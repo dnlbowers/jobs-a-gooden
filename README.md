@@ -30,17 +30,17 @@ notes to review their insights of the process and any company feedback.
 
 ##Structure
 ###Flow Charts:
-![User Journeys](docs/flowcharts/user-Journey.jpg)
+![User Journeys flow chart](docs/flowcharts/user-Journey.jpg)
 
 * What state changes need alerts? log in, log out, 404, 500, pop up for apply. 
 Make a section in the features with screenshots vut reference this here.
 
 ##Skeleton
 ###wireframes:
-![Homepage](docs/wireframes/homepage.png)
-![Homepage](docs/wireframes/job-full-details.png)
-![Homepage](docs/wireframes/jobs-openings.png)
-![Homepage](docs/wireframes/pinned-jobs.png)
+![Homepage wireframes](docs/wireframes/homepage.png)
+![Full job details wireframes](docs/wireframes/job-full-details.png)
+![Job opening page wireframes](docs/wireframes/jobs-openings.png)
+![Pinned jobs page wireframes](docs/wireframes/pinned-jobs.png)
 
 ##Surface
 ###Color scheme:
