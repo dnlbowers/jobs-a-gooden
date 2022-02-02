@@ -1,8 +1,8 @@
 # Jobs-A-Gooden
 As a developing developer, job hunting is something I have found at the forefront of 
 everyone's mind. The app aims to be a proof of concept using a single API to fetch 
-current job roles and provide a method for the user to pin jobs, make notes, and 
-use a Kanban board to track the status of their application processes.
+current job roles and provide a method for the user to pin jobs and make notes to 
+track the status of their application processes and any insights gained along the way.
 
 ##Strategy 
 On average, it takes a new developer around 20-25 interviews to land their first 
