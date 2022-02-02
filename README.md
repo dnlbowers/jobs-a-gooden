@@ -1,10 +1,10 @@
-# Jobs-A-Gooden.
+# Jobs-A-Gooden
 As a developing developer, job hunting is something I have found at the forefront of 
 everyone's mind. The app aims to be a proof of concept using a single API to fetch 
 current job roles and provide a method for the user to pin jobs, make notes, and 
 use a Kanban board to track the status of their application processes.
 
-##Strategy. 
+##Strategy 
 On average, it takes a new developer around 20-25 interviews to land their first 
 developer job, and this does not include the total amount of applications sent out 
 but a job seeker.
@@ -47,5 +47,6 @@ Make a section in the features with screenshots vut reference this here.
 
 ###Typography:
 
-# Credits:
+
+## Credits
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
