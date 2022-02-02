@@ -22,17 +22,30 @@ and make it easier for the candidate to research the potential employer upon
 response to their application. The personal board would also allow the user to make 
 notes to review their insights of the process and any company feedback.
 
-##Structure.
+###Opportunities:
+**Feasibility chart here to lead into scope (the MVP)**
+
+##Scope
+* Use the above to describe the scope of the MVP the remaining go to future developments
+
+##Structure
 ###Flow Charts:
 ![User Journeys](docs/flowcharts/user-Journey.jpg)
 
-##Skeleton.
+* What state changes need alerts? log in, log out, 404, 500, pop up for apply. 
+Make a section in the features with screenshots vut reference this here.
+
+##Skeleton
 ###wireframes:
 ![Homepage](docs/wireframes/homepage.png)
 ![Homepage](docs/wireframes/job-full-details.png)
 ![Homepage](docs/wireframes/jobs-openings.png)
 ![Homepage](docs/wireframes/pinned-jobs.png)
 
+##Surface
+###Color scheme:
+
+###Typography:
 
 # Credits:
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
