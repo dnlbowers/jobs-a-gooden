@@ -47,6 +47,9 @@ Make a section in the features with screenshots vut reference this here.
 
 ###Typography:
 
+##Data Model
+![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg)
+
 
 ## Credits
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
