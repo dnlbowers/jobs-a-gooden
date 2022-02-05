@@ -1,1 +1,1 @@
-web: gunicorn jobsagooden.wsgi
+web gunicorn jobsagooden.wsgi
