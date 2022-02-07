@@ -10,3 +10,4 @@ cloudinary_python.txt
 .idea
 .venv
 .env
+python3 -m django --version
