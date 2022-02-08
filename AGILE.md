@@ -5,3 +5,7 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * During the last stage of the sprint, I  had some issues with getting the app to display via Heroku and realise I had underestimated the story points on this task.
 *I finished the sprint ahead of time at 01:40 05/02
 ![First sprint screenshot](docs/agile/sprint-screenshots/sprint1-initial-deployment.JPG)
+
+sprint 2 notes:
+* decided the API was going to slow me down to much so lowered the priority for this sprint.
+* Decided to build out the site structure with the backup plan of user posting jobs for others to view
