@@ -55,3 +55,4 @@ Make a section in the features with screenshots vut reference this here.
 
 ## Credits
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
+* Guidence on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
