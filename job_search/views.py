@@ -3,11 +3,11 @@ from django.http import HttpResponse
 
 
 def job_search(request):
-    return render(request, 'pages/job-search.html')
+    return render(request, 'job_search/pages/job-search.html')
 
 
 def full_listing(request, pk):
-    return render(request, 'pages/full-listing.html')
+    return render(request, 'job_search/pages/full-listing.html')
 
 
 def pinned_posts(request):
