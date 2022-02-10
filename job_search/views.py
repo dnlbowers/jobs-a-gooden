@@ -7,7 +7,8 @@ def job_search(request):
 
 
 def full_listing(request, pk):
-    return render(request, 'job_search/pages/full-listing.html')
+    jobid = pk
+    return render(request, 'job_search/pages/full-listing.html', {'job': jobid})
 
 
 def pinned_posts(request):

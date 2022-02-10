@@ -10,3 +10,4 @@ cloudinary_python.txt
 .idea
 .venv
 .env
+.gitpod.yml
