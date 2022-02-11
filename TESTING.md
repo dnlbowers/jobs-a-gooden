@@ -9,6 +9,9 @@ from my local machine. The basis of this conditional was, if the file exists the
 completely and in this case take the config vars entered on the heroku app settings instead.
 
 * Issue - When I pushed my code to GitHub it detected from the requirements.txt that Django 3.2 was installed, however without the latest security patches.
-* Cause - I used the Code institute recommended pip install Django==3.2 gunicorn command to install django during the initial deployment This installation did not include the
-latest security patches.
+* Cause - I used the Code institute recommended pip install Django==3.2 gunicorn command to install django during the initial deployment This installation did not include the latest security patches.
 * Solution - I upgraded to the latest patch of this Django version with "pip install --upgrade django==3.2.12" and the error disappeared.
+
+* Issue - early on in the project I was finding API all required O-auth which was not working with the taught fetch method. I found reed employment had an API which used basic authentication however when using it from my local host it was getting blocked.
+* Cause - Lack of understanding in API's requiring authentication.
+* Solution - Since this was very early on in the project I decided to not spend a a lot of time on it. I was able to pull the data using the endpoint and api key in the browser address bar and saved that data to a Json file. This would serve as test data to build the site and I would come back to the API issue at a later stage.
