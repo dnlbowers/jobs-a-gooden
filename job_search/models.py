@@ -19,7 +19,7 @@ class JobSearch(models.Model):
     date_expired = models.DateTimeField(
         auto_now_add=False, blank=True, null=True)
     job_description = models.TextField()
-    job_url = models.URLField(max_length=200)
+    job_url = models.URLField(max_length=2000)
     is_pinned = models.BooleanField(default=False)
 
     def __str__(self):

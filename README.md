@@ -51,6 +51,7 @@ Make a section in the features with screenshots vut reference this here.
 
 ##Data Model
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg)
+[*** REVISED Entity-Relationship-Model***](https://drawsql.app/student-444/diagrams/ci-pp4-job-search/embed)
 
 
 ## Credits
