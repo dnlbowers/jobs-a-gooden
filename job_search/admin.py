@@ -1,6 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import JobSearch
+from .models import Job, PinnedJob, Notes 
 
-admin.site.register(JobSearch)
+admin.site.register(Job)
+admin.site.register(PinnedJob)
+admin.site.register(Notes)

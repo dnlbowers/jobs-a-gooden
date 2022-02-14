@@ -3,7 +3,7 @@ import uuid
 
 
 # Create your models here.
-class JobSearch(models.Model):
+class Job(models.Model):
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
@@ -20,7 +20,42 @@ class JobSearch(models.Model):
         auto_now_add=False, blank=True, null=True)
     job_description = models.TextField()
     job_url = models.URLField(max_length=2000)
-    is_pinned = models.BooleanField(default=False)
+    is_pinned = models.BooleanField(
+        'PinnedJob', default=False
+        )
 
     def __str__(self):
         return self.company_name + " - " + self.job_title
+
+
+class PinnedJob(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+        unique=True)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    date_pinned = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.job.company_name + " - " + self.job.job_title + \
+            "-" + "pinned by"  # + self.user.username
+
+
+class Notes(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+        unique=True)
+    pinned_job = models.ForeignKey(PinnedJob, on_delete=models.CASCADE)
+    # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    short_description = models.CharField(max_length=200, default=False, blank=True, null=True)
+    note = models.TextField()
+    date_created = models.DateTimeField(auto_now_add=True)
+    is_insight = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.job.company_name + " - " + self.job.job_title + \
+            "-" + "noted by "  # + self.user.username
