@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 import uuid
 
-from django.forms import SlugField
-
 
 # Create your models here.
 class Job(models.Model):
@@ -13,7 +11,9 @@ class Job(models.Model):
         default=uuid.uuid4,
         editable=False,
         unique=True)
-    slug = models.SlugField(max_length=200, default=id, unique=True, editable=False)
+    slug = models.SlugField(
+        max_length=200, default=id, unique=True, editable=False
+        )
     company_name = models.CharField(max_length=100)
     job_title = models.CharField(max_length=400)
     location = models.CharField(max_length=200)
@@ -45,7 +45,7 @@ class PinnedJob(models.Model):
         default=uuid.uuid4,
         editable=False,
         unique=True)
-    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)  # Wanted this to have a condition if not pinned then delete
     # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     date_pinned = models.DateTimeField(auto_now_add=True)
 
