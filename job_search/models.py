@@ -51,7 +51,8 @@ class Notes(models.Model):
         unique=True)
     pinned_job = models.ForeignKey(PinnedJob, on_delete=models.CASCADE)
     # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    short_description = models.CharField(max_length=200, default=False, blank=True, null=True)
+    short_description = models.CharField(
+        max_length=200, default=False, blank=True, null=True)
     note = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
     is_insight = models.BooleanField(default=False)
