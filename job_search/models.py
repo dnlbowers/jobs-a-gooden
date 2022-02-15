@@ -1,5 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 import uuid
+
+from django.forms import SlugField
 
 
 # Create your models here.
@@ -9,6 +13,7 @@ class Job(models.Model):
         default=uuid.uuid4,
         editable=False,
         unique=True)
+    slug = models.SlugField(max_length=200, default=id, unique=True, editable=False)
     company_name = models.CharField(max_length=100)
     job_title = models.CharField(max_length=400)
     location = models.CharField(max_length=200)
@@ -24,8 +29,14 @@ class Job(models.Model):
         'PinnedJob', default=False
         )
 
+    class Meta:
+        ordering = ['-date_posted']
+
     def __str__(self):
         return self.company_name + " - " + self.job_title
+
+    def job_is_pinned(self):
+        return self.is_pinned
 
 
 class PinnedJob(models.Model):
