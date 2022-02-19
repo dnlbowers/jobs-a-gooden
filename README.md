@@ -66,11 +66,13 @@ I have further divided this table into 3 categories to help prioritize the order
     * Personal insights.
     * User login.
     * User profiles.
+  
 * UX efforts **should** accommodate these:
-    * Progress tracker (Kanban board).
-    * Tips/resources.
     * API to fetch jobs data
-* Unwise use of time to address there:
+    * Tips/resources.
+    * Progress tracker (Kanban board).
+  
+* **Unwise** use of time to address there:
     * Direct application to jobs.
     * Jobs blog.
     * Employer ratings.
@@ -80,6 +82,7 @@ I have further divided this table into 3 categories to help prioritize the order
     * Freelance specific jobs board.
 
 ## Structure   
+To help me visualize a typical user journey around the site I used [draw.io](https://app.diagrams.net/) to help me plan out the various routes a user could take through the site.
 
 ### Flow Charts:
 ![User Journeys flow chart](docs/flowcharts/user-Journey.jpg)
@@ -103,8 +106,12 @@ Make a section in the features with screenshots vut reference this here.
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg)
 [*** REVISED Entity-Relationship-Model***](https://drawsql.app/student-444/diagrams/ci-pp4-job-search/embed)
 
+## Honorable mentions
 
 ## Credits
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
 * Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
+* Flow charts made using [draw.io](https://app.diagrams.net/)
+* Multiple videos sourced from youtube were used to research a variety of topics:
+    * [Programming with Mosh Python Django Tutorial for Beginners](https://youtu.be/rHux0gMZ3Eg)
