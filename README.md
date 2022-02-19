@@ -106,7 +106,10 @@ Make a section in the features with screenshots vut reference this here.
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg)
 [*** REVISED Entity-Relationship-Model***](https://drawsql.app/student-444/diagrams/ci-pp4-job-search/embed)
 
-## Honorable mentions
+## Agile development process
+For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4) to track and create issues/user stories. Login credentials for the above project space will be provided along with submission, however, a summery of my agile process/learnings can be found [here](AGILE.md).
+
+## Honorable mentions  
 
 ## Credits
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
