@@ -1,15 +1,11 @@
 # Jobs-A-Gooden
-As a developing developer, job hunting is something I have found at the forefront of 
-everyone's mind. The app aims to be a proof of concept using a single API to fetch 
-current job roles and provide a method for the user to pin jobs and make notes to 
-track the status of their application processes and any insights gained along the way.
+As a developing developer, within a group of peers, job hunting is something I have found at the forefront of everyone's mind. The app aims to be a proof of concept using a single API to fetch current job roles and provide a method for the user to pin jobs and make notes to track the status of their application processes and any insights gained along the way.
 
 [Deployed site](https://jobs-a-gooden.herokuapp.com/)
 
 ## Strategy 
-On average, it takes a new developer around 20-25 interviews to land their first 
-developer job, and this does not include the total amount of applications sent out 
-but a job seeker.
+### Site Aims:
+On average, it takes a new developer around 20-25 interviews to land their first developer job, and this does not include the total amount of applications sent out but a job seeker.
 
 It can be hard to keep track of job specs when a company responds, especially 
 when using multiple sites to check for roles, or worse yet, several months 
@@ -100,8 +96,18 @@ Make a section in the features with screenshots vut reference this here.
 * As an **Admin** I can **Log into a user interface** so that **I can easily manage data via a user interface**
 * As an **Admin** I can **easily navigate the admin panel** so that **I can view, search, add and delete jobs**
 
+**NOT YET IN JIRA**  
+* As an **Unregistered User**, I can **quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site**
+* As an **Unregistered User**, I can **register for an account** so that **I can enjoy a personalize experience**
+* As an **Unregistered User**, I can **browse the available jobs (brief description only) ** so that **I can see if I wish to register with the site or not**
+* 
+* As a **Registered User**, I can **create a profile** so that **I can save key details relevant to my job search**
+* As a **Registered User**, I can **save jobs to a pin board** so that **I can refer back to them later with minimal effort**
+* As a **Registered User**, I can **Pin jobs to a board** so that **I can refer back to them later with minimal effort**
+* As a **Registered User** I can **browse the full details of the available jobs** so that **I can see the full job spec and how to apply**
+
 ## Skeleton
-### wireframes:
+### Wireframes:
 ![Homepage wireframes](docs/wireframes/homepage.png)
 ![Full job details wireframes](docs/wireframes/job-full-details.png)
 ![Job opening page wireframes](docs/wireframes/jobs-openings.png)
