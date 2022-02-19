@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import  os
+import os
 import dj_database_url
 if os.path.isfile('jobsagooden/.env'):
     from dotenv import load_dotenv
@@ -21,9 +21,6 @@ if os.path.isfile('jobsagooden/.env'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -33,6 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "DEVELOPMENT" in os.environ
+
 
 ALLOWED_HOSTS = ['jobs-a-gooden.herokuapp.com', '127.0.0.1']
 
