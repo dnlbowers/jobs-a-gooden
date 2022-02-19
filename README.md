@@ -90,6 +90,16 @@ To help me visualize a typical user journey around the site I used [draw.io](htt
 * What state changes need alerts? log in, log out, 404, 500, pop up for apply. 
 Make a section in the features with screenshots vut reference this here.
 
+### User Stories:
+* As a **User**, I can **access a live url** so that **I can use the site**
+* As a **User**, I can **view open job posts** so that **I can decide which ones are of interest to me.**
+* As a **User**, I can **type a URL into the web browser** so that **I can access the sites various pages**
+* As a **User**, I can **see uniformity on each page, as well as clear, distinguish the content subject** so that **I can easily navigate around the page in a way that feels familiar.**
+
+
+* As an **Admin** I can **Log into a user interface** so that **I can easily manage data via a user interface**
+* As an **Admin** I can **easily navigate the admin panel** so that **I can view, search, add and delete jobs**
+
 ## Skeleton
 ### wireframes:
 ![Homepage wireframes](docs/wireframes/homepage.png)
