@@ -56,7 +56,7 @@ I have further divided this table into 3 categories to help prioritize the order
 * UX efforts **must** address these:
     * Job search.
     * User can pin Jobs.
-    * Landing pae with site overview.
+    * Landing page with site overview.
     * Manually add jobs (admin/employer).
     * User specific job notes.
     * Personal insights.
@@ -86,7 +86,7 @@ To help me visualize a typical user journey around the site I used [draw.io](htt
 * What state changes need alerts? log in, log out, 404, 500, pop up for apply. 
 Make a section in the features with screenshots vut reference this here.
 
-### User Stories:
+### User Stories:  **STILL TO ORGANIZE PROPERLY**
 * As a **User**, I can **access a live url** so that **I can use the site**
 * As a **User**, I can **view open job posts** so that **I can decide which ones are of interest to me.**
 * As a **User**, I can **type a URL into the web browser** so that **I can access the sites various pages**
@@ -95,16 +95,20 @@ Make a section in the features with screenshots vut reference this here.
 
 * As an **Admin** I can **Log into a user interface** so that **I can easily manage data via a user interface**
 * As an **Admin** I can **easily navigate the admin panel** so that **I can view, search, add and delete jobs**
-
-**NOT YET IN JIRA**  
-* As an **Unregistered User**, I can **quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site**
-* As an **Unregistered User**, I can **register for an account** so that **I can enjoy a personalize experience**
-* As an **Unregistered User**, I can **browse the available jobs (brief description only) ** so that **I can see if I wish to register with the site or not**
-* 
+ 
+* As an **Unregistered User**, I can **quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
+* As an **Unregistered User**, I can **register for an account** so that **I can enjoy a personalized experience as a job seeker or employer**
+* As an **Unregistered User**, I can **browse the available jobs (brief description only)** so that **I can see if I wish to register with the site or not**
+  
 * As a **Registered User**, I can **create a profile** so that **I can save key details relevant to my job search**
-* As a **Registered User**, I can **save jobs to a pin board** so that **I can refer back to them later with minimal effort**
+
+**NOT YET IN JIRA** 
 * As a **Registered User**, I can **Pin jobs to a board** so that **I can refer back to them later with minimal effort**
 * As a **Registered User** I can **browse the full details of the available jobs** so that **I can see the full job spec and how to apply**
+* As a **Registered User** I can **leave notes specific to the job on my pinboard** so that **I can know can keep track of specific milestones in the application process**
+* As a **Registered User** I can **turn a note into an insight** so that **it can be seen on a separate page showing learnings from the entire process of job  hunting process**
+* As a **Site Admin/Registered Employer** I can **see an extra button on the jobsearch page** so that **I can add new jobs from the user interface**
+
 
 ## Skeleton
 ### Wireframes:
