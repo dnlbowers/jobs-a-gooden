@@ -92,23 +92,22 @@ Make a section in the features with screenshots vut reference this here.
 * As a **User**, I can **type a URL into the web browser** so that **I can access the sites various pages**
 * As a **User**, I can **see uniformity on each page, as well as clear, distinguish the content subject** so that **I can easily navigate around the page in a way that feels familiar.**
 
-
-* As an **Admin** I can **Log into a user interface** so that **I can easily manage data via a user interface**
-* As an **Admin** I can **easily navigate the admin panel** so that **I can view, search, add and delete jobs**
+* As an **Admin** I can...    
+    * **Log into a user interface** so that **I can easily manage data via a user interface**
+    * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
+    * ...**see an extra button on the jobsearch page** so that **I can add new jobs from the user interface**
  
-* As an **Unregistered User**, I can **quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
-* As an **Unregistered User**, I can **register for an account** so that **I can enjoy a personalized experience as a job seeker or employer**
-* As an **Unregistered User**, I can **browse the available jobs (brief description only)** so that **I can see if I wish to register with the site or not**
+* As an **Unregistered User** I can... 
+    * ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
+    * ...**register for an account** so that **I can enjoy a personalized experience as a job seeker or employer**
+    * ...**browse the available jobs (brief description only)** so that **I can see if I wish to register with the site or not**
   
-* As a **Registered User**, I can **create a profile** so that **I can save key details relevant to my job search**
-
-**NOT YET IN JIRA** 
-* As a **Registered User**, I can **Pin jobs to a board** so that **I can refer back to them later with minimal effort**
-* As a **Registered User** I can **browse the full details of the available jobs** so that **I can see the full job spec and how to apply**
-* As a **Registered User** I can **leave notes specific to the job on my pinboard** so that **I can know can keep track of specific milestones in the application process**
-* As a **Registered User** I can **turn a note into an insight** so that **it can be seen on a separate page showing learnings from the entire process of job  hunting process**
-* As a **Site Admin/Registered Employer** I can **see an extra button on the jobsearch page** so that **I can add new jobs from the user interface**
-
+* As a **Registered User** I can... 
+    * ...**create a profile** so that **I can save key details relevant to my job search.**
+    * ...**Pin jobs to a board** so that **I can refer back to them later with minimal effort**
+    * ...**browse the full details of the available jobs** so that **I can see the full job spec and how to apply**  
+    * ...**leave notes specific to the job on my pinboard** so that **I can keep track of specific milestones in the application process**
+    * ...**turn a note into an insight** so that **it can be seen on a separate page showing learnings from the entire process of the job hunting process**
 
 ## Skeleton
 ### Wireframes:
@@ -120,9 +119,9 @@ Make a section in the features with screenshots vut reference this here.
 ## Surface
 ### Color scheme:
 
-###Typography:
+### Typography:
 
-##Data Model
+## Data Model
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg)
 [*** REVISED Entity-Relationship-Model***](https://drawsql.app/student-444/diagrams/ci-pp4-job-search/embed)
 
