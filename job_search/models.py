@@ -11,9 +11,6 @@ class Job(models.Model):
         default=uuid.uuid4,
         editable=False,
         unique=True)
-    slug = models.SlugField(
-        max_length=200, default=id, unique=True, editable=False
-        )
     company_name = models.CharField(max_length=100)
     job_title = models.CharField(max_length=400)
     location = models.CharField(max_length=200)
@@ -39,19 +36,19 @@ class Job(models.Model):
         return self.is_pinned
 
 
-# class PinnedJob(models.Model):
-#     id = models.UUIDField(
-#         primary_key=True,
-#         default=uuid.uuid4,
-#         editable=False,
-#         unique=True)
-#     job = models.ForeignKey(Job, on_delete=models.SET_Null)  # Wanted this to have a condition if not pinned then delete
-#     # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-#     date_pinned = models.DateTimeField(auto_now_add=True)
+class PinnedJob(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+        unique=True)
+    job = models.ForeignKey(Job, on_delete=models.SET_NULL, null=True)  # Wanted this to have a condition if not pinned then delete
+    # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    date_pinned = models.DateTimeField(auto_now_add=True)
 
-#     def __str__(self):
-#         return self.job.company_name + " - " + self.job.job_title + \
-#             "-" + "pinned by"  # + self.user.username
+    def __str__(self):
+        return self.job.company_name + " - " + self.job.job_title + \
+            "-" + "pinned by"  # + self.user.username
 
 
 class Notes(models.Model):

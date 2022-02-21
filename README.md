@@ -93,7 +93,7 @@ Make a section in the features with screenshots vut reference this here.
 * As a **User**, I can **see uniformity on each page, as well as clear, distinguish the content subject** so that **I can easily navigate around the page in a way that feels familiar.**
 
 * As an **Admin** I can...    
-    * **Log into a user interface** so that **I can easily manage data via a user interface**
+    * ...**Log into a user interface** so that **I can easily manage data via a user interface**
     * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
     * ...**see an extra button on the jobsearch page** so that **I can add new jobs from the user interface**
  
@@ -111,18 +111,19 @@ Make a section in the features with screenshots vut reference this here.
 
 ## Skeleton
 ### Wireframes:
-![Homepage wireframes](docs/wireframes/homepage.png)
-![Full job details wireframes](docs/wireframes/job-full-details.png)
-![Job opening page wireframes](docs/wireframes/jobs-openings.png)
-![Pinned jobs page wireframes](docs/wireframes/pinned-jobs.png)
+* [Homepage wireframes](docs/wireframes/homepage.png)
+* [Full job details wireframes](docs/wireframes/job-full-details.png)
+* [Job opening page wireframes](docs/wireframes/jobs-openings.png)
+* [Pinned jobs page wireframes](docs/wireframes/pinned-jobs.png)
 
 ## Surface
 ### Color scheme:
-
+I used the following [Image](docs/images/jaguar-logo.png) to generate the following color scheme on [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000). The resultant color scheme was:
+![Color Scheme](docs/images/jag-colors.jpg)
 ### Typography:
 
 ## Data Model
-![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg)
+![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg)  
 [*** REVISED Entity-Relationship-Model***](https://drawsql.app/student-444/diagrams/ci-pp4-job-search/embed)
 
 ## Agile development process
@@ -135,5 +136,7 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
 * Flow charts made using [draw.io](https://app.diagrams.net/)
+* Jaguar cartoon image from [https://favpng.com](https://favpng.com/png_view/jaguar-jaguar-clip-art-vector-graphics-cartoon-illustration-png/yF62hEBm)
+* [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme from the jaguar image
 * Multiple videos sourced from youtube were used to research a variety of topics:
     * [Programming with Mosh Python Django Tutorial for Beginners](https://youtu.be/rHux0gMZ3Eg)
