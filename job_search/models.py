@@ -5,6 +5,9 @@ import uuid
 
 
 # Create your models here.
+STATUS = ((0, 'hidden'), (1, 'Public'))
+
+
 class Job(models.Model):
     id = models.UUIDField(
         primary_key=True,
