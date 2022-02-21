@@ -1,11 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
+# from django.contrib.auth.models import User
+# from cloudinary.models import CloudinaryField
 import uuid
 
 
 # Create your models here.
-STATUS = ((0, 'hidden'), (1, 'Public'))
+# STATUS = ((0, 'hidden'), (1, 'Public'))
 
 
 class Job(models.Model):
