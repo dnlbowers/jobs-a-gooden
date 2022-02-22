@@ -6,7 +6,7 @@ from .models import Job
 class JobList(generic.ListView):
     model = Job
     paginate_by = 6
-    template_name = 'job_search/pages/job-search.html'
+    template_name = 'job_search/pages/job-list.html'
     context_object_name = 'jobs'
     queryset = Job.objects.all().order_by('-date_posted')
 
