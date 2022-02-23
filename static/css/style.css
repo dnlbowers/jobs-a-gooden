@@ -3,24 +3,21 @@
     padding: 0;
 }
 
+.text-cream {
+    color:#fffdd0
+}
+
 body {
     background-color: #e4b67c;
 }
 
-nav, footer{
-    background-color: #603f3f;
-}
-
-.nav-link {
-    color: #fffdd0;
-}
+/* ------------------------------------------------------------ Header/Navbar */
 
 .nav-padding{
     padding: 0 1rem 1rem;
 }
 
 .navbar-toggler {
-    color: #fffdd0;
     font-size: 30px;
 }
 
@@ -32,3 +29,23 @@ nav, footer{
     font-size: 2em;
 }
 
+nav, footer{
+    background-color: #603f3f;
+}
+
+/* ------------------------------------------------------------ Footer */
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.social-media-icon {
+    display: inline;
+}
