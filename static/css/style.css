@@ -11,6 +11,10 @@ nav, footer{
     background-color: #603f3f;
 }
 
+.nav-link {
+    color: #fffdd0;
+}
+
 .nav-padding{
     padding: 0 1rem 1rem;
 }
