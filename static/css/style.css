@@ -19,6 +19,11 @@ nav, footer{
     padding: 0 1rem 1rem;
 }
 
+.navbar-toggler {
+    color: #fffdd0;
+    font-size: 30px;
+}
+
 #logo {
     width: 60px;
 }
