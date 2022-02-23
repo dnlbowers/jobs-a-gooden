@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Job, PinnedJob, Notes 
+from .models import Job, PinnedJob, Notes
 
 
 @admin.register(Job)
@@ -16,5 +16,8 @@ class JobAdmin(admin.ModelAdmin):
         'company_name', 'job_title', 'date_posted', 'date_expired', 'is_pinned'
     )
 
+
 admin.site.register(PinnedJob)
+
+
 admin.site.register(Notes)
