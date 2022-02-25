@@ -1,8 +1,19 @@
-<div class="card">
-    <img src="" class="card-img-top" alt="Company logo or placeholder image if none provided">
-    <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text"></p>
+<div class="card mb-4">
+    <!-- Image is just a test -->
+    <img src="">
+    <section class="card-body">
+        <h5 class="card-title">{{ job.job_title }}</h5>
+        <p class="card-text">{{ job.company_name }}</p>
+        <p> {{ job.location }} </p>
+        {% if job.max_salary != null and job.min_salary != null%}
+            <p>{{ job.min_salary }} - {{ job.max_salary }} ({{ job.currency }})</p>
+        {% elif job.min_salary == null and job.max_salary != null %}
+            <p>{{ job.max_salary }}</p>
+        {% elif job.min_salary != null and job.max_salary == null %} 
+            <p>{{ job.min_salary }}</p>  
+        {% else %}
+            <p>No Salary information disclosed</p>
+        {% endif %}
         <a href="#" class="btn btn-primary">Full details</a>
-    </div>
+    </section>
 </div>
