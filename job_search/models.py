@@ -5,7 +5,7 @@ import uuid
 
 
 # Create your models here.
-# STATUS = ((0, 'hidden'), (1, 'Public'))
+STATUS = ((0, 'hidden'), (1, 'Public'))
 
 
 class Job(models.Model):
@@ -28,6 +28,7 @@ class Job(models.Model):
     is_pinned = models.BooleanField(
         'PinnedJob', default=False
         )
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['-date_posted']
