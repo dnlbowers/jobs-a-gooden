@@ -144,3 +144,9 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme from the jaguar image
 * Multiple videos sourced from youtube were used to research a variety of topics:
     * [Programming with Mosh Python Django Tutorial for Beginners](https://youtu.be/rHux0gMZ3Eg)
+* General references:
+    * [Geeks for Geeks](https://www.geeksforgeeks.org/)
+    * [Stack Overflow](https://stackoverflow.com/)
+    * [Code Institute Learning Platform](https://codeinstitute.net/)
+    * [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+    * [Bootstrap Documentation](https://getbootstrap.com/)
