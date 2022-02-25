@@ -129,6 +129,9 @@ I used the following [Image](docs/images/jaguar-logo.png) to generate the follow
 ## Agile development process
 For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4) to track and create issues/user stories. Login credentials for the above project space will be provided along with submission, however, a summery of my agile process/learnings can be found [here](AGILE.md).
 
+## Future development
+* automated script to delete/archive hidden job posts by set criteria when actions by admin
+
 ## Honorable mentions  
 
 ## Credits
