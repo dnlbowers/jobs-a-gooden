@@ -96,7 +96,7 @@ Make a section in the features with screenshots vut reference this here.
     * **use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post**    
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
     * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
-    * ...**see an extra button on the jobsearch page** so that **I can add new jobs from the user interface**
+    * ...**see an extra button on the jobs page** so that **I can add new jobs from the user interface**
  
 * As an **Unregistered User** I can... 
     * ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
