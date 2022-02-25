@@ -92,7 +92,8 @@ Make a section in the features with screenshots vut reference this here.
 * As a **User**, I can **type a URL into the web browser** so that **I can access the sites various pages**
 * As a **User**, I can **see uniformity on each page, as well as clear, distinguish the content subject** so that **I can easily navigate around the page in a way that feels familiar.**
 
-* As an **Admin** I can...    
+* As an **Admin** I can...
+    * **use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post**    
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
     * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
     * ...**see an extra button on the jobsearch page** so that **I can add new jobs from the user interface**

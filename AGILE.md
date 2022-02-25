@@ -18,3 +18,6 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * After concluding the sprint, I believe that a lot of the issue I was having using agile development were due to my planning not being thorough enough, and a lack of understanding of some of the key concepts required to work with datamodels within django. I have resolved to go back into the research and planning stage in order to gain further clarity before the third sprint. This will be done by drafting the features in my readme to further clarify and drill down on the MVP. My hope here is it will help me follow the above referenced article to write better user stories for my sprit so all sprint tasks are set solely to provide relevant value to the user. 
 
 ![Second Sprint Screenshot](docs/agile/sprint-screenshots/sprint2.JPG)
+
+## Sprint 3 notes:
+* I sense I how over compensated this time round by adding everything to the sprint. 

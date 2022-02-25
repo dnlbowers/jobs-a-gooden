@@ -13,6 +13,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='job',
             name='status',
-            field=models.IntegerField(choices=[(0, 'hidden'), (1, 'Public')], default=0),
+            field=models.IntegerField(
+                choices=[(0, 'hidden'), (1, 'Public')], default=0
+                ),
         ),
     ]
