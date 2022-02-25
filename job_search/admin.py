@@ -7,7 +7,7 @@ from .models import Job, PinnedJob, Notes
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
     list_display = (
-        'company_name', 'job_title', 'date_expired', 'is_pinned'
+        'company_name', 'job_title', 'date_expired', 'status'
         )
     list_filter = (
         'company_name', 'job_title', 'date_posted', 'date_expired', 'is_pinned'
