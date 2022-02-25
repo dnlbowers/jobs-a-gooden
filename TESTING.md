@@ -13,5 +13,9 @@ completely and in this case take the config vars entered on the heroku app setti
 * Solution - I upgraded to the latest patch of this Django version with "pip install --upgrade django==3.2.12" and the error disappeared.
 
 * Issue - early on in the project I was finding API all required O-auth which was not working with the taught fetch method. I found reed employment had an API which used basic authentication however when using it from my local host it was getting blocked.
-* Cause - Lack of understanding in API's requiring authentication.
+* Cause - Lack of understanding in API's requiring Oauth authentication.
 * Solution - Since this was very early on in the project I decided to not spend a a lot of time on it. I was able to pull the data using the endpoint and api key in the browser address bar and saved that data to a Json file. This would serve as test data to build the site and I would come back to the API issue at a later stage.
+
+* Issue - I was having a lot of trouble inserting my card component from within the job_search app into the required job-list page.
+* Cause - At first I thought it was a file path issue however after much research I found [this article](https://www.geeksforgeeks.org/include-django-template-tags/) showing quotation marks being used with the include property.
+* Solution - Adding the quotation marks around the correct relative filepath resolved the issue.

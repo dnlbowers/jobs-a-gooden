@@ -1,16 +1,33 @@
 <nav class="navbar navbar-expand-sm">
     <div class="container-fluid">
-        <a href="#" class="navbar-brand nav-link text-cream">
+        <!-- Change the navbar brand lnk when home page is ready -->
+        <!-- Brandname and logo -->
+        <a href="{% url 'job_list' %}" class="navbar-brand nav-link text-cream">
             <span id="logo-title" class="navbar-brand mb-0 h1">J.A.G</span>
             <img src="https://res.cloudinary.com/df4m8hva5/image/upload/v1645650841/jaguar-logo-left_y2p0od.png" alt="Baby Jaguar logo" id="logo" class="d-inline-block">
         </a>
+        
+        <!-- Mobile hamburger menu icon -->
         <button class="navbar-toggler text-cream" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="navbar-toggler-icon fa-solid fa-bars"></i>
         </button>
 
+        <!-- Navigation menu items relating to user authentication -->
         <ul class="nav justify-content-end collapse navbar-collapse" id="navbarNav">
-            <li class="nav-item"><a href="" class="nav-link nav-padding text-cream">Sign up</a></li>
-            <li class="nav-item"><a href="" class="nav-link nav-padding text-cream">Sign in</a></li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link nav-padding text-cream" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-padding text-cream" href="{% url 'account_login' %}">Login</a>
+                </li>
+            {% endif %}
+
+            <!-- job related navigation items -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-padding text-cream" href="#" id="jobsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Jobs
@@ -22,7 +39,6 @@
                     <li><a href="" class="dropdown-item">Insights</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="" class="nav-link"></a></li>
         </ul>
     </div>
 </nav>
