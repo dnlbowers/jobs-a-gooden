@@ -3,5 +3,8 @@
     "python.linting.enabled": true,
     "cSpell.words": [
         "datamodels"
-    ]
+    ],
+    "emmet.includeLanguages": {
+        "django-html": "html"
+      }
 }
