@@ -19,3 +19,7 @@ completely and in this case take the config vars entered on the heroku app setti
 * Issue - I was having a lot of trouble inserting my card component from within the job_search app into the required job-list page.
 * Cause - At first I thought it was a file path issue however after much research I found [this article](https://www.geeksforgeeks.org/include-django-template-tags/) showing quotation marks being used with the include property.
 * Solution - Adding the quotation marks around the correct relative filepath resolved the issue.
+
+* Issue - Linking my custom base.html in the allauth template wasn't working no matter what filepath I was using.
+* Cause - Due to my file structure using base.html only in the extends property wasn't enough, after a lot of dead end research I looked at the allauth views file to see where it was looking for the templates and saw it was checking the settings file.
+* Solution - By adding os.path.join(BASE_DIR, 'templates', 'packages/allauth') I was able to redirect the project to look here for my all auth templates and enabling me to keep my packages separate to my customer code.
