@@ -33,17 +33,22 @@ nav, footer{
     background-color: #603f3f;
 }
 
+/* ------------------------------------------------------------ Job cards */
+.card-header {
+    background-color: #603f3f;
+    display: flex;
+    justify-content: flex-end;
+    padding: .5rem 0.25rem;
+}
+
 /* ------------------------------------------------------------ Footer */
 footer {
-    bottom: 0;
-    position: absolute;
     width: 100%;
 }
 
 .social-media {
     display: flex;
     justify-content: space-around;
-    margin: 1rem 0;
 }
 
 .social-media-icon {
