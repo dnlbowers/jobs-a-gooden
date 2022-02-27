@@ -4,6 +4,6 @@ from . import views
 urlpatterns = [
     # Temporarily set jobsearch to home page
     path('', views.JobList.as_view(), name='job_list'),
-    path('listing/<str:pk>/', views.full_listing, name='full_listing'),
+    path('<uuid:id>/', views.FullJobSpec.as_view(), name='full_job_details'),
     path('pinboard', views.pinned_posts, name='pin_board'),
 ]

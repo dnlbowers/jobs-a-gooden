@@ -20,4 +20,8 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 ![Second Sprint Screenshot](docs/agile/sprint-screenshots/sprint2.JPG)
 
 ## Sprint 3 notes:
-* I sense I how over compensated this time round by adding everything to the sprint. 
+* Due to the time taken to plan between sprint 2 and 3 this sprint felt a lot smoother. 
+* My burn down chart reflects a down wards trend, however I over committed with the amount of user stories added at the sprint set up phase. The issue here is not knowing exactly when I will have time to work on the project and so I have no way of accurately predicting how many stories I will be able to complete.
+* To combat this I may refined my "must haves", "should haves" etc each sprint and ensure I only work on the highest priority ones each time as I did with sprint 3. 
+
+![Second Sprint Screenshot](docs/agile/sprint-screenshots/sprint2.JPG)

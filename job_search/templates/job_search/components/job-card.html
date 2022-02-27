@@ -35,9 +35,9 @@
             <p>No Salary information disclosed</p>
         {% endif %}
         {% if user.is_authenticated %}
-            <button href="#" class="btn btn-primary">Full details</button>
+            <a href="{% url 'full_job_details' job.id %}" class="btn btn-primary">Full details</a>
         {% else %}
-            <button href="#" class="btn btn-primary"disabled>Full details</button>
+            <a href="#" class="btn btn-primary"disabled>Full details</a>
         {% endif %}
     </section>
 </div>
