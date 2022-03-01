@@ -3,6 +3,10 @@ const pinToggleRef = document.querySelectorAll('#flexSwitchCheckDefault')
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    /**
+     * Adds event listeners to the pin job toggle switches
+     * And triggers is_pinned field in the database to be updated.
+     */
     pinToggleRef.forEach( pin => {
         pin.addEventListener('click', () => {
             if(pin.checked){
