@@ -1,6 +1,6 @@
 # start which some explanations of how you used JIRA i.e. priority as must have - nice to have
 
-## Sprint 2 notes:
+## Sprint 1 notes:
 My first sprint was a short one, intended to get familiar with JIRA and get the initial app set up and deployed. 
 * I set a time limit from 23:40 on 04/02 until 02:00 05/02.
 * There were five tasks each with one story point. 
@@ -25,3 +25,6 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * To combat this I may refined my "must haves", "should haves" etc each sprint and ensure I only work on the highest priority ones each time as I did with sprint 3. 
 
 ![Second Sprint Screenshot](docs/agile/sprint-screenshots/sprint2.JPG)
+
+## Sprint 4 notes:
+* Since in sprint 3 I managed to complete 6 user stories I chose to take all the remain seven into sprint 4.
