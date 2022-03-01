@@ -3,36 +3,24 @@
 
     <header class="card-header">
         <!-- pin job toggle active when logged in -->
-        {% if user.is_authenticated %}
-            <div class="form-check form-switch card-header">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-            </div>
-
-        <!-- pin job toggle disabled when logged out -->
-        {% else %}
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
-                <label class="form-check-label" for="flexSwitchCheckDisabled"></label>
-            </div>
-        {% endif %}
+        {% include '../components/pin-toggle.html' %}
     </header>
 
     <!-- Brief summary of the job destails, Job title, company, name, locations and slaray info -->
     <section class="card-body">
         <h5 class="card-title">{{ job.job_title }}</h5>
-        <p class="card-text">{{ job.company_name }}</p>
-        <p> {{ job.location }} </p>
+        <h6 class="card-subtitle text-muted">{{ job.company_name }}</h6>
+        <p class="card-text"> {{ job.location }} </p>
 
         <!-- Conditionals to account for some companies would not disclose a renumeration package -->
         {% if job.max_salary != null and job.min_salary != null%}
-            <p>{{ job.min_salary }} - {{ job.max_salary }} ({{ job.currency }})</p>
+            <p class="card-text">{{ job.min_salary }} - {{ job.max_salary }} ({{ job.currency }})</p>
         {% elif job.min_salary == null and job.max_salary != null %}
-            <p>{{ job.max_salary }} ({{ job.currency }})</p>
+            <p class="card-text">{{ job.max_salary }} ({{ job.currency }})</p>
         {% elif job.min_salary != null and job.max_salary == null %} 
-            <p>{{ job.min_salary }} ({{ job.currency }})</p>  
+            <p class="card-text">{{ job.min_salary }} ({{ job.currency }})</p>  
         {% else %}
-            <p>No Salary information disclosed</p>
+            <p class="card-text">No Salary information disclosed</p>
         {% endif %}
         {% if user.is_authenticated %}
             <a href="{% url 'full_job_details' job.id %}" class="btn btn-primary">Full details</a>
