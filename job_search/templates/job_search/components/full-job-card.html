@@ -1,33 +1,42 @@
 <div class="card mb-4">
-
     <header class="card-header">
         <!-- pin job toggle active when logged in -->
         <div id="full-jobcard-heading">
-        {% include '../layout/full-job-headings.html' %}
+            {% include '../layout/full-job-headings.html' %}
         </div>
         {% include '../components/pin-toggle.html' %}
     </header>
 
-    <div>
+    <div class="card-body">
         <!-- Conditionals to account for some companies would not disclose a renumeration package -->
         {% if job.max_salary != null and job.min_salary != null%}
-            <p class="card-text">Salary expectation - {{ job.min_salary }} - {{ job.max_salary }} ({{ job.currency }})</p>
+        <p class="card-text">
+            Salary expectation - {{ job.min_salary }} - {{ job.max_salary }} ({{ job.currency }})
+        </p>
         {% elif job.min_salary == null and job.max_salary != null %}
-            <p class="card-text">Salary expectation - {{ job.max_salary }} ({{ job.currency }})</p>
-        {% elif job.min_salary != null and job.max_salary == null %} 
-            <p class="card-text">Salary expectation - {{ job.min_salary }} ({{ job.currency }})</p>  
+        <p class="card-text">
+            Salary expectation - {{ job.max_salary }} ({{ job.currency }})
+        </p>
+        {% elif job.min_salary != null and job.max_salary == null %}
+        <p class="card-text">
+            Salary expectation - {{ job.min_salary }} ({{ job.currency }})
+        </p>
         {% else %}
-            <p class="card-text">No Salary information disclosed</p>
+        <p class="card-text">No Salary information disclosed</p>
         {% endif %}
 
+        <section>
+            <h3>Full Details</h3>
+            <p>{{ job.job_description }}</p>
+        </section>
+        {% if user.is_authenticated %}
+        <a href="{% url 'job_list' %}" class="btn btn-primary"
+            >Back to all jobs</a
+        >
+        {% else %}
+        <a href="{% url 'job_list' %}" class="btn btn-primary" disabled
+            >Back to all jobs</a
+        >
+        {% endif %}
     </div>
-    <section>
-        <h3>Full Details</h3>
-        <p>{{ job.job_description }}</p>
-    </section>
-    {% if user.is_authenticated %}
-    <a href="{% url 'job_list' %}" class="btn btn-primary">Back to all jobs</a>
-    {% else %}
-        <a href="{% url 'job_list' %}" class="btn btn-primary"disabled>Back to all jobs</a>
-    {% endif %}
 </div>
