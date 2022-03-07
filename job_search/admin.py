@@ -11,10 +11,10 @@ class JobAdmin(SummernoteModelAdmin):
         'company_name', 'job_title', 'date_expired', 'status'
         )
     list_filter = (
-        'company_name', 'job_title', 'date_posted', 'date_expired', 'is_pinned'
+        'company_name', 'job_title', 'date_posted', 'date_expired'
     )
     search_fields = (
-        'company_name', 'job_title', 'date_posted', 'date_expired', 'is_pinned'
+        'company_name', 'job_title', 'date_posted', 'date_expired'
     )
     summer_fields = ('job_description',)
 
