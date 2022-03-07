@@ -24,7 +24,17 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * My burn down chart reflects a down wards trend, however I over committed with the amount of user stories added at the sprint set up phase. The issue here is not knowing exactly when I will have time to work on the project and so I have no way of accurately predicting how many stories I will be able to complete.
 * To combat this I may refined my "must haves", "should haves" etc each sprint and ensure I only work on the highest priority ones each time as I did with sprint 3. 
 
-![Second Sprint Screenshot](docs/agile/sprint-screenshots/sprint2.JPG)
+![Third Sprint Screenshot](docs/agile/sprint-screenshots/sprint3.JPG)
 
 ## Sprint 4 notes:
-* Since in sprint 3 I managed to complete 6 user stories I chose to take all the remain seven into sprint 4.
+* Since in sprint 3 I managed to complete 6 user stories I chose to take all the remaining seven into sprint 4.
+* Due to several commitments outside of the course I only completed one task. This was the first week I have not had much time to work on the project due to haven't a tech interview questionnaire to complete.
+* Due to the above this turned more into a dummy sprint with little achieved. Up until I had to divert my attention the burn down chart was looking ok so I will be re-adding the stories to the next sprint with reassessed priorities.
+
+![Fourth Sprint Screenshot](docs/agile/sprint-screenshots/sprint4.JPG)
+
+## Sprint 4 notes:
+* <>
+* <>
+
+![Fifth Sprint Screenshot](docs/agile/sprint-screenshots/sprint5.JPG)
