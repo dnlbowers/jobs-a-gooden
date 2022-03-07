@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
      * And triggers is_pinned field in the database to be updated.
      */
     pinToggleRef.forEach( pin => {
-        pin.addEventListener('click', () => {
+        pin.addEventListener('change', () => {
             if(pin.checked){
+                
                 console.log("checked and pinned")
             } else {
+                
                 console.log("unchecked and unpinned")
             };
         })
