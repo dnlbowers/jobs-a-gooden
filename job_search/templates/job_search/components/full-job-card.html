@@ -27,7 +27,7 @@
 
         <section>
             <h3>Full Details</h3>
-            <p>{{ job.job_description }}</p>
+            <p>{{ job.job_description|safe }}</p>
         </section>
         {% if user.is_authenticated %}
         <a href="{% url 'job_list' %}" class="btn btn-primary"
