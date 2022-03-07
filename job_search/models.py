@@ -26,6 +26,9 @@ class Job(models.Model):
     job_description = models.TextField()
     job_url = models.URLField(max_length=2000)
     status = models.IntegerField(choices=STATUS, default=0)
+    is_pinned = models.ManyToManyField(
+        User, related_name='is_pinned', blank=True
+    )
 
     class Meta:
         ordering = ['-date_posted']
@@ -34,15 +37,15 @@ class Job(models.Model):
         return self.company_name + " - " + self.job_title
 
 
-class PinnedJob(models.Model):
-    job = models.ForeignKey(Job, on_delete=models.SET_NULL, null=True)
-    is_pinned = models.ManyToManyField(
-        User, related_name='is_pinned', blank=True
-    )
+# class PinnedJob(models.Model):
+#     job = models.ForeignKey(Job, on_delete=models.SET_NULL, null=True)
+#     is_pinned = models.ManyToManyField(
+#         User, related_name='is_pinned', blank=True
+#     )
 
-    def __str__(self):
-        return self.job.company_name + " - " + self.job.job_title + \
-            "-" + "pinned by" + self.user.username
+    # def __str__(self):
+    #     return self.job.company_name + " - " + self.job.job_title + \
+    #         "-" + "pinned by" + self.user.username
 
 
 class Notes(models.Model):
@@ -51,7 +54,7 @@ class Notes(models.Model):
         default=uuid.uuid4,
         editable=False,
         unique=True)
-    pinned_job = models.ForeignKey(PinnedJob, on_delete=models.CASCADE) # need a conditional where insights are saved
+    # pinned_to_job = models.ForeignKey(Job, on_delete=models.CASCADE)
     # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     short_description = models.CharField(
         max_length=200, default=False, blank=True, null=True)

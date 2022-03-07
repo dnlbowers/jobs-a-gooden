@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Job, PinnedJob, Notes
+from .models import Job, Notes
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -19,7 +19,7 @@ class JobAdmin(SummernoteModelAdmin):
     summer_fields = ('job_description',)
 
 
-admin.site.register(PinnedJob)
+# admin.site.register(PinnedJob)
 
 
 admin.site.register(Notes)
