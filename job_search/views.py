@@ -55,7 +55,7 @@ class PinJob(View):
         else:
             pinned_job.is_pinned.add(request.user)
 
-        return HttpResponseRedirect(reverse('full_job_details', args=[id]))
+        return HttpResponseRedirect(reverse('job_details', args=[id]))
 
 
 def pinned_posts(request):

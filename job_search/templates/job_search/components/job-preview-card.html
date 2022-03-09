@@ -2,7 +2,7 @@
 <div class="card mb-4">
 
     <header class="card-header">
-        <!-- pin job toggle active when logged in -->
+        <!-- pin job toggle active only when logged in -->
         {% include '../components/pin-toggle.html' %}
     </header>
 
@@ -23,7 +23,7 @@
             <p class="card-text">No Salary information disclosed</p>
         {% endif %}
         {% if user.is_authenticated %}
-            <a href="{% url 'full_job_details' job.id %}" class="btn btn-primary">Full details</a>
+            <a href="{% url 'job_details' job.id %}" class="btn btn-primary">Full details</a>
         {% else %}
             <a href="#" class="btn btn-primary"disabled>Full details</a>
         {% endif %}

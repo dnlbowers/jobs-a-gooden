@@ -1,18 +1,29 @@
 {% if user.is_authenticated %}
 <form class="d-inline" action="{% url 'pin_job' job.id %}" method="POST">
     {% csrf_token %}
-    {% if pinned %}
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-            <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-        </div>
-    {% else %}
-        <div class="form-check form-switch card-header">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-        </div>
-    {% endif %}
-</form>    
+{% if pinned %}
+
+    <div class="form-check form-switch">
+        <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+        <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+    </div> 
+    <button id="pin-submit" class="pin-submit-btn" type="submit" name="pinned_job" value="{{ pinned_job.id }}">
+        <i class="far fa-heart"></i>
+    </button>
+</form> 
+{% else %}
+
+    <div class="form-check form-switch card-header">
+        <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label pin" for="flexSwitchCheckDefault"></label>
+    </div> 
+    <button id="pin-submit" class="pin-submit-btn" type="submit" name="pinned_job" value="{{ pinned_job.id }}">
+        <i class="fas fa-heart"></i>
+    </button>
+</form> 
+{% endif %}
+
+   
 
 <!-- pin job toggle disabled when logged out -->
 {% else %}

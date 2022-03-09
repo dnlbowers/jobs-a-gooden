@@ -24,6 +24,12 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - Due to my file structure using base.html only in the extends property wasn't enough, after a lot of dead end research I looked at the allauth views file to see where it was looking for the templates and saw it was checking the settings file.
 * Solution - By adding os.path.join(BASE_DIR, 'templates', 'packages/allauth') I was able to redirect the project to look here for my all auth templates and enabling me to keep my packages separate to my customer code.
 
-* issue - Errors on postgres database migrations.
+* Issue - Errors on postgres database migrations.
 * Cause - Whilst coming to terms with how to use the model portion of django I recreated the models multiple times, this caused various errors when migrating changes to the database.
 * Solution - I deleted the postgres database form heroku and my migration files and added a new Postgres server to heroku. I then re-ran the migration commands to start the database over from scratch. Once migrated I also needed to re add the job data for testing purposes and recreate the super user.
+
+* Issue - without touching my code in between coding sessions When trying to run the server locally I was having an error message saying it could not connect to my heroku postgres server database. 
+* Cause - due to an [Heroku maintenance](docs/images/heroku-maintenance.jpg) my DATABASE_URL had changed causing my local .env file to be out of date. 
+* Solution - Updating the DATABASE_URL resolved the issue with running the server locally. This
+
+Issue - Trying to pin a job post using the bootstrap toggle as a trigger.
