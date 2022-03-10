@@ -47,10 +47,10 @@ class FullJobSpec(View):
 
 
 class PinJob(View):
-    def pin_job(self, request, id):
+    def post(self, request, id):
         pinned_job = get_object_or_404(Job, id=id)
 
-        if pinned_job.is_pinned.filter(id=request.user.id).exist():
+        if pinned_job.is_pinned.filter(id=request.user.id).exists():
             pinned_job.is_pinned.remove(request.user)
         else:
             pinned_job.is_pinned.add(request.user)
