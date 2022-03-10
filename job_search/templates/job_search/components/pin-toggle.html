@@ -1,5 +1,5 @@
 {% if user.is_authenticated %}
-<form class="d-inline" action="{% url 'pin_job' job.id %}" method="POST">
+<form class="d-inline" action="{% url 'pinned_job' job.id %}" method="POST">
     {% csrf_token %}
 {% if pinned %}
 
@@ -7,7 +7,7 @@
         <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
         <label class="form-check-label" for="flexSwitchCheckChecked"></label>
     </div> 
-    <button id="pin-submit" class="pin-submit-btn" type="submit" name="pinned_job" value="{{ pinned_job.id }}">
+    <button class="d-none pin-submit-btn" type="submit" name="pinned_job" value="{{ pinned_job.id }}">
         <i class="far fa-heart"></i>
     </button>
 </form> 
@@ -17,7 +17,7 @@
         <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckDefault">
         <label class="form-check-label pin" for="flexSwitchCheckDefault"></label>
     </div> 
-    <button id="pin-submit" class="pin-submit-btn" type="submit" name="pinned_job" value="{{ pinned_job.id }}">
+    <button class="d-none pin-submit-btn" type="submit" name="pinned_job" value="{{ pinned_job.id }}">
         <i class="fas fa-heart"></i>
     </button>
 </form> 
