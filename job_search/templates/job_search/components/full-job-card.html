@@ -4,7 +4,9 @@
         <div id="full-jobcard-heading">
             {% include '../layout/full-job-headings.html' %}
         </div>
-        {% include '../components/pin-toggle.html' %}
+        <form id="pin-form" class="d-inline" action="{% url 'pinned_job' job.id %}" method="POST">
+            {% include '../components/pin-toggle.html' %}
+        </form> 
     </header>
 
     <div class="card-body">

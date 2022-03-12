@@ -3,7 +3,9 @@
 
     <header class="card-header">
         <!-- pin job toggle active only when logged in -->
-        {% include '../components/pin-toggle.html' %}
+        <form id="pin-form" class="d-inline" action="{% url 'pinned_job' job.id %}" method="POST">
+            {% include '../components/pin-toggle.html' %}
+        </form> 
     </header>
 
     <!-- Brief summary of the job destails, Job title, company, name, locations and slaray info -->
