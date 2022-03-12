@@ -144,6 +144,8 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme from the jaguar image
 * Multiple videos sourced from youtube were used to research a variety of topics:
     * [Programming with Mosh Python Django Tutorial for Beginners](https://youtu.be/rHux0gMZ3Eg)
+    * [Django forms with Ajax | How to use ajax with django](https://youtu.be/C4fr3SCqgJQ)
+    * [Learn Django - Class-Based Views series](https://youtu.be/ScteNE1jB4g)
 * General references:
     * [Geeks for Geeks](https://www.geeksforgeeks.org/)
     * [Stack Overflow](https://stackoverflow.com/)
