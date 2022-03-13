@@ -1,4 +1,5 @@
 //Global constant references for elements in the DOM
+const pinFormRef = document.getElementById('pin-form')
 const pinToggleRef = document.querySelectorAll('.pin')
 const pinSubmitRef = document.querySelector('.pin-submit-btn')
 

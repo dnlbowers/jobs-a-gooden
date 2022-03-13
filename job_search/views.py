@@ -45,6 +45,8 @@ class FullJobSpec(View):
             },
         )
 
+# can I use a redirect view to split the like redirect? https://youtu.be/ScteNE1jB4g
+
 
 class PinJob(View):
     def post(self, request, id):

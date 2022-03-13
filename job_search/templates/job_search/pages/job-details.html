@@ -1,9 +1,8 @@
 {% extends 'layout/base.html' %} {% block content %}
 <main class="p-3">
-    {% load crispy_forms_tags %}
-    {% comment %} {% include '../layout/full-job-headings.html' %}} {% endcomment %}
     {% include '../components/full-job-card.html' %}
-    {% comment %} {% include '../components/pin-modal.html' %} {% endcomment %}
-
+            {% comment %} {% include '../layout/full-job-headings.html' %}} {% endcomment %}
+        
+        {% comment %} {% include '../components/pin-modal.html' %} {% endcomment %}
 </main>
 {% endblock %}
