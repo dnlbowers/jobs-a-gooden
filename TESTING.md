@@ -37,5 +37,5 @@ completely and in this case take the config vars entered on the heroku app setti
 * Solution - This was abandoned and I decided to use Javascript to handle the post request as opposed to the form. This caused the issue to resolve how ever gave rise to the below bug
 
 * Issue - Pinned jobs displayed correctly on on all pages but could not be edited from the full job spec page.
-* Cause - When attempting to toggle the job is_pinned status from the full job details page it was adding /pinned/jobid to the end of the url and causing a 404 error.
-* Solution  
+* Cause - When attempting to toggle the job is_pinned status from the full job details page it was adding /pinned/{job.id} to the end of the url already containing the job id, causing a 404 error.
+* Solution - adding "../" to the start of the fetch url in the javascript file allowed the toggle to always start from the root url when updating the pinned job status. 

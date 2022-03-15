@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * Makes fetch request toggling the status on pinned job
      */
     function togglePinnedJob(status, id) {
-        fetch(`pinned/${id}/`, {
+        fetch(`../pinned/${id}/`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded',

@@ -38,3 +38,7 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * I allowed myself to run over on this sprint whilst I completed the Pin job feature, although concluded the task with a bug and created a bug ticket to enter the next sprint
 
 ![Fifth Sprint Screenshot](docs/agile/sprint-screenshots/sprint5.JPG)
+
+## Sprint 6 notes:
+* I realized that I concluded PJG-29 prematurely. And had to reopen this story to create the view and page for the user specific pinned jobs list
+![Sixth sprint screenshot](docs/agile/sprint-screenshots/sprint1-initial-deployment.JPG)
