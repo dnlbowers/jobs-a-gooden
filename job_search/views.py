@@ -70,5 +70,20 @@ class PinJob(View):
         return HttpResponse(200)
 
 
+# class PinnedJobBoard(generic.ListView):
+#     model = PinnedJobs
+#     paginate_by = 6
+#     template_name = 'job_search/pages/pinboard.html'
+#     context_object_name = 'jobs'
+    
+#     def get_queryset(self):
+#         return super().get_queryset()
+    
+    
+# How to paginate? 
 def pinned_posts(request):
-    return render(request, 'pages/pinboard.html')
+    # get all pinned posts by user
+    pinned = PinnedJobs.objects.get(user=request.user)
+    # get all jobs from the many to many list
+    jobs = pinned.pinned_jobs.all()
+    return render(request, 'job_search/pages/pinboard.html', {'jobs': jobs})
