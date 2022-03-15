@@ -134,6 +134,10 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * automated script to delete/archive hidden job posts by set criteria when actions by admin
 
 ## Honorable mentions  
+* sean - just a legend any way you slice it
+* matt - the comfort of a friend no matter the time of day, the push of a competitor even if I am wasn't playing the game
+* steve - Always pushing me to think bigger
+
 
 ## Credits
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)

@@ -28,8 +28,14 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - Whilst coming to terms with how to use the model portion of django I recreated the models multiple times, this caused various errors when migrating changes to the database.
 * Solution - I deleted the postgres database form heroku and my migration files and added a new Postgres server to heroku. I then re-ran the migration commands to start the database over from scratch. Once migrated I also needed to re add the job data for testing purposes and recreate the super user.
 
-* Issue - without touching my code in between coding sessions When trying to run the server locally I was having an error message saying it could not connect to my heroku postgres server database. 
-* Cause - due to an [Heroku maintenance](docs/images/heroku-maintenance.jpg) my DATABASE_URL had changed causing my local .env file to be out of date. 
+* Issue - Without touching my code in between coding sessions When trying to run the server locally I was having an error message saying it could not connect to my heroku postgres server database. 
+* Cause - Due to an [Heroku maintenance](docs/images/heroku-maintenance.jpg) my DATABASE_URL had changed causing my local .env file to be out of date. 
 * Solution - Updating the DATABASE_URL resolved the issue with running the server locally. This
 
-Issue - Trying to pin a job post using the bootstrap toggle as a trigger.
+* Issue - Pinned jobs not showing in the job list as pinned but showing as pinned in the full job spec.
+* Causes - I was trying to use a form with a hidden submit button and using JS to hit the button on click of the pin job toggle. This caused issues in that I could not retrieve the data from the generic list view on the job list page. As such I was unable see which posts were pinned unless on the full job post itself.
+* Solution - This was abandoned and I decided to use Javascript to handle the post request as opposed to the form. This caused the issue to resolve how ever gave rise to the below bug
+
+* Issue - Pinned jobs displayed correctly on on all pages but could not be edited from the full job spec page.
+* Cause - When attempting to toggle the job is_pinned status from the full job details page it was adding /pinned/jobid to the end of the url and causing a 404 error.
+* Solution  

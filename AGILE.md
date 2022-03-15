@@ -33,8 +33,8 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 
 ![Fourth Sprint Screenshot](docs/agile/sprint-screenshots/sprint4.JPG)
 
-## Sprint 4 notes:
-* <>
-* <>
+## Sprint 5 notes:
+* I re-added all the user stories to this sprint but underestimated the amount of time required to implement the pin job feature. As a result I only managed to get two stories done in this sprint.
+* I allowed myself to run over on this sprint whilst I completed the Pin job feature, although concluded the task with a bug and created a bug ticket to enter the next sprint
 
 ![Fifth Sprint Screenshot](docs/agile/sprint-screenshots/sprint5.JPG)
