@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
-from .models import Job
+from django.http import HttpResponse
+from .models import Job, PinnedJobs
 
+# ~ADD DOCSTRINGS
 
 class JobList(generic.ListView):
     model = Job
@@ -45,19 +46,28 @@ class FullJobSpec(View):
             },
         )
 
-# can I use a redirect view to split the like redirect? https://youtu.be/ScteNE1jB4g
-
 
 class PinJob(View):
     def post(self, request, id):
-        pinned_job = get_object_or_404(Job, id=id)
+        # get the status of the toggle from post request in JS file
+        status = True if request.POST['status'] == 'true' else False
+        # Identify the job being toggled
+        job = Job.objects.get(id=id)
+        # identify the users pinned job database table
+        pinned = PinnedJobs.objects.get(user=request.user)
 
-        if pinned_job.is_pinned.filter(id=request.user.id).exists():
-            pinned_job.is_pinned.remove(request.user)
+        if status:
+            # add to manytomany list
+            pinned.pinned_jobs.add(job)
+            # add user to is_pinned
+            job.is_pinned.add(request.user)
         else:
-            pinned_job.is_pinned.add(request.user)
+            # remove from manytomany list
+            pinned.pinned_jobs.remove(job)
+            # remove user from is_pinned
+            job.is_pinned.remove(request.user)
 
-        return HttpResponseRedirect(reverse('job_details', args=[id]))
+        return HttpResponse(200)
 
 
 def pinned_posts(request):
