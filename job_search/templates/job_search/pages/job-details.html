@@ -1,30 +1,13 @@
 {% extends 'layout/base.html' %} {% block content %}
 <main class="p-3">
-    {% load crispy_forms_tags %}
-    {% include '../components/full-job-card.html' %}
-    
-    <!-- Take from blog walkthrough to be adapted later -->
-    <div class="col-md-8 card mb-4  mt-3 ">
-        <div class="card-body">
-            <!-- This is for the alert  -->
-            {% if note_made %}
-            <div class="alert alert-success alert-dismissible fade show" id="msg" role="alert">
-                Your comment is awaiting approval
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            {% else %}
-            {% if user.is_authenticated %}
-            <!-- need to add user is the logged in user and job is pinned -->
-            <h3>Make a note and track your progress:</h3>
-            <p>Leaving a note as: {{ user.username }}</p>
-            <form method="post" style="margin-top: 1.3em;">
-                {{ note_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-            </form>
-            {% endif %}
-            {% endif %}
-        </div>
+    <div class="row">
+        <article class="col-md-8">
+            {% include '../components/full-job-card.html' %}
+        </article>
+        <section class="col-md-4">
+            {% include '../components/note-form.html' %}
+            <!-- make accordian with previous notes -->
+        </section>
     </div>
 </main>
 {% endblock %}
