@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponse
 from .models import Job, PinnedJobs
+from .forms import NoteForm
 
 # ~ADD DOCSTRINGS
+
 
 class JobList(generic.ListView):
     model = Job
@@ -27,6 +29,7 @@ class FullJobSpec(View):
             {
                 "job": job_spec,
                 "pinned": pinned,
+                'notes': NoteForm()
             },
         )
 
@@ -70,17 +73,7 @@ class PinJob(View):
         return HttpResponse(200)
 
 
-# class PinnedJobBoard(generic.ListView):
-#     model = PinnedJobs
-#     paginate_by = 6
-#     template_name = 'job_search/pages/pinboard.html'
-#     context_object_name = 'jobs'
-    
-#     def get_queryset(self):
-#         return super().get_queryset()
-    
-    
-# How to paginate? 
+# How to paginate?
 def pinned_posts(request):
     # get all pinned posts by user
     pinned = PinnedJobs.objects.get(user=request.user)

@@ -38,16 +38,18 @@ class Job(models.Model):
 
 
 class PinnedJobs(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     pinned_jobs = models.ManyToManyField(Job, related_name='pinned_jobs', blank=True)
 
     def __str__(self):
         return f'{self.user.username}\'s pinned jobs'
 
+
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         PinnedJobs.objects.create(user=instance)
+
 
 class Notes(models.Model):
     id = models.UUIDField(
@@ -58,7 +60,7 @@ class Notes(models.Model):
     # pinned_to_job = models.ForeignKey(Job, on_delete=models.CASCADE)
     # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     short_description = models.CharField(
-        max_length=200, default=False, blank=True, null=True)
+        max_length=200, blank=False, null=False)
     note = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
     is_insight = models.BooleanField(default=False)
