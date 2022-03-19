@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponse
-from .models import Job, PinnedJobs
+from .models import Job, PinnedJobs, Notes
 from .forms import NoteForm
 
 # ~ADD DOCSTRINGS
@@ -19,6 +19,9 @@ class FullJobSpec(View):
     def get(self, request, id, *args, **kwargs):
         queryset = Job.objects.filter(status=1)
         job_spec = get_object_or_404(queryset, id=id)
+        # get all pinned posts by user
+        notes = job_spec.related_job.all().order_by('-date_created')
+
         pinned = False
         if job_spec.is_pinned.filter(id=self.request.user.id).exists():
             pinned = True
@@ -29,16 +32,29 @@ class FullJobSpec(View):
             {
                 "job": job_spec,
                 "pinned": pinned,
-                'notes': NoteForm()
+                'notes': notes,
+                'note_made': False,  # boolean to to use as conditional
+                'note_form': NoteForm()
             },
         )
 
     def post(self, request, id, *args, **kwargs):
         queryset = Job.objects.filter(status=1)
         job_spec = get_object_or_404(queryset, id=id)
+        notes = job_spec.notes.all().order_by('-date_created')
         pinned = False
         if job_spec.is_pinned.filter(id=self.request.user.id).exists():
             pinned = True
+
+        note_form = NoteForm(data=request.POST)
+
+        if note_form.is_valid():
+            note_form.instance.user = request.user.username
+            note = note_form.save(commit=False)
+            note.related_job = job_spec
+            note.save()
+        else:
+            note_form = NoteForm()
 
         return render(
             request,
@@ -46,6 +62,9 @@ class FullJobSpec(View):
             {
                 "job": job_spec,
                 "pinned": pinned,
+                'notes': notes,
+                'note_made': True,  # boolean to to use as conditional
+                'note_form': NoteForm()
             },
         )
 

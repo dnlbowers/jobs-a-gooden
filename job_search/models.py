@@ -57,13 +57,16 @@ class Notes(models.Model):
         default=uuid.uuid4,
         editable=False,
         unique=True)
-    # pinned_to_job = models.ForeignKey(Job, on_delete=models.CASCADE)
-    # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    related_job = models.ForeignKey(Job, on_delete=models.CASCADE, default=False, related_name='related_job')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=False)
     short_description = models.CharField(
         max_length=200, blank=False, null=False)
     note = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
     is_insight = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["-date_created"]
 
     def __str__(self):
         return self.job.company_name + " - " + self.job.job_title + \
