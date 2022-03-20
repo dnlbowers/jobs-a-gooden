@@ -34,7 +34,7 @@ class FullJobSpec(View):
                 "pinned": pinned,
                 'notes': notes,
                 'note_made': False,  # boolean to to use as conditional
-                # 'note_form': NoteForm()
+                'note_form': NoteForm()
             },
         )
 
@@ -50,13 +50,14 @@ class FullJobSpec(View):
 
         if note_form.is_valid():
             note = Notes()
-            note.user = request.user.username
             note.short_description = note_form['short_description']
             note.note = note_form['note']
             note.is_insight = note_form['is_insight']
-            note = note_form.save(commit=False)
-            note.related_job = job_spec
+            note.related_job = Job.objects.get(id=id)  # returns all job, how to specify?
+            note.user = request.user
             note.save()
+            # note.related_job = job_spec
+            # note.save()
         else:
             note_form = NoteForm()
 

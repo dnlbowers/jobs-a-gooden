@@ -1,13 +1,15 @@
 {% extends 'layout/base.html' %} {% block content %}
 <main class="p-3">
     <div class="row">
-        <article class="col-md-8">
+        <article {% if pinned %} class="col-md-8" {% endif %}>
             {% include '../components/full-job-card.html' %}
         </article>
-        <section class="col-md-4">
-            {% include '../components/note-form.html' %}
-            <!-- make accordian with previous notes -->
-        </section>
+        {% if pinned %}
+            <section class="col-md-4">
+                {% include '../components/note-form.html' %}
+                <!-- make accordian with previous notes -->
+            </section>
+        {% endif %}
     </div>
 </main>
 {% endblock %}

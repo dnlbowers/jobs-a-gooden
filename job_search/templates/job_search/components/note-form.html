@@ -11,10 +11,10 @@
     <div class="card">
         {% if user.is_authenticated %}
         <!-- need to add user is the logged in user and job is pinned -->
-        <h3>Make a note and track your progress:</h3>
+        <h3>Make a notes and track your progress:</h3>
         <p>Leaving a note as: {{ user.username }}</p>
         <form method="post" style="margin-top: 1.3em;">
-            {{ note_form | crispy }} <!-- as_table maybe? -->
+            {{ note_form|crispy }} <!-- as_table maybe? -->
             {% csrf_token %}
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
         </form>
