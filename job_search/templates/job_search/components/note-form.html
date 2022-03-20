@@ -14,10 +14,13 @@
         <h3>Make a note and track your progress:</h3>
         <p>Leaving a note as: {{ user.username }}</p>
         <form method="post" style="margin-top: 1.3em;">
-            {{ note_form | crispy }}
+            {{ note_form | crispy }} <!-- as_table maybe? -->
             {% csrf_token %}
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
         </form>
         {% endif %}
         {% endif %}
+    </div>
+    <div class="card">
+        
     </div>

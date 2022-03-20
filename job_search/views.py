@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponse
-from .models import Job, PinnedJobs, Notes
+from .models import Job, PinnedJobs, User, Notes
 from .forms import NoteForm
 
 # ~ADD DOCSTRINGS
@@ -34,14 +34,14 @@ class FullJobSpec(View):
                 "pinned": pinned,
                 'notes': notes,
                 'note_made': False,  # boolean to to use as conditional
-                'note_form': NoteForm()
+                # 'note_form': NoteForm()
             },
         )
 
     def post(self, request, id, *args, **kwargs):
         queryset = Job.objects.filter(status=1)
         job_spec = get_object_or_404(queryset, id=id)
-        notes = job_spec.notes.all().order_by('-date_created')
+        notes = job_spec.related_job.all().order_by('-date_created')
         pinned = False
         if job_spec.is_pinned.filter(id=self.request.user.id).exists():
             pinned = True
@@ -49,7 +49,11 @@ class FullJobSpec(View):
         note_form = NoteForm(data=request.POST)
 
         if note_form.is_valid():
-            note_form.instance.user = request.user.username
+            note = Notes()
+            note.user = request.user.username
+            note.short_description = note_form['short_description']
+            note.note = note_form['note']
+            note.is_insight = note_form['is_insight']
             note = note_form.save(commit=False)
             note.related_job = job_spec
             note.save()

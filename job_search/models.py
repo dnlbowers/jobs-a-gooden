@@ -8,6 +8,7 @@ from django.dispatch import receiver
 # Create your models here.
 STATUS = ((0, 'hidden'), (1, 'Public'))
 
+
 class Job(models.Model):
     id = models.UUIDField(
         primary_key=True,
@@ -39,7 +40,9 @@ class Job(models.Model):
 
 class PinnedJobs(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pinned_jobs = models.ManyToManyField(Job, related_name='pinned_jobs', blank=True)
+    pinned_jobs = models.ManyToManyField(
+        Job, related_name='pinned_jobs', blank=True
+        )
 
     def __str__(self):
         return f'{self.user.username}\'s pinned jobs'
@@ -52,11 +55,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
 
 class Notes(models.Model):
-    id = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        editable=False,
-        unique=True)
+
     related_job = models.ForeignKey(Job, on_delete=models.CASCADE, default=False, related_name='related_job')
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=False)
     short_description = models.CharField(
