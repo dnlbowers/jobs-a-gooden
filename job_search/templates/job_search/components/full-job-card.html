@@ -32,7 +32,7 @@
         {% if user.is_authenticated %}
             <a href="{% url 'job_list' %}" class="btn btn-primary">Back to all jobs</a>
         {% else %}
-            <a href="{% url 'job_list' %}" class="btn btn-primary" disabled>Back to all jobs</a>
+            <a href="{% url 'job_list' %}" class="btn btn-primary disabled">Back to all jobs</a>
         {% endif %}
     </div>
 </div>

@@ -12,7 +12,7 @@
                 <form method="post">
                     {{ note_form|crispy }} <!-- as_table maybe? -->
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </form>
             </div>
         {% endif %}
