@@ -50,12 +50,13 @@ class FullJobSpec(View):
 
         if note_form.is_valid():
             note = Notes()
-            note.short_description = note_form['short_description']
-            note.note = note_form['note']
-            note.is_insight = note_form['is_insight']
+            note.short_description = note_form.cleaned_data['short_description']
+            note.note = note_form.cleaned_data['note']
+            # note.is_insight = note_form['is_insight']
             note.related_job = Job.objects.get(id=id)  # returns all job, how to specify?
             note.user = request.user
             note.save()
+            # return NoteForm()
             # note.related_job = job_spec
             # note.save()
         else:
