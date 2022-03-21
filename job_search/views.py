@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponse
-from .models import Job, PinnedJobs, User, Notes
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse_lazy
+from .models import Job, PinnedJobs, Notes
 from .forms import NoteForm
 
 # ~ADD DOCSTRINGS
@@ -21,7 +22,7 @@ class FullJobSpec(View):
         job_spec = get_object_or_404(queryset, id=id)
         # get all pinned posts by user
         notes = job_spec.related_job.all().order_by('-date_created')
-
+        author = self.request.user.id
         pinned = False
         if job_spec.is_pinned.filter(id=self.request.user.id).exists():
             pinned = True
@@ -30,6 +31,7 @@ class FullJobSpec(View):
             request,
             'job_search/pages/job-details.html',
             {
+                'author': author,
                 "job": job_spec,
                 "pinned": pinned,
                 'notes': notes,
@@ -42,6 +44,7 @@ class FullJobSpec(View):
         queryset = Job.objects.filter(status=1)
         job_spec = get_object_or_404(queryset, id=id)
         notes = job_spec.related_job.all().order_by('-date_created')
+        author = self.request.user.id
         pinned = False
         if job_spec.is_pinned.filter(id=self.request.user.id).exists():
             pinned = True
@@ -50,15 +53,16 @@ class FullJobSpec(View):
 
         if note_form.is_valid():
             note = Notes()
-            note.short_description = note_form.cleaned_data['short_description']
+            note.short_description = note_form.cleaned_data[
+                'short_description'
+                ]
             note.note = note_form.cleaned_data['note']
             # note.is_insight = note_form['is_insight']
-            note.related_job = Job.objects.get(id=id)  # returns all job, how to specify?
+            note.related_job = Job.objects.get(id=id)
             note.user = request.user
             note.save()
-            # return NoteForm()
-            # note.related_job = job_spec
-            # note.save()
+            return HttpResponseRedirect(reverse('note_made', args=[id]))
+
         else:
             note_form = NoteForm()
 
@@ -66,6 +70,7 @@ class FullJobSpec(View):
             request,
             'job_search/pages/job-details.html',
             {
+                'author': author,
                 "job": job_spec,
                 "pinned": pinned,
                 'notes': notes,
@@ -73,6 +78,12 @@ class FullJobSpec(View):
                 'note_form': NoteForm()
             },
         )
+
+
+# class JobNotes(generic.CreateView):
+#     form_class = NoteForm()
+#     success_url = reverse_lazy('note_made')
+
 
 
 class PinJob(View):
