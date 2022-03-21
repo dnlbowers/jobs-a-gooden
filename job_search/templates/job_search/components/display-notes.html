@@ -1,0 +1,35 @@
+<div class="card mt-3">
+    <header class="card-header bg-brown">
+        <h2>Notes:</h2>
+    </header>
+    
+    <div class="accordion accordion-flush" id="accordionFlush">
+        {% for note in notes %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingForNote{{ note.id }}">
+                    <button class="accordion-button collapsed bg-brown" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseForNote{{ note.id }}" aria-expanded="false" aria-controls="flush-collapseForNote{{ note.id }}">
+                        <h3 class="note-heading">{{ note.short_description }}</h3>
+                        <p class="note-muted-txt">{{ note.date_created }}</p>
+                    </button>
+                    
+                </h2>
+                <div id="flush-collapseForNote{{ note.id }}" class="accordion-collapse collapse" aria-labelledby="flush-headingForNote{{ note.id }}" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body"><p>{{ note.note }}</p></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+        {% comment %} <header class="card-header bg-brown">
+            <h3 class="note-heading">{{ note.short_description }}</h3>
+            <p class="note-muted-txt">{{ note.date_created }}</p>
+        </header> 
+        <div class="card-body">
+        <!-- to test only -->
+            {{ note.related_job }}
+            {{ note.user }}
+        <!-- actual content -->
+            <p>{{ note.note }}</p>
+        </div> {% endcomment %}
+    {% comment %} {% endfor %} {% endcomment %}
+</div>

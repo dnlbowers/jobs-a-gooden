@@ -5,10 +5,22 @@
             {% include '../components/full-job-card.html' %}
         </article>
         {% if pinned %}
-            <section class="col-md-4">
-                {% include '../components/note-form.html' %}
+            <div class="col-md-4 container">
+                <!-- Take from blog walkthrough to be adapted later and broken into components -->
+    <!-- This is for the alert  -->
+                    {% if note_made %}
+                    <div class="alert alert-success alert-dismissible fade show" id="msg" role="alert">
+                        Your comment is awaiting approval
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        
+                    </div>
+                        {% include '../components/note-form.html' %}
+                    {% else %}
+                        {% include '../components/note-form.html' %}
+                    {% endif %}
                 <!-- make accordian with previous notes -->
-            </section>
+                {% include '../components/display-notes.html' %}
+            </div>
         {% endif %}
     </div>
 </main>
