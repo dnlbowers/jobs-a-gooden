@@ -50,7 +50,7 @@ completely and in this case take the config vars entered on the heroku app setti
 
 * Issue - If refreshing after submitting a note then a duplicate note is added to the database.
 * Cause - Page was refreshing but not redirecting upon for submission
-* Solution - By adding ```return HttpResponseRedirect(reverse('note_made', args=[id]))``` after the form save which points to a new URL upon submit this fixed the issue of resubmitting the same form inputs twice.
+* Solution - By adding ```return HttpResponseRedirect(reverse('note_made', args=[id]))``` after the form save which points to a new URL path upon submit, this fixed the issue of resubmitting the same form inputs twice.
 
 
 **Issues to fix **

@@ -57,7 +57,7 @@ class FullJobSpec(View):
                 'short_description'
                 ]
             note.note = note_form.cleaned_data['note']
-            # note.is_insight = note_form['is_insight']
+            note.is_insight = note_form.cleaned_data['is_insight']
             note.related_job = Job.objects.get(id=id)
             note.user = request.user
             note.save()
