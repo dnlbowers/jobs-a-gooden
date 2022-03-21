@@ -39,3 +39,23 @@ completely and in this case take the config vars entered on the heroku app setti
 * Issue - Pinned jobs displayed correctly on on all pages but could not be edited from the full job spec page.
 * Cause - When attempting to toggle the job is_pinned status from the full job details page it was adding /pinned/{job.id} to the end of the url already containing the job id, causing a 404 error.
 * Solution - adding "../" to the start of the fetch url in the javascript file allowed the toggle to always start from the root url when updating the pinned job status. 
+
+* Issue - Bootstrap accordion wasn't closing a section when opening a new one.
+* Cause - When tailoring the boot strap code I failed to match the accordion ID with the data-bs-parent.
+* Solution - Once these two attributes were set to the same ID then the accordion opened and close as expected on section at a time.
+
+* Issue - Notes left where were not user specific and all notes could be seen by all users.
+* Cause - There was no variable defined in the view which allowed me to use the logged in user as part of the conditional in the template.
+* Solution - By setting the author variable in the the view.py I was able to match the requesting user user id in the Notes model so to show the user their own notes.
+
+* Issue - If refreshing after submitting a note then a duplicate note is added to the database.
+* Cause - Page was refreshing but not redirecting upon for submission
+* Solution - By adding ```return HttpResponseRedirect(reverse('note_made', args=[id]))``` after the form save which points to a new URL upon submit this fixed the issue of resubmitting the same form inputs twice.
+
+
+**Issues to fix **
+
+  
+* Issue - When pinning a post from the full view one has to refresh before seeing the note feature.
+
+*Issue - Paginate pinned post page
