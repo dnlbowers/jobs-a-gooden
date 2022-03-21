@@ -63,8 +63,7 @@ class Notes(models.Model):
         ordering = ["-date_created"]
 
     def __str__(self):
-        return self.job.company_name + " - " + self.job.job_title + \
-            "-" + "noted by " + self.user.username
+        return self.short_description + "noted by " + self.user.username
 
 
 class PinnedJobs(models.Model):
