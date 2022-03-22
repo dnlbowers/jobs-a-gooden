@@ -11,4 +11,5 @@ urlpatterns = [
     path('note/<uuid:id>/', views.FullJobSpec.as_view(), name='note_made'),
     path('pinboard', views.pinned_posts, name='pin_board'),
     path('pinned/<uuid:id>/', views.PinJob.as_view(), name='pinned_job'),
+    path('insights/', views.DisplayInsights.as_view(), name='insights'),
 ]

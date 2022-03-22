@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse_lazy
 from .models import Job, PinnedJobs, Notes
 from .forms import NoteForm
 
@@ -80,12 +79,6 @@ class FullJobSpec(View):
         )
 
 
-# class JobNotes(generic.CreateView):
-#     form_class = NoteForm()
-#     success_url = reverse_lazy('note_made')
-
-
-
 class PinJob(View):
     def post(self, request, id):
         # get the status of the toggle from post request in JS file
@@ -116,3 +109,11 @@ def pinned_posts(request):
     # get all jobs from the many to many list
     jobs = pinned.pinned_jobs.all()
     return render(request, 'job_search/pages/pinboard.html', {'jobs': jobs})
+
+
+class DisplayInsights(generic.ListView):
+    model = Notes
+    paginate_by = 6
+    template_name = 'job_search/pages/insights.html'
+    context_object_name = 'insights'
+    queryset = Notes.objects.filter(is_insight=True).order_by('-date_created')
