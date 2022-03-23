@@ -109,6 +109,9 @@ Make a section in the features with screenshots vut reference this here.
     * ...**browse the full details of the available jobs** so that **I can see the full job spec and how to apply**  
     * ...**leave notes specific to the job on my pinboard** so that **I can keep track of specific milestones in the application process**
     * ...**turn a note into an insight** so that **it can be seen on a separate page showing learnings from the entire process of the job hunting process**
+    * ...**delete previous notes and insights** so that **I can update tidy up notes or insights that are no longer relevant to me.**
+    * ...**see a timeline of insights** so that **I can track them over time**
+
 
 ## Skeleton
 ### Wireframes:

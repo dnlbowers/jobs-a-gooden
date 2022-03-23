@@ -40,5 +40,13 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 ![Fifth Sprint Screenshot](docs/agile/sprint-screenshots/sprint5.JPG)
 
 ## Sprint 6 notes:
-* I realized that I concluded PJG-29 prematurely. And had to reopen this story to create the view and page for the user specific pinned jobs list
-![Sixth sprint screenshot](docs/agile/sprint-screenshots/sprint1-initial-deployment.JPG)
+* I realized that I concluded PJG-29 prematurely. And had to reopen this story to create the view and page for the user specific pinned jobs list.
+* I concluded this sprint with just 3 tasks left to create the core functionality of my MVP. 
+* I realized that the periods between sprints is useful for reflection on current progress and have realized some further stories to be added to the back log.
+* Still trying to get the hang of story points and my velocity rate. I feel this will improve as I become more familiar with the framework. 
+* Beginning to rethink a profile page as it seems unnecessary at this point in the process.
+![Sixth sprint screenshot](docs/agile/sprint-screenshots/sprint6.JPG)
+
+## Sprint 7 notes:
+* Added some extra user stories to improve CRUD functionality and user experience.
+![Seventh sprint screenshot](docs/agile/sprint-screenshots/sprint7.JPG)
