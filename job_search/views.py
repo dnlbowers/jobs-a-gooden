@@ -117,3 +117,11 @@ class DisplayInsights(generic.ListView):
     template_name = 'job_search/pages/insights.html'
     context_object_name = 'insights'
     queryset = Notes.objects.filter(is_insight=True).order_by('-date_created')
+
+
+class DeleteNote(View):
+    # delete note from database (check why the params work like they do)
+    def delete(self, request, id):
+        delete_note = Notes.objects.get(id=id)
+        delete_note.delete()
+        return HttpResponse(200)

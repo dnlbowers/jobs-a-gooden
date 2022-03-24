@@ -1,5 +1,6 @@
 //Global constant references for elements in the DOM
 const pinToggleRef = document.querySelectorAll('.pin')
+const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn')
 
 document.addEventListener("DOMContentLoaded", () => {
     /**
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return cookieValue;
     }
     const csrftoken = getCookie('csrftoken');
- 
+
     /**
      * Adds event listeners to the pin job toggle switches
      */
@@ -32,9 +33,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const status = event.target.checked;
             const id = pin.dataset.id;
             // make fetch request to update the database
-            togglePinnedJob(status, id)
+            togglePinnedJob(status, id);
         });
     });
+
+    /**
+     * Adds event listeners to the delete notes button
+     */
+    deleteNoteBtnRef.forEach( delBtn => {
+        delBtn.addEventListener('click', () => {
+            // const clicked = event.type;
+            const note_id = delBtn.dataset.id;
+            console.log(note_id)
+            deleteNote(note_id);
+        })
+    })
 
     /**
      * Makes fetch request toggling the status on pinned job
@@ -56,5 +69,26 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.log(`ERROR: ${error}`));
     }
+
+        /**
+     * Makes fetch request toggling the status on pinned job
+     */
+        function deleteNote(id) {
+            fetch(`/delete/${id}/`, {
+                method: 'DELETE',
+                headers: new Headers({
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': csrftoken,
+                    'X-Requested-With': 'XMLHttpRequest',
+                    }),
+                body: ``,
+                credentials: 'same-origin',
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log("data", data);
+            })
+            .catch(error => console.log(`ERROR: ${error}`));
+        }
 
 });

@@ -2,7 +2,9 @@
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "cSpell.words": [
-        "datamodels"
+        "csrftoken",
+        "datamodels",
+        "jobsagooden"
     ],
     "emmet.includeLanguages": {
         "django-html": "html"
