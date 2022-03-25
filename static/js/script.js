@@ -1,6 +1,8 @@
 //Global constant references for elements in the DOM
-const pinToggleRef = document.querySelectorAll('.pin')
-const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn')
+const pinToggleRef = document.querySelectorAll('.pin');
+const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
+const noteSectionRef = document.querySelectorAll('.accordion-item');
+const notesAccordionRef = document.getElementById('notes-accordion')
 
 document.addEventListener("DOMContentLoaded", () => {
     /**
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
      */
         function deleteNote(id) {
             fetch(`/delete/${id}/`, {
-                method: 'DELETE',
+                method: 'POST',
                 headers: new Headers({
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'X-CSRFToken': csrftoken,
@@ -87,8 +89,23 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.text())
             .then(data => {
                 console.log("data", data);
+                if (data == 200) {
+                    removeNote(id);
+                }
             })
             .catch(error => console.log(`ERROR: ${error}`));
         }
 
+        
+        const removeNote = (noteId) => {
+            console.log(noteId)
+            console.log(noteSectionRef)
+            noteSectionRef.forEach(note => {
+                let noteSection = note.getAttribute('data-note-item')
+                
+                if (noteSection === noteId) {
+                    notesAccordionRef.removeChild(note)
+                }
+            })
+        }
 });

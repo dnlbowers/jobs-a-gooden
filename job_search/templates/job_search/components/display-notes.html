@@ -9,7 +9,7 @@
         {% for note in notes %}
             <!-- Bootstrap accordion to display user specific notes -->
             {% if author ==  note.user_id %}
-                <div class="accordion-item">
+                <div class="accordion-item" data-note-item="{{ note.id }}">
                     <h2 class="accordion-header" id="flush-headingForNote{{ note.id }}">
                         <button class="accordion-button collapsed bg-brown" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseForNote{{ note.id }}" aria-expanded="false" aria-controls="flush-collapseForNote{{ note.id }}">
                         <div>    

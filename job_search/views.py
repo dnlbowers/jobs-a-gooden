@@ -19,7 +19,7 @@ class FullJobSpec(View):
     def get(self, request, id, *args, **kwargs):
         queryset = Job.objects.filter(status=1)
         job_spec = get_object_or_404(queryset, id=id)
-        # get all pinned posts by user
+        # get all notes by user
         notes = job_spec.related_job.all().order_by('-date_created')
         author = self.request.user.id
         pinned = False
@@ -121,7 +121,8 @@ class DisplayInsights(generic.ListView):
 
 class DeleteNote(View):
     # delete note from database (check why the params work like they do)
-    def delete(self, request, id):
+    def post(self, request, id):
         delete_note = Notes.objects.get(id=id)
         delete_note.delete()
         return HttpResponse(200)
+
