@@ -110,7 +110,7 @@ main {
   }
   
   /* Container around content */
-  .container {
+  .insight-container {
     padding: 10px 40px;
     position: relative;
     background-color: inherit;
@@ -119,12 +119,12 @@ main {
   }
   
   /* The circles on the timeline */
-  .container::after {
+  .insight-container::after {
     content: '';
     position: absolute;
     width: 25px;
     height: 25px;
-    right: -17px;
+    right: -12px;
     background-color: white;
     border: 4px solid #FF9F55;
     top: 15px;
@@ -172,7 +172,7 @@ main {
   
   /* Fix the circle for containers on the right side */
   .right::after {
-    left: -16px;
+    left: -12px;
   }
   
   /* The actual content */
@@ -207,14 +207,14 @@ footer {
     }
     
     /* Full-width containers */
-    .container {
+    .insight-container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
     }
     
     /* Make sure that all arrows are pointing leftwards */
-    .container::before {
+    .insight-container::before {
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
@@ -223,7 +223,7 @@ footer {
   
     /* Make sure all circles are at the same spot */
     .left::after, .right::after {
-    left: 15px;
+    left: 18px;
     }
     
     /* Make all right containers behave like the left ones */

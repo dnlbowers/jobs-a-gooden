@@ -151,6 +151,7 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * Flow charts made using [draw.io](https://app.diagrams.net/)
 * Jaguar cartoon image from [https://favpng.com](https://favpng.com/png_view/jaguar-jaguar-clip-art-vector-graphics-cartoon-illustration-png/yF62hEBm)
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme from the jaguar image
+* [W3cschool](https://www.w3schools.com/howto/howto_css_timeline.asp) was used to source the majority of the code used to create a timeline in CSS for the insights page. Minor styling adjustments were made and the HTML was adapted to include a Jinja for loop to display the relevant data without code repetition.
 * Multiple videos sourced from youtube were used to research a variety of topics:
     * [Programming with Mosh Python Django Tutorial for Beginners](https://youtu.be/rHux0gMZ3Eg)
     * [Django forms with Ajax | How to use ajax with django](https://youtu.be/C4fr3SCqgJQ)
@@ -161,3 +162,4 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
     * [Code Institute Learning Platform](https://codeinstitute.net/)
     * [Django Documentation](https://docs.djangoproject.com/en/3.2/)
     * [Bootstrap Documentation](https://getbootstrap.com/)
+    * [Jinja Template Documentation](https://jinja.palletsprojects.com/en/3.0.x/templates/)

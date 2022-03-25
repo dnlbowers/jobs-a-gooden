@@ -118,11 +118,14 @@ class DisplayInsights(generic.ListView):
     context_object_name = 'insights'
     queryset = Notes.objects.filter(is_insight=True).order_by('-date_created')
 
+    def get_queryset(self):
+        return super().get_queryset().filter(user=self.request.user)
+
 
 class DeleteNote(View):
     # delete note from database (check why the params work like they do)
-    def post(self, request, id):
+    @staticmethod
+    def post(request, id):
         delete_note = Notes.objects.get(id=id)
         delete_note.delete()
         return HttpResponse(200)
-
