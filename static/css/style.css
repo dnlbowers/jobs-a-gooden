@@ -49,6 +49,16 @@ main {
     background-color: #e4b67c;
 }
 
+/* ------------------------------------------------------------ Add job form */
+
+.add-job-form {
+    background-color: #efefef;
+    margin: 1rem auto;
+    /* max-width: 400px; */
+    padding: 1rem;
+}
+
+
 /* ------------------------------------------------------------ Job card preview */
 
 .head-with-toggle {
