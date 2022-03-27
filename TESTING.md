@@ -52,10 +52,13 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - Page was refreshing but not redirecting upon for submission
 * Solution - By adding ```return HttpResponseRedirect(reverse('note_made', args=[id]))``` after the form save which points to a new URL path upon submit, this fixed the issue of resubmitting the same form inputs twice.
 
+* Issue - Pagination not working when displaying the job preview cards on the pinned posts page.
+* cause - I initially created a functional view to display pinned posts this did not allow for pagination.
+* Solution - By using the generic class ListView with using get_queryset to add the additional information required to render this feature using a generic class view.    
 
 **Issues to fix **
-
+* Issue - Notes and pinned post remained until page refresh even when deleted/unpinned
   
 * Issue - When pinning a post from the full view one has to refresh before seeing the note feature.
 
-*Issue - Paginate pinned post page
+

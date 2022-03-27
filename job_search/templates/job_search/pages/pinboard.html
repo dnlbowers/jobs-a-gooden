@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Job preview column -->
-                <div class="col-md-12 mt-3 left">
+                <div class="col-md-12 mt-3">
                     <div class="row">   
                     {% for job in jobs %}
                         <div class="col-md-4">
@@ -32,7 +32,7 @@
                 {% endif %}
                 
                 <li class="current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                 </li>
 
                 {% if page_obj.has_next %}

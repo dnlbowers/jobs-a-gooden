@@ -10,7 +10,7 @@ urlpatterns = [
     path('<uuid:id>/', views.FullJobSpec.as_view(), name='job_details'),
     path('addjob/', views.AddJob.as_view(), name='add_job'),
     # Pinning posts to save them
-    path('pinboard/', views.pinned_posts, name='pin_board'),
+    path('pinboard/', views.PinnedPosts.as_view(), name='pin_board'),
     path('pinned/<uuid:id>/', views.PinJob.as_view(), name='pinned_job'),
     # Notes and insights to track progress
     path('note/<uuid:id>/', views.FullJobSpec.as_view(), name='note_made'),

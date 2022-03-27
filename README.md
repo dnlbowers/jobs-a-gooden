@@ -96,7 +96,6 @@ Make a section in the features with screenshots vut reference this here.
     * **use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post**    
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
     * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
-    * ...**see an extra button on the jobs page** so that **I can add new jobs from the user interface**
  
 * As an **Unregistered User** I can... 
     * ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
@@ -111,6 +110,7 @@ Make a section in the features with screenshots vut reference this here.
     * ...**turn a note into an insight** so that **it can be seen on a separate page showing learnings from the entire process of the job hunting process**
     * ...**delete previous notes and insights** so that **I can delete notes or insights that are no longer relevant to me.**
     * ...**see a timeline of insights** so that **I can track them over time**
+    * ...**Add my job posts** so that **I may make notes and insights to track my progress and should I choose to share the opportunity with the community**
 
 
 ## Skeleton
@@ -136,7 +136,8 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 ## Future development
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin
 * Build online community.
-* 
+* Job categories
+* Search feature
 
 ## Honorable mentions  
 * sean - just a legend any way you slice it
