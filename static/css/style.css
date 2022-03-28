@@ -23,6 +23,14 @@
     background-color: #fdfd96;
 }
 
+.display-none {
+  display: none;
+}
+
+.display-inline {
+  display: inline;
+}
+
 
 /* ------------------------------------------------------------ Header/Navbar */
 
@@ -79,10 +87,7 @@ main {
 }
 
 /* ------------------------------------------------------------ Notes */
-#notes-section {
-  display: none;
-  flex-direction: column;
-}
+
 .note-heading {
     font-size: 16px;
     width: 100%;

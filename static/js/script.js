@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // make fetch request to update the database
             togglePinnedJob(status, id);
             if(event.target.checked){ 
-                $('#notes-section').show(1000)
+                $('#notes-section').show(800)
                 console.log("show")
             } else {
-                $('#notes-section').hide(1000)
+                $('#notes-section').hide(800)
                 console.log("hide")
             }
         });

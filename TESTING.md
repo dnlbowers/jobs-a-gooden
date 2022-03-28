@@ -62,7 +62,7 @@ completely and in this case take the config vars entered on the heroku app setti
 
 * Issue - When first entering a Job posts full spec The notes section was hidden until unpinned and pinned again.
 * Cause - I had made the notes section display none and removed the default to hide it when unpinned. 
-* Solution - I added if pinned variable inline to add the d-flex class to the notes section. This allowed the full details page to know when a job was pinned upon loading whilst the toggle then took care of the hide and show.
+* Solution - I added two custom classes which hold the properties display inline if the job is pinned and display none if the job is unpinned. I chose to use custom classed over the bootstrap classes d-none and d-inline so that they did not interfere with the display none property applied by the jquery hide property.
 
 **Issues to fix **  
 * Issue - Notes and pinned post remained until page refresh even when deleted/unpinned
