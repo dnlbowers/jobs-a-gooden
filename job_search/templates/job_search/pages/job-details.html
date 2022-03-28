@@ -5,7 +5,7 @@
             {% include '../components/full-job-card.html' %}
         </article>
 
-        <div id="notes-section" class="col-md-4 container">
+        <div id="notes-section" class="col-md-4 container {% if pinned %}d-flex{% endif %}">
             <!-- Take from blog walkthrough to be adapted later and broken into components -->
 <!-- This is for the alert  -->
                 {% if note_made %}

@@ -3,7 +3,6 @@ const pinToggleRef = document.querySelectorAll('.pin');
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
 const noteSectionRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion')
-const notesSectionRef = document.getElementById('notes-section')
 
 document.addEventListener("DOMContentLoaded", () => {
     /**
@@ -38,10 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // make fetch request to update the database
             togglePinnedJob(status, id);
             if(event.target.checked){ 
-                $(notesSectionRef).show(1000)
+                $('#notes-section').show(1000)
                 console.log("show")
             } else {
-                $(notesSectionRef).hide(1000)
+                $('#notes-section').hide(1000)
                 console.log("hide")
             }
         });

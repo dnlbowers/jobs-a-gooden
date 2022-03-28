@@ -56,9 +56,15 @@ completely and in this case take the config vars entered on the heroku app setti
 * cause - I initially created a functional view to display pinned posts this did not allow for pagination.
 * Solution - By using the generic class ListView with using get_queryset to add the additional information required to render this feature using a generic class view.    
 
-**Issues to fix **
+* Issue - Notes and pinned post remained until page refresh even when deleted/unpinned.
+* Cause - The is pinned variable from the views required a page refresh to update the DOM. 
+* Solution - By adding Jquery to show and hide the element I was able to make the toggle affect the DOM dynamically to display and hide the note section.
+
+* Issue - When first entering a Job posts full spec The notes section was hidden until unpinned and pinned again.
+* Cause - I had made the notes section display none and removed the default to hide it when unpinned. 
+* Solution - I added if pinned variable inline to add the d-flex class to the notes section. This allowed the full details page to know when a job was pinned upon loading whilst the toggle then took care of the hide and show.
+
+**Issues to fix **  
 * Issue - Notes and pinned post remained until page refresh even when deleted/unpinned
-  
-* Issue - When pinning a post from the full view one has to refresh before seeing the note feature.
 
 
