@@ -1,27 +1,26 @@
 {% extends 'layout/base.html' %} {% block content %}
 <main class="p-3">
     <div class="row">
-        <article {% if pinned %} class="col-md-8" {% endif %}>
+        <article id="full-job-spec" class="col">
             {% include '../components/full-job-card.html' %}
         </article>
-        {% if pinned %}
-            <div class="col-md-4 container">
-                <!-- Take from blog walkthrough to be adapted later and broken into components -->
-    <!-- This is for the alert  -->
-                    {% if note_made %}
-                    <div class="alert alert-success alert-dismissible fade show" id="msg" role="alert">
-                        Your comment is awaiting approval
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        
-                    </div>
-                        {% include '../components/note-form.html' %}
-                    {% else %}
-                        {% include '../components/note-form.html' %}
-                    {% endif %}
-                <!-- make accordian with previous notes -->
-                {% include '../components/display-notes.html' %}
-            </div>
-        {% endif %}
+
+        <div id="notes-section" class="col-md-4 container">
+            <!-- Take from blog walkthrough to be adapted later and broken into components -->
+<!-- This is for the alert  -->
+                {% if note_made %}
+                <div class="alert alert-success alert-dismissible fade show" id="msg" role="alert">
+                    Your comment is awaiting approval
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    
+                </div>
+                    {% include '../components/note-form.html' %}
+                {% else %}
+                    {% include '../components/note-form.html' %}
+                {% endif %}
+            <!-- make accordian with previous notes -->
+            {% include '../components/display-notes.html' %}
+        </div>
     </div>
 </main>
 {% endblock %}
