@@ -43,10 +43,16 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * I realized that I concluded PJG-29 prematurely. And had to reopen this story to create the view and page for the user specific pinned jobs list.
 * I concluded this sprint with just 3 tasks left to create the core functionality of my MVP. 
 * I realized that the periods between sprints is useful for reflection on current progress and have realized some further stories to be added to the back log.
+    * Add job post.
+    * Display insights chronologically.
+    * Note/insight deletion.
+    * Bug tickets added for issues found with user stories implemented during the previous sprints
 * Still trying to get the hang of story points and my velocity rate. I feel this will improve as I become more familiar with the framework. 
 * Beginning to rethink a profile page as it seems unnecessary at this point in the process.
 ![Sixth sprint screenshot](docs/agile/sprint-screenshots/sprint6.JPG)
 
 ## Sprint 7 notes:
-* Added some extra user stories to improve CRUD functionality and user experience.
+* First time my burn down chart met with the expected trajectory largely due to having a limit number of user stories.
+* Realized my mistake of meeting the criteria of 60% must haves in a sprint. I was planning with 60% of the tasks and not 60% of the over all story points. This will be fixed from the next sprint onwards.
+* Decided to keep the job list page as the home page (initially this was only a temporary measure) However in the course of development I decided that a hero image would look good below the nave bar and decided to make this from my carousel picturing the sites features.
 ![Seventh sprint screenshot](docs/agile/sprint-screenshots/sprint7.JPG)
