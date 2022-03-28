@@ -3,20 +3,19 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Job, PinnedJobs, Notes
-from .forms import NoteForm
+from .forms import NoteForm, AddJobForm
 
 
 # ~ADD DOCSTRINGS
 class AddJob(generic.CreateView):
-    model = Job
-    fields = ['company_name', 'job_title', 'location', 'min_salary', 'max_salary', 'currency', 'date_expired', 'job_description', 'job_url', 'status']
+    form_class = AddJobForm
     template_name = 'job_search/pages/add-job.html'
-    success_url = reverse_lazy('job_list')
+    success_url = reverse_lazy('add_job')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         super(AddJob, self).form_valid(form)
-        return redirect('job_list')
+        return redirect('add_job')
 
 
 class JobList(generic.ListView):
