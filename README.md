@@ -103,7 +103,6 @@ Make a section in the features with screenshots vut reference this here.
     * ...**browse the available jobs (brief description only)** so that **I can see if I wish to register with the site or not**
   
 * As a **Registered User** I can... 
-    * ...**create a profile** so that **I can save key details relevant to my job search.**
     * ...**Pin jobs to a board** so that **I can refer back to them later with minimal effort**
     * ...**browse the full details of the available jobs** so that **I can see the full job spec and how to apply**  
     * ...**leave notes specific to the job on my pinboard** so that **I can keep track of specific milestones in the application process**
@@ -111,6 +110,9 @@ Make a section in the features with screenshots vut reference this here.
     * ...**delete previous notes and insights** so that **I can delete notes or insights that are no longer relevant to me.**
     * ...**see a timeline of insights** so that **I can track them over time**
     * ...**Add my job posts** so that **I may make notes and insights to track my progress and should I choose to share the opportunity with the community**
+
+### User Stories dropped as part of the agile process
+* As a **Registered User** I can **create a profile** so that **I can save key details relevant to my job search.**
 
 
 ## Skeleton

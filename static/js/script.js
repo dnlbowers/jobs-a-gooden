@@ -36,13 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const id = pin.dataset.id;
             // make fetch request to update the database
             togglePinnedJob(status, id);
-            // if(event.target.checked){ 
-            //     $('#notes-section').show(2000)
-            //     console.log("show")
-            // } else {
-            //     $('#notes-section').hide(2000)
-            //     console.log("hide")
-            // }
         });
     });
 
@@ -90,37 +83,37 @@ document.addEventListener("DOMContentLoaded", () => {
         /**
      * Makes fetch request toggling the status on pinned job
      */
-        function deleteNote(id) {
-            fetch(`/delete/${id}/`, {
-                method: 'POST',
-                headers: new Headers({
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'X-CSRFToken': csrftoken,
-                    'X-Requested-With': 'XMLHttpRequest',
-                    }),
-                body: ``,
-                credentials: 'same-origin',
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log("data", data);
-                if (data == 200) {
-                    removeNote(id);
-                }
-            })
-            .catch(error => console.log(`ERROR: ${error}`));
-        }
+    function deleteNote(id) {
+        fetch(`/delete/${id}/`, {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': csrftoken,
+                'X-Requested-With': 'XMLHttpRequest',
+                }),
+            body: ``,
+            credentials: 'same-origin',
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("data", data);
+            if (data == 200) {
+                removeNote(id);
+            }
+        })
+        .catch(error => console.log(`ERROR: ${error}`));
+    }
 
-        
-        const removeNote = (noteId) => {
-            console.log(noteId)
-            console.log(noteSectionRef)
-            noteSectionRef.forEach(note => {
-                let noteSection = note.getAttribute('data-note-item')
-                
-                if (noteSection === noteId) {
-                    notesAccordionRef.removeChild(note)
-                }
-            })
-        }
+    
+    const removeNote = (noteId) => {
+        console.log(noteId)
+        console.log(noteSectionRef)
+        noteSectionRef.forEach(note => {
+            let noteSection = note.getAttribute('data-note-item')
+            
+            if (noteSection === noteId) {
+                notesAccordionRef.removeChild(note)
+            }
+        })
+    }
 });
