@@ -36,13 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const id = pin.dataset.id;
             // make fetch request to update the database
             togglePinnedJob(status, id);
-            if(event.target.checked){ 
-                $('#notes-section').show(2000)
-                console.log("show")
-            } else {
-                $('#notes-section').hide(2000)
-                console.log("hide")
-            }
+            // if(event.target.checked){ 
+            //     $('#notes-section').show(2000)
+            //     console.log("show")
+            // } else {
+            //     $('#notes-section').hide(2000)
+            //     console.log("hide")
+            // }
         });
     });
 
@@ -74,6 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(response => response.text())
         .then(data => {
+            console.log(status)
+            if (data == 200) {
+                if (status == true) {
+                    $('#notes-section').hide().animate({width: 'toggle'}, {duration: 1000});
+                } else {
+                    $('#notes-section').show().animate({width: 'toggle'}, {duration: 1000});
+                } 
+            }
             console.log(data); 
         })
         .catch(error => console.log(`ERROR: ${error}`));
