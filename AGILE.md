@@ -57,3 +57,8 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * Decided to keep the job list page as the home page (initially this was only a temporary measure) However in the course of development I decided that a hero image would look good below the nave bar and decided to make this from my carousel picturing the sites features.
 * Since the idea of a user profile seemed to be less relevant at this stage the last day of sprint seven was used to plan futher user stories to plan the next stages of development in a way that provided the most value to the user.
 ![Seventh sprint screenshot](docs/agile/sprint-screenshots/sprint7.JPG)
+
+## Sprint 8 notes: 
+* I have added several user stories so that all tasks are aimed at adding value to the user
+* Learning from my mistake in the previous sprint I have assign 60% of the story points as "must haves" for this sprint as opposed to 60% of the tasks.
+* 

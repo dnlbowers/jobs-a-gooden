@@ -96,6 +96,10 @@ Make a section in the features with screenshots vut reference this here.
     * **use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post**    
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
     * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
+    * ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.**
+
+* As An **Admin** or **Job Post Author** I can....
+    * **Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
  
 * As an **Unregistered User** I can... 
     * ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
@@ -110,7 +114,13 @@ Make a section in the features with screenshots vut reference this here.
     * ...**delete previous notes and insights** so that **I can delete notes or insights that are no longer relevant to me.**
     * ...**see a timeline of insights** so that **I can track them over time**
     * ...**Add my job posts** so that **I may make notes and insights to track my progress and should I choose to share the opportunity with the community**
-
+    * ...**edit previously made notes and insights** so that **I may correct mistakes or further elaborate on an existing comment/insights.**
+    * ...**Delete notes and insights** so that **I can remove any which were left by mistake or are no longer relevant to me**
+    * ...**See balanced forms with an included text editor for the main field** so that **I can have a pleasant visual experience across the site, and my job post and notes/insight look visually appealing in the style and layout when the submitted data is displayed.**
+ 
+* As a **Site User** I can...
+    * ...**See alerts upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful or if an error occurred.**
+  
 ### User Stories dropped as part of the agile process
 * As a **Registered User** I can **create a profile** so that **I can save key details relevant to my job search.**
 
@@ -140,6 +150,8 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * Build online community.
 * Job categories
 * Search feature
+* API for a Job's site
+* Auto email to Job post author when job close to expired that it will be deleted after the specified time of expiration.
 
 ## Honorable mentions  
 * sean - just a legend any way you slice it

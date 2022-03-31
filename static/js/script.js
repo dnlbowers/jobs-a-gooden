@@ -70,9 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(status)
             if (data == 200) {
                 if (status == true) {
-                    $('#notes-section').hide().animate({width: 'toggle'}, {duration: 1000});
+                    $('#notes-section').show() //.animate({width: 'toggle'}, {duration: 1000});
                 } else {
-                    $('#notes-section').show().animate({width: 'toggle'}, {duration: 1000});
+                    $('#notes-section').hide() //.animate({width: 'toggle'}, {duration: 1000});
                 } 
             }
             console.log(data); 
