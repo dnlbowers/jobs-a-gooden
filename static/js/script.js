@@ -3,7 +3,7 @@ const pinToggleRef = document.querySelectorAll('.pin');
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
 const noteAccordionRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion')
-const JobPreviewRef = document.querySelectorAll(".job-preview")
+const jobPreviewRef = document.querySelectorAll(".job-preview")
 const pinnedUrlRef = window.location.href.includes("pinboard")
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -129,11 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const removePinnedJob = (jobId) => {
-        JobPreviewRef.forEach(job => {
+        jobPreviewRef.forEach(job => {
             let pinnedJob = job.getAttribute('data-pinned-job')
 
             if (pinnedJob === jobId) {
                 $(job).hide(); //.animate({width: 'toggle'}, {duration: 1000});
+                window.location.reload()
             }
         })
     }

@@ -64,6 +64,10 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - I had made the notes section display none and removed the default to hide it when unpinned. 
 * Solution - I added two custom classes which hold the properties display inline if the job is pinned and display none if the job is unpinned. I chose to use custom classed over the bootstrap classes d-none and d-inline so that they did not interfere with the display none property applied by the jquery hide property.
 
+* Issue - When unpinning a job post from the saved jobs page there was a gap left where the hidden element resided. Further more this caused issues with the pagination if multiple posts were removed.
+* Cause - The generic class is set to paginate by 6, once enough post were removed and the "next button clicked the "if paginated" condition was no longer true causing a page cannot be found error.
+* Solution - By forcing the page to refresh with javascript after hiding the element this caused the pinned posts to shuffle across when the page reloaded. This meant there would always be 6 pinned jobs per page providing there were 6 to display.
+
 **Issues to fix **  
 * Issue - Notes and pinned post remained until page refresh even when deleted/unpinned
 
