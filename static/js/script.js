@@ -1,8 +1,10 @@
 //Global constant references for elements in the DOM
 const pinToggleRef = document.querySelectorAll('.pin');
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
-const noteSectionRef = document.querySelectorAll('.accordion-item');
+const noteAccordionRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion')
+const JobPreviewRef = document.querySelectorAll(".job-preview")
+const pinnedUrlRef = window.location.href.includes("pinboard")
 
 document.addEventListener("DOMContentLoaded", () => {
     /**
@@ -68,11 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             console.log(status)
-            if (data == 200) {
+            if (data == 200  && pinnedUrlRef){
+                console.log("url if")
+                if (status == false) {
+                    console.log("function call")
+                    removePinnedJob(id);
+                }
+
+            } else if (data == 200) {
+                console.log("note section if")
                 if (status == true) {
-                    $('#notes-section').show() //.animate({width: 'toggle'}, {duration: 1000});
+                    $('#notes-section').show(); //.animate({width: 'toggle'}, {duration: 1000});
                 } else {
-                    $('#notes-section').hide() //.animate({width: 'toggle'}, {duration: 1000});
+                    $('#notes-section').hide(); //.animate({width: 'toggle'}, {duration: 1000});
                 } 
             }
             console.log(data); 
@@ -107,12 +117,23 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const removeNote = (noteId) => {
         console.log(noteId)
-        console.log(noteSectionRef)
-        noteSectionRef.forEach(note => {
+        console.log(noteAccordionRef)
+        noteAccordionRef.forEach(note => {
+
             let noteSection = note.getAttribute('data-note-item')
             
             if (noteSection === noteId) {
                 notesAccordionRef.removeChild(note)
+            }
+        })
+    }
+
+    const removePinnedJob = (jobId) => {
+        JobPreviewRef.forEach(job => {
+            let pinnedJob = job.getAttribute('data-pinned-job')
+
+            if (pinnedJob === jobId) {
+                $(job).hide(); //.animate({width: 'toggle'}, {duration: 1000});
             }
         })
     }
