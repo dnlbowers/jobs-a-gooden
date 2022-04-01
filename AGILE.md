@@ -61,4 +61,4 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 ## Sprint 8 notes: 
 * I have added several user stories so that all tasks are aimed at adding value to the user
 * Learning from my mistake in the previous sprint I have assign 60% of the story points as "must haves" for this sprint as opposed to 60% of the tasks.
-* 
+![Eighth sprint screenshot](docs/agile/sprint-screenshots/sprint8.JPG)
