@@ -28,4 +28,10 @@
             <a href="#" class="btn btn-primary disabled" >login/signup to view more details</a>
         {% endif %}
     </section>
+    <div class="text-center card-footer bg-brown">
+        {% if user.is_staff %}
+            <p>Job Closing date - {{ job.date_expired }}</p>
+            <button class="btn btn-danger job-del-button" data-id="{{ job.id }}"><i class="fa-solid fa-trash-can"></i></button>
+        {% endif %}
+    </div>
 </div>

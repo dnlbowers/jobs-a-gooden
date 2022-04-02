@@ -97,8 +97,6 @@ Make a section in the features with screenshots vut reference this here.
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
     * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
     * ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.**
-
-* As An **Admin** or **Job Post Author** I can....
     * **Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
  
 * As an **Unregistered User** I can... 

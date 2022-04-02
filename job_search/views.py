@@ -113,15 +113,6 @@ class PinJob(View):
         return HttpResponse(200)
 
 
-# How to paginate?
-# def pinned_posts(request):
-#     # get all pinned posts by user
-#     pinned = PinnedJobs.objects.get(user=request.user)
-#     # get all jobs from the many to many list
-#     jobs = pinned.pinned_jobs.all()
-#     return render(request, 'job_search/pages/pinboard.html', {'jobs': jobs})
-
-
 class PinnedPosts(generic.ListView):
     model = PinnedJobs
     paginate_by = 6
@@ -155,3 +146,24 @@ class DeleteNote(View):
         delete_note = Notes.objects.get(id=id)
         delete_note.delete()
         return HttpResponse(200)
+
+
+class DeleteJob(View):
+    # delete job from database (check why the params work like they do)
+    @staticmethod
+    def post(request, id):
+        delete_job = Job.objects.get(id=id)
+        delete_job.delete()
+        return HttpResponse(200)
+
+
+# class EditNote(View):
+#     # edit note from database (check why the params work like they do)
+#     @staticmethod
+#     def post(request, id):
+#         edit_note = Notes.objects.get(id=id)
+#         edit_note.short_description = request.POST['short_description']
+#         edit_note.note = request.POST['note']
+#         edit_note.is_insight = request.POST['is_insight']
+#         edit_note.save()
+#         return HttpResponse(200)
