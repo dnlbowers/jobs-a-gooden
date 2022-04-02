@@ -7,7 +7,7 @@ urlpatterns = [
         extra_context={'title': 'Open Positions'}
         ), name='job_list'),
     # how do I add title to these views?
-    path('<uuid:id>/', views.FullJobSpec.as_view(), name='job_details'),
+    path('fulldetails/<uuid:id>/', views.FullJobSpec.as_view(), name='job_details'),
     path('addjob/', views.AddJob.as_view(), name='add_job'),
     path('deletejob/<uuid:id>/', views.DeleteJob.as_view(), name='delete_job'),
     # Pinning posts to save them

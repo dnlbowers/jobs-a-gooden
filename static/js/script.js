@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * and updates the database accordingly
      */
     function togglePinnedJob(status, id) {
-        fetch(`../pinned/${id}/`, {
+        fetch(`/pinned/${id}/`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -114,6 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             console.log("data", data);
+            if (data == 200) {
+                removeNote(id);
+            }
 
         })
         .catch(error => console.log(`ERROR: ${error}`));
@@ -137,9 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             console.log("data", data);
-            if (data == 200) {
-                removeNote(id);
-            }
+
         })
         .catch(error => console.log(`ERROR: ${error}`));
     }
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const removePinnedJob = (jobId) => {
         jobPreviewRef.forEach(job => {
-            let pinnedJob = job.getAttribute('data-pinned-job')
+            let pinnedJob = job.getAttribute('data-job-preview')
 
             if (pinnedJob === jobId) {
                 $(job).hide(); //.animate({width: 'toggle'}, {duration: 1000});
