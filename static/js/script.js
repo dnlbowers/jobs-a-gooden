@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(status)
             if (data == 200  && pinnedUrlRef){
                 if (status == false) {
-                    removePinnedJob(id);
+                    removeJobPreview(id);
                 }
 
             } else if (data == 200) {
@@ -140,7 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             console.log("data", data);
-
+            if (data == 200) {
+                removeJobPreview(id)
+            }
         })
         .catch(error => console.log(`ERROR: ${error}`));
     }
@@ -159,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    const removePinnedJob = (jobId) => {
+    const removeJobPreview = (jobId) => {
         jobPreviewRef.forEach(job => {
             let pinnedJob = job.getAttribute('data-job-preview')
 
