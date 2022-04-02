@@ -4,6 +4,7 @@ const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
 const noteAccordionRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion')
 const jobPreviewRef = document.querySelectorAll(".job-preview")
+const deleteJobBtnRef = document.querySelectorAll('.job-del-button')
 const pinnedUrlRef = window.location.href.includes("pinboard")
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,14 +48,22 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteNoteBtnRef.forEach( delBtn => {
         delBtn.addEventListener('click', () => {
             // const clicked = event.type;
-            const note_id = delBtn.dataset.id;
-            console.log(note_id)
-            deleteNote(note_id);
+            const noteId = delBtn.dataset.id;
+            deleteNote(noteId);
+        })
+    })
+
+    deleteJobBtnRef.forEach( delBtn => {
+        delBtn.addEventListener('click', () => {
+            console.log("Del btn clicked")
+            const jobId = delBtn.dataset.id;
+            deleteJob(jobId);
         })
     })
 
     /**
      * Makes fetch request toggling the status on pinned job
+     * and updates the database accordingly
      */
     function togglePinnedJob(status, id) {
         fetch(`../pinned/${id}/`, {
@@ -71,14 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             console.log(status)
             if (data == 200  && pinnedUrlRef){
-                console.log("url if")
                 if (status == false) {
-                    console.log("function call")
                     removePinnedJob(id);
                 }
 
             } else if (data == 200) {
-                console.log("note section if")
                 if (status == true) {
                     $('#notes-section').show(); //.animate({width: 'toggle'}, {duration: 1000});
                 } else {
@@ -90,11 +96,35 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.log(`ERROR: ${error}`));
     }
 
-        /**
+    /**
      * Makes fetch request toggling the status on pinned job
+     * and updates the database accordingly
      */
     function deleteNote(id) {
-        fetch(`/delete/${id}/`, {
+        fetch(`/deletenote/${id}/`, {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': csrftoken,
+                'X-Requested-With': 'XMLHttpRequest',
+                }),
+            body: ``,
+            credentials: 'same-origin',
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("data", data);
+
+        })
+        .catch(error => console.log(`ERROR: ${error}`));
+    }
+
+    /**
+     * Makes fetch request to delete job
+     * and updates the database accordingly
+     */
+    function deleteJob(id) {
+        fetch(`/deletejob/${id}/`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -138,4 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     }
+
+    //const removeDeleteJob = (jobId) => {
+
+    //}
 });
