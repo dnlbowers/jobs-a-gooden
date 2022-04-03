@@ -6,6 +6,7 @@ const notesAccordionRef = document.getElementById('notes-accordion')
 const jobPreviewRef = document.querySelectorAll(".job-preview")
 const deleteJobBtnRef = document.querySelectorAll('.job-del-button')
 const pinnedUrlRef = window.location.href.includes("pinboard")
+const fullSpecUrlRef = window.location.href.includes("fulldetails")
 
 document.addEventListener("DOMContentLoaded", () => {
     /**
@@ -55,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     deleteJobBtnRef.forEach( delBtn => {
         delBtn.addEventListener('click', () => {
-            console.log("Del btn clicked")
             const jobId = delBtn.dataset.id;
             deleteJob(jobId);
         })
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * and updates the database accordingly
      */
     function deleteNote(id) {
-        fetch(`/deletenote/${id}/`, {
+        fetch(`/${id}/deletenote/`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * and updates the database accordingly
      */
     function deleteJob(id) {
-        fetch(`/deletejob/${id}/`, {
+        fetch(`/fulldetails/${id}/delete`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -140,7 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             console.log("data", data);
-            if (data == 200) {
+            if (fullSpecUrlRef && data == 200){
+                window.location.replace('/');
+            } else if (data == 200) {
                 removeJobPreview(id)
             }
         })

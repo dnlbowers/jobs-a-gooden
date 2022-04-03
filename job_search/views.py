@@ -150,10 +150,12 @@ class DeleteNote(View):
 
 class DeleteJob(View):
     # delete job from database (check why the params work like they do)
+    
     @staticmethod
     def post(request, id):
         delete_job = Job.objects.get(id=id)
         delete_job.delete()
+        
         return HttpResponse(200)
 
 
