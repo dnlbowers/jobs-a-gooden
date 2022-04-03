@@ -17,4 +17,5 @@ urlpatterns = [
     path('fulldetails/<uuid:id>/note/', views.FullJobSpec.as_view(), name='note_made'),
     path('insights/', views.DisplayInsights.as_view(), name='insights'),
     path('<id>/deletenote/', views.DeleteNote.as_view(), name='delete_note'),
+    path('note/<int:pk>/edit/', views.EditNote.as_view(), name='edit_note'),
 ]

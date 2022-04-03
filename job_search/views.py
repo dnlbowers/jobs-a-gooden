@@ -150,22 +150,16 @@ class DeleteNote(View):
 
 class DeleteJob(View):
     # delete job from database (check why the params work like they do)
-    
     @staticmethod
     def post(request, id):
         delete_job = Job.objects.get(id=id)
         delete_job.delete()
-        
+
         return HttpResponse(200)
 
 
-# class EditNote(View):
-#     # edit note from database (check why the params work like they do)
-#     @staticmethod
-#     def post(request, id):
-#         edit_note = Notes.objects.get(id=id)
-#         edit_note.short_description = request.POST['short_description']
-#         edit_note.note = request.POST['note']
-#         edit_note.is_insight = request.POST['is_insight']
-#         edit_note.save()
-#         return HttpResponse(200)
+class EditNote(generic.UpdateView):
+    model = Notes
+    template_name = 'job_search/pages/edit-note.html'
+    fields = ['short_description', 'note', 'is_insight']
+    success_url = "/fulldetails/{related_job_id}"
