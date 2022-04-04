@@ -95,7 +95,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jobsagooden.wsgi.application'
 
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
 
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+
+        # Change editor size
+        'width': '100%',
+        'height': '400',
+    }
+}
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 # if "DEVELOPMENT" in os.environ:
