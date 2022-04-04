@@ -163,3 +163,16 @@ class EditNote(generic.UpdateView):
     template_name = 'job_search/pages/edit-note.html'
     fields = ['short_description', 'note', 'is_insight']
     success_url = "/fulldetails/{related_job_id}"
+
+    def get_form_class(self):
+        return NoteForm
+
+
+class EditInsight(generic.UpdateView):
+    model = Notes
+    template_name = 'job_search/pages/edit-insight.html'
+    fields = ['short_description', 'note', 'is_insight']
+    success_url = '/insights'
+
+    def get_form_class(self):
+        return NoteForm

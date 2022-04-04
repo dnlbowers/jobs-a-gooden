@@ -25,7 +25,7 @@ class AddJobForm(forms.ModelForm):
             'job_description',
             'job_url',
             'status'
-            ]
+        ]
         widgets = {
             'job_description': SummernoteWidget(),
         }
