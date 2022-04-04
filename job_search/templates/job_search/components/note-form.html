@@ -1,5 +1,5 @@
 <!-- Form to make a note -->
-{% load crispy_forms_tags %}
+
 
     <section class="card">
         {% if user.is_authenticated %}
@@ -10,8 +10,19 @@
             <div class="card-body">
                 <p>Signed in as: {{ user.username }}</p>
                 <form method="post">
-                    {{ note_form|crispy }} <!-- as_table maybe? -->
                     {% csrf_token %}
+                    {% load widget_tweaks %}
+                    {% for field in note_form %}
+                        <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                            {{ field.errors }}
+                            {{ field.label_tag }}
+                            {% if field == note_form.is_insight %}
+                                {% render_field field %}
+                            {% else %}
+                                {% render_field field class="form-control" %}
+                            {% endif %}
+                        </div>                        
+                    {% endfor %}
                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </form>
             </div>

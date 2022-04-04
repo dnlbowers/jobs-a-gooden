@@ -65,7 +65,7 @@ main {
 
 /* ------------------------------------------------------------ Add job form */
 
-.add-job-form {
+.form-container {
     background-color: #efefef;
     margin: 1rem auto;
     /* max-width: 400px; */
