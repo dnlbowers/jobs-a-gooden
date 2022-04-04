@@ -1,11 +1,15 @@
 from .models import Notes, Job
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 
 
 class NoteForm(forms.ModelForm):
     class Meta:
         model = Notes
         fields = ('short_description', 'note', 'is_insight', )
+        widgets = {
+            'note': SummernoteWidget(),
+        }
 
 
 class AddJobForm(forms.ModelForm):
@@ -22,3 +26,6 @@ class AddJobForm(forms.ModelForm):
             'job_url',
             'status'
             ]
+        widgets = {
+            'job_description': SummernoteWidget(),
+        }
