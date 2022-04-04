@@ -114,7 +114,7 @@ Make a section in the features with screenshots vut reference this here.
     * ...**Add my job posts** so that **I may make notes and insights to track my progress and should I choose to share the opportunity with the community**
     * ...**edit previously made notes and insights** so that **I may correct mistakes or further elaborate on an existing comment/insights.**
     * ...**See balanced forms with an included text editor for the main field** so that **I can have a pleasant visual experience across the site, and my job post and notes/insight look visually appealing in the style and layout when the submitted data is displayed.**
-    * ...**Delete insights from the insights page** so that **I can have a smoother user experience and still delete insights for job posts no longer present.**
+    * ...**Delete or edit insights from the insights page** so that **I can update or delete insights without job posts no longer visible.**
  
 * As a **Site User** I can...
     * ...**See alerts upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful or if an error occurred.**
