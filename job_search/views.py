@@ -4,6 +4,7 @@ from django.views import generic, View
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Job, PinnedJobs, Notes
 from .forms import NoteForm, AddJobForm
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 # ~ADD DOCSTRINGS
@@ -158,11 +159,12 @@ class DeleteJob(View):
         return HttpResponse(200)
 
 
-class EditNote(generic.UpdateView):
+class EditNote(SuccessMessageMixin ,generic.UpdateView):
     model = Notes
     template_name = 'job_search/pages/edit-note.html'
     fields = ['short_description', 'note', 'is_insight']
     success_url = "/fulldetails/{related_job_id}"
+    success_message = 'Note successfully edited!!!!'
 
     def get_form_class(self):
         return NoteForm

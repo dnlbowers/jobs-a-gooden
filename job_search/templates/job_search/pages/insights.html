@@ -9,7 +9,7 @@
                     <section class="content">
                         <p class="text-muted {% if forloop.counter|divisibleby:2 %}text-start{% else %}text-end{%endif%}">{{ insight.date_created }}</p>
                         <h2>{{ insight.short_description }}</h2>
-                        <p>{{ insight.note }}</p>
+                        <p>{{ insight.note|safe }}</p>
                         <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
                         <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ insight.id }}">Delete</button>
                     </section>

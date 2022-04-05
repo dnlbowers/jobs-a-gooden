@@ -24,7 +24,7 @@
                             {% if note.is_insight %}
                                 <p class="text-end text-muted marked-as">Marked as insight <span><i class="fa-solid fa-check"></i></span></p>
                             {% endif %}
-                            <p>{{ note.note }}</p>
+                            <p>{{ note.note|safe }}</p>
                             <a href="{% url 'edit_note' note.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
                             <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ note.id }}">Delete</button>
                         </div>
