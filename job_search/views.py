@@ -5,13 +5,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Job, PinnedJobs, Notes
 from .forms import NoteForm, AddJobForm
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 
 # ~ADD DOCSTRINGS
-class AddJob(generic.CreateView):
+class AddJob(SuccessMessageMixin, generic.CreateView):
     form_class = AddJobForm
     template_name = 'job_search/pages/add-job.html'
     success_url = reverse_lazy('add_job')
+    success_message = 'Your Job Advert has been Successfully Submitted and is Awaiting Admin Approval'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -72,10 +74,19 @@ class FullJobSpec(View):
             note.related_job = Job.objects.get(id=id)
             note.user = request.user
             note.save()
-            return HttpResponseRedirect(reverse('note_made', args=[id]))
+            new_note = Notes.objects.get(id=note.id)
+            messages.success(request, 'Note/insight successfully added')
+            return HttpResponseRedirect(reverse_lazy(
+                'add_note',
+                kwargs={'pk': new_note.id, 'id': id}
+                ))
 
         else:
             note_form = NoteForm()
+            messages.error(
+                request,
+                'Please be sure to enter a short description and a note.'
+                )
 
         return render(
             request,
@@ -159,22 +170,23 @@ class DeleteJob(View):
         return HttpResponse(200)
 
 
-class EditNote(SuccessMessageMixin ,generic.UpdateView):
+class EditNote(SuccessMessageMixin, generic.UpdateView):
     model = Notes
     template_name = 'job_search/pages/edit-note.html'
     fields = ['short_description', 'note', 'is_insight']
     success_url = "/fulldetails/{related_job_id}"
-    success_message = 'Note successfully edited!!!!'
+    success_message = 'Note Successfully Updated'
 
     def get_form_class(self):
         return NoteForm
 
 
-class EditInsight(generic.UpdateView):
+class EditInsight(SuccessMessageMixin, generic.UpdateView):
     model = Notes
     template_name = 'job_search/pages/edit-insight.html'
     fields = ['short_description', 'note', 'is_insight']
     success_url = '/insights'
+    success_message = 'Insight Successfully Updated'
 
     def get_form_class(self):
         return NoteForm

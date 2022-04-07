@@ -3,6 +3,7 @@
 
     <main>    
         <h1 class="text-center">Add a Job to track or share.</h1>
+        {% include '../components/messages.html' %}
         <div class="container form-container">
             <form method="post">
                 {% csrf_token %}
