@@ -1,10 +1,19 @@
 //Global constant references for elements in the DOM
+
+// Job pinning related element elements
 const pinToggleRef = document.querySelectorAll('.pin');
+const unpinModalRef = document.getElementById('unpinned-modal')
+
+// Note related element references
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
-const noteAccordionRef = document.querySelectorAll('.accordion-item');
+const noteItemRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion')
+
+// Job related element references
 const jobPreviewRef = document.querySelectorAll(".job-preview")
 const deleteJobBtnRef = document.querySelectorAll('.job-del-button')
+
+// reference to the page URL
 const pinnedUrlRef = window.location.href.includes("pinboard")
 const fullSpecUrlRef = window.location.href.includes("fulldetails")
 
@@ -39,6 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const status = event.target.checked;
             const id = pin.dataset.id;
             // make fetch request to update the database
+            if (status){
+                console.log("toggle on")
+            } else {
+                showUnpinWarning()
+                console.log("toggle off")
+            }
             togglePinnedJob(status, id);
         });
     });
@@ -152,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const removeNote = (noteId) => {
         console.log(noteId)
-        console.log(noteAccordionRef)
-        noteAccordionRef.forEach(note => {
+        console.log(noteItemRef)
+        noteItemRef.forEach(note => {
 
             let noteSection = note.getAttribute('data-note-item')
             
@@ -172,6 +187,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.location.reload()
             }
         })
+    }
+
+    function showUnpinWarning(){
+        unpinModalRef.classList.remove('fade')
+        unpinModalRef.classList.remove('d-none')
     }
 
     //const removeDeleteJob = (jobId) => {
