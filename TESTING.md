@@ -1,5 +1,5 @@
 
-## Bugs and Fixes
+## Bugs and Fixes During the Development Process
 * Issue - On the epic  called "initial deployment"  the final user story was to deploy to heroku. When deploying I was getting an application error 
 when loading the app on heroku.
 * Cause - Checking the logs via the heroku console I could see it was having issues when looking my .env file. This was purposely not a tracked file 
@@ -67,8 +67,17 @@ completely and in this case take the config vars entered on the heroku app setti
 * Issue - When unpinning a job post from the saved jobs page there was a gap left where the hidden element resided. Further more this caused issues with the pagination if multiple posts were removed.
 * Cause - The generic class is set to paginate by 6, once enough post were removed and the "next button clicked the "if paginated" condition was no longer true causing a page cannot be found error.
 * Solution - By forcing the page to refresh with javascript after hiding the element this caused the pinned posts to shuffle across when the page reloaded. This meant there would always be 6 pinned jobs per page providing there were 6 to display.
+ 
+* Issue - Notes and pinned post remained until page refresh even when deleted/unpinned.
+* Cause - The displayed data is only retrieved by the logic in the view upon page refresh.
+* Solution - By using Javascript to force a refresh after each job was unpinned this ensured that all space on the page was filled until only 5 or less entries remained to be displayed.
 
-**Issues to fix **  
-* Issue - Notes and pinned post remained until page refresh even when deleted/unpinned
+* Issue - using bootstrap alerts to display appropriate alerts to the user upon form submission were not displaying correctly.
+* Cause - The original logic in the view was having trouble passing a success message when leaving a note or insight and redirecting pages(my solution to form duplication on page refresh). 
+* Solution - After some research I discovered that there was a specific [message method](https://www.csestack.org/display-messages-form-submit-django/) for django which could be used in unison with bootstrap alerts. Applying this resolved the issue.
 
+**Issues to fix ** 
+* Issue - When on page two or more of a paginated page and removing items from it, a page not found error can occur if no more items remain in the page.
+* Cause - The pagination feature is such that the last page can only exist if there is more items than the set "paginate_by" value. removing surplus items causes the page not to exist.
+* Solution -
 

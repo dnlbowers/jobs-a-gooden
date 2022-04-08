@@ -55,10 +55,17 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * First time my burn down chart met with the expected trajectory largely due to having a limit number of user stories.
 * Realized my mistake of meeting the criteria of 60% must haves in a sprint. I was planning with 60% of the tasks and not 60% of the over all story points. This will be fixed from the next sprint onwards.
 * Decided to keep the job list page as the home page (initially this was only a temporary measure) However in the course of development I decided that a hero image would look good below the nave bar and decided to make this from my carousel picturing the sites features.
-* Since the idea of a user profile seemed to be less relevant at this stage the last day of sprint seven was used to plan futher user stories to plan the next stages of development in a way that provided the most value to the user.
+* Since the idea of a user profile seemed to be less relevant at this stage the last day of sprint seven was used to plan further user stories to plan the next stages of development in a way that provided the most value to the user.
 ![Seventh sprint screenshot](docs/agile/sprint-screenshots/sprint7.JPG)
 
 ## Sprint 8 notes: 
 * I have added several user stories so that all tasks are aimed at adding value to the user
 * Learning from my mistake in the previous sprint I have assign 60% of the story points as "must haves" for this sprint as opposed to 60% of the tasks.
+* Burn down chart was looking good until PJG-49 where I got stuck understanding how to utilize messages in django. I started to make progress when the sprint concluded mid task. This will be come the first task of the next sprint to complete the JS to close the alerts, and implement models.
 ![Eighth sprint screenshot](docs/agile/sprint-screenshots/sprint8.JPG)
+
+## Sprint 8 notes: 
+* 60% of the story points was more or less all of the stories due to the last item in the sprint which was the final over hall of the front end design.
+* This sprint is aiming to conclude with all functionality in tact (or conclude very near to it).
+* I will be noting down design thoughts and ideas as I go to implement later during PJG-53.
+![Ninth sprint screenshot](docs/agile/sprint-screenshots/sprint9.JPG)

@@ -98,6 +98,7 @@ Make a section in the features with screenshots vut reference this here.
     * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
     * ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.**
     * **Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
+    * **Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
  
 * As an **Unregistered User** I can... 
     * ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
@@ -115,9 +116,11 @@ Make a section in the features with screenshots vut reference this here.
     * ...**edit previously made notes and insights** so that **I may correct mistakes or further elaborate on an existing comment/insights.**
     * ...**See balanced forms with an included text editor for the main field** so that **I can have a pleasant visual experience across the site, and my job post and notes/insight look visually appealing in the style and layout when the submitted data is displayed.**
     * ...**Delete or edit insights from the insights page** so that **I can update or delete insights without job posts no longer visible.**
+    * ...**Create insights directly from the insights page** so that **I can document my general learning along the path of my career that may not be specific to a job role advertised on the site.**
  
 * As a **Site User** I can...
     * ...**See alerts upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful or if an error occurred.**
+    * ...**See appealing colors and uniform style themes** so that **every page and part of the process stimulates a positive response.**
   
 ### User Stories dropped as part of the agile process
 * As a **Registered User** I can **create a profile** so that **I can save key details relevant to my job search.**
