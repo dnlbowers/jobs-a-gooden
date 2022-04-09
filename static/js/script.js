@@ -2,7 +2,9 @@
 
 // Job pinning related element elements
 const pinToggleRef = document.querySelectorAll('.pin');
-const unpinModalRef = document.getElementById('unpinned-modal')
+const unpinModalRef = document.getElementById('unpinned-modal');
+const closeUnpinModalRef = document.querySelectorAll('.cancel-unpin');
+const confirmUnpinRef = document.querySelector('.confirm-unpin')
 
 // Note related element references
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
@@ -45,18 +47,40 @@ document.addEventListener("DOMContentLoaded", () => {
     pinToggleRef.forEach( pin => {
         pin.addEventListener('change', event => {
             // gets the status of the toggle switch
-            const status = event.target.checked;
-            const id = pin.dataset.id;
+            let status = event.target.checked;
+            let id = pin.dataset.id;
             // make fetch request to update the database
             if (status){
                 console.log("toggle on")
+                togglePinnedJob(status, id);
             } else {
-                showUnpinWarning()
+                showUnpinWarning(id);
                 console.log("toggle off")
             }
-            togglePinnedJob(status, id);
+            
         });
     });
+
+    closeUnpinModalRef.forEach( closeModalBtn => {
+        closeModalBtn.addEventListener('click', () => {
+            pinToggleRef.forEach( pin => {
+                if (pin.dataset.id === confirmUnpinRef.dataset.id){
+                    console.log('triggered');
+                    pin.checked;
+                }
+            })
+            closeUnpinWarning();
+            
+        })
+    })
+
+    confirmUnpinRef.addEventListener('click', () => {
+        let id = confirmUnpinRef.dataset.id;
+        console.log(id)
+        togglePinnedJob(false, id);
+        closeUnpinWarning();
+    })
+
 
     /**
      * Adds event listeners to the delete notes button
@@ -189,9 +213,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    function showUnpinWarning(){
-        unpinModalRef.classList.remove('fade')
-        unpinModalRef.classList.remove('d-none')
+    function showUnpinWarning(jobId) {
+        unpinModalRef.classList.remove('d-none');
+        unpinModalRef.classList.add('show');
+        confirmUnpinRef.setAttribute('data-id', jobId);
+    }
+
+    function closeUnpinWarning() {
+        unpinModalRef.classList.add('d-none');
+        unpinModalRef.classList.remove('show');
+        confirmUnpinRef.removeAttribute('data-id');
     }
 
     //const removeDeleteJob = (jobId) => {
