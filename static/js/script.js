@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //----------------------------------------------------------delete Notes related functionality
 
     /**
-     * Makes fetch request toggling the status on pinned job
+     * Communicates with the backend toggling the status on pinned job
      * and updates the database accordingly
      */
     function deleteNote(noteId) {
@@ -142,6 +142,32 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    /**
+     * Makes fetch request to delete a job post
+     * and updates the database accordingly
+     */
+    function deleteJob(jobId) {
+        fetch(`/fulldetails/${jobId}/delete`, {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': csrftoken,
+                'X-Requested-With': 'XMLHttpRequest',
+                }),
+            body: ``,
+            credentials: 'same-origin',
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("data", data);
+            if (fullSpecUrlRef && data == 200){
+                window.location.replace('/');
+            } else if (data == 200) {
+                removeJobPreview(jobId)
+            }
+        })
+        .catch(error => console.log(`ERROR: ${error}`));
+    }
 
 //---------------------------------------------------------- Event listeners
 
@@ -165,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteJobBtnRef.forEach( delBtn => {
             delBtn.addEventListener('click', () => {
                 const jobId = delBtn.dataset.id;
-                deleteJob(jobId);
+                warningModal(true, jobId, 'deleteJob');
             })
         })
     }
@@ -201,8 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
             closeModalBtn.addEventListener('click', () => {
                 pinToggleRef.forEach( pin => {
                     let id = pin.dataset.id;
-                    if ( id === acceptWarningRef.dataset.id){
-                        console.log('triggered');
+                    let btnTxt = acceptWarningBtnRef.innerHTML;
+
+                    if ( id === acceptWarningRef.dataset.id && btnTxt === 'Unpin Job'){
                         pin.click();
                     };
                 })
@@ -215,8 +242,10 @@ document.addEventListener("DOMContentLoaded", () => {
             let btnTxt = acceptWarningBtnRef.innerHTML; 
             if (typeof(id) === 'string' && btnTxt === 'Unpin Job') {
                 togglePinnedJob(false, id);
-            } else if (btnTxt === 'Delete'){
+            } else if (btnTxt === 'Delete Note') {
                 deleteNote(id);
+            } else if (btnTxt === 'Delete Job') {
+                deleteJob(id);
             }
             
             warningModal(false, id);
@@ -247,6 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
             unpinJobWarning()
         }else if (reason === 'deleteNote'){
             deleteNoteWarning()
+        }else if (reason === 'deleteJob'){
+            deleteJobWarning()
         }
     }
 
@@ -261,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Your insights will still be visible form the insights page.</p>
             <p>Are you Sure you Wish to Unpin this Job post?</p>
         `;
-        acceptWarningBtnRef.innerHTML='Unpin Job'
+        acceptWarningBtnRef.innerHTML='Unpin Job';
     }
 
     function deleteNoteWarning() {
@@ -270,7 +301,19 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Once deletion is confirmed this information wil be lost forever.</p>
             <p>Are you Sure you Wish to delete?</p>
         `;
-        acceptWarningBtnRef.innerHTML='Delete'
+        acceptWarningBtnRef.innerHTML='Delete Note'
+        
+    }
+
+    function deleteJobWarning() {
+        warnModalBodyRef.innerHTML = `
+        <p>Deleting this Job is irreversible.</p>
+        <p>Once deletion is confirmed this information wil be lost forever,</p>
+        <p>along with all related notes (insights will be safe safely stored on the insights page).</p>
+        <p>Are you Sure you Wish to delete?</p>
+    `;
+    acceptWarningBtnRef.innerHTML='Delete Job';
+
     }
 
 
