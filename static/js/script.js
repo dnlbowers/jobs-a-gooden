@@ -48,7 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteNoteEvents()
     deleteJobEvents()
     loadPinJobEvents()
-    warningModalEvents()
+    if (warningModalRef){
+        warningModalEvents()
+    } 
 
 //----------------------------------------------------------Pin job related functionality
 

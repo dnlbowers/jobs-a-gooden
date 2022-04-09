@@ -76,6 +76,10 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - The original logic in the view was having trouble passing a success message when leaving a note or insight and redirecting pages(my solution to form duplication on page refresh). 
 * Solution - After some research I discovered that there was a specific [message method](https://www.csestack.org/display-messages-form-submit-django/) for django which could be used in unison with bootstrap alerts. Applying this resolved the issue.
 
+* Issue - When on pages where the warning modal did not exit the was a console error.
+* Cause - Event listeners for the modal were being loaded regardless if the modal was present or not and this caused the browser to say it could not find various buttons when loading "warningModalEvents()".
+* Solution - By adding a truthy conditional statement to check if the modal was present before firing of the event listener function the console error disappeared since these event listeners would only load when the modals ID attribute was found.
+
 **Issues to fix ** 
 * Issue - When on page two or more of a paginated page and removing items from it, a page not found error can occur if no more items remain in the page.
 * Cause - The pagination feature is such that the last page can only exist if there is more items than the set "paginate_by" value. removing surplus items causes the page not to exist.

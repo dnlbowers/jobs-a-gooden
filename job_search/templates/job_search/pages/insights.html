@@ -1,42 +1,43 @@
 {% extends 'layout/base.html' %}
 {% block content %}
         
-<main>
-    <h1 class="text-center">Review your past insights</h1>
-    {% include '../components/messages.html' %}
-    <div class="timeline">
-        {% for insight in insights %}
-            <div class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}">
-                <section class="content">
-                    <p class="text-muted {% if forloop.counter|divisibleby:2 %}text-start{% else %}text-end{%endif%}">{{ insight.date_created }}</p>
-                    <h2>{{ insight.short_description }}</h2>
-                    <p>{{ insight.note|safe }}</p>
-                    <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ insight.id }}">Delete</button>
-                </section>
-            </div>
-        {% endfor %} 
-    </div>
+    <main>
+        <h1 class="text-center">Review your past insights</h1>
+        {% include '../components/messages.html' %}
+        <div class="timeline">
+            {% for insight in insights %}
+                <div class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}">
+                    <section class="content">
+                        <p class="text-muted {% if forloop.counter|divisibleby:2 %}text-start{% else %}text-end{%endif%}">{{ insight.date_created }}</p>
+                        <h2>{{ insight.short_description }}</h2>
+                        <p>{{ insight.note|safe }}</p>
+                        <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ insight.id }}">Delete</button>
+                    </section>
+                </div>
+            {% endfor %} 
+        </div>
+        {% include "../components/warning-modal.html" %}
+    </main>
 
     <!-- Pagination taken from CI blog walkthroguh with additions from Django docs-->
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page=1" class="page-link">&#60;&#60;</a></li>
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&#60; Prev </a></li>
-            {% endif %}
-            
-            <li class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </li>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page=1" class="page-link">&#60;&#60;</a></li>
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&#60; Prev </a></li>
+                {% endif %}
+                
+                <li class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </li>
 
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next &#62;</a></li>
-            <li><a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">&#62;&#62;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next &#62;</a></li>
+                <li><a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">&#62;&#62;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     {% endif %}
-</main>
 {% endblock %}
