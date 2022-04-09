@@ -1,25 +1,29 @@
 //Global constant references for elements in the DOM
 
-// Job pinning related element elements
-const pinToggleRef = document.querySelectorAll('.pin');
-const unpinModalRef = document.getElementById('unpinned-modal');
-const closeUnpinModalRef = document.querySelectorAll('.cancel-unpin');
-const confirmUnpinRef = document.querySelector('.confirm-unpin')
+// Warning Modal references
+const warningModalRef = document.getElementById('warningModal');
+const closeWarningModalRef = document.querySelectorAll('.cancel-warning');
+const acceptWarningRef = document.querySelector('.accept-warning');
+const warnModalBodyRef = document.getElementById('warning-message');
+const acceptWarningBtnRef = document.querySelector('.accept-warning');
+
 
 // Note related element references
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
 const noteItemRef = document.querySelectorAll('.accordion-item');
-const notesAccordionRef = document.getElementById('notes-accordion')
+const notesAccordionRef = document.getElementById('notes-accordion');
 
 // Job related element references
-const jobPreviewRef = document.querySelectorAll(".job-preview")
-const deleteJobBtnRef = document.querySelectorAll('.job-del-button')
+const jobPreviewRef = document.querySelectorAll(".job-preview");
+const deleteJobBtnRef = document.querySelectorAll('.job-del-button');
+const pinToggleRef = document.querySelectorAll('.pin');
 
 // reference to the page URL
-const pinnedUrlRef = window.location.href.includes("pinboard")
-const fullSpecUrlRef = window.location.href.includes("fulldetails")
+const pinnedUrlRef = window.location.href.includes("pinboard");
+const fullSpecUrlRef = window.location.href.includes("fulldetails");
 
 document.addEventListener("DOMContentLoaded", () => {
+    
     /**
      * Retrieves cookie and saves the contained csrf token to a variable for later use
      * Code Taken from Django docs https://docs.djangoproject.com/en/3.2/ref/csrf/
@@ -41,69 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const csrftoken = getCookie('csrftoken');
 
-    /**
-     * Adds event listeners to the pin job toggle switches
-     */
-    pinToggleRef.forEach( pin => {
-        pin.addEventListener('change', event => {
-            // gets the status of the toggle switch
-            let status = event.target.checked;
-            let id = pin.dataset.id;
-            // make fetch request to update the database
-            if (status){
-                console.log("toggle on")
-                togglePinnedJob(status, id);
-            } else {
-                showUnpinWarning(id);
-                console.log("toggle off")
-            }
-            
-        });
-    });
+    deleteNoteEvents()
+    deleteJobEvents()
+    loadPinJobEvents()
+    warningModalEvents()
 
-    closeUnpinModalRef.forEach( closeModalBtn => {
-        closeModalBtn.addEventListener('click', () => {
-            pinToggleRef.forEach( pin => {
-                if (pin.dataset.id === confirmUnpinRef.dataset.id){
-                    console.log('triggered');
-                    pin.checked;
-                }
-            })
-            closeUnpinWarning();
-            
-        })
-    })
-
-    confirmUnpinRef.addEventListener('click', () => {
-        let id = confirmUnpinRef.dataset.id;
-        console.log(id)
-        togglePinnedJob(false, id);
-        closeUnpinWarning();
-    })
-
+//----------------------------------------------------------Pin job related functionality
 
     /**
-     * Adds event listeners to the delete notes button
-     */
-    deleteNoteBtnRef.forEach( delBtn => {
-        delBtn.addEventListener('click', () => {
-            // const clicked = event.type;
-            const noteId = delBtn.dataset.id;
-            deleteNote(noteId);
-        })
-    })
-
-    deleteJobBtnRef.forEach( delBtn => {
-        delBtn.addEventListener('click', () => {
-            const jobId = delBtn.dataset.id;
-            deleteJob(jobId);
-        })
-    })
-
-    /**
-     * Makes fetch request toggling the status on pinned job
-     * and updates the database accordingly
-     */
+    * Communicates with the back end and Updates the database
+    * Without the need to refresh the page.
+    */
     function togglePinnedJob(status, id) {
         fetch(`/pinned/${id}/`, {
             method: 'POST',
@@ -118,12 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(data => {
             console.log(status)
+            // Checks if the user in on the saved jobs page
             if (data == 200  && pinnedUrlRef){
                 if (status == false) {
                     removeJobPreview(id);
                 }
-
-            } else if (data == 200) {
+            } else if (data == 200) { 
                 if (status == true) {
                     $('#notes-section').show(); //.animate({width: 'toggle'}, {duration: 1000});
                 } else {
@@ -136,11 +88,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /**
+     *  Removes job preview card from listViews
+     */
+    const removeJobPreview = (jobId) => {
+        jobPreviewRef.forEach(job => {
+            let pinnedJob = job.getAttribute('data-job-preview')
+
+            if (pinnedJob === jobId) {
+                $(job).hide(); //.animate({width: 'toggle'}, {duration: 1000});
+                window.location.reload()
+            }
+        })
+    }
+
+//----------------------------------------------------------delete Notes related functionality
+
+    /**
      * Makes fetch request toggling the status on pinned job
      * and updates the database accordingly
      */
-    function deleteNote(id) {
-        fetch(`/${id}/deletenote/`, {
+    function deleteNote(noteId) {
+        fetch(`/${noteId}/deletenote/`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -154,41 +122,13 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             console.log("data", data);
             if (data == 200) {
-                removeNote(id);
+                removeNote(noteId);
             }
 
         })
         .catch(error => console.log(`ERROR: ${error}`));
     }
-
-    /**
-     * Makes fetch request to delete job
-     * and updates the database accordingly
-     */
-    function deleteJob(id) {
-        fetch(`/fulldetails/${id}/delete`, {
-            method: 'POST',
-            headers: new Headers({
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'X-CSRFToken': csrftoken,
-                'X-Requested-With': 'XMLHttpRequest',
-                }),
-            body: ``,
-            credentials: 'same-origin',
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log("data", data);
-            if (fullSpecUrlRef && data == 200){
-                window.location.replace('/');
-            } else if (data == 200) {
-                removeJobPreview(id)
-            }
-        })
-        .catch(error => console.log(`ERROR: ${error}`));
-    }
-
-    
+        
     const removeNote = (noteId) => {
         console.log(noteId)
         console.log(noteItemRef)
@@ -202,30 +142,136 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    const removeJobPreview = (jobId) => {
-        jobPreviewRef.forEach(job => {
-            let pinnedJob = job.getAttribute('data-job-preview')
 
-            if (pinnedJob === jobId) {
-                $(job).hide(); //.animate({width: 'toggle'}, {duration: 1000});
-                window.location.reload()
-            }
+//---------------------------------------------------------- Event listeners
+
+    /**
+     * Event Listeners for note deletion buttons
+     */
+    function deleteNoteEvents() {
+
+        deleteNoteBtnRef.forEach( delBtn => {
+            delBtn.addEventListener('click', () => {
+                const noteId = delBtn.dataset.id;
+                warningModal(true, noteId, 'deleteNote');
+            })
         })
     }
 
-    function showUnpinWarning(jobId) {
-        unpinModalRef.classList.remove('d-none');
-        unpinModalRef.classList.add('show');
-        confirmUnpinRef.setAttribute('data-id', jobId);
+     /**
+     * Event Listeners for job deletion buttons
+     */
+    function deleteJobEvents() {
+        deleteJobBtnRef.forEach( delBtn => {
+            delBtn.addEventListener('click', () => {
+                const jobId = delBtn.dataset.id;
+                deleteJob(jobId);
+            })
+        })
     }
 
-    function closeUnpinWarning() {
-        unpinModalRef.classList.add('d-none');
-        unpinModalRef.classList.remove('show');
-        confirmUnpinRef.removeAttribute('data-id');
+    /**
+     * Triggers JS functionality relating to pinning and unpinning jobs
+     */
+    function loadPinJobEvents() {
+        //Adds event listeners to the pin job toggle switches
+        pinToggleRef.forEach( pin => {
+            pin.addEventListener('change', event => {
+                // gets the status of the toggle switch
+                let status = event.target.checked;
+                let id = pin.dataset.id;
+                // make fetch request to update the database
+                if (status){
+                    console.log("toggle on")
+                    togglePinnedJob(status, id);
+                } else {
+                    warningModal(true, id, 'unpinJob');
+                    console.log("toggle off")
+                }
+                
+            });
+        });
     }
 
-    //const removeDeleteJob = (jobId) => {
+     /**
+     * Event Listeners for warning modal buttons
+     */
+    function warningModalEvents() {
+        closeWarningModalRef.forEach( closeModalBtn => {
+            closeModalBtn.addEventListener('click', () => {
+                pinToggleRef.forEach( pin => {
+                    let id = pin.dataset.id;
+                    if ( id === acceptWarningRef.dataset.id){
+                        console.log('triggered');
+                        pin.click();
+                    };
+                })
+                warningModal(false, null, 'clear');
+            })
+        });
 
-    //}
+        acceptWarningRef.addEventListener('click', () => {
+            let id = acceptWarningRef.dataset.id;
+            let btnTxt = acceptWarningBtnRef.innerHTML; 
+            if (typeof(id) === 'string' && btnTxt === 'Unpin Job') {
+                togglePinnedJob(false, id);
+            } else if (btnTxt === 'Delete'){
+                deleteNote(id);
+            }
+            
+            warningModal(false, id);
+        });
+    }
+
+    /**
+     * Shows/hides Modal to warn user
+     * assigns/removes Job ID to confirm button
+     */
+    function warningModal(display, Id, reason='clear') {
+        populateWarning(reason)
+        if (display) {
+            warningModalRef.classList.remove('d-none');
+            warningModalRef.classList.add('show');
+            acceptWarningRef.setAttribute('data-id', Id);
+        } else {
+            warningModalRef.classList.add('d-none');
+            warningModalRef.classList.remove('show');
+            acceptWarningRef.removeAttribute('data-id'); 
+        }
+    }
+
+    function populateWarning(reason){
+        if (reason === 'clear'){
+            clearWarningModal()
+        }else if (reason === 'unpinJob'){
+            unpinJobWarning()
+        }else if (reason === 'deleteNote'){
+            deleteNoteWarning()
+        }
+    }
+
+    function clearWarningModal() {
+        warnModalBodyRef.innerHTML='';
+        acceptWarningBtnRef.innerHTML=''
+    }
+    
+    function unpinJobWarning(){
+        warnModalBodyRef.innerHTML=`
+            <p>By unpinning this post you will be deleting all its associated notes.</p>
+            <p>Your insights will still be visible form the insights page.</p>
+            <p>Are you Sure you Wish to Unpin this Job post?</p>
+        `;
+        acceptWarningBtnRef.innerHTML='Unpin Job'
+    }
+
+    function deleteNoteWarning() {
+        warnModalBodyRef.innerHTML = `
+            <p>Deleting this note/insight is irreversible.</p>
+            <p>Once deletion is confirmed this information wil be lost forever.</p>
+            <p>Are you Sure you Wish to delete?</p>
+        `;
+        acceptWarningBtnRef.innerHTML='Delete'
+    }
+
+
 });
