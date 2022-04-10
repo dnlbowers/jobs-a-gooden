@@ -21,6 +21,8 @@ const pinToggleRef = document.querySelectorAll('.pin');
 // reference to the page URL
 const pinnedUrlRef = window.location.href.includes("pinboard");
 const fullSpecUrlRef = window.location.href.includes("fulldetails");
+const paginatedUrlRef = window.location.href.includes("page");
+const insightUrlRef = window.location.href.includes("insights");
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -94,13 +96,33 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     const removeJobPreview = (jobId) => {
         jobPreviewRef.forEach(job => {
+            console.log(job)
             let pinnedJob = job.getAttribute('data-job-preview')
 
             if (pinnedJob === jobId) {
-                $(job).hide(); //.animate({width: 'toggle'}, {duration: 1000});
-                window.location.reload()
+                
+                if(jobPreviewRef.length === 1) {
+                    previousPageRedirect();
+                } else {
+                    $(job).hide();
+                    return window.location.reload()
+                }
             }
         })
+    }
+
+    /**
+     * Take the page number from the url minus 1
+     * before redirecting the user to the previous page
+     */
+    const previousPageRedirect = () => {
+        let url = window.location.href;
+        console.log(url)
+        let page = window.location.href.substr(-1)-1;
+        console.log(page)
+        let previousPage = url.slice(0, -1) + page;
+        console.log(previousPage)
+        return window.location.replace(previousPage)
     }
 
 //----------------------------------------------------------delete Notes related functionality
@@ -246,6 +268,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 togglePinnedJob(false, id);
             } else if (btnTxt === 'Delete Note') {
                 deleteNote(id);
+                if (insightUrlRef){
+                    console.log('here now')
+                    window.location.reload(true);
+                }
             } else if (btnTxt === 'Delete Job') {
                 deleteJob(id);
             }
@@ -303,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Once deletion is confirmed this information wil be lost forever.</p>
             <p>Are you Sure you Wish to delete?</p>
         `;
-        acceptWarningBtnRef.innerHTML='Delete Note'
+        acceptWarningBtnRef.innerHTML='Delete Note';
         
     }
 

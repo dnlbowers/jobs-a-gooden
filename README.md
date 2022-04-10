@@ -153,6 +153,7 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * Search feature
 * API for a Job's site
 * Auto email to Job post author when job close to expired that it will be deleted after the specified time of expiration.
+* [KanBan board](https://codepen.io/josetxu/pen/VwyxZKq) to track applied, round, and response.
 
 ## Honorable mentions  
 * sean - just a legend any way you slice it
