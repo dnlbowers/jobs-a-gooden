@@ -130,7 +130,6 @@ class PinnedPosts(generic.ListView):
     paginate_by = 6
     template_name = 'job_search/pages/pinboard.html'
     context_object_name = 'jobs'
-    queryset = Job.objects.filter(status=1).order_by('date_posted')
 
     def get_queryset(self):
         # get all pinned posts by user

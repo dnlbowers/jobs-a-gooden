@@ -12,6 +12,7 @@ const acceptWarningBtnRef = document.querySelector('.accept-warning');
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
 const noteItemRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion');
+const insightItemRef = document.querySelectorAll('.insight-container');
 
 // Job related element references
 const jobPreviewRef = document.querySelectorAll(".job-preview");
@@ -269,8 +270,12 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (btnTxt === 'Delete Note') {
                 deleteNote(id);
                 if (insightUrlRef){
-                    console.log('here now')
-                    window.location.reload(true);
+                    if (insightItemRef.length===1){
+                        previousPageRedirect()
+                    } else {
+                        window.location.reload(true);
+                    }
+                    
                 }
             } else if (btnTxt === 'Delete Job') {
                 deleteJob(id);
@@ -343,6 +348,4 @@ document.addEventListener("DOMContentLoaded", () => {
     acceptWarningBtnRef.innerHTML='Delete Job';
 
     }
-
-
 });
