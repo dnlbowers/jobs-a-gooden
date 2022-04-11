@@ -26,7 +26,7 @@ class Job(models.Model):
         auto_now_add=False, blank=True, null=True)
     job_description = models.TextField()
     job_url = models.URLField(max_length=2000)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     is_pinned = models.ManyToManyField(
         User, related_name='is_pinned', blank=True
     )

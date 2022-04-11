@@ -10,18 +10,28 @@ from django.contrib import messages
 
 # ~ADD DOCSTRINGS
 class AddJob(SuccessMessageMixin, generic.CreateView):
+    """
+    This view is used to add a job to the database.
+    """
     form_class = AddJobForm
     template_name = 'job_search/pages/add-job.html'
     success_url = reverse_lazy('add_job')
     success_message = 'Your Job Advert has been Successfully Submitted and is Awaiting Admin Approval'
 
     def form_valid(self, form):
+        """
+        This method is called when valid form data has been POSTed.
+        Successful form submission will redirect the user back to the add job page.
+        """
         form.instance.user = self.request.user
         super(AddJob, self).form_valid(form)
         return redirect('add_job')
 
 
 class JobList(generic.ListView):
+    """
+    This view is used to display a list of public approved jobs.
+    """
     model = Job
     paginate_by = 6
     template_name = 'job_search/pages/job-list.html'
@@ -32,7 +42,16 @@ class JobList(generic.ListView):
 
 
 class FullJobSpec(View):
+    """
+    This view is used to display a full job spec, including notes/insights.
+    It also display the form to create notes and insights.
+    """
+
     def get(self, request, id, *args, **kwargs):
+        """
+        Retrieves the job spec and related notes/insights from the database.
+        """
+
         queryset = Job.objects.filter(status=1, approved=True)
         job_spec = get_object_or_404(queryset, id=id)
         # get all notes by user
@@ -56,6 +75,11 @@ class FullJobSpec(View):
         )
 
     def post(self, request, id, *args, **kwargs):
+        """
+        This method is called when a POST request is made to the view
+        via the note creation form.
+        """
+
         queryset = Job.objects.filter(status=1, approved=True)
         job_spec = get_object_or_404(queryset, id=id)
         notes = job_spec.related_job.all().order_by('-date_created')
@@ -105,7 +129,16 @@ class FullJobSpec(View):
 
 
 class PinJob(View):
+    """
+    This view is used to toggle the pinned status of a job.
+    """
+    
     def post(self, request, id):
+        """
+        When pin jon toggle is toggled this method is called
+        to update the relevant many2many fields in the database
+        """
+        
         # get the status of the toggle from post request in JS file
         status = True if request.POST['status'] == 'true' else False
         # Identify the job being toggled
@@ -128,12 +161,20 @@ class PinJob(View):
 
 
 class PinnedPosts(generic.ListView):
+    """
+    This view is used to display a list of pinned jobs.
+    """
+
     model = PinnedJobs
     paginate_by = 6
     template_name = 'job_search/pages/pinboard.html'
     context_object_name = 'jobs'
 
     def get_queryset(self):
+        """
+        Gets only the pinned jobs for the current user.
+        """
+        
         # get all pinned posts by user
         pinned = PinnedJobs.objects.get(user=self.request.user)
         # get all jobs from the many to many list
@@ -142,6 +183,10 @@ class PinnedPosts(generic.ListView):
 
 
 class DisplayInsights(generic.ListView):
+    """
+    This view is used to display a list of insights for a job.
+    """
+    
     model = Notes
     paginate_by = 6
     template_name = 'job_search/pages/insights.html'
@@ -149,22 +194,39 @@ class DisplayInsights(generic.ListView):
     queryset = Notes.objects.filter(is_insight=True).order_by('-date_created')
 
     def get_queryset(self):
+        """"
+        filters insights to be specific to the current user
+        """
         return super().get_queryset().filter(user=self.request.user)
 
 
 class DeleteNote(View):
+    """
+    This view is used to delete a note from the database.
+    """
     # delete note from database (check why the params work like they do)
     @staticmethod
     def post(request, id):
+        """"
+        Gets the note id from the post request and deletes the note.
+        """
         delete_note = Notes.objects.get(id=id)
         delete_note.delete()
         return HttpResponse(200)
 
 
 class DeleteJob(View):
+    """"
+    This view deletes a job from the database.
+    returns a httpresponse when successful
+    """
     # delete job from database (check why the params work like they do)
     @staticmethod
     def post(request, id):
+        """ 
+        Gets the job id from the post request and deletes the job.
+        returns a httpresponse when successful
+        """
         delete_job = Job.objects.get(id=id)
         delete_job.delete()
 
@@ -172,6 +234,11 @@ class DeleteJob(View):
 
 
 class EditNote(SuccessMessageMixin, generic.UpdateView):
+    """
+    This view is used to edit a note in the database.
+    directly from the job details page, and display a alert as feedback
+    """
+    
     model = Notes
     template_name = 'job_search/pages/edit-note.html'
     fields = ['short_description', 'note', 'is_insight']
@@ -179,10 +246,17 @@ class EditNote(SuccessMessageMixin, generic.UpdateView):
     success_message = 'Note Successfully Updated'
 
     def get_form_class(self):
+        """
+        Gets the form class for the edit note view.
+        """
         return NoteForm
 
 
 class EditInsight(SuccessMessageMixin, generic.UpdateView):
+    """
+    This view is used to edit a note marked as an insight in the database.
+    directly from the insights page, and display a alert as feedback
+    """
     model = Notes
     template_name = 'job_search/pages/edit-insight.html'
     fields = ['short_description', 'note', 'is_insight']
@@ -190,10 +264,16 @@ class EditInsight(SuccessMessageMixin, generic.UpdateView):
     success_message = 'Insight Successfully Updated'
 
     def get_form_class(self):
+        """
+        Gets the form class for the edit insight view.
+        """
         return NoteForm
 
 
 class EditJob(SuccessMessageMixin, generic.UpdateView):
+    """
+    This view is used to edit a job in the database, and displays an alert as feedback
+    """
     model = Job
     template_name = 'job_search/pages/add-job.html'
     success_url = '../{id}'
@@ -201,4 +281,7 @@ class EditJob(SuccessMessageMixin, generic.UpdateView):
     success_message = 'Job Successfully Updated'
 
     def get_form_class(self):
+        """
+        Gets the form class for the edit job view.
+        """
         return AddJobForm
