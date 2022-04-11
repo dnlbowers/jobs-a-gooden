@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
 from django.http import HttpResponse, HttpResponseRedirect
@@ -26,12 +26,14 @@ class JobList(generic.ListView):
     paginate_by = 6
     template_name = 'job_search/pages/job-list.html'
     context_object_name = 'jobs'
-    queryset = Job.objects.filter(status=1).order_by('-date_posted')
+    queryset = Job.objects.filter(
+        status=1, approved=True
+        ).order_by('-date_posted')
 
 
 class FullJobSpec(View):
     def get(self, request, id, *args, **kwargs):
-        queryset = Job.objects.filter(status=1)
+        queryset = Job.objects.filter(status=1, approved=True)
         job_spec = get_object_or_404(queryset, id=id)
         # get all notes by user
         notes = job_spec.related_job.all().order_by('-date_created')
@@ -54,7 +56,7 @@ class FullJobSpec(View):
         )
 
     def post(self, request, id, *args, **kwargs):
-        queryset = Job.objects.filter(status=1)
+        queryset = Job.objects.filter(status=1, approved=True)
         job_spec = get_object_or_404(queryset, id=id)
         notes = job_spec.related_job.all().order_by('-date_created')
         author = self.request.user.id
@@ -189,3 +191,14 @@ class EditInsight(SuccessMessageMixin, generic.UpdateView):
 
     def get_form_class(self):
         return NoteForm
+
+
+class EditJob(SuccessMessageMixin, generic.UpdateView):
+    model = Job
+    template_name = 'job_search/pages/add-job.html'
+    success_url = '../{id}'
+    fields = '__all__'
+    success_message = 'Job Successfully Updated'
+
+    def get_form_class(self):
+        return AddJobForm

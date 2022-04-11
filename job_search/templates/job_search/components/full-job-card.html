@@ -39,6 +39,7 @@
         {% if user.is_staff %}
         {% csrf_token %}
             <p>Job Closing date - {{ job.date_expired }} </p>
+            <a href="{% url 'edit_job' job.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
             <button class="btn btn-danger job-del-button" data-id="{{ job.id }}"><i class="fa-solid fa-trash-can"></i></button>
         {% endif %}
     </div>

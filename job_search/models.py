@@ -30,6 +30,7 @@ class Job(models.Model):
     is_pinned = models.ManyToManyField(
         User, related_name='is_pinned', blank=True
     )
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-date_posted']
