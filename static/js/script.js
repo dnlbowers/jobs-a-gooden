@@ -25,6 +25,7 @@ const fullSpecUrlRef = window.location.href.includes("fulldetails");
 const paginatedUrlRef = window.location.href.includes("page");
 const insightUrlRef = window.location.href.includes("insights");
 
+
 document.addEventListener("DOMContentLoaded", () => {
     
     /**
@@ -48,6 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const csrftoken = getCookie('csrftoken');
 
+    // fetch constant
+    const headersRef =new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-CSRFToken': csrftoken,
+        'X-Requested-With': 'XMLHttpRequest',
+        })
+    
+    //Load event listeners
     deleteNoteEvents()
     deleteJobEvents()
     loadPinJobEvents()
@@ -64,11 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function togglePinnedJob(status, id) {
         fetch(`/pinned/${id}/`, {
             method: 'POST',
-            headers: new Headers({
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'X-CSRFToken': csrftoken,
-                'X-Requested-With': 'XMLHttpRequest',
-                }),
+            headers: headersRef,
             body: `status=${status}`,
             credentials: 'same-origin',
         })
@@ -77,11 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(status)
             // Checks if the user in on the saved jobs page
             if (data == 200  && pinnedUrlRef){
-                if (status == false) {
+                if (!status) {
                     removeJobPreview(id);
                 }
             } else if (data == 200) { 
-                if (status == true) {
+                if (status) {
                     $('#notes-section').show(); //.animate({width: 'toggle'}, {duration: 1000});
                 } else {
                     $('#notes-section').hide(); //.animate({width: 'toggle'}, {duration: 1000});
@@ -112,17 +117,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    //----------------------------------------------------------Pagination
+    
     /**
      * Take the page number from the url minus 1
      * before redirecting the user to the previous page
      */
     const previousPageRedirect = () => {
         let url = window.location.href;
-        console.log(url)
         let page = window.location.href.substr(-1)-1;
-        console.log(page)
         let previousPage = url.slice(0, -1) + page;
-        console.log(previousPage)
         return window.location.replace(previousPage)
     }
 
@@ -135,11 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function deleteNote(noteId) {
         fetch(`/${noteId}/deletenote/`, {
             method: 'POST',
-            headers: new Headers({
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'X-CSRFToken': csrftoken,
-                'X-Requested-With': 'XMLHttpRequest',
-                }),
+            headers: headersRef,
             body: ``,
             credentials: 'same-origin',
         })
@@ -153,10 +153,13 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.log(`ERROR: ${error}`));
     }
-        
+    
+    /**
+     * Loops through the note accordion and when the data attribute id
+     * matches the noteId parameter the relevant child containing the note
+     * is removed
+     */
     const removeNote = (noteId) => {
-        console.log(noteId)
-        console.log(noteItemRef)
         noteItemRef.forEach(note => {
 
             let noteSection = note.getAttribute('data-note-item')
@@ -174,11 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function deleteJob(jobId) {
         fetch(`/fulldetails/${jobId}/delete`, {
             method: 'POST',
-            headers: new Headers({
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'X-CSRFToken': csrftoken,
-                'X-Requested-With': 'XMLHttpRequest',
-                }),
+            headers: headersRef,
             body: ``,
             credentials: 'same-origin',
         })
@@ -209,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-     /**
+    /**
      * Event Listeners for job deletion buttons
      */
     function deleteJobEvents() {
@@ -231,20 +230,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 // gets the status of the toggle switch
                 let status = event.target.checked;
                 let id = pin.dataset.id;
-                // make fetch request to update the database
+
                 if (status){
-                    console.log("toggle on")
                     togglePinnedJob(status, id);
                 } else {
                     warningModal(true, id, 'unpinJob');
-                    console.log("toggle off")
                 }
                 
             });
         });
     }
 
-     /**
+    /**
      * Event Listeners for warning modal buttons
      */
     function warningModalEvents() {
@@ -255,6 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     let btnTxt = acceptWarningBtnRef.innerHTML;
 
                     if ( id === acceptWarningRef.dataset.id && btnTxt === 'Unpin Job'){
+                        // if unpin job cancelled slides the toggle back to pinned position
                         pin.click();
                     };
                 })
@@ -302,6 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    /**
+     * Populates the modal according to the passed parameter(str)
+     */
     function populateWarning(reason){
         if (reason === 'clear'){
             clearWarningModal()
@@ -314,11 +315,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    /**
+     * Clears modal and acceptance button inner html 
+     */
     function clearWarningModal() {
         warnModalBodyRef.innerHTML='';
         acceptWarningBtnRef.innerHTML=''
     }
     
+    /**
+     * Inputs content form modal when unpinning a job
+     */
     function unpinJobWarning(){
         warnModalBodyRef.innerHTML=`
             <p>By unpinning this post you will be deleting all its associated notes.</p>
@@ -328,6 +335,9 @@ document.addEventListener("DOMContentLoaded", () => {
         acceptWarningBtnRef.innerHTML='Unpin Job';
     }
 
+    /**
+     * Inputs content form modal when deleting a note
+     */
     function deleteNoteWarning() {
         warnModalBodyRef.innerHTML = `
             <p>Deleting this note/insight is irreversible.</p>
@@ -338,6 +348,9 @@ document.addEventListener("DOMContentLoaded", () => {
         
     }
 
+    /**
+     * Inputs content form modal when deleting a job
+     */
     function deleteJobWarning() {
         warnModalBodyRef.innerHTML = `
         <p>Deleting this Job is irreversible.</p>

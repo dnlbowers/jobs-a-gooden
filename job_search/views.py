@@ -16,12 +16,14 @@ class AddJob(SuccessMessageMixin, generic.CreateView):
     form_class = AddJobForm
     template_name = 'job_search/pages/add-job.html'
     success_url = reverse_lazy('add_job')
-    success_message = 'Your Job Advert has been Successfully Submitted and is Awaiting Admin Approval'
+    success_message = 'Your Job Advert has been Successfully Submitted and is'\
+        ' Awaiting Admin Approval'
 
     def form_valid(self, form):
         """
-        This method is called when valid form data has been POSTed.
-        Successful form submission will redirect the user back to the add job page.
+        This method is called when valid form data has been posted.
+        Successful form submission will redirect the user back to the
+        add job page.
         """
         form.instance.user = self.request.user
         super(AddJob, self).form_valid(form)
@@ -38,7 +40,7 @@ class JobList(generic.ListView):
     context_object_name = 'jobs'
     queryset = Job.objects.filter(
         status=1, approved=True
-        ).order_by('-date_posted')
+    ).order_by('-date_posted')
 
 
 class FullJobSpec(View):
@@ -94,7 +96,7 @@ class FullJobSpec(View):
             note = Notes()
             note.short_description = note_form.cleaned_data[
                 'short_description'
-                ]
+            ]
             note.note = note_form.cleaned_data['note']
             note.is_insight = note_form.cleaned_data['is_insight']
             note.related_job = Job.objects.get(id=id)
@@ -105,14 +107,14 @@ class FullJobSpec(View):
             return HttpResponseRedirect(reverse_lazy(
                 'add_note',
                 kwargs={'pk': new_note.id, 'id': id}
-                ))
+            ))
 
         else:
             note_form = NoteForm()
             messages.error(
                 request,
                 'Please be sure to enter a short description and a note.'
-                )
+            )
 
         return render(
             request,
@@ -132,13 +134,13 @@ class PinJob(View):
     """
     This view is used to toggle the pinned status of a job.
     """
-    
+
     def post(self, request, id):
         """
         When pin jon toggle is toggled this method is called
         to update the relevant many2many fields in the database
         """
-        
+
         # get the status of the toggle from post request in JS file
         status = True if request.POST['status'] == 'true' else False
         # Identify the job being toggled
@@ -174,7 +176,7 @@ class PinnedPosts(generic.ListView):
         """
         Gets only the pinned jobs for the current user.
         """
-        
+
         # get all pinned posts by user
         pinned = PinnedJobs.objects.get(user=self.request.user)
         # get all jobs from the many to many list
@@ -186,7 +188,7 @@ class DisplayInsights(generic.ListView):
     """
     This view is used to display a list of insights for a job.
     """
-    
+
     model = Notes
     paginate_by = 6
     template_name = 'job_search/pages/insights.html'
@@ -223,7 +225,7 @@ class DeleteJob(View):
     # delete job from database (check why the params work like they do)
     @staticmethod
     def post(request, id):
-        """ 
+        """
         Gets the job id from the post request and deletes the job.
         returns a httpresponse when successful
         """
@@ -238,7 +240,7 @@ class EditNote(SuccessMessageMixin, generic.UpdateView):
     This view is used to edit a note in the database.
     directly from the job details page, and display a alert as feedback
     """
-    
+
     model = Notes
     template_name = 'job_search/pages/edit-note.html'
     fields = ['short_description', 'note', 'is_insight']
@@ -272,7 +274,8 @@ class EditInsight(SuccessMessageMixin, generic.UpdateView):
 
 class EditJob(SuccessMessageMixin, generic.UpdateView):
     """
-    This view is used to edit a job in the database, and displays an alert as feedback
+    This view is used to edit a job in the database,
+    and displays an alert as feedback
     """
     model = Job
     template_name = 'job_search/pages/add-job.html'
