@@ -9,10 +9,20 @@ class JobAdmin(SummernoteModelAdmin):
         'company_name', 'job_title', 'date_expired', 'status', 'approved'
         )
     list_filter = (
-        'company_name', 'job_title', 'date_posted', 'date_expired', 'status', 'approved'
+        'company_name',
+        'job_title',
+        'date_posted',
+        'date_expired',
+        'status',
+        'approved'
     )
     search_fields = (
-        'company_name', 'job_title', 'date_posted', 'date_expired', 'status', 'approved'
+        'company_name',
+        'job_title',
+        'date_posted',
+        'date_expired',
+        'status',
+        'approved'
     )
     summer_fields = ('job_description',)
     actions = ['approve_job']
