@@ -2,8 +2,12 @@
 {% block content %}
         
     <main>
-        <h1 class="text-center">Review your past insights</h1>
         {% include '../components/messages.html' %}
+        <h1 class="text-center">Review your past insights</h1>
+
+        <div class="text-center">
+            <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i>Add insight</a>
+        </div>
         <div class="timeline">
             {% for insight in insights %}
                 <div class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}">

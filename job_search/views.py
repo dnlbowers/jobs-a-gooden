@@ -30,6 +30,26 @@ class AddJob(SuccessMessageMixin, generic.CreateView):
         return redirect('add_job')
 
 
+class AddInsight(SuccessMessageMixin, generic.CreateView):
+    """
+    This view is used to add a job to the database.
+    """
+    form_class = NoteForm
+    template_name = 'job_search/pages/add-insight.html'
+    success_url = reverse_lazy('insights')
+    success_message = 'Your insight has been addned Successfully'
+
+    def form_valid(self, form):
+        """
+        This method is called when valid form data has been posted.
+        Successful form submission will redirect the user back to the
+        add job page.
+        """
+        form.instance.user = self.request.user
+        super(AddInsight, self).form_valid(form)
+        return redirect('insights')
+
+
 class JobList(generic.ListView):
     """
     This view is used to display a list of public approved jobs.

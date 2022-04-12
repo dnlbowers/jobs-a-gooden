@@ -43,9 +43,10 @@ class Notes(models.Model):
 
     related_job = models.ForeignKey(
         Job, on_delete=models.CASCADE,
-        default=False,
+        default=None,
         related_name='related_job',
         blank=True,
+        null=True
         )
     user = models.ForeignKey(
         User,
