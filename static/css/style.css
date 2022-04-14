@@ -37,11 +37,15 @@
   border: 2px solid #000!important;
 }
 
+.border-bottom {
+  border-bottom: 3px solid #000!important;
+}
+
 
 /* ------------------------------------------------------------ Header/Navbar */
 
 .nav-padding{
-    padding: 0 1rem 1rem;
+    padding: 0 0.5rem 1rem;
 }
 
 .navbar-toggler {
@@ -80,7 +84,6 @@ main {
 }
 
 .card-header {
-  border-bottom: 3px solid #000! important;
   border-radius: 16px 16px 0 0! important;
 }
 
