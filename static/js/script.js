@@ -1,12 +1,10 @@
 //Global constant references for elements in the DOM
-
 // Warning Modal references
 const warningModalRef = document.getElementById('warningModal');
 const closeWarningModalRef = document.querySelectorAll('.cancel-warning');
 const acceptWarningRef = document.querySelector('.accept-warning');
 const warnModalBodyRef = document.getElementById('warning-message');
 const acceptWarningBtnRef = document.querySelector('.accept-warning');
-
 
 // Note related element references
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
@@ -49,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const csrftoken = getCookie('csrftoken');
 
-    // fetch constant
-    const headersRef =new Headers({
+    // fetch headers constant
+    const headersRef = new Headers({
         'Content-Type': 'application/x-www-form-urlencoded',
         'X-CSRFToken': csrftoken,
         'X-Requested-With': 'XMLHttpRequest',

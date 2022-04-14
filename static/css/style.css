@@ -31,6 +31,12 @@
   display: inline;
 }
 
+.btn-danger,
+.btn-success,
+.btn-warning {
+  border: 2px solid #000!important;
+}
+
 
 /* ------------------------------------------------------------ Header/Navbar */
 
@@ -50,13 +56,6 @@
     font-size: 2em;
 }
 
-/* ------------------------------------------------------------------------ Carousel styling */
-
-.carousel-item > img {
-  height: 600px;
-}
-
-
 /* ------------------------------------------------------------ Main content styling (general) */
 
 main {
@@ -75,10 +74,29 @@ main {
 
 /* ------------------------------------------------------------ Job card preview */
 
+.card {
+  border: 3px solid #000;
+  border-radius: 20px! important;
+}
+
+.card-header {
+  border-bottom: 3px solid #000! important;
+  border-radius: 16px 16px 0 0! important;
+}
+
 .head-with-toggle {
     display: flex;
     justify-content: flex-end;
     padding: .5rem 0.25rem;
+}
+
+.form-check-input {
+  border: 2px solid #000! important;
+}
+
+.card-footer {
+  border-top: 3px solid #000! important;
+  border-radius: 0 0 16px 16px! important;
 }
 
 /* ----------------------------------------------------------------------------------------- Full Job details page */

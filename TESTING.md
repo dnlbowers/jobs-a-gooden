@@ -84,5 +84,9 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - The pagination feature is such that the last page can only exist if there is more items than the set "paginate_by" value. removing surplus items causes the page not to exist.
 * Solution - By using javascript I checked when the relevant list nod was equal to 1 and used this to trigger a function which takes the last digit from the url and subtracts 1 before redirecting the user to the previous page.
 
+* Issue - When on page 1 and removing all the items on it a page not found error was being presented.
+* Cause - My previousPageRedirect function created in the above bug fix was changing the page to page 0 when removing all the items from page 1.
+* Solution - Added and extra conditional to this function so it wouldn't go below page 1.
+
 **Issues to fix **
 
