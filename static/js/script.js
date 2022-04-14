@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     previousPageRedirect();
                 } else {
                     $(job).hide();
-                    return window.location.reload()
+                    return window.location.reload(true)
                 }
             }
         })
@@ -126,8 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const previousPageRedirect = () => {
         let url = window.location.href;
         let page = window.location.href.substr(-1)-1;
-        let previousPage = url.slice(0, -1) + page;
-        return window.location.replace(previousPage)
+        if (page === 0) {
+            return window.location.reload(true)
+        } else {
+            page - 1;
+            let previousPage = url.slice(0, -1) + page;
+            return window.location.replace(previousPage)
+        }
+
     }
 
 //----------------------------------------------------------delete Notes related functionality
@@ -265,11 +271,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let btnTxt = acceptWarningBtnRef.innerHTML; 
             if (typeof(id) === 'string' && btnTxt === 'Unpin Job') {
                 togglePinnedJob(false, id);
-            } else if (btnTxt === 'Delete Note') {
+            } else if (btnTxt === 'Delete Entry') {
                 deleteNote(id);
                 if (insightUrlRef){
-                    if (insightItemRef.length===1){
-                        previousPageRedirect()
+                    if (insightItemRef.length === 1){
+                        previousPageRedirect();
+                        window.location.reload(true);
+                        
                     } else {
                         window.location.reload(true);
                     }
@@ -344,7 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Once deletion is confirmed this information wil be lost forever.</p>
             <p>Are you Sure you Wish to delete?</p>
         `;
-        acceptWarningBtnRef.innerHTML='Delete Note';
+        acceptWarningBtnRef.innerHTML='Delete Entry';
         
     }
 
