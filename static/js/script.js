@@ -275,9 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 deleteNote(id);
                 if (insightUrlRef){
                     if (insightItemRef.length === 1){
-                        previousPageRedirect();
-                        window.location.reload(true);
-                        
+                        previousPageRedirect();                        
                     } else {
                         window.location.reload(true);
                     }
