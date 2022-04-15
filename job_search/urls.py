@@ -15,12 +15,16 @@ urlpatterns = [
      path('fulldetails/<uuid:pk>/edit',
           views.EditJob.as_view(), name='edit_job'),
      # Pinning posts to save them
-     path('pinboard/', views.PinnedPosts.as_view(), name='pin_board'),
+     path('pinboard/', views.PinnedPosts.as_view(
+          extra_context={'title': 'Saved Jobs'}
+          ), name='pin_board'),
      path('pinned/<uuid:id>/', views.PinJob.as_view(), name='pinned_job'),
      # Notes and insights to track progress
      path('addnote/<int:pk>/fulldetails/<uuid:id>/',
           views.FullJobSpec.as_view(), name='add_note'),
-     path('insights/', views.DisplayInsights.as_view(), name='insights'),
+     path('insights/', views.DisplayInsights.as_view(
+          extra_context={'title': 'Insights'}
+          ), name='insights'),
      path('insights/add', views.AddInsight.as_view(), name='add_insight'),
      path('<id>/deletenote/', views.DeleteNote.as_view(), name='delete_note'),
      path('note/<int:pk>/edit/', views.EditNote.as_view(), name='edit_note'),

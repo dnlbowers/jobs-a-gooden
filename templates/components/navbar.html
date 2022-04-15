@@ -13,7 +13,7 @@
         </button>
 
         <!-- Navigation menu items relating to user authentication status -->
-        <ul class="nav justify-content-start collapse navbar-collapse" id="navbarNav">
+        <ul class="nav collapse navbar-collapse" id="navbarNav">
             {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link nav-padding text-cream" href="{% url 'account_logout' %}">Logout</a>

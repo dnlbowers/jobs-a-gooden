@@ -1,3 +1,4 @@
+from turtle import title
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
@@ -8,8 +9,24 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
 
+class PageTitleViewMixin:
+    title = ""
+
+    def get_title(self):
+        """
+        Return the class title attr by default,
+        but you can override this method to further customize
+        """
+        return self.title
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = self.get_title()
+        return context
+
+
 # ~ADD DOCSTRINGS
-class AddJob(SuccessMessageMixin, generic.CreateView):
+class AddJob(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):
     """
     This view is used to add a job to the database.
     """
@@ -18,6 +35,7 @@ class AddJob(SuccessMessageMixin, generic.CreateView):
     success_url = reverse_lazy('add_job')
     success_message = 'Your Job Advert has been Successfully Submitted and is'\
         ' Awaiting Admin Approval'
+    title = "Add a Job"
 
     def form_valid(self, form):
         """
@@ -30,7 +48,7 @@ class AddJob(SuccessMessageMixin, generic.CreateView):
         return redirect('add_job')
 
 
-class AddInsight(SuccessMessageMixin, generic.CreateView):
+class AddInsight(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):
     """
     This view is used to add a job to the database.
     """
@@ -38,6 +56,7 @@ class AddInsight(SuccessMessageMixin, generic.CreateView):
     template_name = 'job_search/pages/add-insight.html'
     success_url = reverse_lazy('insights')
     success_message = 'Your insight has been addned Successfully'
+    title = "Add an Insight"
 
     def form_valid(self, form):
         """
@@ -63,7 +82,7 @@ class JobList(generic.ListView):
     ).order_by('-date_posted')
 
 
-class FullJobSpec(View):
+class FullJobSpec(PageTitleViewMixin, View):
     """
     This view is used to display a full job spec, including notes/insights.
     It also display the form to create notes and insights.
@@ -92,7 +111,8 @@ class FullJobSpec(View):
                 "pinned": pinned,
                 'notes': notes,
                 'note_made': False,  # boolean to to use as conditional
-                'note_form': NoteForm()
+                'note_form': NoteForm(),
+                'title': 'Job Details',
             },
         )
 
@@ -145,7 +165,8 @@ class FullJobSpec(View):
                 "pinned": pinned,
                 'notes': notes,
                 'note_made': True,  # boolean to to use as conditional
-                'note_form': NoteForm()
+                'note_form': NoteForm(),
+                'title': 'Job Details',
             },
         )
 
@@ -255,7 +276,7 @@ class DeleteJob(View):
         return HttpResponse(200)
 
 
-class EditNote(SuccessMessageMixin, generic.UpdateView):
+class EditNote(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):
     """
     This view is used to edit a note in the database.
     directly from the job details page, and display a alert as feedback
@@ -266,6 +287,7 @@ class EditNote(SuccessMessageMixin, generic.UpdateView):
     fields = ['short_description', 'note', 'is_insight']
     success_url = "/fulldetails/{related_job_id}"
     success_message = 'Note Successfully Updated'
+    title = 'Edit Note'
 
     def get_form_class(self):
         """
@@ -274,7 +296,7 @@ class EditNote(SuccessMessageMixin, generic.UpdateView):
         return NoteForm
 
 
-class EditInsight(SuccessMessageMixin, generic.UpdateView):
+class EditInsight(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):
     """
     This view is used to edit a note marked as an insight in the database.
     directly from the insights page, and display a alert as feedback
@@ -284,6 +306,7 @@ class EditInsight(SuccessMessageMixin, generic.UpdateView):
     fields = ['short_description', 'note', 'is_insight']
     success_url = '/insights'
     success_message = 'Insight Successfully Updated'
+    title = 'Edit Insight'
 
     def get_form_class(self):
         """
@@ -292,7 +315,7 @@ class EditInsight(SuccessMessageMixin, generic.UpdateView):
         return NoteForm
 
 
-class EditJob(SuccessMessageMixin, generic.UpdateView):
+class EditJob(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):
     """
     This view is used to edit a job in the database,
     and displays an alert as feedback
@@ -302,6 +325,7 @@ class EditJob(SuccessMessageMixin, generic.UpdateView):
     success_url = '../{id}'
     fields = '__all__'
     success_message = 'Job Successfully Updated'
+    title = 'Edit Job'
 
     def get_form_class(self):
         """
