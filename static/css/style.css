@@ -23,6 +23,10 @@
     background-color: #fdfd96;
 }
 
+.page-background {
+    background-color: #e4b67c;
+}
+
 .display-none {
   display: none;
 }
@@ -76,9 +80,8 @@
 /* ------------------------------------------------------------ Main content styling (general) */
 
 main {
-    background-color: #e4b67c;
+  min-height: 80vh;
 }
-
 /* ------------------------------------------------------------ Add job form */
 
 .form-container {
@@ -217,7 +220,7 @@ main {
   right: 30px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
+  border-color: transparent transparent transparent #000;
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -231,7 +234,7 @@ main {
   left: 30px;
   border: medium solid white;
   border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
+  border-color: transparent #000 transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -240,7 +243,8 @@ main {
 }
 
 /* The actual content */
-.content {
+.insight-content {
+  border: 2px solid #000;
   padding: 20px 30px;
   background-color: white;
   position: relative;
@@ -305,7 +309,7 @@ footer {
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    border-color: transparent #000 transparent transparent;
     }
   
     /* Make sure all circles are at the same spot */
