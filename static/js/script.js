@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 if(jobPreviewRef.length === 1) {
                     previousPageRedirect();
+                     return window.location.reload(true);
                 } else {
                     $(job).hide();
                     return window.location.reload(true)
@@ -123,18 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
      * before redirecting the user to the previous page
      */
     const previousPageRedirect = () => {
+        
         let page = window.location.href.substr(-1)-1;
         console.log(page)
         console.log(typeof(page))
-        if (page === 0 || isNaN(page)) {
-            console.log(page + "is here")
-            return window.location.reload(true)
-        } else {
-            page - 1;
-            let previousPage = url.slice(0, -1) + page;
-            return window.location.replace(previousPage)
+        if (!isNaN(page)) {
+            if (page != 0){
+                console.log('eh?')
+                page - 1;
+                let previousPage = window.location.href.slice(0, -1) + page;
+                return window.location.replace(previousPage)
+            }
         }
-
     }
 
 //----------------------------------------------------------delete Notes related functionality

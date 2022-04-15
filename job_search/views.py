@@ -63,6 +63,7 @@ class AddInsight(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):
         add job page.
         """
         form.instance.user = self.request.user
+        form.instance.is_insight = self.request.is_insight = True
         super(AddInsight, self).form_valid(form)
         return redirect('insights')
 

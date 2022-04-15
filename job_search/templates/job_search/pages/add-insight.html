@@ -7,18 +7,16 @@
             <form method="post">
                 {% csrf_token %}
                 {% load widget_tweaks %}
-                {% for field in form %}
-                    <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
-                        {{ field.errors }}
-                        
-                        {% if field == form.is_insight %}
-                                {% render_field field|append_attr:"checked:checked" type="checkbox" class="d-none" %}
-                        {% else %}
-                            {{ field.label_tag }}
-                            {% render_field field class="form-control" %}
-                        {% endif %}
-                    </div>                        
-                {% endfor %}
+                
+                <div class="form-group {% if form.errors %} alert alert-danger {% endif %}">
+                    {{ form.errors }}
+                    {{ form.short_description.label_tag }}
+                    {% render_field form.short_description class="form-control" %}
+                    {{ form.note.label_tag }}
+                    {% render_field form.note class="form-control" %}
+                    
+                </div>                        
+                
                 <button type="submit" class="btn btn-primary btn-lg">Submit</button>
             </form>
         </div>
