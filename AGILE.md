@@ -64,8 +64,15 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 * Burn down chart was looking good until PJG-49 where I got stuck understanding how to utilize messages in django. I started to make progress when the sprint concluded mid task. This will be come the first task of the next sprint to complete the JS to close the alerts, and implement models.
 ![Eighth sprint screenshot](docs/agile/sprint-screenshots/sprint8.JPG)
 
-## Sprint 8 notes: 
+## Sprint 9 notes: 
 * 60% of the story points was more or less all of the stories due to the last item in the sprint which was the final over hall of the front end design.
 * This sprint is aiming to conclude with all functionality in tact (or conclude very near to it).
 * I will be noting down design thoughts and ideas as I go to implement later during PJG-53.
+* sprint finished part way through PJG-53, This story will be past into the next sprint.
 ![Ninth sprint screenshot](docs/agile/sprint-screenshots/sprint9.JPG)
+
+## Sprint 10 notes: 
+* There are slightly more than 60% of story point as must haves because I need to ensure the bugs which cannot be considered features are solved.
+* This sprint is aimed at having the site ready in production so it is ready for release. There is much more I would like to have done however as in the real world there are deadlines, this project to is running out of time before submission. I am treating this as the first release and will continue to improve as we go.
+
+![Tenth sprint screenshot](docs/agile/sprint-screenshots/sprint10.JPG)

@@ -1,5 +1,7 @@
 
 ## Bugs and Fixes During the Development Process
+Below are a list of bugs and fixes found during the process of creating a feature. Further bugs can be found in JIRA as bug tickets. The Jira tickets are bugs found after the iteration including this feature was concluded because during the feature creation the bugs were missed completely.
+
 * Issue - On the epic  called "initial deployment"  the final user story was to deploy to heroku. When deploying I was getting an application error 
 when loading the app on heroku.
 * Cause - Checking the logs via the heroku console I could see it was having issues when looking my .env file. This was purposely not a tracked file 

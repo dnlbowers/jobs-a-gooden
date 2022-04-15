@@ -1,4 +1,3 @@
-from turtle import title
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
@@ -9,13 +8,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
 
+# Taken https://www.djangoforge.dev/guides/page-titles/
 class PageTitleViewMixin:
     title = ""
 
     def get_title(self):
         """
-        Return the class title attr by default,
-        but you can override this method to further customize
+        Return the class title attr by default
         """
         return self.title
 
@@ -25,7 +24,6 @@ class PageTitleViewMixin:
         return context
 
 
-# ~ADD DOCSTRINGS
 class AddJob(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):
     """
     This view is used to add a job to the database.

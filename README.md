@@ -121,6 +121,7 @@ Make a section in the features with screenshots vut reference this here.
 * As a **Site User** I can...
     * ...**See alerts upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful or if an error occurred.**
     * ...**See appealing colors and uniform style themes** so that **every page and part of the process stimulates a positive response.**
+    * ...**Access the site from any size screen and still have a pleasant experience on the site** so that **I am not restricted to which devices I can use on the site**
   
 ### User Stories dropped as part of the agile process
 * As a **Registered User** I can **create a profile** so that **I can save key details relevant to my job search.**
@@ -170,6 +171,7 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme from the jaguar image
 * [W3cschool](https://www.w3schools.com/howto/howto_css_timeline.asp) was used to source the majority of the code used to create a timeline in CSS for the insights page. Minor styling adjustments were made and the HTML was adapted to include a Jinja for loop to display the relevant data without code repetition.
 * [CSEStack](https://www.csestack.org/display-messages-form-submit-django/) to research using messages upon form submission.
+* The PageTitleViewMixin was taken from [djangoforge.com](https://www.djangoforge.dev/guides/page-titles/)
 * Multiple videos sourced from youtube were used to research a variety of topics:
     * [Programming with Mosh Python Django Tutorial for Beginners](https://youtu.be/rHux0gMZ3Eg)
     * [Django forms with Ajax | How to use ajax with django](https://youtu.be/C4fr3SCqgJQ)
