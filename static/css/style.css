@@ -68,6 +68,11 @@
     font-size: 2em;
 }
 
+.hero-container {
+  overflow: hidden;
+  position: relative;
+}
+
 /* ------------------------------------------------------------ Main content styling (general) */
 
 main {
