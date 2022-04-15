@@ -90,5 +90,9 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - My previousPageRedirect function created in the above bug fix was changing the page to page 0 when removing all the items from page 1.
 * Solution - Added and extra conditional to this function so it wouldn't go below page 1.
 
+* Issue - While testing the solution of bug fix ticket PJG-55, I found that when deleting insights from the insights page they were not disappearing when the page refreshed.
+* Cause - The delete note function was not applicable for the DOM on the insight page, so although the insight was removed from the database the item was still visible from the insights page.
+* Solution - Creating a separate function similar to deleteNote for deleteInsight allowed me to traverse the DOM and remove elements from the time line at the time of deletion.
+
 **Issues to fix **
 

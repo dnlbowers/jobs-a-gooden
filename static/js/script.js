@@ -6,11 +6,12 @@ const acceptWarningRef = document.querySelector('.accept-warning');
 const warnModalBodyRef = document.getElementById('warning-message');
 const acceptWarningBtnRef = document.querySelector('.accept-warning');
 
-// Note related element references
+// Note/insight related element references
 const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
 const noteItemRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion');
 const insightItemRef = document.querySelectorAll('.insight-container');
+const insightTimelineRef = document.getElementById('timeline')
 
 // Job related element references
 const jobPreviewRef = document.querySelectorAll(".job-preview");
@@ -85,9 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } else if (data == 200) { 
                 if (status) {
-                    $('#notes-section').show(); //.animate({width: 'toggle'}, {duration: 1000});
+                    $('#notes-section').show();
                 } else {
-                    $('#notes-section').hide(); //.animate({width: 'toggle'}, {duration: 1000});
+                    $('#notes-section').hide();
                 } 
             }
             console.log(data); 
@@ -122,9 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
      * before redirecting the user to the previous page
      */
     const previousPageRedirect = () => {
-        let url = window.location.href;
         let page = window.location.href.substr(-1)-1;
-        if (page === 0) {
+        console.log(page)
+        console.log(typeof(page))
+        if (page === 0 || isNaN(page)) {
+            console.log(page + "is here")
             return window.location.reload(true)
         } else {
             page - 1;
@@ -151,7 +154,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             console.log("data", data);
             if (data == 200) {
-                removeNote(noteId);
+                if (fullSpecUrlRef) {
+                    removeNote(noteId);
+                } else if (insightUrlRef) {
+                    removeInsight(noteId);
+                }    
             }
 
         })
@@ -169,7 +176,17 @@ document.addEventListener("DOMContentLoaded", () => {
             let noteSection = note.getAttribute('data-note-item')
             
             if (noteSection === noteId) {
-                notesAccordionRef.removeChild(note)
+                notesAccordionRef.removeChild(note);
+            }
+        })
+    }
+
+    const removeInsight = (noteId) => {
+        insightItemRef.forEach(insight => {
+            let insightSection = insight.getAttribute('data-insight-item')
+
+            if (insightSection === noteId) {
+                insightTimelineRef.removeChild(insight);
             }
         })
     }
@@ -273,11 +290,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 deleteNote(id);
                 if (insightUrlRef){
                     if (insightItemRef.length === 1){
-                        previousPageRedirect();                        
-                    } else {
-                        window.location.reload(true);
-                    }
-                    
+                        previousPageRedirect();
+                    }                        
                 }
             } else if (btnTxt === 'Delete Job') {
                 deleteJob(id);
