@@ -1,12 +1,20 @@
 {% if messages %}
 {% for message in messages %}
     <div class="container-fluid p-0">
-        <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+        <div id="msg" class="alert {{ message.tags }} alert-dismissible" role="alert" >
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
             <span aria-hidden="true"></span>
             </button>
             {{ message }}
         </div>
     </div>
+    <!-- custom script to close bootstap alerts after a small period of time taken from CI blog project -->
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+    </script>
 {% endfor %}
 {% endif %}
