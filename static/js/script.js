@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 if(jobPreviewRef.length === 1) {
                     previousPageRedirect();
-                     return window.location.reload(true);
+                    return window.location.reload(true);
                 } else {
                     $(job).hide();
                     return window.location.reload(true)
@@ -126,8 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const previousPageRedirect = () => {
         
         let page = window.location.href.substr(-1)-1;
-        console.log(page)
-        console.log(typeof(page))
         if (!isNaN(page)) {
             if (page != 0){
                 console.log('eh?')
@@ -182,6 +180,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    /**
+     * Loops through the insights timeline and when the data attribute id
+     * matches the noteId parameter the relevant child containing the insight
+     * is removed
+     */
     const removeInsight = (noteId) => {
         insightItemRef.forEach(insight => {
             let insightSection = insight.getAttribute('data-insight-item')
@@ -378,6 +381,5 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Are you Sure you Wish to delete?</p>
     `;
     acceptWarningBtnRef.innerHTML='Delete Job';
-
     }
 });
