@@ -24,24 +24,5 @@
         {% include "../components/warning-modal.html" %}
     </main>
 
-    <!-- Pagination taken from CI blog walkthroguh with additions from Django docs-->
-    {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li><a href="?page=1" class="page-link">&#60;&#60;</a></li>
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&#60; Prev </a></li>
-                {% endif %}
-                
-                <li class="current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                </li>
-
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next &#62;</a></li>
-                <li><a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">&#62;&#62;</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    {% endif %}
+    {% include "../components/pagination.html" %}
 {% endblock %}

@@ -41,6 +41,10 @@
   border-bottom: 3px solid #000!important;
 }
 
+.border-top {
+  border-top: 3px solid #000!important;
+}
+
 
 /* ------------------------------------------------------------ Header/Navbar */
 
@@ -234,6 +238,19 @@ main {
     border-radius: 6px;
   }
 
+/* ------------------------------------------------------------ Pagination bar */
+
+.pagination {
+  margin-bottom: 0!important;
+  padding: 5px 0;
+}
+
+.current {
+  align-items: center;
+  border: 1px solid #dee2e6;
+  display: flex;
+  padding: 6px;
+}
 
 /* ------------------------------------------------------------ Footer */
 
@@ -244,6 +261,7 @@ footer {
 .social-media {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 0;
 }
 
 .social-media-icon {

@@ -1,0 +1,20 @@
+    <!-- Pagination taken from CI blog walkthroguh with additions from Django docs-->
+    {% if is_paginated %}
+    <nav class="bg-brown border-top" aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page=1" class="page-link bg-brown">&#60;&#60;</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link bg-brown">&#60; Prev </a></li>
+            {% endif %}
+            
+            <li class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </li>
+
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link bg-brown"> Next &#62;</a></li>
+            <li><a href="?page={{ page_obj.paginator.num_pages }}" class="page-link bg-brown">&#62;&#62;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
