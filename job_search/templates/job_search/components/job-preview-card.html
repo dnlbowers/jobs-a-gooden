@@ -30,7 +30,7 @@
             {% endif %}
         </div>
     </section>
-    <div class="text-center card-footer bg-brown">
+    <div class="text-center card-footer bg-brown border-top">
         <p>Job Closing date - {{ job.date_expired }}</p>
         {% if user.is_staff %}
             <a href="{% url 'edit_job' job.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>

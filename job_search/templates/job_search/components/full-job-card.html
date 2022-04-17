@@ -8,6 +8,11 @@
     </header>
 
     <div class="card-body">
+        {% if pinned %}
+            <div id="note-shortcut" class="text-center line-break-bottom">
+                <a href="#notes-section" class="btn btn-warning">To Notes Section</a>
+            </div>
+        {% endif %}
         <!-- Conditionals to account for some companies would not disclose a renumeration package -->
         {% if job.max_salary != null and job.min_salary != null%}
         <p class="card-text">
@@ -25,19 +30,22 @@
         <p class="card-text">No Salary information disclosed</p>
         {% endif %}
 
-        <section>
+        <article>
             <h3>Full Details</h3>
             <p>{{ job.job_description|safe }}</p>
-        </section>
-        {% if user.is_authenticated %}
-            <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to all jobs</a>
-            <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
-        {% else %}
-            <a href="" class="btn btn-secondary disabled">Back to all jobs</a>
-            <a href="" class="btn btn-success disabled">Log in to apply</a>
-        {% endif %}
+        
+        <div class="text-center">    
+            {% if user.is_authenticated %}
+                <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to all jobs</a>
+                <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
+            {% else %}
+                <a href="" class="btn btn-secondary disabled">Back to all jobs</a>
+                <a href="" class="btn btn-success disabled">Log in to apply</a>
+            {% endif %}
+        </div>
+        </article>
     </div>
-    <div class="text-center card-footer bg-brown">
+    <div class="text-center card-footer bg-brown border-top">
         {% if user.is_staff %}
         {% csrf_token %}
             <p>Job Closing date - {{ job.date_expired }} </p>

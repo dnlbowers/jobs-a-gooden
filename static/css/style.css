@@ -133,7 +133,6 @@ main {
 }
 
 .card-footer {
-  border-top: 3px solid #000! important;
   border-radius: 0 0 16px 16px! important;
 }
 
@@ -165,6 +164,13 @@ main {
 .accordion-button:not(.collapsed) {
     color: #e4b67c;
     background-color: #603f3f;
+}
+
+.accordion-item:last-of-type,
+.accordion-collapse,
+.accordion-button.collapsed  {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 /* ------------------------------------------------------------ insights */
@@ -369,3 +375,9 @@ footer {
     left: 0%;
     }
   }
+
+@media screen and (min-width: 768px) {
+    #note-shortcut {
+        display: none;
+    }
+}

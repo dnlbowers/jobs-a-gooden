@@ -86,10 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } else if (data == 200) { 
                 if (status) {
-                    $('#notes-section').show();
-                } else {
-                    $('#notes-section').hide();
                     if(fullSpecUrlRef) {
+                        $('#notes-section').show();
+                        return window.location.reload(true);
+                    }
+                } else {
+                    if(fullSpecUrlRef) {
+                        $('#notes-section').hide();
                         return window.location.reload(true);
                     }
                 } 
