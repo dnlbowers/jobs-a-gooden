@@ -3,6 +3,11 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 
 
+class DateInput(forms.DateInput):
+    """ Date input for job expiry date field"""
+    input_type = 'date'
+
+
 class NoteForm(forms.ModelForm):
     class Meta:
         model = Notes
@@ -13,6 +18,11 @@ class NoteForm(forms.ModelForm):
 
 
 class AddJobForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(AddJobForm, self).__init__(*args, **kwargs)
+        self.fields['job_url'].initial = 'https://'
+
     class Meta:
         model = Job
         fields = [
@@ -24,8 +34,10 @@ class AddJobForm(forms.ModelForm):
             'date_expired',
             'job_description',
             'job_url',
-            'status'
+            'status',
         ]
+
         widgets = {
             'job_description': SummernoteWidget(),
+            'date_expired': DateInput(attrs={'class': 'form-field'}),
         }

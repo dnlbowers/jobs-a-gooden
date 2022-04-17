@@ -59,7 +59,7 @@ class Notes(models.Model):
         null=False
         )
     note = models.TextField()
-    date_created = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateField(auto_now_add=True)
     is_insight = models.BooleanField(default=False)
 
     class Meta:

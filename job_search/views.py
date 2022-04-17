@@ -41,7 +41,7 @@ class AddJob(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):
         Successful form submission will redirect the user back to the
         add job page.
         """
-        form.instance.user = self.request.user
+
         super(AddJob, self).form_valid(form)
         return redirect('add_job')
 
