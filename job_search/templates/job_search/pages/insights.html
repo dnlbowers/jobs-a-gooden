@@ -1,11 +1,16 @@
 {% extends 'layout/base.html' %}
 {% block content %}
-        
-    <main>
-        {% include '../components/messages.html' %}
-        <h1 class="text-center">Review your past insights</h1>
 
-        <div class="text-center">
+    <div>
+        {% include "../layout/insights-hero.html" %}
+    </div>    
+    <main>
+        <div class="text-center bg-brown p-1 border-bottom border-top line-break-bottom">
+            <h1>Jobs Pinboard</h1>
+        </div>
+        {% include '../components/messages.html' %}
+
+        <div class="text-center line-break-bottom">
             <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i>Add insight</a>
         </div>
         <div id="timeline">

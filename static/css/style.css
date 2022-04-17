@@ -10,6 +10,10 @@ body {
 
 /* ------------------------------------------------------------ General text styling */
 
+.line-break-bottom {
+  margin-bottom: 1rem;
+}
+
 .text-cream {
     color:#fffdd0
 }
@@ -76,9 +80,15 @@ body {
     font-size: 2em;
 }
 
+/* ------------------------------------------------------------ Hero image styling */
+
 .hero-container {
   overflow: hidden;
   position: relative;
+}
+
+.hero-image{
+  max-height: 600px;
 }
 
 /* ------------------------------------------------------------ Main content styling (general) */
@@ -86,6 +96,7 @@ body {
 main {
   min-height: 80vh;
 }
+
 /* ------------------------------------------------------------ Add job form */
 
 .form-container {
@@ -165,21 +176,22 @@ main {
 
 /* The actual timeline (the vertical ruler) */
 #timeline {
-    position: relative;
-    max-width: 1200px;
     margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
   }
   
 /* The actual timeline (the vertical ruler) */
 #timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
   background-color: white;
-  top: 0;
+  border: 1px solid #000;
   bottom: 0;
+  content: '';
   left: 50%;
   margin-left: -3px;
+  position: absolute;
+  width: 6px;
+  top: 0;
 }
 
 /* Container around content */
@@ -199,7 +211,7 @@ main {
   height: 25px;
   right: -12px;
   background-color: white;
-  border: 4px solid #FF9F55;
+  border: 4px solid #DE9F13;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
