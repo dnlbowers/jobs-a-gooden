@@ -187,6 +187,7 @@ class PinJob(View):
         job = Job.objects.get(id=id)
         # identify the users pinned job database table
         pinned = PinnedJobs.objects.get(user=request.user)
+        user_notes = Notes.objects.all().filter(user=request.user)
 
         if status:
             # add to manytomany list
@@ -198,6 +199,9 @@ class PinJob(View):
             pinned.pinned_jobs.remove(job)
             # remove user from is_pinned
             job.is_pinned.remove(request.user)
+            for note in user_notes:
+                if note.related_job == job and note.is_insight is False:
+                    note.delete()
 
         return HttpResponse(200)
 

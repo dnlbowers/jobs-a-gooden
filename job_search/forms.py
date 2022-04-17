@@ -34,7 +34,6 @@ class AddJobForm(forms.ModelForm):
             'date_expired',
             'job_description',
             'job_url',
-            'status',
         ]
 
         widgets = {
