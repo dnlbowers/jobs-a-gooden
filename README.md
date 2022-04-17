@@ -149,6 +149,7 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 
 ## Future development
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.
+* For reasons of data protection the admin should not see the content of the users notes via the admin panel. For not it has been left for testing purposes but in the future I will be looking to encode them so the admin can only see there is a note and note what the note says.
 * Build online community.
 * Job categories
 * Search feature

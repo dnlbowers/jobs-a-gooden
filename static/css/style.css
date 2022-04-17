@@ -22,6 +22,10 @@ body {
     text-align: center;
 }
 
+.bg-offwhite {
+    background-color: #fafafa;
+}
+
 .bg-brown {
     background-color: #603f3f;
     color: #fffdd0;
@@ -317,6 +321,7 @@ footer {
     display: flex;
     justify-content: space-around;
     margin-bottom: 0;
+    padding: 10px 0;
 }
 
 .social-media-icon {

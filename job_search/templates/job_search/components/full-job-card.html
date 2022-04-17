@@ -1,4 +1,4 @@
-<div class="card mb-4">
+<div class="card mb-4 bg-offwhite">
     <header class="card-header head-with-toggle bg-brown border-bottom">
         <div id="full-jobcard-heading">
             {% include '../layout/full-job-headings.html' %}
@@ -30,9 +30,11 @@
             <p>{{ job.job_description|safe }}</p>
         </section>
         {% if user.is_authenticated %}
-            <a href="{% url 'job_list' %}" class="btn btn-primary">Back to all jobs</a>
+            <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to all jobs</a>
+            <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
         {% else %}
-            <a href="{% url 'job_list' %}" class="btn btn-primary disabled">Back to all jobs</a>
+            <a href="" class="btn btn-secondary disabled">Back to all jobs</a>
+            <a href="" class="btn btn-success disabled">Log in to apply</a>
         {% endif %}
     </div>
     <div class="text-center card-footer bg-brown">
