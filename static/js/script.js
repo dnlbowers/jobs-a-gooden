@@ -89,6 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     $('#notes-section').show();
                 } else {
                     $('#notes-section').hide();
+                    if(fullSpecUrlRef) {
+                        return window.location.reload(true);
+                    }
                 } 
             }
             console.log(data); 
