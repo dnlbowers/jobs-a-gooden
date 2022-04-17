@@ -94,5 +94,7 @@ completely and in this case take the config vars entered on the heroku app setti
 * Cause - The delete note function was not applicable for the DOM on the insight page, so although the insight was removed from the database the item was still visible from the insights page.
 * Solution - Creating a separate function similar to deleteNote for deleteInsight allowed me to traverse the DOM and remove elements from the time line at the time of deletion.
 
-**Issues to fix **
+* Issue - When registering with an email a 500 error was being displayed.
+* Cause - I was missing several settings for all auth in my setting.py
+* Solution - Once I added the additional settings required to handle an email on sign up the issue was resolved.
 
