@@ -305,7 +305,7 @@ class EditInsight(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):
     directly from the insights page, and display a alert as feedback
     """
     model = Notes
-    template_name = 'job_search/pages/edit-insight.html'
+    template_name = 'job_search/pages/add-insight.html'
     fields = ['short_description', 'note', 'is_insight']
     success_url = '/insights'
     success_message = 'Insight Successfully Updated'
@@ -316,6 +316,17 @@ class EditInsight(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):
         Gets the form class for the edit insight view.
         """
         return NoteForm
+
+    def form_valid(self, form):
+        """
+        This method is called when valid form data has been posted.
+        Successful form submission will redirect the user back to the
+        add job page.
+        """
+        form.instance.user = self.request.user
+        form.instance.is_insight = self.request.is_insight = True
+        super(EditInsight, self).form_valid(form)
+        return redirect('insights')
 
 
 class EditJob(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):

@@ -2,7 +2,7 @@
 {% block content %}
 
     <main>    
-        <h1 class="text-center">Create an insight</h1>
+        <h1 class="text-center">{% if title == 'Add an Insight' %} Create an insight {% elif title == 'Edit Insight'%} Edit your insight {% endif %}</h1>
         <div class="container form-container">
             <form method="post">
                 {% csrf_token %}
