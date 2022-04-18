@@ -13,15 +13,8 @@
         <p class="card-text"> {{ job.location }} </p>
 
         <!-- Conditionals to account for some companies would not disclose a renumeration package -->
-        {% if job.max_salary != null and job.min_salary != null%}
-            <p class="card-text">{{ job.min_salary }} - {{ job.max_salary }} ({{ job.currency }})</p>
-        {% elif job.min_salary == null and job.max_salary != null %}
-            <p class="card-text">{{ job.max_salary }} ({{ job.currency }})</p>
-        {% elif job.min_salary != null and job.max_salary == null %} 
-            <p class="card-text">{{ job.min_salary }} ({{ job.currency }})</p>  
-        {% else %}
-            <p class="card-text">No Salary information disclosed</p>
-        {% endif %}
+        {% include '../components/salary-info.html' %}
+        
         <div class="text-center">
             {% if user.is_authenticated %}
                 <a href="{% url 'job_details' job.id %}" class="btn btn-warning">Full details</a>
