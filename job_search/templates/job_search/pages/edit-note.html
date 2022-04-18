@@ -3,25 +3,29 @@
 
     <main>    
         <h1 class="text-center">Edit your note or insight</h1>
-        <div class="container form-container">
-            <form method="post">
-                {% csrf_token %}
-                {% load widget_tweaks %}
-                {% for field in form %}
-                    <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
-                        {{ field.errors }}
-                        {{ field.label_tag }}
-                        {% if field == form.is_insight %}
-                            {% render_field field %}
-                        {% else %}
-                            {% render_field field class="form-control" %}
-                        {% endif %}
-                    </div>                        
-                {% endfor %}
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        <div class="container">
+            <div class="surround mb-3">
+                <div class="form-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load widget_tweaks %}
+                        {% for field in form %}
+                            <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                                {{ field.errors }}
+                                {{ field.label_tag }}
+                                {% if field == form.is_insight %}
+                                    {% render_field field %}
+                                {% else %}
+                                    {% render_field field class="form-control" %}
+                                {% endif %}
+                            </div>                        
+                        {% endfor %}
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </main>
 {% endblock %}

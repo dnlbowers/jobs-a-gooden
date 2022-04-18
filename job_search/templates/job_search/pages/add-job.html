@@ -4,23 +4,26 @@
     <main>    
         <h1 class="text-center">Add a Job Post.</h1>
         {% include '../components/messages.html' %}
-        <div class="container form-container">
-            <form method="post">
-                {% csrf_token %}
-                {% load widget_tweaks %}
-                {% for field in form %}
-                <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
-                    {{ field.errors }}
-                    {{ field.label_tag }}
-                    {% render_field field class="form-control" %}
+        <div class="container">
+            <div class="surround mb-3">
+                <div class="form-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load widget_tweaks %}
+                        {% for field in form %}
+                        <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                            {{ field.errors }}
+                            {{ field.label_tag }}
+                            {% render_field field class="form-control" %}
+                        </div>
+                        {% endfor %}
+                        <div class="mt-3 text-center">
+                            <a href="{% url 'job_list' %}" class="btn btn-secondary btn-lg">Cancel</i></a>
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                {% endfor %}
-                <div class="mt-3 text-center">
-                    <a href="{% url 'job_list' %}" class="btn btn-secondary btn-lg">Back to jobs</i></a>
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </div>
-                
-            </form>
+            </div>
         </div>
     </main>
 {% endblock %}

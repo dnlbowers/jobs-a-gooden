@@ -3,24 +3,28 @@
 
     <main>    
         <h1 class="text-center">{% if title == 'Add an Insight' %} Create an insight {% elif title == 'Edit Insight'%} Edit your Insight {% endif %}</h1>
-        <div class="container form-container">
-            <form method="post">
-                {% csrf_token %}
-                {% load widget_tweaks %}
-                
-                <div class="form-group {% if form.errors %} alert alert-danger {% endif %}">
-                    {{ form.errors }}
-                    {{ form.short_description.label_tag }}
-                    {% render_field form.short_description class="form-control" %}
-                    {{ form.note.label_tag }}
-                    {% render_field form.note class="form-control" %}
-                    
-                </div>                        
-                <div class="text-center">
-                    <a href="{% url 'insights' %}" class="btn btn-secondary btn-lg">Back to Insights</i></a>
-                    <button type="submit" class="btn btn-primary btn-lg">{% if title == 'Add an Insight' %} Create {% elif title == 'Edit Insight'%} Save {% endif %}</button>
-                </div>
-            </form>
+        <div class="container">
+            <div class="surround mb-3">
+                <div class="form-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load widget_tweaks %}
+                        
+                        <div class="form-group {% if form.errors %} alert alert-danger {% endif %}">
+                            {{ form.errors }}
+                            {{ form.short_description.label_tag }}
+                            {% render_field form.short_description class="form-control" %}
+                            {{ form.note.label_tag }}
+                            {% render_field form.note class="form-control" %}
+                            
+                        </div>                        
+                        <div class="text-center">
+                            <a href="{% url 'insights' %}" class="btn btn-secondary btn-lg">Cancel</i></a>
+                            <button type="submit" class="btn btn-primary btn-lg">{% if title == 'Add an Insight' %} Create {% elif title == 'Edit Insight'%} Save {% endif %}</button>
+                        </div>
+                    </form>
+            </div>
         </div>
+    </div>
     </main>
 {% endblock %}

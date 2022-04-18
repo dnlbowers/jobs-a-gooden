@@ -107,9 +107,8 @@ main {
 .form-container {
     background-color: #efefef;
     border: 2px solid #000;
-    border-radius: 20px;
-    margin: 1rem auto;
-    /* max-width: 400px; */
+    border-radius: 13px;
+    margin: 0 auto;
     padding: 1rem;
 }
 
