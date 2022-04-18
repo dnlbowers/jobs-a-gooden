@@ -289,7 +289,7 @@ class EditNote(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):
     template_name = 'job_search/pages/edit-note.html'
     fields = ['short_description', 'note', 'is_insight']
     success_url = "/fulldetails/{related_job_id}"
-    success_message = 'Note Successfully Updated'
+    success_message = 'Note/Insight Successfully Updated'
     title = 'Edit Note'
 
     def get_form_class(self):

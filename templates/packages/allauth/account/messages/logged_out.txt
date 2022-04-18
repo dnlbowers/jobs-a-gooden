@@ -1,2 +1,2 @@
-{% load i18n %}
-{% blocktrans %}You have signed out.{% endblocktrans %}
+{% comment %} {% load i18n %}
+{% blocktrans %}You have signed out.{% endblocktrans %} {% endcomment %}
