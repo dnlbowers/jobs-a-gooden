@@ -5,12 +5,12 @@
         {% include "../layout/insights-hero.html" %}
     </div>    
     <main>
-        <div class="text-center bg-brown p-1 border-bottom border-top line-break-bottom">
+        <div class="text-center bg-brown p-1 border-bottom border-top mb-3">
             <h1>Insights</h1>
         </div>
         {% include '../components/messages.html' %}
 
-        <div class="text-center line-break-bottom">
+        <div class="text-center mb-3">
             <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i>Add insight</a>
         </div>
         <div id="timeline">
