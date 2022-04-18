@@ -125,8 +125,6 @@ main {
 }
 
 .head-with-toggle {
-    display: flex;
-    justify-content: flex-end;
     padding: .5rem 0.25rem;
 }
 

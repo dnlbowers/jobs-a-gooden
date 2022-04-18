@@ -1,11 +1,14 @@
 <div class="surround mb-4">
     <article class="card bg-offwhite">
         <header class="card-header head-with-toggle bg-brown border-bottom">
+            <div class="d-flex justify-content-end">
+                <!-- pin job toggle active when logged in -->
+                {% include '../components/pin-toggle.html' %} 
+            </div>
             <div id="full-jobcard-heading">
                 {% include '../layout/full-job-headings.html' %}
             </div>
-            <!-- pin job toggle active when logged in -->
-            {% include '../components/pin-toggle.html' %} 
+            
         </header>
 
         <div class="card-body">
@@ -23,10 +26,10 @@
             
                 <div class="text-center">    
                     {% if user.is_authenticated %}
-                        <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to all jobs</a>
+                        <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to jobs</a>
                         <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
                     {% else %}
-                        <a href="" class="btn btn-secondary disabled">Back to all jobs</a>
+                        <a href="" class="btn btn-secondary disabled">Back to jobs</a>
                         <a href="" class="btn btn-success disabled">Log in to apply</a>
                     {% endif %}
                 </div>
