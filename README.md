@@ -168,16 +168,14 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
 * Flow charts made using [draw.io](https://app.diagrams.net/)
-* Jaguar cartoon image from [https://favpng.com](https://favpng.com/png_view/jaguar-jaguar-clip-art-vector-graphics-cartoon-illustration-png/yF62hEBm)
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme from the jaguar image
 * [W3cschool](https://www.w3schools.com/howto/howto_css_timeline.asp) was used to source the majority of the code used to create a timeline in CSS for the insights page. Minor styling adjustments were made and the HTML was adapted to include a Jinja for loop to display the relevant data without code repetition.
 * [CSEStack](https://www.csestack.org/display-messages-form-submit-django/) to research using messages upon form submission.
 * The PageTitleViewMixin was taken from [djangoforge.com](https://www.djangoforge.dev/guides/page-titles/)
 * The golden gradient color scheme - [brandgradients.com](http://www.brandgradients.com/gold-gradient).
 * Images:
-  * Open positions hero image taken from [upsplash.com](https://unsplash.com/photos/oqStl2L5oxI) 
-  * Pinboard hero image taken from [upsplash.com](https://unsplash.com/photos/5aiRb5f464A)
-  * insights hero image taken from [upsplash.com](https://unsplash.com/photos/82TpEld0_e4)
+  * Hero images taken from [upsplash.com](https://unsplash.com) 
+  * Jaguar cartoon image from [https://favpng.com](https://favpng.com/png_view/jaguar-jaguar-clip-art-vector-graphics-cartoon-illustration-png/yF62hEBm)
 * Multiple videos sourced from youtube were used to research a variety of topics:
     * [Programming with Mosh Python Django Tutorial for Beginners](https://youtu.be/rHux0gMZ3Eg)
     * [Django forms with Ajax | How to use ajax with django](https://youtu.be/C4fr3SCqgJQ)

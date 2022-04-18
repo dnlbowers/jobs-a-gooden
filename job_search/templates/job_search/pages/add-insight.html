@@ -1,8 +1,12 @@
 {% extends 'layout/base.html' %}
 {% block content %}
-
-    <main>    
-        <h1 class="text-center">{% if title == 'Add an Insight' %} Create an insight {% elif title == 'Edit Insight'%} Edit your Insight {% endif %}</h1>
+    <div>
+        {% include "../layout/add-insights-hero.html" %}
+    </div> 
+    <main>
+        <div class="text-center bg-brown p-1 border-bottom border-top mb-3">    
+            <h1 class="text-center">{% if title == 'Add an Insight' %} Create an insight {% elif title == 'Edit Insight'%} Edit your Insight {% endif %}</h1>
+        </div>
         <div class="container">
             <div class="surround mb-3">
                 <div class="form-container">
