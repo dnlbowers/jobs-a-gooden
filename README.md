@@ -173,6 +173,7 @@ For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/pro
 * [W3cschool](https://www.w3schools.com/howto/howto_css_timeline.asp) was used to source the majority of the code used to create a timeline in CSS for the insights page. Minor styling adjustments were made and the HTML was adapted to include a Jinja for loop to display the relevant data without code repetition.
 * [CSEStack](https://www.csestack.org/display-messages-form-submit-django/) to research using messages upon form submission.
 * The PageTitleViewMixin was taken from [djangoforge.com](https://www.djangoforge.dev/guides/page-titles/)
+* The golden gradient color scheme - [brandgradients.com](http://www.brandgradients.com/gold-gradient).
 * Images:
   * Open positions hero image taken from [upsplash.com](https://unsplash.com/photos/oqStl2L5oxI) 
   * Pinboard hero image taken from [upsplash.com](https://unsplash.com/photos/5aiRb5f464A)

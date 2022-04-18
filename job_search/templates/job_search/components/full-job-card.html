@@ -1,42 +1,44 @@
-<div class="card mb-4 bg-offwhite">
-    <header class="card-header head-with-toggle bg-brown border-bottom">
-        <div id="full-jobcard-heading">
-            {% include '../layout/full-job-headings.html' %}
-        </div>
-        <!-- pin job toggle active when logged in -->
-        {% include '../components/pin-toggle.html' %} 
-    </header>
-
-    <div class="card-body">
-        {% if pinned %}
-            <div id="note-shortcut" class="text-center mb-3">
-                <a href="#notes-section" class="btn btn-warning">To Notes Section</a>
+<div class="surround mb-4">
+    <article class="card bg-offwhite">
+        <header class="card-header head-with-toggle bg-brown border-bottom">
+            <div id="full-jobcard-heading">
+                {% include '../layout/full-job-headings.html' %}
             </div>
-        {% endif %}
-        <!-- Conditionals to account for some companies would not disclose a renumeration package -->
-        {% include '../components/salary-info.html' %}
+            <!-- pin job toggle active when logged in -->
+            {% include '../components/pin-toggle.html' %} 
+        </header>
 
-        <article>
-            <h3>Full Details</h3>
-            <p>{{ job.job_description|safe }}</p>
-        
-        <div class="text-center">    
-            {% if user.is_authenticated %}
-                <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to all jobs</a>
-                <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
-            {% else %}
-                <a href="" class="btn btn-secondary disabled">Back to all jobs</a>
-                <a href="" class="btn btn-success disabled">Log in to apply</a>
+        <div class="card-body">
+            {% if pinned %}
+                <div id="note-shortcut" class="text-center mb-3">
+                    <a href="#notes-section" class="btn btn-warning">To Notes Section</a>
+                </div>
+            {% endif %}
+            <!-- Conditionals to account for some companies would not disclose a renumeration package -->
+            {% include '../components/salary-info.html' %}
+
+            <section>
+                <h3>Full Details</h3>
+                <p>{{ job.job_description|safe }}</p>
+            
+                <div class="text-center">    
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to all jobs</a>
+                        <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
+                    {% else %}
+                        <a href="" class="btn btn-secondary disabled">Back to all jobs</a>
+                        <a href="" class="btn btn-success disabled">Log in to apply</a>
+                    {% endif %}
+                </div>
+            </section>
+        </div>
+        <div class="text-center card-footer bg-brown border-top">
+            {% if user.is_staff %}
+            {% csrf_token %}
+                <p>Job Closing date - {{ job.date_expired }} </p>
+                <a href="{% url 'edit_job' job.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                <button class="btn btn-danger job-del-button" data-id="{{ job.id }}"><i class="fa-solid fa-trash-can"></i></button>
             {% endif %}
         </div>
-        </article>
-    </div>
-    <div class="text-center card-footer bg-brown border-top">
-        {% if user.is_staff %}
-        {% csrf_token %}
-            <p>Job Closing date - {{ job.date_expired }} </p>
-            <a href="{% url 'edit_job' job.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-            <button class="btn btn-danger job-del-button" data-id="{{ job.id }}"><i class="fa-solid fa-trash-can"></i></button>
-        {% endif %}
-    </div>
+    </article>
 </div>

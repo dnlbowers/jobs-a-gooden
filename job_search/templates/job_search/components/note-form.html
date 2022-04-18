@@ -1,6 +1,7 @@
 <!-- Form to make a note -->
 
 {% include '../components/messages.html' %}
+<div class="surround mb-4">
     <section class="card bg-offwhite">
         {% if user.is_authenticated %}
             <header class="card-header bg-brown text-center">
@@ -27,5 +28,5 @@
                 </form>
             </div>
         {% endif %}
-        
     </section>
+</div>

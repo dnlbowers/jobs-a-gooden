@@ -1,33 +1,35 @@
 <!-- Job card displaying breif info about a post -->
-<div class="card mb-4 job-preview" data-job-preview="{{ job.id }}">
+<div class="surround mb-4">
+    <section class="card job-preview" data-job-preview="{{ job.id }}">
 
-    <header class="card-header head-with-toggle bg-brown border-bottom">
-        <!-- pin job toggle active only when logged in -->
-        {% include '../components/pin-toggle.html' %}
-    </header>
+        <header class="card-header head-with-toggle bg-brown border-bottom">
+            <!-- pin job toggle active only when logged in -->
+            {% include '../components/pin-toggle.html' %}
+        </header>
 
-    <!-- Brief summary of the job destails, Job title, company, name, locations and slaray info -->
-    <section class="card-body bg-pale-yellow">
-        <h5 class="card-title">{{ job.job_title }}</h5>
-        <h6 class="card-subtitle text-muted">{{ job.company_name }}</h6>
-        <p class="card-text"> {{ job.location }} </p>
+        <!-- Brief summary of the job destails, Job title, company, name, locations and slaray info -->
+        <section class="card-body bg-pale-yellow">
+            <h5 class="card-title">{{ job.job_title }}</h5>
+            <h6 class="card-subtitle text-muted">{{ job.company_name }}</h6>
+            <p class="card-text"> {{ job.location }} </p>
 
-        <!-- Conditionals to account for some companies would not disclose a renumeration package -->
-        {% include '../components/salary-info.html' %}
-        
-        <div class="text-center">
-            {% if user.is_authenticated %}
-                <a href="{% url 'job_details' job.id %}" class="btn btn-warning">Full details</a>
-            {% else %}
-                <a href="#" class="btn btn-warning disabled" >login/signup to view more details</a>
+            <!-- Conditionals to account for some companies would not disclose a renumeration package -->
+            {% include '../components/salary-info.html' %}
+            
+            <div class="text-center">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'job_details' job.id %}" class="btn btn-warning">Full details</a>
+                {% else %}
+                    <a href="#" class="btn btn-warning disabled" >login/signup to view more details</a>
+                {% endif %}
+            </div>
+        </section>
+        <div class="text-center card-footer bg-brown border-top">
+            <p>Job Closing date - {{ job.date_expired }}</p>
+            {% if user.is_staff %}
+                <a href="{% url 'edit_job' job.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                <button class="btn btn-danger job-del-button" data-id="{{ job.id }}"><i class="fa-solid fa-trash-can"></i></button>
             {% endif %}
         </div>
     </section>
-    <div class="text-center card-footer bg-brown border-top">
-        <p>Job Closing date - {{ job.date_expired }}</p>
-        {% if user.is_staff %}
-            <a href="{% url 'edit_job' job.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-            <button class="btn btn-danger job-del-button" data-id="{{ job.id }}"><i class="fa-solid fa-trash-can"></i></button>
-        {% endif %}
-    </div>
 </div>

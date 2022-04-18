@@ -1,37 +1,38 @@
 <!-- How to remove duplicate notes and delete note option -->
-
-<div class="card mt-4">
-    <header class="card-header bg-brown border-bottom text-center">
-        <h2>Notes & <span><i class="fa-solid fa-lightbulb"></i></span> Insights:</h2>
-    </header>
-    
-    <div class="accordion accordion-flush" id="notes-accordion">
-        {% for note in notes %}
-            <!-- Bootstrap accordion to display user specific notes -->
-            {% if author ==  note.user_id %}
-                <div class="accordion-item border-bottom" data-note-item="{{ note.id }}">
-                    <h2 class="accordion-header" id="flush-headingForNote{{ note.id }}">
-                        <button class="accordion-button collapsed bg-brown" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseForNote{{ note.id }}" aria-expanded="false" aria-controls="flush-collapseForNote{{ note.id }}">
-                        <div>    
-                            <h3 class="note-heading">{% if note.is_insight %}<span><i class="fa-solid fa-lightbulb"></i></span>{% endif %}   {{ note.short_description }}</h3>
-                            <p class="note-muted-txt">{{ note.date_created }}</p>
-                        </div>
-                        </button>
-                        
-                    </h2>
-                    <div id="flush-collapseForNote{{ note.id }}" class="accordion-collapse collapse border-bottom" aria-labelledby="flush-headingForNote{{ note.id }}" data-bs-parent="#notes-accordion">
-                        <div class="accordion-body {% if note.is_insight %}bg-pale-yellow{%endif%}">
-                            {% if note.is_insight %}
-                                <p class="text-end text-muted marked-as">Marked as insight <span><i class="fa-solid fa-check"></i></span></p>
-                            {% endif %}
-                            <p>{{ note.note|safe }}</p>
-                            <a href="{% url 'edit_note' note.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ note.id }}">Delete</button>
+<div class="surround mb-4">
+    <section class="card">
+        <header class="card-header bg-brown border-bottom text-center">
+            <h2>Notes & <span><i class="fa-solid fa-lightbulb"></i></span> Insights:</h2>
+        </header>
+        
+        <section class="accordion accordion-flush" id="notes-accordion">
+            {% for note in notes %}
+                <!-- Bootstrap accordion to display user specific notes -->
+                {% if author ==  note.user_id %}
+                    <div class="accordion-item border-bottom" data-note-item="{{ note.id }}">
+                        <h2 class="accordion-header" id="flush-headingForNote{{ note.id }}">
+                            <button class="accordion-button collapsed bg-brown" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseForNote{{ note.id }}" aria-expanded="false" aria-controls="flush-collapseForNote{{ note.id }}">
+                            <div>    
+                                <h3 class="note-heading">{% if note.is_insight %}<span><i class="fa-solid fa-lightbulb"></i></span>{% endif %}   {{ note.short_description }}</h3>
+                                <p class="note-muted-txt">{{ note.date_created }}</p>
+                            </div>
+                            </button>
+                            
+                        </h2>
+                        <div id="flush-collapseForNote{{ note.id }}" class="accordion-collapse collapse border-bottom" aria-labelledby="flush-headingForNote{{ note.id }}" data-bs-parent="#notes-accordion">
+                            <div class="accordion-body {% if note.is_insight %}bg-pale-yellow{%endif%}">
+                                {% if note.is_insight %}
+                                    <p class="text-end text-muted marked-as">Marked as insight <span><i class="fa-solid fa-check"></i></span></p>
+                                {% endif %}
+                                <p>{{ note.note|safe }}</p>
+                                <a href="{% url 'edit_note' note.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ note.id }}">Delete</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div class="card-footer bg-brown"></div>
+                {% endif %}
+            {% endfor %}
+        </section>
+        <div class="card-footer bg-brown"></div>
+    </section>
 </div>

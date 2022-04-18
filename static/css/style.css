@@ -55,6 +55,13 @@ body {
   border-top: 3px solid #000!important;
 }
 
+.surround {
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+  border-radius: 20px;
+  border: 3px solid #000;
+  padding: 5px;
+}
+
 
 /* ------------------------------------------------------------ Header/Navbar */
 
@@ -111,11 +118,11 @@ main {
 
 .card {
   border: 3px solid #000;
-  border-radius: 20px! important;
+  border-radius: 13px! important;
 }
 
 .card-header {
-  border-radius: 16px 16px 0 0! important;
+  border-radius: 10px 10px 0 0! important;
 }
 
 .head-with-toggle {
@@ -129,7 +136,7 @@ main {
 }
 
 .card-footer {
-  border-radius: 0 0 16px 16px! important;
+  border-radius: 0 0 10px 10px! important;
 }
 
 /* ----------------------------------------------------------------------------------------- Full Job details page */
@@ -276,13 +283,6 @@ main {
 /* ------------------------------------------------------------ Warning Modal */
 #warningModal {
   background-color: rgba(0,0,0,0.5);
-}
-
-.modal-surround {
-  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
-  border-radius: 20px;
-  border: 3px solid #000;
-  padding: 5px;
 }
 
 .modal-header {
