@@ -9,9 +9,9 @@
 
         <!-- Brief summary of the job destails, Job title, company, name, locations and slaray info -->
         <section class="card-body bg-pale-yellow">
-            <h5 class="card-title">{{ job.job_title }}</h5>
-            <h6 class="card-subtitle text-muted">{{ job.company_name }}</h6>
-            <p class="card-text"> {{ job.location }} </p>
+            <h2 class="card-title text-center fw-bolder">{{ job.job_title }}</h2>
+            <h3 class="card-subtitle text-muted text-center fw-bold">{{ job.company_name }}</h3>
+            <p class="card-text text-center"> {{ job.location }} </p>
 
             <!-- Conditionals to account for some companies would not disclose a renumeration package -->
             {% include '../components/salary-info.html' %}

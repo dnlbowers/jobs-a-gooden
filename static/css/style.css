@@ -405,6 +405,7 @@ footer {
   }
 
 @media screen and (min-width: 768px) {
+
     body {
       font-size: 1.5rem;
     }
@@ -415,5 +416,26 @@ footer {
 
     #note-shortcut {
         display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #logo-title {
+      font-size: 3em;
+    }
+
+    #logo {
+      width: 96px
+    }
+
+    .job-preview {
+      min-height: 592px;
+    }
+
+    .job-preview > .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
     }
 }

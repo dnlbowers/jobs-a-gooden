@@ -1,15 +1,15 @@
 {% if job.max_salary != null and job.min_salary != null%}
-    <p class="card-text">
+    <p class="card-text text-center">
         Salary expectation - {{ job.min_salary }} - {{ job.max_salary }} ({{ job.currency }})
     </p>
 {% elif job.min_salary == null and job.max_salary != null %}
-    <p class="card-text">
+    <p class="card-text text-center">
         Salary expectation - {{ job.max_salary }} ({{ job.currency }})
     </p>
 {% elif job.min_salary != null and job.max_salary == null %}
-    <p class="card-text">
+    <p class="card-text text-center">
         Salary expectation - {{ job.min_salary }} ({{ job.currency }})
     </p>
 {% else %}
-    <p class="card-text">No Salary information disclosed</p>
+    <p class="card-text text-center">No Salary information disclosed</p>
 {% endif %}
