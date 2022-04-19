@@ -9,6 +9,9 @@
                 <h3>Make notes and track your progress:</h3>
             </header>
             <div class="card-body">
+                <p class="text-center">
+                    <a href="{% url 'tracking_instructions' %}">Note or Insight?</a>
+                </p>
                 <p>Signed in as: {{ user.username }}</p>
                 <form method="post">
                     {% csrf_token %}
@@ -24,7 +27,10 @@
                             {% endif %}
                         </div>                        
                     {% endfor %}
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </div>
                 </form>
             </div>
         {% endif %}

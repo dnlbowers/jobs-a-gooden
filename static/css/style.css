@@ -49,6 +49,7 @@ body {
 
 .btn {
   border: 2px solid #000!important;
+  font-weight: bolder;
 }
 
 .border-bottom {
@@ -125,13 +126,14 @@ main {
 }
 
 #instructions-link {
-  color: #fafafa;
-  font-weight: bolder;
-  text-decoration: none;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+    color: #000;
+    text-decoration: none;
 }
 
 #instructions-link:hover {
-  color: #e4b67c
+    background: linear-gradient(to right, #fbf5b7 ,#b38728,#fcf6ba,#bf953f);
+    text-decoration: underline;
 }
 
 /* ------------------------------------------------------------ Add job form */
