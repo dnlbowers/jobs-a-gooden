@@ -1,7 +1,6 @@
 {% extends "layout/base.html" %}
 
 {% load i18n %}
-{% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -13,39 +12,40 @@
             <header class="card-header bg-brown">
                 <h1>{% trans "Sign In" %}</h1>
             </header>
-            <div class="card-body">
-                {% get_providers as socialaccount_providers %}
+            <div class="card-body text-start p-4">
 
-                {% if socialaccount_providers %}
-                <p>{% blocktrans with site.name as site_name %}Please sign in with one
-                of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-                for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-                <div class="socialaccount_ballot">
-
-                  <ul class="socialaccount_providers">
-                    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-                  </ul>
-
-                  <div class="login-or">{% trans 'or' %}</div>
-
-                </div>
-
-                {% include "socialaccount/snippets/login_extra.html" %}
-
-                {% else %}
-                <p>{% blocktrans %}If you have not created an account yet, then please
-                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-                {% endif %}
-
+                <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
+                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+                <!-- Customised from allauth's template, adapted using widget tweaks -->
                 <form class="login" method="POST" action="{% url 'account_login' %}">
-                  {% csrf_token %}
-                  {{ form.as_p }}
+
+                    {% csrf_token %}
+                    {% load widget_tweaks %}
+                    {% for field in form %}
+                        <div class="form-group p-2 {% if field.errors %} alert alert-danger {% endif %}">
+                            {{ field.errors }}
+                            
+                            {% if field.name == "remember" %}
+                                <div class="text-center">
+                                    {{ field.label_tag}}
+                                    {% render_field field class="p1" %}
+                                </div>
+                            {% else %}
+                                {{ field.label_tag}}
+                                {% render_field field class="form-control" %}
+                                
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
                   {% if redirect_field_value %}
-                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                   {% endif %}
-                  <p>* If you have forgotten your password kindly contact us by email admin@jag.com with your username.</p>
-                  <button class="primaryAction btn btn-lg btn-primary" type="submit">{% trans "Sign In" %}</button>
+                        
+                        <div class="text-center p-2">
+                            <button class="primaryAction btn btn-lg btn-primary" type="submit">{% trans "Sign In" %}</button>
+                        </div>
+                        <p class="text-center p-2 fs-6">* If you have forgotten your password kindly contact us by email admin@jag.com with your username.</p>
                 </form>
             </div>
             <div class="card-footer bg-brown"></div>

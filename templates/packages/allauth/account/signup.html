@@ -11,16 +11,27 @@
               <header class="card-header bg-brown">
                   <h1>{% trans "Sign Up" %}</h1>
               </header>
-              <div class="card-body">
-                  <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+              <div class="card-body text-start">
+                  <p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
+                  
                   <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {% load widget_tweaks %}
+                    {% for field in form %}
+                        <div class="form-group p-2 {% if field.errors %} alert alert-danger {% endif %}">
+                            {{ field.errors }}
+                            {{ field.label_tag}}
+                            {% render_field field class="form-control" %}
+                        </div>
+                    {% endfor %}
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button type="submit" class="btn btn-primary btn-lg">{% trans "Sign Up" %} &raquo;</button>
+                    <div class="text-center p-3">
+                        <button type="submit" class="btn btn-primary btn-lg">{% trans "Sign Up" %} &raquo;</button>
+                    </div>
+                    <p class="text-center p-2 fs-6">* If you are having trouble signing up kindly contact us by email admin@jag.com with the username and email (if applicable) you are trying to use.</p>
                   </form>
               </div>
               <div class="card-footer bg-brown"></div>
