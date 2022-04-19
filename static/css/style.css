@@ -80,10 +80,22 @@ body {
 .navbar-toggler {
     font-size: 30px;
 }
-
+ 
 .nav-dropdown {
   border-radius: 12px;
   border: 3px solid #000;
+}
+
+.dropdown-item:hover{
+    border-radius: 12px;
+    border: 1px solid #000;
+    font-weight: bolder;
+}
+
+.nav-link:focus, .nav-link:hover {
+  background-color: #e4b67c;
+  color: #000;
+  font-weight: bolder;
 }
 
 #logo {
@@ -143,6 +155,7 @@ main {
 }
 
 .card-footer {
+  min-height: 50px;
   border-radius: 0 0 10px 10px! important;
 }
 

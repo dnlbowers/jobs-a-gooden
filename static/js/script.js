@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let page = window.location.href.substr(-1)-1;
         if (!isNaN(page)) {
             if (page != 0){
-                console.log('eh?')
                 page - 1;
                 let previousPage = window.location.href.slice(0, -1) + page;
                 return window.location.replace(previousPage)
