@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Condiment&family=Lato&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,9 @@
 }
 
 body {
-  min-height: 100vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    min-height: 100vh;
 }
 
 /* ------------------------------------------------------------ General text styling */
@@ -87,6 +91,7 @@ body {
 }
 
 #logo-title{
+    font-family: 'Condiment', cursive;
     font-size: 2em;
 }
 
@@ -98,7 +103,7 @@ body {
 }
 
 .hero-image{
-  max-height: 600px;
+  max-height: 500px;
 }
 
 /* ------------------------------------------------------------ Main content styling (general) */
@@ -375,6 +380,14 @@ footer {
   }
 
 @media screen and (min-width: 768px) {
+    body {
+      font-size: 1.5rem;
+    }
+
+    .nav-padding{
+      padding: 0 1.5rem 1rem;
+    }
+
     #note-shortcut {
         display: none;
     }
