@@ -2,20 +2,20 @@
 
     {% if request.user in job.is_pinned.all %}
         <div class="form-check form-switch">
-            <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked data-id="{{ job.id }}">
-            <label class="form-check-label pin" for="flexSwitchCheckChecked"></label>
+            <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckChecked{{job.id}}" checked data-id="{{ job.id }}">
+            <label class="form-check-label pin" for="flexSwitchCheckChecked{{job.id}}"></label>
         </div> 
     {% else %}
         <div class="form-check form-switch">
-            <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckDefault" data-id="{{ job.id }}">
-            <label class="form-check-label pin" for="flexSwitchCheckDefault"></label>
+            <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckDefault{{job.id}}" data-id="{{ job.id }}">
+            <label class="form-check-label pin" for="flexSwitchCheckDefault{{job.id}}"></label>
         </div> 
     {% endif %}
 
 <!-- pin job toggle disabled when logged out -->
 {% else %}
     <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
-        <label class="form-check-label" for="flexSwitchCheckDisabled"></label>
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled{{job.id}}" disabled>
+        <label class="form-check-label" for="flexSwitchCheckDisabled{{job.id}}"></label>
     </div>
 {% endif %}
