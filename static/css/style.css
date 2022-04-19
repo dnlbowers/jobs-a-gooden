@@ -124,6 +124,16 @@ main {
   min-height: 80vh;
 }
 
+#instructions-link {
+  color: #fafafa;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+#instructions-link:hover {
+  color: #e4b67c
+}
+
 /* ------------------------------------------------------------ Add job form */
 
 .form-container {

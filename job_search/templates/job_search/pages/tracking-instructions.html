@@ -36,6 +36,12 @@
                             interview was...". Insights will be saved on a separate page to not be deleted when a job is  
                             unpinned, but they can also be created without a related job post from the insights page.
                         </p>
+                        <div class="text-center">
+                            <a href="{% url 'job_list' %}" class="btn btn-primary btn-large">Open Positions</a>
+                            {% if user.authenticated %}
+                                <a href="{% url 'pin_board' %}" class="btn btn-secondary btn-large">Saved jobs</a>
+                            {% endif %}
+                        </div>
                     </section>
                 </div>
             </div>
