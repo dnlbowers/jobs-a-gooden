@@ -35,9 +35,11 @@
                 <a class="nav-link dropdown-toggle nav-padding text-cream {% if not user.is_authenticated %}disabled{% endif %}" href="#" id="jobsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Tracking
                 </a>
-                <ul class="dropdown-menu" aria-labelleby="jobsDropdown">
-                    <li><a href="{% url 'pin_board' %}" class="dropdown-item">Saved jobs</a></li>
-                    <li><a href="{% url 'insights' %}" class="dropdown-item">Insights</a></li>
+                <ul class="dropdown-menu surround" aria-labelleby="jobsDropdown">
+                    <div class="bg-pale-yellow nav-dropdown">
+                        <li class="border-bottom"><a href="{% url 'pin_board' %}" class="dropdown-item">Saved jobs</a></li>
+                        <li><a href="{% url 'insights' %}" class="dropdown-item">Insights</a></li>
+                    </div>
                 </ul>
             </li>
 

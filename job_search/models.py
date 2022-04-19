@@ -42,7 +42,7 @@ class Job(models.Model):
 class Notes(models.Model):
 
     related_job = models.ForeignKey(
-        Job, on_delete=models.CASCADE,
+        Job, on_delete=models.SET_NULL,
         default=None,
         related_name='related_job',
         blank=True,

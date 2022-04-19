@@ -274,6 +274,14 @@ class DeleteJob(View):
         returns a httpresponse when successful
         """
         delete_job = Job.objects.get(id=id)
+        related_notes = Notes.objects.all()
+        for note in related_notes:
+            if delete_job.id == note.related_job_id:
+                if note.is_insight:
+                    note.related_job = None
+                    note.save()
+                else:
+                    note.delete()
         delete_job.delete()
 
         return HttpResponse(200)
