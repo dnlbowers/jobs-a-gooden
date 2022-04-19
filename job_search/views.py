@@ -24,6 +24,11 @@ class PageTitleViewMixin:
         return context
 
 
+class TrackingInstructions(PageTitleViewMixin, generic.TemplateView):
+    title = "Tracking Instructions"
+    template_name = "job_search/pages/tracking-instructions.html"
+
+
 class AddJob(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):
     """
     This view is used to add a job to the database.

@@ -1,0 +1,44 @@
+{% extends 'layout/base.html' %} {% block content %}
+    <main class="p-3">
+        <div class="container-fluid">
+            <div class="surround m-3">
+                <div class="card">
+                    <header class="card-header bg-brown border-bottom text-center">
+                        <h1 class="fw-bolder">How to Track your Journey</h1>
+                    </header>
+                    <section class="card-body">
+                        
+                        <h2 class="text-center fw-bolder pb-3">Tracking Your Job Search Journey</h2>
+                        <h3 class= "text-start fw-bold ps-3 pt-1">Pinning a Job to your Personal Jobs board:</h3>
+                        <p class="p-3">
+                            Use the toggle switch on top of any job post to save it to your personal
+                            jobs board. Once the toggle turns blue, you will see a notes section where you 
+                            can make notes and insights to keep track of cricital events and learnings gained 
+                            throughout the job hunting journey.
+                        </p>
+                        <h2 class="text-center fw-bolder pb-3">Notes, insights, what's the difference?</h2>
+                        <h3 class= "text-start fw-bold ps-3 pt-1">Notes:</h3>
+                        <p class="p-3">
+                            Notes are intended to record critical events related to a specific role, i.e. "Applied for the role" 
+                            and "Created Customise CV for the role." The ability to leave notes is only available while
+                            a job post is pinned to your own personal jobs board. <strong> Kindly note that unpinning 
+                            a job post will also delete all your job-specific notes.*</strong>
+                        </p>
+                        <p class="ps-3 pe-3">
+                            <strong>*</strong> Should you wish to keep a note when unpinning a job,  
+                            you can click the edit button to mark it as an insight instead.
+                        </p>
+                        
+                        <h3 class= "text-start fw-bold ps-3 pt-1">Insight:</h3>
+                        <p class="p-3">
+                            Insights are intended as general learnings gained along the path to finding your dream job,
+                            i.e. "Realised that I want to work for 'x' company in the future" and "Feedback from the failed
+                            interview was...". Insights will be saved on a separate page to not be deleted when a job is  
+                            unpinned, but they can also be created without a related job post from the insights page.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

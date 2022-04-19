@@ -30,7 +30,7 @@
                         <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
                     {% else %}
                         <a href="" class="btn btn-secondary disabled">Back to jobs</a>
-                        <a href="" class="btn btn-success disabled">Log in to apply</a>
+                        <a class="btn btn-success" href="{% url 'account_login' %}">Login to Apply</a>
                     {% endif %}
                 </div>
             </section>
