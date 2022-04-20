@@ -5,14 +5,19 @@
         {% include "../layout/insights-hero.html" %}
     </div>    
     <main>
+        
         <div class="text-center bg-brown p-1 border-bottom border-top mb-3">
             <h1>Insights</h1>
         </div>
+        
         {% include '../components/messages.html' %}
 
+        <!-- Allows user to access form for making isights not linked to a specific job post -->
         <div class="text-center mb-3">
             <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i>Add insight</a>
         </div>
+
+        <!-- timeline to show insights adapted from https://www.w3schools.com/howto/howto_css_timeline.asp -->
         <div id="timeline">
             {% for insight in insights %}
                 <section class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}" data-insight-item="{{ insight.id }}">
@@ -20,14 +25,19 @@
                         <p class="text-muted {% if forloop.counter|divisibleby:2 %}text-start{% else %}text-end{%endif%}">{{ insight.date_created }}</p>
                         <h2>{{ insight.short_description }}</h2>
                         <p>{{ insight.note|safe }}</p>
+
+                        <!-- CRUD controls for insight entry -->
                         <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
                         <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ insight.id }}">Delete</button>
                     </section>
                 </section>
             {% endfor %} 
         </div>
+
         {% include "../components/warning-modal.html" %}
+
     </main>
 
     {% include "../components/pagination.html" %}
+
 {% endblock %}

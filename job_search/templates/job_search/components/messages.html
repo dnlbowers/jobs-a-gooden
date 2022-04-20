@@ -1,3 +1,4 @@
+<!-- Generic message functionality to avoid repetition -->
 {% if messages %}
 {% for message in messages %}
     <div class="container-fluid p-0">
@@ -14,7 +15,7 @@
             let messages = document.getElementById("msg");
             let alert = new bootstrap.Alert(messages);
             alert.close();
-        }, 3000);
+        }, 4000);
     </script>
 {% endfor %}
 {% endif %}

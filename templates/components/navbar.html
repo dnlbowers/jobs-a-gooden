@@ -1,59 +1,89 @@
 <nav class="navbar navbar-expand-sm bg-brown border-bottom">
     <div class="container-fluid p-3">
-        <!-- Change the navbar brand lnk when home page is ready -->
+        
         <!-- Brandname and logo -->
         <a href="{% url 'job_list' %}" class="navbar-brand nav-link text-cream">
             <span id="logo-title" class="navbar-brand mb-0 h1">J.A.G</span>
             <img src="https://res.cloudinary.com/df4m8hva5/image/upload/v1645650841/jaguar-logo-left_y2p0od.png" alt="Baby Jaguar logo" id="logo" class="d-inline-block">
         </a>
         
-        <!-- Mobile hamburger menu icon -->
+        <!-- Mobile hamburger menu icon for smaller screens -->
         <button class="navbar-toggler text-cream" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="navbar-toggler-icon fa-solid fa-bars"></i>
         </button>
 
         <!-- Navigation menu items relating to user authentication status -->
         <ul class="nav collapse navbar-collapse" id="navbarNav">
+
             {% if user.is_authenticated %}
+
                 <li class="nav-item">
                     <a class="nav-link nav-padding text-cream" href="{% url 'account_logout' %}">Logout</a>
                 </li>
+
             {% else %}
+
                 <li class="nav-item">
                     <a class="nav-link nav-padding text-cream" href="{% url 'account_signup' %}">Register</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link nav-padding text-cream" href="{% url 'account_login' %}">Login</a>
                 </li>
+
             {% endif %}
 
             <!-- job related navigation items -->
             <li class="nav-item dropdown">
+
                 <a class="nav-link dropdown-toggle nav-padding text-cream {% if not user.is_authenticated %}disabled{% endif %}" href="#" id="jobsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Jobs
                 </a>
+
                 <ul class="dropdown-menu surround" aria-labelleby="jobsDropdown">
+
                     <div class="bg-pale-yellow nav-dropdown">
+
                         <li class="border-bottom">
                             <a href="{% url 'job_list' %}" class="dropdown-item">Open Positions</a>
                         </li>
+
                         <li>
                             <a href="{% url 'add_job' %}" class="dropdown-item">Add a Job</a>
                         </li>
+
                     </div>
                 </ul>
             </li>
 
             <!-- job tracking related navigation items -->
             <li class="nav-item dropdown">
+
                 <a class="nav-link dropdown-toggle nav-padding text-cream {% if not user.is_authenticated %}disabled{% endif %}" href="#" id="TrackingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Tracking
                 </a>
+
                 <ul class="dropdown-menu surround" aria-labelleby="TrackingDropdown">
+
                     <div class="bg-pale-yellow nav-dropdown">
-                        <li class="border-bottom"><a href="{% url 'tracking_instructions' %}" class="dropdown-item">How to Use</a></li>
-                        <li class="border-bottom"><a href="{% url 'pin_board' %}" class="dropdown-item">Saved jobs</a></li>
-                        <li><a href="{% url 'insights' %}" class="dropdown-item">Insights</a></li>
+
+                        <li class="border-bottom">
+                            <a href="{% url 'tracking_instructions' %}" class="dropdown-item">
+                                How to Use
+                            </a>
+                        </li>
+                        
+                        <li class="border-bottom">
+                            <a href="{% url 'pin_board' %}" class="dropdown-item">
+                                Saved jobs
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="{% url 'insights' %}" class="dropdown-item">
+                                Insights
+                            </a>
+                        </li>
                     </div>
                 </ul>
             </li>            

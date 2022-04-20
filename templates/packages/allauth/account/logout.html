@@ -7,23 +7,36 @@
 {% block content %}
     <div class="container">
         <div class="surround mb-3 mt-3">
+
             <div class="card text-center">
+
                 <header class="card-header bg-brown">
                     <h1>{% trans "Sign Out" %}</h1>
                 </header>
+
+                <!-- Customised from allauth's template for log out, adapted using widget tweaks -->
                 <div class="card-body">
-                    <p>{% trans 'Are you sure you want to sign out?' %}</p>
+                    <p>
+                        {% trans 'Are you sure you want to sign out?' %}
+                    </p>
 
                     <form method="post" action="{% url 'account_logout' %}">
-                      {% csrf_token %}
-                      {% if redirect_field_value %}
-                      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-                      {% endif %}
-                      <a href="{% url 'job_list' %}" class="btn btn-secondary btn-lg">Cancel</a>
-                      <button type="submit" class="btn btn-primary btn-lg">{% trans 'Sign Out' %}</button>
+                        
+                        {% csrf_token %}
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                        {% endif %}
+                        
+                        <!-- From controls -->
+                        <a href="{% url 'job_list' %}" class="btn btn-secondary btn-lg">Cancel</a>
+                        <button type="submit" class="btn btn-primary btn-lg">{% trans 'Sign Out' %}</button>
+
                     </form>
                 </div>
+
+                <!-- decorative only -->
                 <div class="card-footer bg-brown"></div>
+                
             </div>
         </div>
     </div>

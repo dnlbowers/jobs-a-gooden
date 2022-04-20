@@ -1,8 +1,8 @@
-<div class="surround mb-4">
+<div class="surround mt-3 mb-3">
     <article class="card bg-offwhite">
         <header class="card-header head-with-toggle bg-brown border-bottom">
             <div class="d-flex justify-content-end">
-                <!-- pin job toggle active when logged in -->
+                <!-- pin job toggle active only when logged in -->
                 {% include '../components/pin-toggle.html' %} 
             </div>
             <div id="full-jobcard-heading">
@@ -19,11 +19,13 @@
             {% endif %}
             <!-- Conditionals to account for some companies would not disclose a renumeration package -->
             {% include '../components/salary-info.html' %}
-
+            
+            <!-- Full job desription -->
             <section>
                 <h3>Full Details</h3>
                 <p>{{ job.job_description|safe }}</p>
-            
+                
+                <!-- Button to apply or exit job spec -->
                 <div class="text-center">    
                     {% if user.is_authenticated %}
                         <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to jobs</a>
@@ -35,12 +37,14 @@
                 </div>
             </section>
         </div>
+        
+        <!-- Job expiry date and controls to edit or delete (visiable only to Admins) -->
         <div class="text-center card-footer bg-brown border-top">
             {% if user.is_staff %}
             {% csrf_token %}
                 <p>Job Closing date - {{ job.date_expired }} </p>
-                <a href="{% url 'edit_job' job.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                <button class="btn btn-danger job-del-button" data-id="{{ job.id }}"><i class="fa-solid fa-trash-can"></i></button>
+                <a href="{% url 'edit_job' job.id %}" class="btn btn-success">Edit</i></a>
+                <button class="btn btn-danger job-del-button" data-id="{{ job.id }}">Delete</button>
             {% endif %}
         </div>
     </article>

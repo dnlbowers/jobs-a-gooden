@@ -1,11 +1,13 @@
 <!-- Form to make a note -->
 
+<!-- Imports messages from class view -->
 {% include '../components/messages.html' %}
-<div class="surround mb-4">
+
+<!-- Form for leaving job specific notes/insights -->
+<div class="surround mb-3 mt-3">
     <section class="card bg-offwhite">
         {% if user.is_authenticated %}
             <header class="card-header bg-brown text-center">
-                <!-- need to add user is the logged in user and job is pinned -->
                 <h3>Make notes and track your progress:</h3>
             </header>
             <div class="card-body">

@@ -4,7 +4,9 @@
     {% include 'layout/head.html' %}
 </head>
 <body class="d-flex flex-column page-background">
-    {% include 'components/navbar.html' %}
+    <header>
+        {% include 'components/navbar.html' %}
+    <header>
     {% block content %}
     
     {% endblock %}

@@ -3,31 +3,42 @@
         
     <div>
         {% include "../layout/pinboard-hero.html" %}
-    </div>    
+    </div> 
+      
     <main>
+
         <div class="text-center bg-brown p-1 border-bottom border-top mb-3">
             <h1>Jobs Pinboard</h1>
         </div>
+
+        {% include "../components/go-to-instructions.html" %}
+
         <div class="container-fluid">
+
             <div class="row">
+
                 <!-- Job preview column -->
                 <div class="col-lg-12 mt-3">
+
                     <div class="row">   
-                    {% for job in jobs %}
-                        <div class="col-lg-4">
-                            {% include "../components/job-preview-card.html" %}
-                        </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                    </div>
-                    <div class="row">
-                    {% endif %}
-                    {% endfor %}
+                        {% for job in jobs %}
+                            <div class="col-lg-4">
+                                {% include "../components/job-preview-card.html" %}
+                            </div>
+                        {% if forloop.counter|divisibleby:3 %}
+                            </div>
+                            <div class="row">
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
-        {% include "../components/warning-modal.html" %}        
+
+        {% include "../components/warning-modal.html" %}   
+
     </main>
 
     {% include "../components/pagination.html" %}
+    
 {% endblock %}

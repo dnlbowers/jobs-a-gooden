@@ -1,14 +1,24 @@
 <!-- Modal -->
+<!-- Modal to warn when action irrevesable -->
 <div class="modal fade modal-dialog-centered d-none" id="warningModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="unpinned-modal-label" aria-hidden="true">
+    
+    <!-- Decorative surround -->
     <div class="modal-dialog surround">
+
         <div class="modal-content">
+
+            <!-- Static heading -->
             <div class="modal-header bg-brown border-bottom">
                 <h5 class="modal-title" id="warningModalLabel"><i class="fa-solid fa-triangle-exclamation text-danger"></i> Warning!</h5>
                 <button type="button" class="btn-close cancel-warning" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
+            <!-- container for message to be added dynamically by javascript -->
             <div id="warning-message" class="modal-body bg-pale-yellow">
                 
             </div>
+
+            <!-- Place holder buttons inner text to be changed by javascript according to the action taken -->
             <div id="warning-buttons" class="modal-footer bg-brown border-top">
                 <button type="button" class="btn btn-secondary cancel-warning" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-danger accept-warning">Proceed</button>

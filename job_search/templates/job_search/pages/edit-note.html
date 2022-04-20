@@ -1,13 +1,18 @@
 {% extends 'layout/base.html' %}
 {% block content %}
-    <div>
+    
+<div>
         {% include "../layout/edit-note-hero.html" %}
     </div>
+
     <main>
+
         <div class="text-center bg-brown p-1 border-bottom border-top mb-3">     
             <h1 class="text-center">Edit Note/Insight</h1>
         </div>
+
         <div class="container">
+            <!-- Edit note form prepopulated with existing entry and surrounds -->
             <div class="surround mb-3">
                 <div class="form-container">
                     <form method="post">
@@ -24,9 +29,12 @@
                                 {% endif %}
                             </div>                        
                         {% endfor %}
+                        
+                        <!-- Save changes or exit form saving data as is -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary btn-lg">Save</button>
                         </div>
+
                     </form>
                 </div>
             </div>
