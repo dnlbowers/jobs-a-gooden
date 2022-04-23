@@ -58,7 +58,7 @@ class AddInsight(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):
     form_class = NoteForm
     template_name = 'job_search/pages/add-insight.html'
     success_url = reverse_lazy('insights')
-    success_message = 'Your insight has been addned Successfully'
+    success_message = 'Your insight has been added Successfully'
     title = "Add an Insight"
 
     def form_valid(self, form):
@@ -114,7 +114,6 @@ class FullJobSpec(PageTitleViewMixin, View):
                 "job": job_spec,
                 "pinned": pinned,
                 'notes': notes,
-                'note_made': False,  # boolean to to use as conditional
                 'note_form': NoteForm(),
                 'title': 'Job Details',
             },
@@ -168,7 +167,6 @@ class FullJobSpec(PageTitleViewMixin, View):
                 "job": job_spec,
                 "pinned": pinned,
                 'notes': notes,
-                'note_made': True,  # boolean to to use as conditional
                 'note_form': NoteForm(),
                 'title': 'Job Details',
             },
