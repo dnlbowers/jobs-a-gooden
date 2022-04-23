@@ -9,13 +9,17 @@
         <div class="text-center bg-brown p-1 border-bottom border-top mb-3">
             <h1>Insights</h1>
         </div>
-        
-        {% include '../components/messages.html' %}
 
         <!-- Allows user to access form for making isights not linked to a specific job post -->
         <div class="text-center mb-3">
-            <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i>Add insight</a>
+            <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add insight</a>
         </div>
+
+        <div class="text-center mb-2">
+            {% include "../components/go-to-instructions.html" %}
+        </div>
+        
+        {% include '../components/messages.html' %}
 
         <!-- timeline to show insights adapted from https://www.w3schools.com/howto/howto_css_timeline.asp -->
         <div id="timeline">
