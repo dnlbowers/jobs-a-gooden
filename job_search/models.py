@@ -74,9 +74,9 @@ class PinnedJobs(models.Model):
     pinned_jobs = models.ManyToManyField(
         Job, related_name='pinned_jobs', blank=True
         )
-    notes = models.ManyToManyField(
-        Notes, related_name='user_notes', blank=True
-        )
+    # notes = models.ManyToManyField(
+    #     Notes, related_name='user_notes', blank=True
+    #     )
 
     def __str__(self):
         return f'{self.user.username}\'s pinned jobs'
@@ -84,5 +84,9 @@ class PinnedJobs(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Listens for a user being created and create a profile for them
+    So user specific data relating to pinned jobs can be stored
+    """
     if created:
         PinnedJobs.objects.create(user=instance)
