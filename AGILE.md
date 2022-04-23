@@ -74,5 +74,6 @@ My first sprint was a short one, intended to get familiar with JIRA and get the 
 ## Sprint 10 notes: 
 * There are slightly more than 60% of story point as must haves because I need to ensure the bugs which cannot be considered features are solved.
 * This sprint is aimed at having the site ready in production so it is ready for release. There is much more I would like to have done however as in the real world there are deadlines, this project to is running out of time before submission. I am treating this as the first release and will continue to improve as we go.
+* Finished this sprint 2 days early due to all tasks completed. All though this was finished early it was a harder sprint due to a large story of 40 points, in future I would break this story down into sub tasks to help stay more focused whilst styling the front end. 
 
 ![Tenth sprint screenshot](docs/agile/sprint-screenshots/sprint10.JPG)
