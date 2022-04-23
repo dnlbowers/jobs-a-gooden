@@ -158,14 +158,16 @@ My initial plan for my database tables included using a JSON with data from the 
 
 My user model was also removed in favor of the default model provided by the ALLAUTH library. I combined the notes and insights tables into a single table with a boolean felid to indicate if the entry was a note or insight.
 
-Below is the final version of the ERD generated via PG admin. There are only the 3 custom tables mentioned above; the rest were generated automatically by ALLAUTH.
+Below is the final version of the ERD generated via PG admin connected to my Heroku Postgres database. There are only the three custom tables mentioned above; the rest were generated automatically by various Libraries.
 
 ![Final ERD](docs/images/erd.png)
  
 Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs.
 
 ## Agile development process
-For this project I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4) to track and create issues/user stories. Login credentials for the above project space will be provided along with submission, however, a summery of my agile process/learnings can be found [here](AGILE.md).
+I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4/roadmap) to track and create issues/user stories. I will provide login credentials for the above project space when submitting the project. However, you can find a summary of my agile process/learnings [here](AGILE.md).
+
+## Features  **Come back here after AGILE.md edit**
 
 ## Future development
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.
