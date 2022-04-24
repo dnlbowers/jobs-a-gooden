@@ -7,6 +7,7 @@ This site is a community job share platform. It provides a method for users to s
 
 [Deployed site](https://jobs-a-gooden.herokuapp.com/)
 
+# Planning Phase
 ## Strategy 
 ### Site Aims:
 It takes a new developer around 20-25 interviews to land their first developer job. This does not include the total number of applications sent out by a job seeker.
@@ -150,7 +151,7 @@ For this project I used two different fonts.
 #### ***Lato:***
 * The main font for the remainder of the site. This was used for its soft edges to match the border radius placed on most elements.
 
-## Data Model
+# Data Model
 Below shows my initial plan for my database tables:
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg) 
 
@@ -164,14 +165,14 @@ Below is the final version of the ERD generated via PG admin connected to my Her
  
 Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs.
 
-## Agile development process
+# Agile development process
 I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4/roadmap) to track and create issues/user stories. I will provide login credentials for the above project space when submitting the project. However, you can find a summary of my agile process/learnings [here](AGILE.md).
 
-## Features  **Come back here after AGILE.md edit**
+# Features
 
-## Future development
+
+# Future development
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.
-* For reasons of data protection the admin should not see the content of the users notes via the admin panel. For not it has been left for testing purposes but in the future I will be looking to encode them so the admin can only see there is a note and note what the note says.
 * Build online community.
 * Job categories
 * Search feature
@@ -179,10 +180,19 @@ I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/
 * Auto email to Job post author when job close to expired that it will be deleted after the specified time of expiration.
 * [KanBan board](https://codepen.io/josetxu/pen/VwyxZKq) to track applied, round, and response.
 
+# **Testing Phase**
+I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).
+
+# Deployment
+## Initial Deployment:
+I have included details of my initial deployment in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
+
+
 ## Honorable mentions  
-* sean - just a legend any way you slice it
+* sean - just a legend any way you slice it, helped me understand the logic behind my pin job feature by providing examples of similar things and helped me to connect to heroku through the console of VSCODE
 * matt - the comfort of a friend no matter the time of day, the push of a competitor even if I am wasn't playing the game
 * steve - Always pushing me to think bigger
+* Guillermo Brachetta - for explaining dotenv package and how to use it
 
 
 ## Credits
