@@ -5,11 +5,16 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
-# Create your models here.
+# Allows admin to hide a job post which is still pinned by a user
+# after the job has expired
 STATUS = ((0, 'hidden'), (1, 'Public'))
 
 
 class Job(models.Model):
+    """"
+    Stores Job post data
+    """
+    
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
@@ -40,6 +45,12 @@ class Job(models.Model):
 
 
 class Notes(models.Model):
+    """"
+    Stores the notes and related job
+    for each user. Insights can be stored
+    without a related job
+    """
+    
 
     related_job = models.ForeignKey(
         Job, on_delete=models.SET_NULL,
@@ -51,7 +62,8 @@ class Notes(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        default=False
+        default=False,
+        editable=False,
         )
     short_description = models.CharField(
         max_length=200,
@@ -66,17 +78,20 @@ class Notes(models.Model):
         ordering = ["-date_created"]
 
     def __str__(self):
-        return self.short_description + "noted by " + self.user.username
+        return "note by " + self.user.username
 
 
 class PinnedJobs(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    """
+    Links a user to many2many list of jobs
+    that they wish to save. The user is entered
+    into the table upon registration.
+    """
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, editable=False)
     pinned_jobs = models.ManyToManyField(
         Job, related_name='pinned_jobs', blank=True
         )
-    # notes = models.ManyToManyField(
-    #     Notes, related_name='user_notes', blank=True
-    #     )
 
     def __str__(self):
         return f'{self.user.username}\'s pinned jobs'
