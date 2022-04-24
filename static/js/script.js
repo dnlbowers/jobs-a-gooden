@@ -380,10 +380,11 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function deleteJobWarning() {
         warnModalBodyRef.innerHTML = `
+        <p><strong>Have you checked the admin panel to see if a user has this job pinned?</strong></p>
         <p>Deleting this Job is irreversible.</p>
         <p>Once deletion is confirmed this information wil be lost forever,</p>
-        <p>along with all related notes (insights will be safe safely stored on the insights page).</p>
-        <p>Are you Sure you Wish to delete?</p>
+        <p>along with all related notes for all users (insights will be safe safely stored on their insights page).</p>
+        <p> Are you Sure you Wish to delete?</p>
     `;
     acceptWarningBtnRef.innerHTML='Delete Job';
     }
