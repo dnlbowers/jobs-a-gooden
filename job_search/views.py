@@ -25,8 +25,19 @@ class PageTitleViewMixin:
 
 
 class TrackingInstructions(PageTitleViewMixin, generic.TemplateView):
+    """
+    This view is used to display the tracking instructions page
+    """
     title = "Tracking Instructions"
     template_name = "job_search/pages/tracking-instructions.html"
+
+
+class Contact(PageTitleViewMixin, generic.TemplateView):
+    """
+    This view is used to display the contact info page
+    """
+    title = "Contact"
+    template_name = "job_search/pages/contact-page.html"
 
 
 class AddJob(SuccessMessageMixin, PageTitleViewMixin, generic.CreateView):

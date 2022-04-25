@@ -1,0 +1,44 @@
+{% extends 'layout/base.html' %} {% block content %}
+    <main>
+        <div class="container mt-5 mb-5">
+            <div class="surround">
+                
+                <!-- Card for how to contact us -->
+                <div class="card">
+                    <header class="card-header bg-brown border-bottom text-center">
+                        <h1 class="fw-bolder">Contact Us</h1>
+                    </header>
+                    <section class="card-body text-center">
+                        
+                        <!-- How to pin jobs to save them -->
+                        <h2 class="fw-bolder pb-3">Want to speak with us?</h2>
+                        <h3 class= "fw-bold ps-3 pt-1">By Email:</h3>
+                        <p class="p-3">
+                            Contact us via email using admin@jag.com 
+                        </p>
+                        <p class="fs-6">
+                            * Aleternatively you can reach out via one
+                            of the social media plaforms linked in the footer of this page.
+                        </p>
+
+                    </section>
+                    
+                    <div class="card-footer bg-brown">
+                        <!-- Navigaiton controls to exit page -->
+                        <nav class="text-center p-1">
+
+                            <p> Where would you like to go?</p>
+
+                            <a href="{% url 'job_list' %}" class="btn btn-primary btn-large">All Jobs</a>
+                            
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'pin_board' %}" class="btn btn-success btn-large">Saved Jobs</a>
+                            {% endif %}
+
+                        </nav>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

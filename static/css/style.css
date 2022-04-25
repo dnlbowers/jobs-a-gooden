@@ -365,7 +365,12 @@ footer {
 @media screen and (min-width: 575px) {
     .nav {
         flex-direction: row;
-        justify-content: flex-end
+        justify-content: flex-end;
+        font-size: 1rem;
+    }
+
+    .nav-padding{
+      padding: 0 0.25rem 1rem;
     }
 }
   
@@ -404,14 +409,26 @@ footer {
     }
   }
 
+@media screen and (min-width: 620px) {
+
+  .nav-padding{
+    padding: 0 0.5rem 1rem;
+  }
+}
+
+
 @media screen and (min-width: 768px) {
 
     body {
       font-size: 1.5rem;
     }
 
+    .nav {
+      font-size: 1.24rem;
+    }
+
     .nav-padding{
-      padding: 0 1.5rem 1rem;
+      padding: 0 1rem 1rem;
     }
 
     #note-shortcut {
@@ -426,6 +443,14 @@ footer {
 
     #logo {
       width: 96px
+    }
+
+    .nav {
+      font-size: 1.5rem;
+    }
+
+    .nav-padding{
+      padding: 0 1.25rem 1rem;
     }
 
     .job-preview {
