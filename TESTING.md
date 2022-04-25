@@ -99,3 +99,32 @@ Below is a list of bugs and fixes found while creating a feature. You can find o
 Contrast error found on disabled button. Due to the buttons not being accessible until logged in I deemed this unnecessary to fix. 
 ![Disabled button contrast error](docs/images/wave-aim/disabled-buttons-error.JPG)
 There was also an accessability issue found due to the label for the pin jobs toggle. setting this to display none, and adding some text in the tags resolved this.
+
+# Lighthouse
+## Job Openings 
+### Logged out:
+![lighthouse score for job openings when logged out](docs/images/lighthouse/home-out.JPG)
+* Accessibility score only 92 due to toggle switch "Form elements do not have associated labels" However left unfix as according to the accessability checker above this was no longer and issue due to visually hiding the label with a description in. 
+
+### Logged in:
+![lighthouse score for job openings when logged in score](docs/images/lighthouse/home-in.JPG)
+
+## Full Job Spec 
+### With Notes Displayed:
+![Full Job Spec with notes displayed score](docs/images/lighthouse/full-spec-notes.JPG)
+* Reduction in accessability score due to no title on the summernote iframe and again the toggle lacking a visual label. 
+
+### No Notes Displayed:
+![Full Job Spec with notes displayed score](docs/images/lighthouse/full-spec.JPG)
+
+## Saved Jobs
+![saved jobs score](docs/images/lighthouse/saved-jobs.JPG)
+
+## Tracking Instructions Page
+![Tracking instructions score](docs/images/lighthouse/instructions.JPG)
+
+## Contact Page
+![contact score](docs/images/lighthouse/contact.JPG)
+
+# **DO INSIGHTS edit notes PAGE**
+

@@ -455,7 +455,8 @@ footer {
     }
 
     .addjob-hero-image,
-    .openings-hero-image{
+    .openings-hero-image,
+    .insights-hero-image {
       transform:translateY(-15%)
     }
 
@@ -507,6 +508,7 @@ footer {
       padding: 0 2rem 1rem;
     }
 
+    .insights-hero-image,
     .openings-hero-image{
       transform:translateY(-20%)
     }
@@ -587,6 +589,10 @@ footer {
   .savedjobs-hero-image {
     transform:translateY(-25%)
   }
+  
+  .insights-hero-image {
+    transform:translateY(-22%)
+  }
 
 }
 
@@ -594,6 +600,10 @@ footer {
 
   .openings-hero-image{
     transform:translateY(-39%)
+  }
+
+  .insights-hero-image {
+    transform:translateY(-25%)
   }
 
 }
