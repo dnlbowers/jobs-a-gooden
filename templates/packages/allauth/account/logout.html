@@ -5,10 +5,10 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="surround mb-3 mt-3">
+    <main class="container">
+        <div class="surround mt-5 mb-5">
 
-            <div class="card text-center">
+            <section class="card text-center">
 
                 <header class="card-header bg-brown">
                     <h1>{% trans "Sign Out" %}</h1>
@@ -37,8 +37,13 @@
                 <!-- decorative only -->
                 <div class="card-footer bg-brown"></div>
                 
-            </div>
+            </section>
+
         </div>
-    </div>
+        <figure class="text-center">
+            <figcaption><h2 class="mb-3">Thanks for visiting our site! Please come visit again soon &#x1F601;</h2></figcaption>
+            <img class="img-fluid" src="https://res.cloudinary.com/df4m8hva5/image/upload/v1645650841/jaguar-logo-left_y2p0od.png" alt="Baby Jaguar mascot">
+        </figure>
+    </main>
 
 {% endblock %}
