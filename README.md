@@ -152,18 +152,18 @@ For this project I used two different fonts.
 * The main font for the remainder of the site. This was used for its soft edges to match the border radius placed on most elements.
 
 # Data Model
-Below shows my initial plan for my database tables:
+Below shows my initial plan for my database tables:  
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg) 
 
 My initial plan for my database tables included using a JSON with data from the API. Since I abandoned this idea early on, the JSON was replaced with a jobs model.
 
 My user model was also removed in favor of the default model provided by the ALLAUTH library. I combined the notes and insights tables into a single table with a boolean felid to indicate if the entry was a note or insight.
 
-Below is the final version of the ERD generated via PG admin connected to my Heroku Postgres database. There are only the three custom tables mentioned above; the rest were generated automatically by various Libraries.
+Below is the final version of the ERD generated via PG admin connected to my Heroku Postgres database. There are only the three custom tables (Notes, Jobs, PinnedJobs); the rest were generated automatically by various Libraries.
 
 ![Final ERD](docs/images/erd.png)
  
-Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs.
+Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs with in the PinnedJobs table.
 
 # Agile development process
 I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4/roadmap) to track and create issues/user stories. I will provide login credentials for the above project space when submitting the project. However, you can find a summary of my agile process/learnings [here](AGILE.md).
@@ -188,14 +188,16 @@ I have included details of testing both during development and post development 
 I have included details of my initial deployment in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
 
 
-## Honorable mentions  
+
+# **Grammarly done til here**
+# Honorable mentions  
 * sean - just a legend any way you slice it, helped me understand the logic behind my pin job feature by providing examples of similar things and helped me to connect to heroku through the console of VSCODE
 * matt - the comfort of a friend no matter the time of day, the push of a competitor even if I am wasn't playing the game
 * steve - Always pushing me to think bigger
 * Guillermo Brachetta - for explaining dotenv package and how to use it
 
 
-## Credits
+# Credits
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
 * Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)

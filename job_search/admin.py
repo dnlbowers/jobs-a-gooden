@@ -80,7 +80,6 @@ class NoteAdmin(admin.ModelAdmin):
     Allows admin to see how the feature is being used or not
     but hides the specific note content for dataprotection.
     """
-    
 
     exclude = (
         'short_description',

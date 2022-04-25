@@ -14,7 +14,7 @@ class Job(models.Model):
     """"
     Stores Job post data
     """
-    
+
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
@@ -50,7 +50,6 @@ class Notes(models.Model):
     for each user. Insights can be stored
     without a related job
     """
-    
 
     related_job = models.ForeignKey(
         Job, on_delete=models.SET_NULL,

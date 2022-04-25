@@ -2,13 +2,16 @@
 Below are the steps I took to deploy the site to Heroku, along with any console commands required to initiate it.
 ### Create repository
 1. Create a new repository in GitHub and clone it locally following [these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+    * ***Note*** - If you are cloning my project, then you can skip all pip installs below and just run the following command in the terminal to install all the required libraries/packages at once:
+       * pip install -r requirements.txt
+    * ***IMPORTANT*** -  If developing locally on your device, ensure you set up/activate the virtual environment ([see below](#setting-up-the-workspace-to-be-done-locally-via-the-console-of-your-chosen-editor)) before installing/generating the requirements.txt file; failure to do this will pollute your machine and put other projects at risk
    
 ### Setting up the Workspace (To be done locally via the console of your chosen editor)
 1. Create a virtual environment on your machine:
     * python -m venv .venv
 1. To ensure the virtual environment is not tracked by version control, add .venv to the .gitignore file.
 1. Install Django with version 3.2:
-    * pip install django3.2
+    * pip install django3.2 
 1. Install gunicorn:
     * pip install gunicorn
 1. Install supporting libraries:
