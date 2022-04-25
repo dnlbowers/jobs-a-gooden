@@ -6,6 +6,11 @@
     </div>    
     <main>
         
+        <div class="text-center mb-2">
+            {% include "../components/go-to-instructions.html" %}
+        </div>
+
+
         <div class="text-center bg-brown p-1 border-bottom border-top mb-3">
             <h1>Insights</h1>
         </div>
@@ -15,9 +20,7 @@
             <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add insight</a>
         </div>
 
-        <div class="text-center mb-2">
-            {% include "../components/go-to-instructions.html" %}
-        </div>
+
         
         {% include '../components/messages.html' %}
 
@@ -31,7 +34,7 @@
                         <p>{{ insight.note|safe }}</p>
 
                         <!-- CRUD controls for insight entry -->
-                        <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success">Edit</a>
                         <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ insight.id }}">Delete</button>
                     </section>
                 </section>

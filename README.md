@@ -87,10 +87,11 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
 * As an **Admin** I can...
     * **use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post**    
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
-    * ...**easily navigate the admin panel** so that **I can view, search, add and delete jobs**
+    * ...**Easily navigate the admin panel** so that **I can view, search, add and delete jobs**
     * ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.**
     * **Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
     * **Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
+    * ... **Filter and search all custom models from the admin page** so that **I can utilize the admin page to review, edit and delete data easily.**
  
 * As an **Unregistered User** I can... 
     * ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
@@ -118,6 +119,7 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
     * **view open job posts** so that **I can decide which ones are of interest to me.**
     * ...**type a URL into the web browser** so that **I can access the sites various pages**
     * **see uniformity on each page, as well as clear, distinguish the content subject** so that **I can easily navigate around the page in a way that feels familiar.**
+    * ... **Find relevant contact details** so that **I can contact the site admin via email**
   
 ### User Stories dropped as part of the agile process
 * As a **Registered User** I can **create a profile** so that **I can save key details relevant to my job search.**
@@ -179,6 +181,7 @@ I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/
 * API for a Job's site
 * Auto email to Job post author when job close to expired that it will be deleted after the specified time of expiration.
 * [KanBan board](https://codepen.io/josetxu/pen/VwyxZKq) to track applied, round, and response.
+* add ability for user to submit a job post as hidden and pin it so the job is available only to them.
 
 # **Testing Phase**
 I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).

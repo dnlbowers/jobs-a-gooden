@@ -28,7 +28,7 @@
                     {% load widget_tweaks %}
                     {% for field in form %}
                         <div class="form-group p-2 {% if field.errors %} alert alert-danger {% endif %}">
-                            {{ field.errors }}
+                            
                             
                             {% if field.name == "remember" %}
                                 <div class="text-center">
@@ -36,8 +36,11 @@
                                     {% render_field field class="p1" %}
                                 </div>
                             {% else %}
-                                {{ field.label_tag}}
-                                {% render_field field class="form-control" %}
+                                <div class="form-group p-2 {% if field.errors %} alert alert-danger {% endif %}">
+                                    {{ field.errors }}
+                                    {{ field.label_tag}}
+                                    {% render_field field class="form-control" %}
+                                </div>
                                 
                             {% endif %}
                         </div>

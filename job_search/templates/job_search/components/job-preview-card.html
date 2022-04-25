@@ -27,7 +27,7 @@
 
         <!-- Job expiry date and additional control for admin users -->
         <div class="text-center card-footer bg-brown border-top">
-            <p>Job Closing date - {{ job.date_expired }}</p>
+            <h4>Job Closing date - {{ job.date_expired }}</h4>
             {% if user.is_staff %}
                 <a href="{% url 'edit_job' job.id %}" class="btn btn-success">Edit</a>
                 <button class="btn btn-danger job-del-button" data-id="{{ job.id }}">Delete</button>

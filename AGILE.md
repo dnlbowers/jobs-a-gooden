@@ -86,3 +86,8 @@ My first sprint was short; I intended to get more familiar with JIRA and get the
 * Finished this sprint two days early. Although I finished this early, it was a more challenging sprint due to PJG-53 of 40 points; in the future, I would break this story down into sub-tasks to help stay more focused while styling the front end. 
 
 ![Tenth sprint screenshot](docs/agile/sprint-screenshots/sprint10.JPG)
+
+### Sprint 11 notes: 
+* This sprint was all must haves to prepare for submission
+
+![Tenth sprint screenshot](docs/agile/sprint-screenshots/sprint11.JPG)

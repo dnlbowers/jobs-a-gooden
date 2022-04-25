@@ -27,7 +27,7 @@ class Job(models.Model):
     max_salary = models.IntegerField(blank=True, null=True)
     currency = models.CharField(max_length=10, blank=True, null=True)
     date_posted = models.DateTimeField(auto_now_add=True)
-    date_expired = models.DateTimeField(
+    date_expired = models.DateField(
         auto_now_add=False, blank=True, null=True)
     job_description = models.TextField()
     job_url = models.URLField(max_length=2000)
