@@ -515,6 +515,10 @@ footer {
       transform:translateY(-25%)
     }
 
+    .savedjobs-hero-image {
+      transform:translateY(-10%)
+    }
+
 }
 
 @media screen and (min-width: 1600px) {
@@ -542,6 +546,10 @@ footer {
 
     .addjob-hero-image {
       transform:translateY(-35%)
+    }
+
+    .savedjobs-hero-image {
+      transform:translateY(-20%)
     }
 
 }
@@ -574,6 +582,10 @@ footer {
 
   .addjob-hero-image {
     transform:translateY(-42%)
+  }
+
+  .savedjobs-hero-image {
+    transform:translateY(-25%)
   }
 
 }
