@@ -454,6 +454,7 @@ footer {
       padding: 0 1.25rem 1rem;
     }
 
+    .addjob-hero-image,
     .openings-hero-image{
       transform:translateY(-15%)
     }
@@ -510,6 +511,10 @@ footer {
       transform:translateY(-20%)
     }
 
+    .addjob-hero-image {
+      transform:translateY(-25%)
+    }
+
 }
 
 @media screen and (min-width: 1600px) {
@@ -522,6 +527,7 @@ footer {
 
 @media screen and (min-width: 1800px) {
 
+    .addjob-hero-image,
     .openings-hero-image{
       transform:translateY(-30%)
     }
@@ -534,6 +540,10 @@ footer {
       transform:translateY(-28%)
     }
 
+    .addjob-hero-image {
+      transform:translateY(-35%)
+    }
+
 }
 
 @media screen and (min-width: 2500px) {
@@ -544,10 +554,14 @@ footer {
 
 }
 
-@media screen and (min-width: 2500px) {
+@media screen and (min-width: 2600px) {
 
   .openings-hero-image{
     transform:translateY(-35%)
+  }
+
+  .addjob-hero-image {
+    transform:translateY(-39%)
   }
 
 }
@@ -556,6 +570,10 @@ footer {
 
   .openings-hero-image{
     transform:translateY(-37%)
+  }
+
+  .addjob-hero-image {
+    transform:translateY(-42%)
   }
 
 }
