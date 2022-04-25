@@ -194,10 +194,12 @@ I have included details of my initial deployment in a separate document called [
 
 # **Grammarly done til here**
 # Honorable mentions  
-* sean - just a legend any way you slice it, helped me understand the logic behind my pin job feature by providing examples of similar things and helped me to connect to heroku through the console of VSCODE
-* matt - the comfort of a friend no matter the time of day, the push of a competitor even if I am wasn't playing the game
-* steve - Always pushing me to think bigger
+* [Sean Murphy](https://github.com/nazarja) - just a legend any way you slice it, helped me understand the logic behind my pin job feature by providing examples of similar things and helped me to connect to heroku through the console of VSCODE
+* [Matt Bodden](https://github.com/MattBCoding) - the comfort of a friend no matter the time of day, the push of a competitor even if I am wasn't playing the game
+* [Steve Wier](https://github.com/StevenWeir038) - Always pushing me to think bigger
 * Guillermo Brachetta - for explaining dotenv package and how to use it
+* Ed_CI - was always there in the project channel and quick to jump in to help
+* Megan
 
 
 # Credits

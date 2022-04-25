@@ -5,7 +5,7 @@
     {% if request.user in job.is_pinned.all %}
         <div class="form-check form-switch">
             <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckChecked{{job.id}}" checked data-id="{{ job.id }}">
-            <label class="form-check-label pin" for="flexSwitchCheckChecked{{job.id}}"></label>
+            <label class="form-check-label pin d-none" for="flexSwitchCheckChecked{{job.id}}">Pin Job toggle</label>
         </div>
 
     {% else %}
@@ -13,7 +13,7 @@
     <!-- toggle for when page first rendered and job has not been pinned previosly -->
         <div class="form-check form-switch">
             <input class="form-check-input pin" type="checkbox" role="switch" id="flexSwitchCheckDefault{{job.id}}" data-id="{{ job.id }}">
-            <label class="form-check-label pin" for="flexSwitchCheckDefault{{job.id}}"></label>
+            <label class="form-check-label pin d-none" for="flexSwitchCheckDefault{{job.id}}">Pin Job toggle</label>
         </div> 
         
     {% endif %}
@@ -22,6 +22,6 @@
 {% else %}
     <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled{{job.id}}" disabled>
-        <label class="form-check-label" for="flexSwitchCheckDisabled{{job.id}}"></label>
+        <label class="form-check-label d-none" for="flexSwitchCheckDisabled{{job.id}}">Pin Job toggle</label>
     </div>
 {% endif %}

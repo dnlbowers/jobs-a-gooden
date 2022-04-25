@@ -95,3 +95,7 @@ Below is a list of bugs and fixes found while creating a feature. You can find o
 * Cause - I was missing several settings for all auth in my setting.py
 * Solution -  I added the additional settings required in settings.py to handle an email on signing up for the issue.
 
+# Wave Aim Accessability checker:
+Contrast error found on disabled button. Due to the buttons not being accessible until logged in I deemed this unnecessary to fix. 
+![Disabled button contrast error](docs/images/wave-aim/disabled-buttons-error.JPG)
+There was also an accessability issue found due to the label for the pin jobs toggle. setting this to display none, and adding some text in the tags resolved this.

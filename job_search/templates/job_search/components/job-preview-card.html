@@ -11,7 +11,7 @@
         <section class="card-body bg-pale-yellow">
             <h2 class="card-title text-center fw-bolder">{{ job.job_title }}</h2>
             <h3 class="card-subtitle text-muted text-center fw-bold">{{ job.company_name }}</h3>
-            <p class="card-text text-center"> {{ job.location }} </p>
+            <h4 class="card-text text-center"> {{ job.location }} </h4>
 
             <!-- Conditionals to account for some companies would not disclose a renumeration package -->
             {% include '../components/salary-info.html' %}
