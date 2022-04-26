@@ -318,10 +318,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (display) {
             warningModalRef.classList.remove('d-none');
             warningModalRef.classList.add('show');
+            warnModalBodyRef.setAttribute('aria-hidden', "false")
             acceptWarningRef.setAttribute('data-id', Id);
         } else {
             warningModalRef.classList.add('d-none');
             warningModalRef.classList.remove('show');
+            warnModalBodyRef.setAttribute('aria-hidden', "true")
             acceptWarningRef.removeAttribute('data-id'); 
         }
     }
