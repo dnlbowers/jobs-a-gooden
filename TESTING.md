@@ -105,6 +105,8 @@ During the lighthouse test I found some reduction to the Accessibility score on 
 
 The lighthouse score also confirmed the poor contrast scores on the nav bar items that are disabled when signed out.
 
+In general Mobile scores were lower in performance for two main reasons. cdn imports from bootstrap and jquery, and hero images which had already been compress multiple times.
+
 ## Job Openings 
 ### Logged out:
 #### *Desktop*:
@@ -140,43 +142,74 @@ The lighthouse score also confirmed the poor contrast scores on the nav bar item
 #### *Desktop*:
 ![saved jobs score](docs/images/lighthouse/saved-jobs.JPG)
 
+#### *Mobile*:
+![saved jobs score](docs/images/lighthouse/saved-jobs-mob.JPG)
+
 ## Tracking Instructions Page
 #### *Desktop*:
 ![Tracking instructions score](docs/images/lighthouse/instructions.JPG)
+
+#### *Mobile*:
+![Tracking instructions score](docs/images/lighthouse/instructions-mob.JPG)
 
 ## Contact Page
 #### *Desktop*:
 ![contact score](docs/images/lighthouse/contact.JPG)
 
+#### *Mobile*:
+![contact score](docs/images/lighthouse/contact-mob.JPG)
+
 ## Insights Page
 #### *Desktop*:
 ![insights score](docs/images/lighthouse/insight.JPG)
 
+#### *Mobile*:
+![insights score](docs/images/lighthouse/insight-mob.JPG)
+
 ## Add Insights Page
 #### *Desktop*:
 ![add insights score](docs/images/lighthouse/add-insight.JPG)
-* Reduction in accessability score due to no title on the summernote iframe. 
+* Reduction in accessability score due to no title on the summernote iframe.
+
+#### *Mobile*:
+![add insights score](docs/images/lighthouse/add-insight-mob.JPG)
+
 
 ## Edit Notes Page
 #### *Desktop*:
 ![edit note score](docs/images/lighthouse/edit-note.JPG)
 * Reduction in accessability score due to no title on the summernote iframe. 
 
+#### *Mobile*:
+![edit note score](docs/images/lighthouse/edit-note-mob.JPG)
+
 ## Add Job Page
 #### *Desktop*:
 ![add job score](docs/images/lighthouse/add-job.JPG)
 * Reduction in accessability score due to no title on the summernote iframe. 
 
+#### *Mobile*:
+![add job score](docs/images/lighthouse/add-job-mob.JPG)
+
 ## Sign Out Page
 #### *Desktop*:
 ![sign out score](docs/images/lighthouse/sign-out.JPG)
+
+#### *Mobile*:
+![sign out score](docs/images/lighthouse/sign-out-mob.JPG)
 
 ## Sign in Page
 #### *Desktop*:
 ![sign in score](docs/images/lighthouse/sign-in.JPG)
 * Reduction in accessability score due to Contrast on disabled navbar buttons
 
+#### *Mobile*:
+![sign in score](docs/images/lighthouse/sign-in-mob.JPG)
+
 ## Sign up Page
 #### *Desktop*:
 ![sign up score](docs/images/lighthouse/register.JPG)
 * Reduction in accessability score due to Contrast on disabled navbar buttons
+
+#### *Mobile*:
+![sign up score](docs/images/lighthouse/register-mob.JPG)

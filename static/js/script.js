@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     const removeJobPreview = (jobId) => {
         jobPreviewRef.forEach(job => {
-            console.log(job)
             let pinnedJob = job.getAttribute('data-job-preview')
 
             if (pinnedJob === jobId) {
