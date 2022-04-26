@@ -101,10 +101,11 @@ Contrast error found on disabled button. Due to the buttons not being accessible
 There was also an accessability issue found due to the label for the pin jobs toggle. setting this to display none, and adding some text in the tags resolved this.
 
 # Lighthouse
+During the lighthouse test I found some reduction to the Accessibility score on pages with a toggle switch. The error was "Form elements do not have associated labels". This was left unfix however as according to the accessability checker above this was no longer an issue after visually hiding the label with a description in. 
+
 ## Job Openings 
 ### Logged out:
 ![lighthouse score for job openings when logged out](docs/images/lighthouse/home-out.JPG)
-* Accessibility score only 92 due to toggle switch "Form elements do not have associated labels" However left unfix as according to the accessability checker above this was no longer and issue due to visually hiding the label with a description in. 
 
 ### Logged in:
 ![lighthouse score for job openings when logged in score](docs/images/lighthouse/home-in.JPG)
@@ -112,7 +113,7 @@ There was also an accessability issue found due to the label for the pin jobs to
 ## Full Job Spec 
 ### With Notes Displayed:
 ![Full Job Spec with notes displayed score](docs/images/lighthouse/full-spec-notes.JPG)
-* Reduction in accessability score due to no title on the summernote iframe and again the toggle lacking a visual label. 
+* Reduction in accessability score due to no title on the summernote iframe. 
 
 ### No Notes Displayed:
 ![Full Job Spec with notes displayed score](docs/images/lighthouse/full-spec.JPG)
@@ -126,5 +127,17 @@ There was also an accessability issue found due to the label for the pin jobs to
 ## Contact Page
 ![contact score](docs/images/lighthouse/contact.JPG)
 
-# **DO INSIGHTS edit notes PAGE**
+## Insights Page
+![insights score](docs/images/lighthouse/insight.JPG)
+
+## Add Insights Page
+![insights score](docs/images/lighthouse/add-insight.JPG)
+
+## Edit Notes Page
+![insights score](docs/images/lighthouse/edit-note.JPG)
+
+## Add Job Page
+![insights score](docs/images/lighthouse/add-job.JPG)
+
+
 
