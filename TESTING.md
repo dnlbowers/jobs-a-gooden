@@ -110,6 +110,9 @@ The lighthouse score also confirmed the poor contrast scores on the nav bar item
 #### *Desktop*:
 ![lighthouse score for job openings when logged out](docs/images/lighthouse/home-out.JPG)
 
+#### *Mobile*:
+
+
 ### Logged in:
 #### *Desktop*:
 ![lighthouse score for job openings when logged in score](docs/images/lighthouse/home-in.JPG)
