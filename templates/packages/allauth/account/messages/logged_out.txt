@@ -1,2 +1,3 @@
+<!-- Commented out to overriden the allauth messages showing above forms when logging out -->
 {% comment %} {% load i18n %}
 {% blocktrans %}You have signed out.{% endblocktrans %} {% endcomment %}

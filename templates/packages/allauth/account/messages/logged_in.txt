@@ -1,3 +1,4 @@
+<!-- Commented out to overriden the allauth messages showing above forms when logging in -->
 {% comment %} {% load account %}
 {% load i18n %}
 {% user_display user as name %}

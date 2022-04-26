@@ -217,7 +217,6 @@ main {
 /* The actual timeline (the vertical ruler) */
 #timeline {
     margin: 0 auto;
-    max-width: 1200px;
     position: relative;
   }
   

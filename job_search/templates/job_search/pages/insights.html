@@ -23,7 +23,7 @@
         {% include '../components/messages.html' %}
 
         <!-- timeline to show insights adapted from https://www.w3schools.com/howto/howto_css_timeline.asp -->
-        <div id="timeline">
+        <div id="timeline" class="mb-3">
             {% for insight in insights %}
                 <section class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}" data-insight-item="{{ insight.id }}">
                     <section class="insight-content">
