@@ -40,19 +40,16 @@
                     Jobs
                 </a>
 
-                <ul class="dropdown-menu surround" aria-labelleby="jobsDropdown">
+                <ul class="dropdown-menu bg-pale-yellow nav-dropdown" aria-labelleby="jobsDropdown">
 
-                    <span class="bg-pale-yellow nav-dropdown d-flex flex-column">
+                    <li class="border-bottom">
+                        <a href="{% url 'job_list' %}" class="dropdown-item">Open Positions</a>
+                    </li>
 
-                        <li class="border-bottom">
-                            <a href="{% url 'job_list' %}" class="dropdown-item">Open Positions</a>
-                        </li>
+                    <li>
+                        <a href="{% url 'add_job' %}" class="dropdown-item">Add a Job</a>
+                    </li>
 
-                        <li>
-                            <a href="{% url 'add_job' %}" class="dropdown-item">Add a Job</a>
-                        </li>
-
-                    </span>
                 </ul>
             </li>
 
@@ -63,29 +60,27 @@
                     Tracking
                 </a>
 
-                <ul class="dropdown-menu surround" aria-labelleby="TrackingDropdown">
+                <ul class="dropdown-menu bg-pale-yellow nav-dropdown" aria-labelleby="TrackingDropdown">
 
-                    <span class="bg-pale-yellow nav-dropdown d-flex flex-column">
-
-                        <li class="border-bottom">
-                            <a href="{% url 'tracking_instructions' %}" class="dropdown-item">
-                                How to Use
-                            </a>
-                        </li>
-                        
-                        <li class="border-bottom">
-                            <a href="{% url 'pin_board' %}" class="dropdown-item">
-                                Saved jobs
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="{% url 'insights' %}" class="dropdown-item">
-                                Insights
-                            </a>
-                        </li>
-                    </span>
+                    <li class="border-bottom">
+                        <a href="{% url 'tracking_instructions' %}" class="dropdown-item">
+                            How to Use
+                        </a>
+                    </li>
+                    
+                    <li class="border-bottom">
+                        <a href="{% url 'pin_board' %}" class="dropdown-item">
+                            Saved jobs
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="{% url 'insights' %}" class="dropdown-item">
+                            Insights
+                        </a>
+                    </li>
                 </ul>
+                
                 <li class="nav-item">
                     <a class="nav-link nav-padding text-cream" href="{% url 'contact' %}">Contact Us</a>
                 </li>
