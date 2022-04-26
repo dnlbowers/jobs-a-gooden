@@ -101,7 +101,7 @@ Contrast error found on disabled button. Due to the buttons not being accessible
 There was also an accessability issue found due to the label for the pin jobs toggle. setting this to display none, and adding some text in the tags resolved this.
 
 # Lighthouse
-During the lighthouse test I found some reduction to the Accessibility score on pages with a toggle switch. The error was "Form elements do not have associated labels". This was left unfix however as according to the accessability checker above this was no longer an issue after visually hiding the label with a description in. 
+During the lighthouse test I found some reduction to the Accessibility score on pages with a toggle switch. The error was "Form elements do not have associated labels". This was fixed by adding an aria-label to the pin jobs toggle. 
 
 The lighthouse score also confirmed the poor contrast scores on the nav bar items that are disabled when signed out.
 
@@ -146,14 +146,17 @@ The lighthouse score also confirmed the poor contrast scores on the nav bar item
 ## Add Insights Page
 #### *Desktop*:
 ![add insights score](docs/images/lighthouse/add-insight.JPG)
+* Reduction in accessability score due to no title on the summernote iframe. 
 
 ## Edit Notes Page
 #### *Desktop*:
 ![edit note score](docs/images/lighthouse/edit-note.JPG)
+* Reduction in accessability score due to no title on the summernote iframe. 
 
 ## Add Job Page
 #### *Desktop*:
 ![add job score](docs/images/lighthouse/add-job.JPG)
+* Reduction in accessability score due to no title on the summernote iframe. 
 
 ## Sign Out Page
 #### *Desktop*:
@@ -162,7 +165,9 @@ The lighthouse score also confirmed the poor contrast scores on the nav bar item
 ## Sign in Page
 #### *Desktop*:
 ![sign in score](docs/images/lighthouse/sign-in.JPG)
+* Reduction in accessability score due to Contrast on disabled navbar buttons
 
 ## Sign up Page
 #### *Desktop*:
 ![sign up score](docs/images/lighthouse/register.JPG)
+* Reduction in accessability score due to Contrast on disabled navbar buttons
