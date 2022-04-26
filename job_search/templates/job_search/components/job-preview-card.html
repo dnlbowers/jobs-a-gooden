@@ -1,6 +1,6 @@
 <!-- Job card displaying breif info about a post -->
 <div class="surround mb-4">
-    <section class="card job-preview" data-job-preview="{{ job.id }}">
+    <div class="card job-preview" data-job-preview="{{ job.id }}">
 
         <header class="card-header head-with-toggle bg-brown border-bottom d-flex justify-content-end">
             <!-- pin job toggle active only when logged in -->
@@ -33,5 +33,5 @@
                 <button class="btn btn-danger job-del-button" data-id="{{ job.id }}">Delete</button>
             {% endif %}
         </div>
-    </section>
+    </div>
 </div>
