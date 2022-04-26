@@ -108,6 +108,10 @@ body {
     font-size: 2em;
 }
 
+ul {
+  list-style-type: none;
+}
+
 /* ------------------------------------------------------------ Hero image styling */
 
 .hero-container {
