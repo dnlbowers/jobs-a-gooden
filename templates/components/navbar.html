@@ -40,9 +40,9 @@
                     Jobs
                 </a>
 
-                <ul class="dropdown-menu surround list-group" aria-labelleby="jobsDropdown">
+                <ul class="dropdown-menu surround" aria-labelleby="jobsDropdown">
 
-                    <ul class="bg-pale-yellow nav-dropdown list-group-item">
+                    <span class="bg-pale-yellow nav-dropdown d-flex flex-column">
 
                         <li class="border-bottom">
                             <a href="{% url 'job_list' %}" class="dropdown-item">Open Positions</a>
@@ -52,7 +52,7 @@
                             <a href="{% url 'add_job' %}" class="dropdown-item">Add a Job</a>
                         </li>
 
-                    </ul>
+                    </span>
                 </ul>
             </li>
 
@@ -63,9 +63,9 @@
                     Tracking
                 </a>
 
-                <ul class="dropdown-menu surround list-group" aria-labelleby="TrackingDropdown">
+                <ul class="dropdown-menu surround" aria-labelleby="TrackingDropdown">
 
-                    <ul class="bg-pale-yellow nav-dropdown list-group-item">
+                    <span class="bg-pale-yellow nav-dropdown d-flex flex-column">
 
                         <li class="border-bottom">
                             <a href="{% url 'tracking_instructions' %}" class="dropdown-item">
@@ -84,7 +84,7 @@
                                 Insights
                             </a>
                         </li>
-                    </ul>
+                    </span>
                 </ul>
                 <li class="nav-item">
                     <a class="nav-link nav-padding text-cream" href="{% url 'contact' %}">Contact Us</a>
