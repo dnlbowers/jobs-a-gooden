@@ -410,6 +410,18 @@ footer {
   .nav-padding{
     padding: 0 0.5rem 1rem;
   }
+
+  .savedjobs-hero-image,
+  .insights-hero-image,
+  .note-hero-image,
+  .addjob-hero-image,
+  .openings-hero-image {
+    display: block !important;
+  }
+
+  .mob-hero-image{
+    display: none;
+  }
 }
 
 
@@ -425,10 +437,6 @@ footer {
 
     .nav-padding{
       padding: 0 1rem 1rem;
-    }
-
-    .openings-hero-image{
-      transform: translateY(-10%);
     }
 
     #note-shortcut {
@@ -453,10 +461,11 @@ footer {
       padding: 0 1.25rem 1rem;
     }
 
+    .note-hero-image,
     .addjob-hero-image,
     .openings-hero-image,
     .insights-hero-image {
-      transform:translateY(-15%)
+      transform: translateY(-15%)
     }
 
     .job-preview {
@@ -495,6 +504,10 @@ footer {
     .job-preview {
       min-height: 692px;
     }
+
+    .note-hero-image {
+      transform: translateY(-20%);
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -524,6 +537,7 @@ footer {
 
 @media screen and (min-width: 1600px) {
 
+    .note-hero-image,
     .openings-hero-image{
       transform:translateY(-25%)
     }
@@ -532,6 +546,7 @@ footer {
 
 @media screen and (min-width: 1800px) {
 
+    .note-hero-image,
     .addjob-hero-image,
     .openings-hero-image{
       transform:translateY(-30%)
@@ -543,6 +558,10 @@ footer {
 
     .openings-hero-image{
       transform:translateY(-28%)
+    }
+
+    .note-hero-image {
+      transform: translateY(-40%);
     }
 
     .addjob-hero-image {
@@ -559,6 +578,10 @@ footer {
 
     .openings-hero-image{
       transform:translateY(-33%)
+    }
+
+    .note-hero-image {
+      transform: translateY(-50%);
     }
 
 }
@@ -587,6 +610,10 @@ footer {
 
   .savedjobs-hero-image {
     transform:translateY(-25%)
+  }
+
+  .note-hero-image {
+    transform: translateY(-52%);
   }
   
   .insights-hero-image {

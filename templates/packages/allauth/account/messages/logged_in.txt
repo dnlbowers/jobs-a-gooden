@@ -1,6 +1,5 @@
-
 {% comment %} {% load account %}
-<!-- Commented out to overriden the allauth messages showing above forms when logging in -->
+<!-- commented out to prevent drom displaying above forms -->
 {% load i18n %}
 {% user_display user as name %}
 {% blocktrans %}Successfully signed in as {{name}}.{% endblocktrans %} {% endcomment %}
