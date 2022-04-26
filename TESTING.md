@@ -108,14 +108,17 @@ The lighthouse score also confirmed the poor contrast scores on the nav bar item
 ## Job Openings 
 ### Logged out:
 #### *Desktop*:
-![lighthouse score for job openings when logged out](docs/images/lighthouse/home-out.JPG)
+![job openings when logged out score](docs/images/lighthouse/home-out.JPG)
 
 #### *Mobile*:
-
+![job openings when logged out score (mobile)](docs/images/lighthouse/home-out-mob.JPG)
 
 ### Logged in:
 #### *Desktop*:
 ![lighthouse score for job openings when logged in score](docs/images/lighthouse/home-in.JPG)
+
+#### *Mobile*:
+![job openings when logged in score (mobile)](docs/images/lighthouse/home-in-mob.JPG)
 
 ## Full Job Spec 
 ### With Notes Displayed:
@@ -123,9 +126,15 @@ The lighthouse score also confirmed the poor contrast scores on the nav bar item
 ![Full Job Spec with notes displayed score](docs/images/lighthouse/full-spec-notes.JPG)
 * Reduction in accessability score due to no title on the summernote iframe. 
 
+#### *Mobile*:
+![Full Job Spec with notes displayed score (mobile)](docs/images/lighthouse/full-spec-notes-mob.JPG)
+
 ### No Notes Displayed:
 #### *Desktop*:
-![Full Job Spec with notes displayed score](docs/images/lighthouse/full-spec.JPG)
+![Full Job Spec without notes displayed score](docs/images/lighthouse/full-spec.JPG)
+
+#### *Mobile*:
+![Full Job Spec without notes displayed score (mobile)](docs/images/lighthouse/full-spec-mob.JPG)
 
 ## Saved Jobs
 #### *Desktop*:
