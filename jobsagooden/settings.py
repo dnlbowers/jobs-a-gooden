@@ -91,6 +91,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jobsagooden.wsgi.application'
 
+SUMMERNOTE_THEME = 'bs4'
 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
