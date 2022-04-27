@@ -21,16 +21,15 @@
                         {% csrf_token %}
                         {% load widget_tweaks %}
                         {% for field in form %}
-                            
-                            <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
-                                {{ field.errors }}
-                                {{ field.label_tag }}
-                                {% if filed == form.job_description %}
-                                    {% render_field field %}
-                                {% else %}
+                            {% if filed == form.job_description %}
+                                {% render_field field %}
+                            {% else %}
+                                <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                                    {{ field.errors }}
+                                    {{ field.label_tag }}
                                     {% render_field field class="form-control" %}
-                                {% endif %}
-                            </div>
+                                </div>
+                            {% endif %}
                         {% endfor %}
 
                         <!-- form controls -->
