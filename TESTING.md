@@ -217,4 +217,7 @@ In general Mobile scores were lower in performance for two main reasons. cdn imp
 # Validators
 ## [HTML](https://validator.w3.org):
 When validating pages rendering text placed into a form field using the summernote editor there was an extra <p> tag which was injected by summernote. The tag was not visible to the users but was picked up by the validator.
+
 ![smmernote error](docs/images/html-validator/summernote-error.JPG) 
+
+This was then resolved by removing the surrounding paragraph tag when rendering a summernote field
