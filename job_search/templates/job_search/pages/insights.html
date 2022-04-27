@@ -25,7 +25,7 @@
         <!-- timeline to show insights adapted from https://www.w3schools.com/howto/howto_css_timeline.asp -->
         <div id="timeline" class="mb-3">
             {% for insight in insights %}
-                <section class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}" data-insight-item="{{ insight.id }}">
+                <div class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}" data-insight-item="{{ insight.id }}">
                     <section class="insight-content">
                         <p class="text-muted {% if forloop.counter|divisibleby:2 %}text-start{% else %}text-end{%endif%}">{{ insight.date_created }}</p>
                         <h2 class="mb-3">{{ insight.short_description }}</h2>
@@ -35,7 +35,7 @@
                         <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success">Edit</a>
                         <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ insight.id }}">Delete</button>
                     </section>
-                </section>
+                </div>
             {% endfor %} 
         </div>
 
