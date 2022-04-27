@@ -13,39 +13,47 @@
         {% include '../components/messages.html' %}
 
         <div class="container">
-            <!-- Add job for and surrond -->
-            <div class="surround mb-3">
-                <div class="form-container">
 
-                    <form method="post">
-                        {% csrf_token %}
-                        {% load widget_tweaks %}
-                        {% for field in form %}
-                            {% if field == form.job_description %}                                
-                                {{ field.errors }}
-                                {{ field.label_tag }}
-                                {% render_field field %}
-                            {% else %}
-                                <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+            {% if user.is_authenticated %}
+                <!-- Add job for and surrond -->
+                <div class="surround mb-3">
+                    <div class="form-container">
+
+                        <form method="post">
+                            {% csrf_token %}
+                            {% load widget_tweaks %}
+                            {% for field in form %}
+                                {% if field == form.job_description %}                                
                                     {{ field.errors }}
                                     {{ field.label_tag }}
-                                    {% render_field field class="form-control" %}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                    {% render_field field %}
+                                {% else %}
+                                    <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                                        {{ field.errors }}
+                                        {{ field.label_tag }}
+                                        {% render_field field class="form-control" %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
 
-                        <!-- form controls -->
-                        <div class="mt-3 text-center">
-                            <p class="fs-6">
-                                <strong>*</strong> Once approved by our admin team, all jobs added will be public for the community. 
-                            </p>
-                            <a href="{% url 'job_list' %}" class="btn btn-secondary btn-lg">Cancel</a>
-                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                        </div>
+                            <!-- form controls -->
+                            <div class="mt-3 text-center">
+                                <p class="fs-6">
+                                    <strong>*</strong> Once approved by our admin team, all jobs added will be public for the community. 
+                                </p>
+                                <a href="{% url 'job_list' %}" class="btn btn-secondary btn-lg">Cancel</a>
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            {% else %}
+                
+                <!-- when not logged in a message to invite user to sign up or log in -->
+                {% include '../layout/non-member.html' %} 
+
+            {% endif %}
         </div>
     </main>
 {% endblock %}

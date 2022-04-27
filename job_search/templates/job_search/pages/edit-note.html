@@ -14,29 +14,36 @@
         <div class="container">
             <!-- Edit note form prepopulated with existing entry and surrounds -->
             <div class="surround mb-3">
-                <div class="form-container">
-                    <form method="post">
-                        {% csrf_token %}
-                        {% load widget_tweaks %}
-                        {% for field in form %}
-                            <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
-                                {{ field.errors }}
-                                {{ field.label_tag }}
-                                {% if field == form.is_insight %}
-                                    {% render_field field %}
-                                {% else %}
-                                    {% render_field field class="form-control" %}
-                                {% endif %}
-                            </div>                        
-                        {% endfor %}
-                        
-                        <!-- Save changes or exit form saving data as is -->
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Save</button>
-                        </div>
+                {% if user.is_authenticated %}
+                    <div class="form-container">
+                        <form method="post">
+                            {% csrf_token %}
+                            {% load widget_tweaks %}
+                            {% for field in form %}
+                                <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                                    {{ field.errors }}
+                                    {{ field.label_tag }}
+                                    {% if field == form.is_insight %}
+                                        {% render_field field %}
+                                    {% else %}
+                                        {% render_field field class="form-control" %}
+                                    {% endif %}
+                                </div>                        
+                            {% endfor %}
+                            
+                            <!-- Save changes or exit form saving data as is -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                            </div>
 
-                    </form>
-                </div>
+                        </form>
+                    </div>
+                {% else %}
+                
+                    <!-- when not logged in a message to invite user to sign up or log in -->
+                    {% include '../layout/non-member.html' %} 
+    
+                {% endif %}
             </div>
         </div>
     </main>

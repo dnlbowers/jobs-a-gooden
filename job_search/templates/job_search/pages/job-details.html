@@ -1,21 +1,32 @@
 {% extends 'layout/base.html' %} {% block content %}
     <main class="p-3">
-        {% include "../components/go-to-instructions.html" %}
-        <div class="row">
-            <!-- Full job specification rendered on bootstrap card component -->
-            <article id="full-job-spec" class="col">
-                {% include '../components/full-job-card.html' %}
-            </article>
+        
+            {% include "../components/go-to-instructions.html" %}
 
-            <!-- Custom display propety classes made to work with show/hide when toggling the dispaly of the below note section -->
-            <div id="notes-section" class="col-md-5 container {% if pinned %}display-inline {% else %}display-none{% endif %}">
+            {% if user.is_authenticated %}
 
-                {% include '../components/note-form.html' %}
+            <div class="row">
+                <!-- Full job specification rendered on bootstrap card component -->
+                <article id="full-job-spec" class="col">
+                    {% include '../components/full-job-card.html' %}
+                </article>
 
-                <!-- Accordian to display previous notes/insights -->
-                {% include '../components/display-notes.html' %}
+                <!-- Custom display propety classes made to work with show/hide when toggling the dispaly of the below note section -->
+                <div id="notes-section" class="col-md-5 container {% if pinned %}display-inline {% else %}display-none{% endif %}">
+
+                    {% include '../components/note-form.html' %}
+
+                    <!-- Accordian to display previous notes/insights -->
+                    {% include '../components/display-notes.html' %}
+                </div>
             </div>
-        </div>
-        {% include "../components/warning-modal.html" %}
+            {% include "../components/warning-modal.html" %}
+
+        {% else %}
+                
+        <!-- when not logged in a message to invite user to sign up or log in -->
+        {% include '../layout/non-member.html' %} 
+
+    {% endif %}
     </main>
 {% endblock %}

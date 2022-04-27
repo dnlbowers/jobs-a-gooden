@@ -240,3 +240,12 @@ My CSS file was found to be free from errors
 ## [JS](https://jshint.com/):
 Only missing semi-colons were found by jshint which have now been added where appropriate.
 [jshint metrics](docs/images/jshint/metrics.JPG)
+
+## [PEP8](http://pep8online.com)
+Before using the pep8 validator I ran ``` autopep8 --in-place --aggressive --aggressive <file name> ``` on all py files.  
+
+Due to this the only error I found was in settings.py with ``` AUTH_PASSWORD_VALIDATORS ``` & ``` STATICFILES_STORAGE ```.   
+
+![settings.py pep8 errors](docs/images/pep8/settings-py.JPG)  
+
+The first appears to be a long standing issue with using pep8 checker with django, and there have been some [suggest resolves](https://code.djangoproject.com/ticket/28163), however Django seem to think shortening this lines is ill advisable. For this reason I left them to be longer than 80 characters. 
