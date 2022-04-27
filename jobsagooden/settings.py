@@ -102,7 +102,7 @@ SUMMERNOTE_CONFIG = {
 
         # Change editor size
         'width': '100%',
-        'height': '400px',
+        'height': '400',
     },
 
 }

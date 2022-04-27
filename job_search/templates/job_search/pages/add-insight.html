@@ -24,13 +24,13 @@
                             {{ form.short_description.label_tag }}
                             {% render_field form.short_description class="form-control" %}
                             {{ form.note.label_tag }}
-                            {% render_field form.note class="form-control" %}
+                            {% render_field form.note %}
                             
                         </div> 
 
                         <!-- form controls with dynamic inner text on submit button -->
                         <div class="text-center">
-                            <a href="{% url 'insights' %}" class="btn btn-secondary btn-lg">Cancel</i></a>
+                            <a href="{% url 'insights' %}" class="btn btn-secondary btn-lg">Cancel</a>
                             <button type="submit" class="btn btn-primary btn-lg">{% if title == 'Add an Insight' %} Create {% elif title == 'Edit Insight'%} Save {% endif %}</button>
                         </div>
 
