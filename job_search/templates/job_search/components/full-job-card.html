@@ -18,14 +18,14 @@
                 </div>
             {% endif %}
             <!-- Conditionals to account for some companies would not disclose a renumeration package -->
-            <div>
+            <div class="mb-3">
                 {% include '../components/salary-info.html' %}
             </div>
             
             <!-- Full job desription -->
             <section>
-                <h3>Full Details</h3>
-                <p>{{ job.job_description|safe }}</p>
+                <h3 class="mb-3 text-center">Full Details</h3>
+                {{ job.job_description|safe }}
                 
                 <!-- Button to apply or exit job spec -->
                 <div class="text-center">    

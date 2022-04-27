@@ -39,7 +39,7 @@
                                 
                                 {% endif %}
 
-                                <p>{{ note.note|safe }}</p>
+                                {{ note.note|safe }}
                                 <a href="{% url 'edit_note' note.id %}" class="btn btn-success">Edit</i></a>
                                 <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ note.id }}">Delete</button>
                             </div>

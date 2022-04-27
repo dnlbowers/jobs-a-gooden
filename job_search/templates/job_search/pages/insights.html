@@ -28,8 +28,8 @@
                 <section class="insight-container {% if forloop.counter|divisibleby:2 %}right{% else %}left{%endif%}" data-insight-item="{{ insight.id }}">
                     <section class="insight-content">
                         <p class="text-muted {% if forloop.counter|divisibleby:2 %}text-start{% else %}text-end{%endif%}">{{ insight.date_created }}</p>
-                        <h2>{{ insight.short_description }}</h2>
-                        <p>{{ insight.note|safe }}</p>
+                        <h2 class="mb-3">{{ insight.short_description }}</h2>
+                        {{ insight.note|safe }}
 
                         <!-- CRUD controls for insight entry -->
                         <a href="{% url 'edit_insight' insight.id %}" class="btn btn-success">Edit</a>
