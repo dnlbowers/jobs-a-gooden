@@ -91,9 +91,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jobsagooden.wsgi.application'
 
+SUMMERNOTE_theme = 'default'
+
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
-    'iframe': True,
+    'iframe': False,
 
     # You can put custom Summernote settings
     'summernote': {
@@ -104,6 +106,25 @@ SUMMERNOTE_CONFIG = {
         'width': '100%',
         'height': '400',
     },
+          # Use proper language setting automatically (default)
+        'lang': 'eu-us',
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear', 'superscript', 'subscript', 'strikethrough',]],
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video', 'hr']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+            ['help', ['help']],
+        ],
+        'url': ['language', ['https://res.cloudinary.com/df4m8hva5/raw/upload/v1/static/summernote/lang/summernote-eu-EU.min.esedf6aafb18.js']]
 
 }
 
