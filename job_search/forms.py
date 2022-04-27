@@ -23,7 +23,7 @@ class AddJobForm(forms.ModelForm):
         super(AddJobForm, self).__init__(*args, **kwargs)
         self.fields['job_url'].widget.attrs = (
             {'placeholder': 'Must begin http:// or https://'}
-            )
+        )
 
     class Meta:
         model = Job

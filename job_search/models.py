@@ -57,18 +57,18 @@ class Notes(models.Model):
         related_name='related_job',
         blank=True,
         null=True
-        )
+    )
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         default=False,
         editable=False,
-        )
+    )
     short_description = models.CharField(
         max_length=200,
         blank=False,
         null=False
-        )
+    )
     note = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
     is_insight = models.BooleanField(default=False)
@@ -90,7 +90,7 @@ class PinnedJobs(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, editable=False)
     pinned_jobs = models.ManyToManyField(
         Job, related_name='pinned_jobs', blank=True
-        )
+    )
 
     def __str__(self):
         return f'{self.user.username}\'s pinned jobs'

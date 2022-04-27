@@ -102,7 +102,7 @@ SUMMERNOTE_CONFIG = {
         # As an example, using Summernote Air-mode
         'airMode': False,
 
-        # Editor size
+        # Change editor size
         'width': '100%',
         'height': '400',
     },
@@ -134,11 +134,11 @@ DATABASES = {
 }
 
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-secondary',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
 }
 
 # Password validation
