@@ -42,17 +42,17 @@
                         </div>
                     {% endfor %}
 
-                  {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                  {% endif %}
+                    {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
                         
-                        <div class="text-center p-2">
-                            <button class="primaryAction btn btn-lg btn-primary" type="submit">{% trans "Sign In" %}</button>
-                        </div>
+                    <div class="text-center p-2">
+                        <button class="primaryAction btn btn-lg btn-primary" type="submit">{% trans "Sign In" %}</button>
+                    </div>
 
-                        <p class="text-center p-2 fs-6">* If you have forgotten your password kindly contact us by email admin@jag.com with your username.</p>
-                
-                    </form>
+                    <p class="text-center p-2 fs-6">* If you have forgotten your password kindly contact us by email admin@jag.com with your username.</p>
+            
+                </form>
             </div>
 
             <!-- decorative only -->

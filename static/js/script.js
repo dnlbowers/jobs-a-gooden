@@ -11,7 +11,7 @@ const deleteNoteBtnRef = document.querySelectorAll('.delete-note-btn');
 const noteItemRef = document.querySelectorAll('.accordion-item');
 const notesAccordionRef = document.getElementById('notes-accordion');
 const insightItemRef = document.querySelectorAll('.insight-container');
-const insightTimelineRef = document.getElementById('timeline')
+const insightTimelineRef = document.getElementById('timeline');
 
 // Job related element references
 const jobPreviewRef = document.querySelectorAll(".job-preview");
@@ -21,7 +21,6 @@ const pinToggleRef = document.querySelectorAll('.pin');
 // reference to the page URL
 const pinnedUrlRef = window.location.href.includes("pinboard");
 const fullSpecUrlRef = window.location.href.includes("fulldetails");
-const paginatedUrlRef = window.location.href.includes("page");
 const insightUrlRef = window.location.href.includes("insights");
 
 
@@ -53,14 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
         'Content-Type': 'application/x-www-form-urlencoded',
         'X-CSRFToken': csrftoken,
         'X-Requested-With': 'XMLHttpRequest',
-        })
+        });
     
     //Load event listeners
-    deleteNoteEvents()
-    deleteJobEvents()
-    loadPinJobEvents()
+    deleteNoteEvents();
+    deleteJobEvents();
+    loadPinJobEvents();
     if (warningModalRef){
-        warningModalEvents()
+        warningModalEvents();
     } 
 
 //----------------------------------------------------------Pin job related functionality
@@ -78,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(response => response.text())
         .then(data => {
-            console.log(status)
+            console.log(status);
             // Checks if the user in on the saved jobs page
             if (data == 200  && pinnedUrlRef){
                 if (!status) {
@@ -107,20 +106,20 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     const removeJobPreview = (jobId) => {
         jobPreviewRef.forEach(job => {
-            let pinnedJob = job.getAttribute('data-job-preview')
+            let pinnedJob = job.getAttribute('data-job-preview');
 
             if (pinnedJob === jobId) {
                 
                 if(jobPreviewRef.length === 1) {
                     previousPageRedirect();
-                    return window.location.reload(true);
+                    
                 } else {
                     $(job).hide();
-                    return window.location.reload(true)
+                    return window.location.reload(true);
                 }
             }
-        })
-    }
+        });
+    };
 
     //----------------------------------------------------------Pagination
     
@@ -131,14 +130,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const previousPageRedirect = () => {
         
         let page = window.location.href.substr(-1)-1;
-        if (!isNaN(page)) {
-            if (page != 0){
-                page - 1;
-                let previousPage = window.location.href.slice(0, -1) + page;
-                return window.location.replace(previousPage)
-            }
+        if (isNaN(page)){
+
+            return window.location.reload(true);
+
+        } else if (page != 0) {
+            
+            let previousPage = window.location.href.slice(0, -1) + page;
+            return window.location.replace(previousPage); 
+
+        } else {
+
+            return window.location.reload(true);
+
         }
-    }
+    };
 
 //----------------------------------------------------------delete Notes related functionality
 
@@ -176,13 +182,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const removeNote = (noteId) => {
         noteItemRef.forEach(note => {
 
-            let noteSection = note.getAttribute('data-note-item')
+            let noteSection = note.getAttribute('data-note-item');
             
             if (noteSection === noteId) {
                 notesAccordionRef.removeChild(note);
             }
-        })
-    }
+        });
+    };
 
     /**
      * Loops through the insights timeline and when the data attribute id
@@ -191,13 +197,13 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     const removeInsight = (noteId) => {
         insightItemRef.forEach(insight => {
-            let insightSection = insight.getAttribute('data-insight-item')
+            let insightSection = insight.getAttribute('data-insight-item');
 
             if (insightSection === noteId) {
                 insightTimelineRef.removeChild(insight);
             }
-        })
-    }
+        });
+    };
 
     /**
      * Makes fetch request to delete a job post
@@ -216,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (fullSpecUrlRef && data == 200){
                 window.location.replace('/');
             } else if (data == 200) {
-                removeJobPreview(jobId)
+                removeJobPreview(jobId);
             }
         })
         .catch(error => console.log(`ERROR: ${error}`));
@@ -233,8 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
             delBtn.addEventListener('click', () => {
                 const noteId = delBtn.dataset.id;
                 warningModal(true, noteId, 'deleteNote');
-            })
-        })
+            });
+        });
     }
 
     /**
@@ -245,8 +251,8 @@ document.addEventListener("DOMContentLoaded", () => {
             delBtn.addEventListener('click', () => {
                 const jobId = delBtn.dataset.id;
                 warningModal(true, jobId, 'deleteJob');
-            })
-        })
+            });
+        });
     }
 
     /**
@@ -283,10 +289,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     if ( id === acceptWarningRef.dataset.id && btnTxt === 'Unpin Job'){
                         // if unpin job cancelled slides the toggle back to pinned position
                         pin.click();
-                    };
-                })
+                    }
+                });
                 warningModal(false, null, 'clear');
-            })
+            });
         });
 
         acceptWarningRef.addEventListener('click', () => {
@@ -314,16 +320,16 @@ document.addEventListener("DOMContentLoaded", () => {
      * assigns/removes Job ID to confirm button
      */
     function warningModal(display, Id, reason='clear') {
-        populateWarning(reason)
+        populateWarning(reason);
         if (display) {
             warningModalRef.classList.remove('d-none');
             warningModalRef.classList.add('show');
-            warnModalBodyRef.setAttribute('aria-hidden', "false")
+            warnModalBodyRef.setAttribute('aria-hidden', "false");
             acceptWarningRef.setAttribute('data-id', Id);
         } else {
             warningModalRef.classList.add('d-none');
             warningModalRef.classList.remove('show');
-            warnModalBodyRef.setAttribute('aria-hidden', "true")
+            warnModalBodyRef.setAttribute('aria-hidden', "true");
             acceptWarningRef.removeAttribute('data-id'); 
         }
     }
@@ -333,13 +339,13 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function populateWarning(reason){
         if (reason === 'clear'){
-            clearWarningModal()
+            clearWarningModal();
         }else if (reason === 'unpinJob'){
-            unpinJobWarning()
+            unpinJobWarning();
         }else if (reason === 'deleteNote'){
-            deleteNoteWarning()
+            deleteNoteWarning();
         }else if (reason === 'deleteJob'){
-            deleteJobWarning()
+            deleteJobWarning();
         }
     }
 
@@ -348,7 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function clearWarningModal() {
         warnModalBodyRef.innerHTML='';
-        acceptWarningBtnRef.innerHTML=''
+        acceptWarningBtnRef.innerHTML='';
     }
     
     /**

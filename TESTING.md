@@ -216,8 +216,27 @@ In general Mobile scores were lower in performance for two main reasons. cdn imp
 
 # Validators
 ## [HTML](https://validator.w3.org):
-When validating pages rendering text placed into a form field using the summernote editor there was an extra <p> tag which was injected by summernote. The tag was not visible to the users but was picked up by the validator.
+
+All pages were free form errors accept those noted below.
+
+* When validating pages rendering text created using the summernote editor there was an extra <p> tag which was surrounding the summernote content. The tag was not visible to the users but was picked up by the validator and resolved by removing the surrounding paragraph tag when rendering a summernote field as part of a form.  
 
 ![smmernote error](docs/images/html-validator/summernote-error.JPG) 
 
-This was then resolved by removing the surrounding paragraph tag when rendering a summernote field
+* I found further errors coming from summernote on pages containing a form using the editor within it. I had tried a number of ways to resolve this including getting rid of default iframe however it appears there is a know issue when when setting the SUMMERNOTE_CONFIG to 'iframe':False that the editor no longer shows. I was unable to find any workable solution however since there was no direct impact on the user I decided to leave this for now.  
+
+![smmernote error](docs/images/html-validator/addjob-summernote-error.JPG)
+
+## [CSS](https://jigsaw.w3.org/css-validator/):
+My CSS file was found to be free from errors
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
+## [JS](https://jshint.com/):
+Only missing semi-colons were found by jshint which have now been added where appropriate.
+[jshint metrics](docs/images/jshint/metrics.JPG)

@@ -248,7 +248,7 @@ class DisplayInsights(generic.ListView):
     """
 
     model = Notes
-    paginate_by = 6
+    paginate_by = 3
     template_name = 'job_search/pages/insights.html'
     context_object_name = 'insights'
     queryset = Notes.objects.filter(is_insight=True).order_by('-date_created')
