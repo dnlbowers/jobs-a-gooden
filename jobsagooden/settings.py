@@ -95,25 +95,29 @@ SUMMERNOTE_theme = 'bs5'
 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
-    'iframe': False,
+    'iframe': True,
 
-    # You can put custom Summernote settings
+    # custom Summernote settings
     'summernote': {
         # As an example, using Summernote Air-mode
         'airMode': False,
 
-        # Change editor size
+        # Editor size
         'width': '100%',
         'height': '400',
     },
-    # Use proper language setting automatically (default)
-    'lang': 'eu-us',
 
     # Toolbar customization
-    # https://summernote.org/deep-dive/#custom-toolbar-popover
     'toolbar': [
         ['style', ['style']],
-        ['font', ['bold', 'italic', 'underline', 'clear', 'superscript', 'subscript', 'strikethrough',]],
+        ['font', [
+            'bold',
+            'italic'
+            'underline'
+            'clear',
+            'superscript',
+            'subscript',
+            'strikethrough', ]],
         ['fontname', ['fontname']],
         ['fontsize', ['fontsize']],
         ['color', ['color']],
@@ -123,8 +127,6 @@ SUMMERNOTE_CONFIG = {
         ['insert', ['link', 'picture', 'video', 'hr']],
         ['view', ['fullscreen', 'codeview', 'help']],
     ],
-    'url': ['language', ['https://res.cloudinary.com/df4m8hva5/raw/upload/v1/static/summernote/lang/summernote-eu-EU.min.esedf6aafb18.js']]
-
 }
 
 DATABASES = {
