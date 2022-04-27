@@ -91,11 +91,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jobsagooden.wsgi.application'
 
-SUMMERNOTE_THEME = 'bs4'
-
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
-    'iframe': False,
+    'iframe': True,
 
     # You can put custom Summernote settings
     'summernote': {
@@ -104,7 +102,7 @@ SUMMERNOTE_CONFIG = {
 
         # Change editor size
         'width': '100%',
-        'height': '400',
+        'height': '400px',
     },
 
 }
