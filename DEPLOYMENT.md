@@ -1,34 +1,47 @@
+# Deployment
+
+## Table of Contents
+* [Deployment](#deployment)
+  * [Initial Deployment](#initial-deployment)
+    * [Create repository](#create-repository)
+    * [Setting up the Workspace (To be done locally via the console of your chosen editor)](#setting-up-the-workspace-to-be-done-locally-via-the-console-of-your-chosen-editor)
+    * [Create Heroku App:](#create-heroku-app)
+    * [Creating Environmental Variables Locally](#creating-environmental-variables-locally)
+    * [Setting up setting.py File](#setting-up-settingpy-file)
+    * [Set up Heroku for use via the console.](#set-up-heroku-for-use-via-the-console)
+  * [Cloning on a Local machine or Via Gitpod Terminal](#cloning-on-a-local-machine-or-via-gitpod-terminal)
+
 ## Initial Deployment
-Below are the steps I took to deploy the site to Heroku, along with any console commands required to initiate it.
-### Create repository
+Below are the steps I took to deploy the site to Heroku and any console commands required to initiate it.
+### Create repository:
 1. Create a new repository in GitHub and clone it locally following [these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
     * ***Note*** - If you are cloning my project, then you can skip all pip installs below and just run the following command in the terminal to install all the required libraries/packages at once:
-       * pip install -r requirements.txt
+       * ```pip install -r requirements.txt```
     * ***IMPORTANT*** -  If developing locally on your device, ensure you set up/activate the virtual environment ([see below](#setting-up-the-workspace-to-be-done-locally-via-the-console-of-your-chosen-editor)) before installing/generating the requirements.txt file; failure to do this will pollute your machine and put other projects at risk
    
-### Setting up the Workspace (To be done locally via the console of your chosen editor)
-1. Create a virtual environment on your machine:
+### Setting up the Workspace (To be done locally via the console of your chosen editor):
+1. Create a virtual environment on your machine (Can be skipped if using gitpod):
     * python -m venv .venv
 1. To ensure the virtual environment is not tracked by version control, add .venv to the .gitignore file.
 1. Install Django with version 3.2:
-    * pip install django3.2 
+    * ```pip install django3.2 ```
 1. Install gunicorn:
-    * pip install gunicorn
+    * ```pip install gunicorn```
 1. Install supporting libraries:
-    * pip install dj_database_url psycopg2
-    * pip install dj3-cloudinary-storage
+    * ```pip install dj_database_url psycopg2```
+    * ```pip install dj3-cloudinary-storage```
 1. Create requirements.txt:
-    * pip freeze --local > requirements.txt
+    * ```pip freeze --local > requirements.txt```
 1. Create an empty folder for your project in your chosen location.
 1. Create a project in the above folder:
-    * django-admin startproject <PROJECT_NAME> (in the case of this project the project name was "jobsagooden")
+    * django-admin startproject <PROJECT_NAME> (in the case of this project, the project name was "jobsagooden")
 1. Create an app within the project:
-    * python manage.py startapp APP_NAME (in the case of this project, the app name was "job_search")
+    * ```python manage.py startapp APP_NAME``` (in the case of this project, the app name was "job_search")
 1. Add a new app to the list of installed apps in setting.py
 1. Migrate changes: 
-    * python manage.py migrate
+    * ```python manage.py migrate```
 1. Test server works locally: 
-    * python manage.py runserver  (You should see the default Django success page)
+    * ```python manage.py runserver```  (You should see the default Django success page)
 
 ### Create Heroku App:
 The below works on the assumption that you already have an account with [Heroku](https://id.heroku.com/login) and are already signed in.
@@ -45,7 +58,7 @@ The below works on the assumption that you already have an account with [Heroku]
     * left box under config vars (variable KEY) = SECRET_KEY
     * right box under config vars (variable VALUE) = Value copied from settings.py in project.
 
-### Creating Environmental Variables Locally
+### Creating Environmental Variables Locally:
 1. Install dotenv package:
     * pip install python-dotenv
 1. On your local machine, create a file called ".env" at the same level as settings.py and add this to the .gitignore file.
@@ -61,7 +74,7 @@ The below works on the assumption that you already have an account with [Heroku]
         * ``` CLOUDINARY_URL=PastedApiEnvironmentalVariable ```
 
 
-### Setting up setting.py File
+### Setting up setting.py File:
 1. At the top of your settings.py file, add the following snippet immediately after the other imports:
     ``` 
         import os
@@ -111,7 +124,7 @@ The below works on the assumption that you already have an account with [Heroku]
 1. Under the line with BASE_DIR, link templates directly in Heroku via settings.py:
    * ``` TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates') ```
 
-1. Within TEMPLATES array add ``` 'DIRS':[TEMPLATES_DIR] ``` like the below example:
+1. Within TEMPLATES array, add ``` 'DIRS':[TEMPLATES_DIR] ``` like the below example:
 ```
    TEMPLATES = [
        {
@@ -129,25 +142,43 @@ The below works on the assumption that you already have an account with [Heroku]
 1. Create Procfile at the top level of the file structure and insert the following:
     * ``` web: gunicorn PROJECT_NAME.wsgi ```
 
-1. Make initial commit and push the code to the GitHub Repository.
-    * git add .
-    * git commit -m "Initial deployment"
-    * git push
+1. Make an initial commit and push the code to the GitHub Repository.
+    * ```git add .```
+    * ```git commit -m "Initial deployment"```
+    * ```git push```
 
 ### Set up Heroku for use via the console.
 1. Click on Account Settings (under the avatar menu)
 1. Scroll down to the API Key section and click Reveal. Copy the API key.
 1. Log in to Heroku via the console and enter your details.
     * heroku login-i
-    * When prompted enter your Heroku username
+    * When prompted, enter your Heroku username
     * Enter copied API key as the password
 
 1. Get your app name from Heroku
-    * heroku apps
-1.  Set Heroku remote
-    * heroku git:remote -a <app_name>
+    * ```heroku apps```
+1. Set Heroku remote
+    * ```heroku git:remote -a <app_name>```
 1. Add, Commit, Pust to GitHub:
-    * git add . && git commit -m "Deploy to Heroku via CLI"
+    * ```git add . && git commit -m "Deploy to Heroku via CLI"```
 1. Push to GitHub and Heroku
-    * git push origin main
-    * git push heroku main	
+    * ```git push origin main```
+    * ```git push heroku main ``` 
+
+## Cloning on a Local machine or Via Gitpod Terminal
+1. Navigate to the [GitHub repository](https://github.com/dnlbowers/battleships), and follow [these steps to clone the project](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) into your IDE of choice.   
+   
+   * **Gitpod** only **requires** you to have the **web extension** installed and **click** the **green Gitpod button** from the repositories main page. If you are **using Gitpod**, please **skip step 2** below as you do not require a virtual environment to protect your machine.  
+  
+1. **Create** the **virtual environment** with the terminal command **```python3 -m venv venv```.** Once complete add the "venv" file to you're ".gitignore" file and use the terminal command **```venv\Scripts\activate.bat``` to activate it.**
+   
+   * ***IMPORTANT*** If developing locally on your device, ensure you **set up/activate the virtual environment before installing/generating the requirements.txt file**; failure to do this will pollute your machine and put other projects at risk.
+ 
+1. **Install the requirements** listed in requirements.txt using the terminal command  **```pip3 install -r requirements.txt```**
+   * Kindly note that since I developed the project from scratch and installed the required libraries as I progressed **I have already included a requirements.txt for this app** by using the terminal command **```pip3 freeze > requirements.txt```** to generate it.
+
+1. **[Create your own Heroku app](#create-heroku-app)**, and update allowed hosts in settings.py.
+   
+1. **[Create your .env file](#creating-environmental-variables-locally).
+
+1. **Run server locally** with ``` python mange.py runserver ```
