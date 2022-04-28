@@ -228,7 +228,7 @@ All pages were free form errors accept those noted below.
 ![smmernote error](docs/images/html-validator/addjob-summernote-error.JPG)
 
 ## [CSS](https://jigsaw.w3.org/css-validator/):
-My CSS file was found to be free from errors
+Checking by URL there were a lot of errors coming from the bootstrap and font awesome source code.  However my CSS file was tested by direct upload was found to be free from errors
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
@@ -241,11 +241,100 @@ My CSS file was found to be free from errors
 Only missing semi-colons were found by jshint which have now been added where appropriate.
 [jshint metrics](docs/images/jshint/metrics.JPG)
 
-## [PEP8](http://pep8online.com)
+## [PEP8](http://pep8online.com):
 Before using the pep8 validator I ran ``` autopep8 --in-place --aggressive --aggressive <file name> ``` on all py files.  
 
 Due to this the only error I found was in settings.py with ``` AUTH_PASSWORD_VALIDATORS ``` & ``` STATICFILES_STORAGE ```.   
 
-![settings.py pep8 errors](docs/images/pep8/settings-py.JPG)  
+![settings.py pep8 errors](docs/images/pep8/settings-py.JPG) 
 
 The first appears to be a long standing issue with using pep8 checker with django, and there have been some [suggest resolves](https://code.djangoproject.com/ticket/28163), however Django seem to think shortening this lines is ill advisable. For this reason I left them to be longer than 80 characters. 
+
+# Manual testing
+Below is a summery of how I test each user story was completed successfully
+
+## As an **Admin** I can...
+
+Here I have only tested the admin panel relating to the JOB_SEARCH app, as the other sections relate to imported libraries.
+
+| Checked | ...**use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post** |
+|:-------:|:--------|
+| &check; | Can add a job post successfully from the admin panel using the summernote editor |
+
+| Checked | ...**Log into a user interface** so that **I can easily manage data via a user interface** |
+|:-------:|:--------|
+| &check; | Can Log in to admin panel successfully |
+
+| Checked | ... **Filter and search all custom models from the admin page** so that **I can utilize the admin page to review, edit and delete data easily.** |
+|:-------:|:--------|
+| **Jobs** |  |
+| &check; | Can search keywords job by company name |
+| &check; | Can search keywords job by job title |
+| &check; | Can filter by a user to see which jobs they have pinned |
+| &check; | Can filter by Company name to see all jobs related to them |
+| &check; | Can filter by job title to see common job posts |
+| &check; | Can filter by date posted ro see recent posts |
+| &check; | Can filter by date expired to see jobs recently expired |
+| &check; | Can filter by status to see hidden/public jobs |
+| &check; | Can filter by approved to know what needs approving still |
+| &check; | Can filter by username and see their pinned jobs  |
+| **Notes** |  |
+| &check; | Can search username |
+| &check; | Can search related job |
+| &check; | Can filter by a user to see which jobs they made notes on |
+| &check; | Can filter by related job to see which users have notes/insights on that role |
+| &check; | Can filter by is_insight to see if feature being used|
+| &check; | Can filter by date created to see how often the feature was used in recent time  |
+| &check; | Short description is not visible to the admin to protect the users privacy   |
+| &check; | Note content is not visible to the admin to protect the users privacy   |
+| **Pinned Jobs** |  |
+| &check; | Can search username |
+| &check; | Can filter by a user to see which jobs they have pinned |
+
+| Checked | ...**Easily navigate the admin panel** so that **I can view, search, add and delete jobs** |
+|:-------:|:--------|
+| &check; | Can add a job |
+| &check; | Can delete an individual job |
+| &check; | Can delete multiple jobs at once |
+| &check; | Can search keywords job by company name |
+| &check; | Can search keywords job by job title |
+| &check; | Can view a job post |
+
+| Checked | ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.** |
+|:-------:|:--------|
+| &check; | Can approved a job individually form within the job post |
+| &check; | Can approve jobs on mass from the main jobs list page |
+
+| Checked | ...**Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
+|:-------:|:--------|
+| &check; | Can delete from the front end |
+| &check; | Delete button only visible the front end for admin staff |
+| &check; | Warning to check if user have the post pinned before deletion from the front end |
+| &check; | Can hide from the admin panel so post still visible on users pinboard |
+| &check; | hidden post still visible on users pinboard when set to hidden |
+
+| Checked | ...**Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
+|:-------:|:--------|
+| &check; | Can edit from the front end |
+| &check; | Edit button only visible the front end for admin staff |
+| &check; | Can cancel the edit |
+| &check; | Can save the edit |
+
+| Checked | ...**Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
+|:-------:|:--------|
+| &check; | Can edit from the front end |
+| &check; | Edit button only visible the front end for admin staff |
+| &check; | Can cancel the edit |
+| &check; | Can save the edit |
+
+## As an **Unregistered User** I can...
+
+| Checked | ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
+|:-------:|:--------|
+| &check; | Can clearly see the theme of the site from the landing page  |
+| &check; | Can access the instructions to better understand what I can do if I register |
+
+
+
+
+

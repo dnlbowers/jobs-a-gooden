@@ -133,7 +133,9 @@ main {
 
 #instructions-link {
     background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728,#fbf5b7 );
+    border-radius: 10px;
     color: #000;
+    font-size: 1.3rem;
     text-decoration: none;
 }
 
@@ -430,6 +432,10 @@ footer {
 
   .mob-hero-image{
     display: none;
+  }
+
+  #instructions-link {
+    font-size: 1.8rem;
   }
 }
 

@@ -67,7 +67,7 @@ class PinnedJobsAdmin(admin.ModelAdmin):
         'user',
         ]
     search_fields = [
-        'user',
+        'user__username',
         ]
     list_filter = (
         'user',
@@ -102,7 +102,5 @@ class NoteAdmin(admin.ModelAdmin):
 
     search_fields = [
         'user__username',
-        'related_job__company_name',
         'related_job__job_title',
-        'date_created'
     ]

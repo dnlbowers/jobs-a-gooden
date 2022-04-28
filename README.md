@@ -89,8 +89,8 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
     * ...**Easily navigate the admin panel** so that **I can view, search, add and delete jobs**
     * ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.**
-    * **Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
-    * **Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
+    * ...**Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
+    * ...**Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
     * ... **Filter and search all custom models from the admin page** so that **I can utilize the admin page to review, edit and delete data easily.**
  
 * As an **Unregistered User** I can... 
