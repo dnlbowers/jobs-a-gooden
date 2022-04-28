@@ -368,3 +368,13 @@ class EditJob(SuccessMessageMixin, PageTitleViewMixin, generic.UpdateView):
         Gets the form class for the edit job view.
         """
         return AddJobForm
+
+# handling exceptions taken from (https://studygyaan.com/django/django-custom-404-error-template-page)
+
+
+def error_404(request, exception):
+    return render(request, 'job_search/pages/404.html')
+
+
+def error_500(request,):
+    return render(request, 'job_search/pages/500.html')

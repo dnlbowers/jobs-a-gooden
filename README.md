@@ -211,6 +211,7 @@ I have included details of my initial deployment in a separate document called [
 * [W3cschool](https://www.w3schools.com/howto/howto_css_timeline.asp) was used to source the majority of the code used to create a timeline in CSS for the insights page. Minor styling adjustments were made and the HTML was adapted to include a Jinja for loop to display the relevant data without code repetition.
 * [CSEStack](https://www.csestack.org/display-messages-form-submit-django/) to research using messages upon form submission.
 * The PageTitleViewMixin was taken from [djangoforge.com](https://www.djangoforge.dev/guides/page-titles/)
+* How to handle exceptions [studygyann.com](https://studygyaan.com/django/django-custom-404-error-template-page)
 * The golden gradient color scheme - [brandgradients.com](http://www.brandgradients.com/gold-gradient).
 * Fonts were taken from [Google Fonts](https://fonts.google.com/)
 * Images:
