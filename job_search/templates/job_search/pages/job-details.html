@@ -1,9 +1,9 @@
 {% extends 'layout/base.html' %} {% block content %}
     <main class="p-3">
-        
+        {% if user.is_authenticated %}
             {% include "../components/go-to-instructions.html" %}
 
-            {% if user.is_authenticated %}
+            
 
             <div class="row">
                 <!-- Full job specification rendered on bootstrap card component -->
@@ -24,9 +24,9 @@
 
         {% else %}
                 
-        <!-- when not logged in a message to invite user to sign up or log in -->
-        {% include '../layout/non-member.html' %} 
+            <!-- when not logged in a message to invite user to sign up or log in -->
+            {% include '../layout/non-member.html' %} 
 
-    {% endif %}
+        {% endif %}
     </main>
 {% endblock %}

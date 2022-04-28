@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}
 {% block content %}
     
-<div>
+    <div>
         {% include "../layout/edit-note-hero.html" %}
     </div>
 
@@ -11,10 +11,11 @@
             <h1 class="text-center">Edit Note/Insight</h1>
         </div>
 
-        <div class="container">
-            <!-- Edit note form prepopulated with existing entry and surrounds -->
-            <div class="surround mb-3">
-                {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
+            <div class="container">
+                <!-- Edit note form prepopulated with existing entry and surrounds -->
+                <div class="surround mb-3">
+
                     <div class="form-container">
                         <form method="post">
                             {% csrf_token %}
@@ -38,13 +39,14 @@
 
                         </form>
                     </div>
-                {% else %}
-                
-                    <!-- when not logged in a message to invite user to sign up or log in -->
-                    {% include '../layout/non-member.html' %} 
-    
-                {% endif %}
+
+                </div>
             </div>
-        </div>
+        {% else %}
+                
+            <!-- when not logged in a message to invite user to sign up or log in -->
+            {% include '../layout/non-member.html' %} 
+
+        {% endif %}
     </main>
 {% endblock %}

@@ -48,12 +48,12 @@
                         </form>
                     </div>
                 </div>
-            {% else %}
-                
-                <!-- when not logged in a message to invite user to sign up or log in -->
-                {% include '../layout/non-member.html' %} 
-
-            {% endif %}
         </div>
+        {% else %}
+                
+        <!-- when not logged in a message to invite user to sign up or log in -->
+        {% include '../layout/non-member.html' %} 
+
+    {% endif %}
     </main>
 {% endblock %}
