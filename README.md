@@ -87,15 +87,15 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
 * As an **Admin** I can...
     * **use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post**    
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
+    * ... **Filter and search all custom models from the admin page** so that **I can utilize the admin page to review, edit and delete data easily.**
     * ...**Easily navigate the admin panel** so that **I can view, search, add and delete jobs**
     * ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.**
     * ...**Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
     * ...**Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
-    * ... **Filter and search all custom models from the admin page** so that **I can utilize the admin page to review, edit and delete data easily.**
  
 * As an **Unregistered User** I can... 
     * ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
-    * ...**register for an account** so that **I can enjoy a personalized experience as a job seeker or employer**
+    * ...**register for an account** so that **I can enjoy a personalized experience as a job seeker**
     * ...**browse the available jobs (brief description only)** so that **I can see if I wish to register with the site or not**
   
 * As a **Registered User** I can... 
@@ -105,7 +105,7 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
     * ...**turn a note into an insight** so that **it can be seen on a separate page showing learnings from the entire process of the job hunting process**
     * ...**delete previous notes and insights** so that **I can delete notes or insights that are no longer relevant to me.**
     * ...**see a timeline of insights** so that **I can track them over time**
-    * ...**Add my job posts** so that **I may make notes and insights to track my progress and should I choose to share the opportunity with the community**
+    * ...**Add my job posts** so that **I may make notes and insights to track my progress.**
     * ...**edit previously made notes and insights** so that **I may correct mistakes or further elaborate on an existing comment/insights.**
     * ...**See balanced forms with an included text editor for the main field** so that **I can have a pleasant visual experience across the site, and my job post and notes/insight look visually appealing in the style and layout when the submitted data is displayed.**
     * ...**Delete or edit insights from the insights page** so that **I can update or delete insights without job posts no longer visible.**

@@ -84,6 +84,7 @@ My first sprint was short; I intended to get more familiar with JIRA and get the
 * There are slightly more than 60% of story points as must-haves because I need to ensure I solve the bugs which cannot be considered features.
 * This sprint aims to have the site ready in production, ready for release. I want to add more to this project; however, there are deadlines in the real world, and this project is running out of time before submission. I treat this as the first release and will continue to improve after the course.
 * Finished this sprint two days early. Although I finished this early, it was a more challenging sprint due to PJG-53 of 40 points; in the future, I would break this story down into sub-tasks to help stay more focused while styling the front end. 
+* Decided to remove the option for a user to hide a job post when adding it
 
 ![Tenth sprint screenshot](docs/agile/sprint-screenshots/sprint10.JPG)
 

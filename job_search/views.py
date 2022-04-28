@@ -264,7 +264,7 @@ class DeleteNote(View):
     """
     This view is used to delete a note from the database.
     """
-    # delete note from database (check why the params work like they do)
+
     @staticmethod
     def post(request, id):
         """"
@@ -280,7 +280,7 @@ class DeleteJob(View):
     This view deletes a job from the database.
     returns a httpresponse when successful
     """
-    # delete job from database (check why the params work like they do)
+
     @staticmethod
     def post(request, id):
         """

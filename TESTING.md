@@ -264,6 +264,7 @@ Here I have only tested the admin panel relating to the JOB_SEARCH app, as the o
 | Checked | ...**Log into a user interface** so that **I can easily manage data via a user interface** |
 |:-------:|:--------|
 | &check; | Can Log in to admin panel successfully |
+| &check; | Changes to any data are reflected in the database |
 
 | Checked | ... **Filter and search all custom models from the admin page** so that **I can utilize the admin page to review, edit and delete data easily.** |
 |:-------:|:--------|
@@ -299,42 +300,176 @@ Here I have only tested the admin panel relating to the JOB_SEARCH app, as the o
 | &check; | Can search keywords job by company name |
 | &check; | Can search keywords job by job title |
 | &check; | Can view a job post |
+| &check; | Any changes to data are reflected in the database |
 
 | Checked | ...**Approve new job posts offered by the community for the community** so that **I can ensure that posts are not malicious, false, misleading, or incomplete.** |
 |:-------:|:--------|
 | &check; | Can approved a job individually form within the job post |
 | &check; | Can approve jobs on mass from the main jobs list page |
+| &check; | Change in approved feild is reflected in the database table for the specific job |
 
-| Checked | ...**Delete a Job post** so that **I can remove jobs that are no longer relevant or available.**
+| Checked | ...**Delete a Job post** so that **I can remove jobs that are no longer relevant or available.** |
 |:-------:|:--------|
 | &check; | Can delete from the front end |
 | &check; | Delete button only visible the front end for admin staff |
 | &check; | Warning to check if user have the post pinned before deletion from the front end |
 | &check; | Can hide from the admin panel so post still visible on users pinboard |
 | &check; | hidden post still visible on users pinboard when set to hidden |
+| &check; | Deletion is reflected in the database |
 
-| Checked | ...**Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
+| Checked | ...**Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.** |
 |:-------:|:--------|
 | &check; | Can edit from the front end |
 | &check; | Edit button only visible the front end for admin staff |
 | &check; | Can cancel the edit |
 | &check; | Can save the edit |
+| &check; | Edit is reflected in the database |
 
-| Checked | ...**Edit a job post with out the need of using the admin panel** to that **if I spot a mistake or update a job post I can do so quickly and easily with out issue.**
-|:-------:|:--------|
-| &check; | Can edit from the front end |
-| &check; | Edit button only visible the front end for admin staff |
-| &check; | Can cancel the edit |
-| &check; | Can save the edit |
 
 ## As an **Unregistered User** I can...
 
-| Checked | ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register**
+| Checked | ...**quickly determine the subject of the site** so that **from the landing page I can see if I want to continue spending my time on this site and register** |
 |:-------:|:--------|
 | &check; | Can clearly see the theme of the site from the landing page  |
 | &check; | Can access the instructions to better understand what I can do if I register |
 
+| Checked | ...**register for an account** so that **I can enjoy a personalized experience as a job seeker** |
+|:-------:|:--------|
+| &check; | Can sign up for a new account with email  |
+| &check; | Can sign up for a new account without email  |
+| &check; | Logged in and get redirected to landing page upon successful sign up |
+| &check; | Able to start using the site features immediately |
+| &check; | New user entry visible from the database after registration |
+| &check; | Unable to register with a duplicate email or username |
+
+| Checked | ...**browse the available jobs (brief description only)** so that **I can see if I wish to register with the site or not** |
+|:-------:|:--------|
+| &check; | Can see the preview cards for available jobs  |
+| &check; | Can clearly see I need to sign up/log in to see more info |
+
+## As a **Registered User** I can... 
+
+| Checked | ...**Pin jobs to a board** so that **I can refer back to them later with minimal effort** |
+|:-------:|:--------|
+| &check; | Can pin a job post from the job opening page  |
+| &check; | Once pinned they are visible on the saved jobs page |
+| &check; | Pinned jobs are visible only to the user who pinned them  |
+| &check; | Once pinned they are visible on the saved jobs page |
+| &check; | Can unpin a job post from the job saved jobs page and it disappears from this view |
+| &check; | The unpinning of the job is reflected when returning to the job openings page |
+| &check; | The unpinning of the job is reflected when returning to the full job spec of that job |
+| &check; | Only user specific Notes are deleted when unpinned |
+| &check; | When unpinned a job the insights remain |
+| &check; | When unpinning a job a warning appears warning the user notes will be lost  |
+| &check; | When clicking cancel on the above warning the toggle switch goes back to the pinned position |
+| &check; | When clicking cancel on the above warning the toggle switch goes back to the pinned position |
+| &check; | When is pinned value is changed it is reflected in the database |
+| &check; | If an user is not logged in they see a custom error page |
+| &check; | If all items on page 2 or above are deleted user redirected to previous page |
+| &check; | If not paginated and all entries are deleted uses sees an empty space where pinned posts were  |
+
+| Checked | ...**browse the full details of the available jobs** so that **I can see the full job spec and how to apply** |
+|:-------:|:--------|
+| &check; | Access full job spec from the job openings page  |
+| &check; | Access full job spec from the saved jobs page |
+| &check; | Can see an apply now button which takes me back to an external site where I can apply |
+| &check; | Can see a button which takes me back to all job openings |
+| &check; | If an user is not logged in they see a custom error page |
+
+| Checked | ...**leave notes specific to the job on my pinboard** so that **I can keep track of specific milestones in the application process** |
+|:-------:|:--------|
+| &check; | When job pinned Notes form and accordion are visible |
+| &check; | When job is unpinned Notes form and accordion are hidden |
+| &check; | The notes section being displayed can be toggled with the toggle switch |
+| &check; | When on smaller screen sizes there is a button to direct the user to the notes section below the full spec |
+| &check; | Can successfully leave a note from the full job spec  |
+| &check; | Can mark Note as insight and it will be indicated by different color background on the accordion item and a light bulb symbol in the heading |
+| &check; | Can see see each note/item heading in the accordion |
+| &check; | When expanding one section of the accordion any previous one closes |
+| &check; | Notes/insights can only be seen by the user who left them |
+| &check; | Notes/insights left are reflected in the database |
+| &check; | If an user is not logged in and tries to use the url to access the edit note for they see a custom error page |
+
+| Checked | ...**turn a note into an insight** so that **it can be seen on a separate page showing learnings from the entire process of the job hunting process** |
+|:-------:|:--------|
+| &check; | Edit button visible on the accordion item |
+| &check; | Take user to a form where is insight can be ticked |
+| &check; | Ticking is insight check box and clicking save updates the record and can be seen from the database and the accordion |
+| &check; | Clicking save without editing any details will return the user to the originating job spec |
+| &check; | Any notes marked as insight are shown on the users personal insights page |
+| &check; | Edit is reflected in the database |
+| &check; | If an user is not logged in they see a custom error page from the forms url |
+
+| Checked | ...**delete previous notes and insights** so that **I can delete notes or insights that are no longer relevant to me.** |
+|:-------:|:--------|
+| &check; | Delete button visible from the notes accordion and the insight page entry |
+| &check; | Warning is displayed when clicking delete |
+| &check; | Warning is closed when clicking cancel |
+| &check; | Entry disappears from notes accordion/ insights page upon deletion confirmation |
+| &check; | Deletion is reflected in the database |
+
+| Checked | ...**see a timeline of insights** so that **I can track them over time** |
+|:-------:|:--------|
+| &check; | Timeline display staggered on larger screens |
+| &check; | Timeline display stacked on smaller screens |
+| &check; | Paginated by 3 |
+| &check; | If all items on page 2 or above are deleted user redirected to previous page |
+| &check; | If not paginated and all entries are deleted uses sees an empty space where the timeline was  |
+| &check; | If an user is not logged in they see a custom error page |
+
+| Checked | ...**Add my job posts** so that **I may make notes and insights to track my progress.** |
+|:-------:|:--------|
+| &check; | Can see add job button on job opening page when logged in |
+| &check; | Can add job from the drop down in the nav bar when logged in |
+| &check; | If an user is not logged in they see a custom error page from the forms url |
+| &check; | Placeholders visible in url fields |
+| &check; | Alert shown on successful form submission  |
+| &check; | Job post is reflected in the database upon submission  |
+| &check; | Approved shows false in the database upon submission |
+| &check; | Doesn't show on job openings page until approved by the admin |
+| &check; | if cancelled user is returned to the landing page. |
+
+| Checked | ...**edit previously made notes and insights** so that **I may correct mistakes or further elaborate on an existing comment/insights.** |
+|:-------:|:--------|
+| &check; | Edit button visible on the accordion item |
+| &check; | Edit buttons take user to a form where the insight/note can be edited |
+| &check; | Edit button visible on the insight page entry |
+| &check; | Ticking is insight check box and clicking save updates the record and can be seen from the database and the accordion |
+| &check; | Clicking save without editing any details will return the user to the originating job spec |
+| &check; | Any notes marked as insight are shown on the users personal insights page |
+| &check; | Edited fields are reflected in the database |
+| &check; | If an user is not logged in they see a custom error page from the form's url |
+
+| Checked |  ...**See balanced forms with an included text editor for the main field** so that **I can have a pleasant visual experience across the site, and my job post and notes/insight look visually appealing in the style and layout when the submitted data is displayed.** |
+|:-------:|:--------|
+| &check; | Note Form formatted and styled with widget tweaks and summernote editor replaces for text area entry |
+| &check; | Add Job Form formatted and styled with widget tweaks and summernote editor replaces for text area entry |
+| &check; | Insights Form formatted and styled with widget tweaks and summernote editor replaces for text area entry |
+| &check; | Edit Note Form formatted and styled with widget tweaks and summernote editor replaces for text area entry |
+
+| Checked | ...**Delete or edit insights from the insights page** so that **I can update or delete insights without job posts no longer visible.** |
+|:-------:|:--------|
+| &check; | Delete button visible from the the insight entry |
+| &check; | Edit button visible from the the insight entry |
+| &check; | Warning is displayed when clicking delete |
+| &check; | Warning is closed when clicking cancel |
+| &check; | Entry disappears from insights page upon deletion |
+| &check; | Deletion is reflected in the database |
+| &check; | Edit is reflected in the database |
+| &check; | If all items on page 2 or above are deleted user redirected to previous page |
+| &check; | If not paginated and all entries are deleted uses sees an empty space where the timeline was  |
 
 
+| Checked | ...**Create insights directly from the insights page** so that **I can document my general learning along the path of my career that may not be specific to a job role advertised on the site.** |
+|:-------:|:--------|
+| &check; | Can see add insight button on insights page when logged in |
+| &check; | If an user is not logged in they see a custom error page from the forms url |
+| &check; | Alert shown on successful form submission  |
+| &check; | Insight related_job field is reflected in the database as null upon submission  |
+| &check; | If cancelled user is returned to the insights page. |
 
-
+## As a **Site User** I can...
+| Checked | ...**See alerts upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful or if an error occurred.**|
+|:-------:|:--------|
+| &check; |  |
+| &check; |  |

@@ -24,6 +24,15 @@ class AddJobForm(forms.ModelForm):
         self.fields['job_url'].widget.attrs = (
             {'placeholder': 'Must begin http:// or https://'}
         )
+        self.fields['currency'].widget.attrs = (
+            {'placeholder': 'USD, EUR, GBP, etc'}
+        )
+        self.fields['min_salary'].widget.attrs = (
+            {'placeholder': 'numbers only, no ", " or "."'}
+        )
+        self.fields['max_salary'].widget.attrs = (
+            {'placeholder': 'numbers only, no ", " or "."'}
+        )
 
     class Meta:
         model = Job
