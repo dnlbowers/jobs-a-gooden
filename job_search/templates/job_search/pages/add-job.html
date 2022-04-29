@@ -12,10 +12,9 @@
     
         {% include '../components/messages.html' %}
 
-        <div class="container">
-
-            {% if user.is_authenticated %}
-                <!-- Add job for and surrond -->
+        {% if user.is_authenticated %}
+            <div class="container">
+                <!-- Add job form and surrond -->
                 <div class="surround mb-3">
                     <div class="form-container">
 
@@ -50,12 +49,12 @@
                         </form>
                     </div>
                 </div>
-        </div>
-            {% else %}
+            </div>
+        {% else %}
                 
-                <!-- when not logged in a message to invite user to sign up or log in -->
-                {% include '../layout/non-member.html' %} 
+            <!-- when not logged in a message to invite user to sign up or log in -->
+            {% include '../layout/non-member.html' %} 
 
-            {% endif %}
+        {% endif %}
     </main>
 {% endblock %}
