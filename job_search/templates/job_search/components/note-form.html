@@ -22,7 +22,7 @@
                         <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
                             {{ field.errors }}
                             {{ field.label_tag }}
-                            {% if field == note_form.is_insight %}
+                            {% if field == note_form.is_insight or field == note_form.note %}
                                 {% render_field field %}
                             {% else %}
                                 {% render_field field class="form-control" %}
