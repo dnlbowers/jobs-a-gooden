@@ -7,7 +7,7 @@
     <main>
 
         <div class="text-center bg-brown p-1 border-bottom border-top mb-3">    
-            <h1 class="text-center">Add a Job Post.</h1>
+            <h1 class="text-center">Add a Job Post</h1>
         </div>
     
         {% include '../components/messages.html' %}
@@ -23,7 +23,7 @@
                             {% csrf_token %}
                             {% load widget_tweaks %}
                             {% for field in form %}
-                            <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                            <div class="form-group {% if field.errors %}alert alert-danger{% endif %}">
                                 {{ field.errors }}
                                 {{ field.label_tag }}
                                 {% if field == form.job_description %}                                
@@ -51,11 +51,11 @@
                     </div>
                 </div>
         </div>
-        {% else %}
+            {% else %}
                 
-        <!-- when not logged in a message to invite user to sign up or log in -->
-        {% include '../layout/non-member.html' %} 
+                <!-- when not logged in a message to invite user to sign up or log in -->
+                {% include '../layout/non-member.html' %} 
 
-    {% endif %}
+            {% endif %}
     </main>
 {% endblock %}

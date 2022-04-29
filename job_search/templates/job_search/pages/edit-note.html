@@ -21,7 +21,7 @@
                             {% csrf_token %}
                             {% load widget_tweaks %}
                             {% for field in form %}
-                                <div class="form-group {% if field.errors %} alert alert-danger {% endif %}">
+                                <div class="form-group{% if field.errors %} alert alert-danger{% endif %}">
                                     {{ field.errors }}
                                     {{ field.label_tag }}
                                     {% if field == form.is_insight %}

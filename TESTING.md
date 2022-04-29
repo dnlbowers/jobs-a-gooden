@@ -468,6 +468,51 @@ Here I have only tested the admin panel relating to the JOB_SEARCH app, as the o
 | &check; | Insight related_job field is reflected in the database as null upon submission  |
 | &check; | If cancelled user is returned to the insights page. |
 
+| Checked | ...**See appealing colors and uniform style themes**|
+|:-------:|:--------|
+| &check; |  Colors pass contrast test |
+| &check; | Colors and styles are consistent across the site |
+
+| Checked | ...**Access the site from any size screen and still have a pleasant experience on the site** so that **I am not restricted to which devices I can use on the site** |
+|:-------:|:--------|
+| &check; | Landing page is responsive from 320px up |
+| &check; | Add Job form is responsive from 320px up |
+| &check; | Tracking instructions is responsive from 320px up |
+| &check; | Saved jobs page is responsive from 320px up |
+| &check; | Insight page is responsive from 320px up |
+| &check; | Contact page is responsive from 320px up |
+| &check; | Navbar is responsive from 320px up |
+| &check; | Footer page is responsive from 320px up |
+| &check; | Edit form is responsive from 320px up |
+| &check; | Add insight form is responsive from 320px up |
+| &check; | Sign in page is responsive from 320px up |
+| &check; | Sign in page is responsive from 320px up |
+| &check; | Sign out page is responsive from 320px up |
+| &check; | Sign up page is responsive from 320px up |
+| &check; | Not signed in message page is responsive from 320px up |
+| &check; | 404 page is responsive from 320px up |
+| &check; | 500 page is responsive from 320px up |
+| &check; | full job spec page is responsive from 320px up |
+| &check; | pagination bar is responsive from 320px up |
+
+| Checked | ...**type a URL into the web browser** so that **I can access the sites various pages** |
+|:-------:|:--------|
+| &check; | All pages can be accessed by their URL when logged in |
+| &check; | When logged out only the landing page, contact page and all auth pages are visible |
+| &check; | Appropriate message displayed if a user is logged out and tries to access a url which is for members only |
+
+| Checked | ...**see uniformity on each page, as well as clear, distinguish the content subject** so that **I can easily navigate around the page in a way that feels familiar.** |
+|:-------:|:--------|
+| &check; | Navbar on all pages the same |
+| &check; | Footer on all pages the same |
+| &check; | Styling of all pages follow a theme |
+
+| Checked | ... **Find relevant contact details** so that **I can contact the site admin via email** |
+|:-------:|:--------|
+| &check; | Contact page accessible from navbar |
+| &check; | email address provided on the contact page |
+
+# **Return to this one**
 ## As a **Site User** I can...
 | Checked | ...**See alerts upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful or if an error occurred.**|
 |:-------:|:--------|
