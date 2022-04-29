@@ -15,7 +15,7 @@ class JobAdmin(SummernoteModelAdmin):
         'date_expired',
         'status',
         'approved'
-        )
+    )
     list_filter = (
         'company_name',
         'job_title',
@@ -31,12 +31,12 @@ class JobAdmin(SummernoteModelAdmin):
     )
     summer_fields = (
         'job_description',
-        )
+    )
     actions = [
         'approve_job',
         'hide_job',
         'make_public'
-        ]
+    ]
 
     def approve_job(self, request, queryset):
         """"
@@ -65,13 +65,13 @@ class PinnedJobsAdmin(admin.ModelAdmin):
 
     list_display = [
         'user',
-        ]
+    ]
     search_fields = [
         'user__username',
-        ]
+    ]
     list_filter = (
         'user',
-        )
+    )
 
 
 @admin.register(Notes)
@@ -84,7 +84,7 @@ class NoteAdmin(admin.ModelAdmin):
     exclude = (
         'short_description',
         'note'
-        )
+    )
 
     list_display = (
         'user',

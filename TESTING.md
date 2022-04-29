@@ -1,5 +1,64 @@
 
-# Manuel Testing
+# Manual Testing
+* [Manual Testing](#manual-testing)
+  * [Bugs and Fixes During the Development Process](#bugs-and-fixes-during-the-development-process)
+* [Wave Aim Accessability checker:](#wave-aim-accessability-checker)
+* [Lighthouse](#lighthouse)
+  * [Job Openings](#job-openings)
+    * [Logged out:](#logged-out)
+      * [*Desktop*:](#desktop)
+      * [*Mobile*:](#mobile)
+    * [Logged in:](#logged-in)
+      * [*Desktop*:](#desktop-1)
+      * [*Mobile*:](#mobile-1)
+  * [Full Job Spec](#full-job-spec)
+    * [With Notes Displayed:](#with-notes-displayed)
+      * [*Desktop*:](#desktop-2)
+      * [*Mobile*:](#mobile-2)
+    * [No Notes Displayed:](#no-notes-displayed)
+      * [*Desktop*:](#desktop-3)
+      * [*Mobile*:](#mobile-3)
+  * [Saved Jobs](#saved-jobs)
+      * [*Desktop*:](#desktop-4)
+      * [*Mobile*:](#mobile-4)
+  * [Tracking Instructions Page](#tracking-instructions-page)
+      * [*Desktop*:](#desktop-5)
+      * [*Mobile*:](#mobile-5)
+  * [Contact Page](#contact-page)
+      * [*Desktop*:](#desktop-6)
+      * [*Mobile*:](#mobile-6)
+  * [Insights Page](#insights-page)
+      * [*Desktop*:](#desktop-7)
+      * [*Mobile*:](#mobile-7)
+  * [Add Insights Page](#add-insights-page)
+      * [*Desktop*:](#desktop-8)
+      * [*Mobile*:](#mobile-8)
+  * [Edit Notes Page](#edit-notes-page)
+      * [*Desktop*:](#desktop-9)
+      * [*Mobile*:](#mobile-9)
+  * [Add Job Page](#add-job-page)
+      * [*Desktop*:](#desktop-10)
+      * [*Mobile*:](#mobile-10)
+  * [Sign Out Page](#sign-out-page)
+      * [*Desktop*:](#desktop-11)
+      * [*Mobile*:](#mobile-11)
+  * [Sign in Page](#sign-in-page)
+      * [*Desktop*:](#desktop-12)
+      * [*Mobile*:](#mobile-12)
+  * [Sign up Page](#sign-up-page)
+      * [*Desktop*:](#desktop-13)
+      * [*Mobile*:](#mobile-13)
+* [Validators](#validators)
+  * [HTML:](#html)
+  * [CSS:](#css)
+  * [JS:](#js)
+  * [PEP8:](#pep8)
+* [Manual testing](#manual-testing-1)
+  * [As an **Admin** I can...](#as-an-admin-i-can)
+  * [As an **Unregistered User** I can...](#as-an-unregistered-user-i-can)
+  * [As a **Registered User** I can...](#as-a-registered-user-i-can)
+* [**Return to this one**](#return-to-this-one)
+  * [As a **Site User** I can...](#as-a-site-user-i-can)
 ## Bugs and Fixes During the Development Process
 Below is a list of bugs and fixes found while creating a feature. You can find other bugs as bug tickets in [JIRA(https://dnlbowers.atlassian.net/jira/software/projects/PJG/issues/PJG-57?jql=project%20%3D%20%22PJG%22%20AND%20type%20%3D%20%22Bug%22%20ORDER%20BY%20created%20DESC)]. The Jira tickets are bugs found after I concluded the sprint including this feature because during the feature creation I missed the bugs.
 
@@ -238,8 +297,8 @@ Checking by URL there were a lot of errors coming from the bootstrap and font aw
 </p>
 
 ## [JS](https://jshint.com/):
-Only missing semi-colons were found by jshint which have now been added where appropriate.
-[jshint metrics](docs/images/jshint/metrics.JPG)
+Only missing semi-colons were found by jshint which have now been added where appropriate.  
+![jshint metrics](docs/images/jshint/metrics.JPG)
 
 ## [PEP8](http://pep8online.com):
 Before using the pep8 validator I ran ``` autopep8 --in-place --aggressive --aggressive <file name> ``` on all py files.  
