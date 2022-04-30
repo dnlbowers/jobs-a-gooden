@@ -98,6 +98,10 @@ body {
     font-weight: bolder;
 }
 
+.nav-link.disabled {
+  color:#f4a460;
+}
+
 .nav-link:focus, .nav-link:hover {
   background-color: #e4b67c;
   color: #000;

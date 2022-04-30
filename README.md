@@ -135,6 +135,20 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
 
 I added a hero image to each page during development and made the Job Opening page the home page. I added some forms to edit notes/insights and add a job; however, these were last-minute additions and were a simple form alone on the page. I deemed there were no wireframes required for these.
 
+### Database Schema
+Below shows my initial plan for my database tables:  
+![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg) 
+
+My initial plan for my database tables included using a JSON with data from the API. Since I abandoned this idea early on, the JSON was replaced with a jobs model.
+
+My user model was also removed in favor of the default model provided by the ALLAUTH library. I combined the notes and insights tables into a single table with a boolean felid to indicate if the entry was a note or insight.
+
+Below is the final version of the ERD generated via PG admin connected to my Heroku Postgres database. There are only the three custom tables (Notes, Jobs, PinnedJobs); the rest were generated automatically by various Libraries.
+
+![Final ERD](docs/images/erd.png)
+ 
+Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs with in the PinnedJobs table.
+
 ## Surface
 ### Color scheme:
 I used the following [Image](docs/images/jaguar-logo.png) to generate the following color scheme on [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000). The resultant color scheme was:
@@ -153,24 +167,27 @@ For this project I used two different fonts.
 #### ***Lato:***
 * The main font for the remainder of the site. This was used for its soft edges to match the border radius placed on most elements.
 
-# Data Model
-Below shows my initial plan for my database tables:  
-![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg) 
-
-My initial plan for my database tables included using a JSON with data from the API. Since I abandoned this idea early on, the JSON was replaced with a jobs model.
-
-My user model was also removed in favor of the default model provided by the ALLAUTH library. I combined the notes and insights tables into a single table with a boolean felid to indicate if the entry was a note or insight.
-
-Below is the final version of the ERD generated via PG admin connected to my Heroku Postgres database. There are only the three custom tables (Notes, Jobs, PinnedJobs); the rest were generated automatically by various Libraries.
-
-![Final ERD](docs/images/erd.png)
- 
-Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs with in the PinnedJobs table.
-
-# Agile development process
+# Agile Development Process
 I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4/roadmap) to track and create issues/user stories. I will provide login credentials for the above project space when submitting the project. However, you can find a summary of my agile process/learnings [here](AGILE.md).
 
 # Features
+## Site Navigation
+### Navbar
+#### Signed Out:
+![Navbar when logged out](docs/images/features/navbar/signed-out.JPG)
+The navbar allows the user to easily navigate the site. When signed out of the page it shows the follow:
+* Shows link to register.
+* Shows link to login.
+* Jobs and Tracking dropdown menus disabled and showing as a different color to the other nav items.
+* Logo with company acronym and mascot. This also servers as a link back to the home page at any point in the users journey.  
+
+#### Signed In:   
+![Navbar when logged in](docs/images/features/navbar/signed-in.JPG)  
+Changes to the nav bar when logged in are:
+* Register and Login nav items replaced with Logout.
+* Jobs and Tracking drop downs now clickable and the color matches the other nav items.
+    ![Jobs dropdown](docs/images/features/navbar/jobs-dropdown.JPG)  
+    ![Jobs dropdown](docs/images/features/navbar/tracking-dropdown.JPG)
 
 
 # Future development
@@ -187,10 +204,8 @@ I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/
 I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).
 
 # Deployment
-## Initial Deployment:
+
 I have included details of my initial deployment in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
-
-
 
 # **Grammarly done til here**
 # Honorable mentions  

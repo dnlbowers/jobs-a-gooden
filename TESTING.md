@@ -1,4 +1,3 @@
-
 # Manuel Testing
 * [Manuel Testing](#manuel-testing)
   * [Bugs and Fixes During the Development Process](#bugs-and-fixes-during-the-development-process)
@@ -154,9 +153,9 @@ Below is a list of bugs and fixes found while creating a feature. You can find o
 * Solution -  I added the additional settings required in settings.py to handle an email on signing up for the issue.
 
 # Wave Aim Accessibility checker:
-Found a contrast error on the disabled buttons in the navbar. Due to the buttons not being accessible until logged in, I deemed fixing this unnecessary.   
+* Found a contrast error on the disabled dropdown buttons in the navbar. Due to the buttons not being accessible until logged in, I deemed fixing this unnecessary. I fixed this by changing the default color of a disabled nav-link item provided by bootstrap so something more visible yet still darker than the cream color used by active links.  
 ![Disabled button contrast error](docs/images/wave-aim/disabled-buttons-error.JPG)   
-There was also an accessibility issue due to the label for the pin jobs toggle. Setting this to display none and adding some text in the tags resolved this. Later during the lighthouse checks below, I added an aria label to the toggle, which fixed the lighthouse score for accessibility.
+* There was an accessibility issue due to the label for the pin jobs toggle. Setting this to display none and adding some text in the tags resolved this. Later during the lighthouse checks below, I added an aria label to the toggle, which fixed the lighthouse score for accessibility.
 
 # Lighthouse
 The lighthouse test showed a reduced score for accessibility on pages with a toggle switch. The error was "Form elements do not have associated labels." I fixed this by adding an aria-label to the pin jobs toggle. 
