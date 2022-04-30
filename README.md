@@ -1,15 +1,15 @@
-# Jobs-A-Gooden
+# **Jobs-A-Gooden**
 As a developing developer within a group of peers, job hunting is something I have found at the forefront of everyone's mind. 
 
-This site is a community job share platform. It provides a method for users to save job posts, make notes to track their applications, and journal insights as they progress.
+This site is a community job share platform. It provides a method for users to save a job post, and make notes to track their applications. In addition to this the user can also journal their insights as they progress along the job hunting journey.
 
-# **AM I RESPONSIVE SCREENSHOT HERE**
+![Responsive screenshot showing site on different screen sizes](docs/images/responsive.JPG)
 
 [Deployed site](https://jobs-a-gooden.herokuapp.com/)
 
-# Planning Phase
-## Strategy 
-### Site Aims:
+# **Planning Phase**
+## **Strategy** 
+### **Site Aims:**
 It takes a new developer around 20-25 interviews to land their first developer job. This does not include the total number of applications sent out by a job seeker.
 
 Keeping track of one's applications can be troublesome. When a company responds, it can be hard to remember the job post requirements, especially when multiple sites are used to check for roles. Worse yet, several months have passed since you sent the application.
@@ -46,7 +46,7 @@ Totals | 59 | 60
 
 Viability and feasibility in the above table are based on both time and current level of ability using different languages/frameworks. 
 
-## Scope
+## **Scope**
 
 Due to the imbalance in scores above there will definitely be some tradeoffs, however, I anticipate that there will need to be some trade offs due to the time set for this project. 
 
@@ -57,7 +57,6 @@ I have further divided this table into 3 categories to help prioritize the order
     * User specific job notes.
     * Personal insights.
     * User login.
-
   
 * UX efforts **should** accommodate these:
     * API to fetch jobs data
@@ -75,15 +74,14 @@ I have further divided this table into 3 categories to help prioritize the order
     * Direct email to employer with CV/cover letter attachments.
     * Community mentorship.
     * Freelance specific jobs board.
-
-## Structure   
+  
+## **Structure**   
 To help me visualize a typical user journey around the site, I used [draw.io](https://app.diagrams.net/) to help me plan out the various routes a user could take through the site. This flow changed slightly throughout development, specifically with the dropping of an API for the jobs data. However, in general, it guided the process.
-
-### Flow Charts:
+  
 ![User Journeys flow chart](docs/flowcharts/user-Journey.jpg)
-
-### User Stories:  
-
+  
+### **User Stories:**  
+  
 * As an **Admin** I can...
     * **use a text editor within the admin panel** so that **I can create a job description in a way that is clear and appeals to the eye when creating a job post**    
     * ...**Log into a user interface** so that **I can easily manage data via a user interface**
@@ -121,12 +119,12 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
     *  ...**see uniformity on each page and clearly distinguish the content subject** so that **I can quickly and familiarly navigate the page.**
     * ... **Find relevant contact details** so that **I can contact the site admin via email**
   
-### User Stories dropped as part of the agile process
+### **User Stories dropped as part of the agile process**
 * As a **Registered User** I can **create a profile** so that **I can save key details relevant to my job search.**
 
 
-## Skeleton
-### Wireframes:
+## **Skeleton**
+### **Wireframes:**
 * [Homepage wireframes](docs/wireframes/homepage.png)  
 * [Full job details wireframes](docs/wireframes/job-full-details.png)
 * [Job opening page wireframes](docs/wireframes/jobs-openings.png)
@@ -135,7 +133,7 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
 
 I added a hero image to each page during development and made the Job Opening page the home page. I added some forms to edit notes/insights and add a job; however, these were last-minute additions and were a simple form alone on the page. I deemed there were no wireframes required for these.
 
-### Database Schema
+### **Database Schema**
 Below shows my initial plan for my database tables:  
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg) 
 
@@ -149,8 +147,8 @@ Below is the final version of the ERD generated via PG admin connected to my Her
  
 Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs with in the PinnedJobs table.
 
-## Surface
-### Color scheme:
+## **Surface**
+### **Color scheme:**
 I used the following [Image](docs/images/jaguar-logo.png) to generate the following color scheme on [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000). The resultant color scheme was:
 ![Color Scheme](docs/images/jag-colors.jpg)
 
@@ -158,7 +156,7 @@ This was adapted throughout the development process. The colors used have been p
 
 ![Color gird](docs/images/color-grid.jpg)
 
-### Typography:
+### **Typography**:
 
 For this project I used two different fonts. 
 #### ***Condiment:***
@@ -169,28 +167,84 @@ For this project I used two different fonts.
 
 # Agile Development Process
 I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4/roadmap) to track and create issues/user stories. I will provide login credentials for the above project space when submitting the project. However, you can find a summary of my agile process/learnings [here](AGILE.md).
+  
+# **Features**
+## **Site Navigation**
+### **Navbar**
+#### ***Logo:***
+When brainstorming names for the site the term of phase "Jobs A Gooden" came to mind when thinking about finding the perfect job. This gave rise to the acronym J.A.G, for this reason I used the below image as the logo/mascot of the brand.
 
-# Features
-## Site Navigation
-### Navbar
-#### Signed Out:
-![Navbar when logged out](docs/images/features/navbar/signed-out.JPG)
+The Font used was a cursive style on purpose because of the jagged appearance it gave the text.  
+  
+![Site Logo](docs/images/features/navbar/logo.JPG)
+  
+#### ***Signed Out:***
 The navbar allows the user to easily navigate the site. When signed out of the page it shows the follow:
 * Shows link to register.
 * Shows link to login.
 * Jobs and Tracking dropdown menus disabled and showing as a different color to the other nav items.
 * Logo with company acronym and mascot. This also servers as a link back to the home page at any point in the users journey.  
-
-#### Signed In:   
-![Navbar when logged in](docs/images/features/navbar/signed-in.JPG)  
+![Navbar when logged out](docs/images/features/navbar/signed-out.JPG)
+  
+#### ***Signed In:***
 Changes to the nav bar when logged in are:
-* Register and Login nav items replaced with Logout.
+* Register and Login nav items replaced with Logout.     
+![Navbar when logged in](docs/images/features/navbar/signed-in.JPG)  
+  
 * Jobs and Tracking drop downs now clickable and the color matches the other nav items.
     ![Jobs dropdown](docs/images/features/navbar/jobs-dropdown.JPG)  
     ![Jobs dropdown](docs/images/features/navbar/tracking-dropdown.JPG)
+  
+#### ***Hamburger menu on smaller screen sizes:***
+To allow the menu to be displayed properly on smaller screen sizes a burger menu was implemented using bootstrap.  
+![Jobs dropdown](docs/images/features/navbar/mobile-menu.JPG)   
+![Jobs dropdown](docs/images/features/navbar/mobile-menu-open.JPG) 
+  
+### **Hero Images:**
+The hero images are picked to portray the theme of the page to the user. 
+#### ***Job Openings/Landing Page:***
+For this page I wanted something that inspired the user in their job search. The neon sign saying "Do something great" is inline with people I spoke to when researching what a user would want out of a job. Out of the 5 people I asked "Why did you decide to change jobs last?" 4 said that they wanted a career which felt more fulfilling for them and had an impact. The chosen image was to personify this desire.  
+![Job Opening page hero image](docs/images/features/hero-images/job-openings.JPG)  
+
+#### ***Add Job Form Page:***
+I wanted an image that invoked a positive feeling for both users and employers adding a job to share with the community.
+  
+![Add Job Form Hero Image](docs/images/features/hero-images/add-job.JPG)
+  
+### ***Saved jobs page:***
+The chosen image shows a man sticking posits to the wall and makes notes to track is ideas. I felt this nicely personified the  sites intention to save jobs and makes notes as a user brainstorms and tracks the journey of their future career path.
+
+![Saved Job page hero image](docs/images/features/hero-images/pinboard.JPG)
+  
+### ***Insights page:***
+This hero image sticks with the inspirational theme. The words "Lets your intuition guide you. You are what you have been looking for" are displayed on a pamphlet. Although there is some [debate in the psychological community](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5020639/#:~:text=Intuition%20and%20insight%20are%20intriguing%20phenomena%20of%20non-analytical,by%20recombining%20the%20single%20elements%20of%20a%20problem.) over the differences between insights and intuition as as a type non-analytical mental functioning. However, the common perception is intuition precedes insight and for this reason it seemed fitting that this inspirational quote should be placed on the insights pages.  
+  
+![Insights page hero image](docs/images/features/hero-images/insights.JPG)
+  
+### ***Edit note form page:***
+For this page I chose a image of a person making notes in a copy book.
+  
+![Edit notes Page hero image](docs/images/features/hero-images/notes.JPG)
+  
+## **Site Instructions**
+### ***Access to instructions page:***
+There are three ways a user can access the site instructions detailing how to use the sites primary feature of tracking a job search journey. 
+#### ***Nav link:***
+![Nav link to instructions page](docs/images/features/instructions/nav-link.JPG)  
+  
+#### ***On page Button***
+There is a button linking the user to the site instructions at the top of the pages main content on the following pages:-
+* Job Openings.
+* Saved Jobs/Jobs Pinboard page.
+* insights page.  
+  
+![Button to instructions](docs/images/features/instructions/button-link.JPG)
+
+## **Page Content**
+### ***Job Openings:***
 
 
-# Future development
+# **Future development**
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.
 * Build online community.
 * Job categories
@@ -198,7 +252,7 @@ Changes to the nav bar when logged in are:
 * API for a Job's site
 * Auto email to Job post author when job close to expired that it will be deleted after the specified time of expiration.
 * [KanBan board](https://codepen.io/josetxu/pen/VwyxZKq) to track applied, round, and response.
-* add ability for user to submit a job post as hidden and pin it so the job is available only to them.
+* The ability for the user to keep their added posts private, visible only on their saved jobs board. Currently this is only possible if the admin pins the post on the users behalf from the admin panel. 
 
 # **Testing Phase**
 I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).
@@ -218,6 +272,7 @@ I have included details of my initial deployment in a separate document called [
 
 
 # Credits
+* responsive screenshot made using [techsini.com](https://techsini.com/multi-mockup/index.php)
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
 * Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
