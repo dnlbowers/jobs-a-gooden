@@ -110,7 +110,7 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
     * .**Create insights directly from the insights page** so that **I can document my general learning along my career path that may not be specific to a job role advertised on the site.**
  
 * As a **Site User** I can...
-    * ...**See alerts upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful or if an error occurred.**
+    * ...**see appropriate responses upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful.**
     * ...**See appealing colors and uniform style themes** so that **every page and part of the process stimulates a positive response.**
     * ...**Access the site from any size screen and still have a pleasant experience on the site** so that **I am not restricted to which devices I can use on the site**
     * ...**access a live url** so that **I can use the site**
