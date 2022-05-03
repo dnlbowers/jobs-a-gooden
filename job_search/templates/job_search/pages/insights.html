@@ -20,8 +20,6 @@
             <a href="{% url 'add_insight' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add insight</a>
         </div>
 
-        {% include '../components/messages.html' %}
-
         <!-- timeline to show insights adapted from https://www.w3schools.com/howto/howto_css_timeline.asp -->
         <div id="timeline" class="mb-3">
             {% for insight in insights %}

@@ -458,6 +458,7 @@ This error shows when a user type a url into the browser which doesn't exist wit
 * Auto email to Job post author when job close to expired that it will be deleted after the specified time of expiration.
 * [KanBan board](https://codepen.io/josetxu/pen/VwyxZKq) to track applied, round, and response.
 * The ability for the user to keep their added posts private, visible only on their saved jobs board. Currently this is only possible if the admin pins the post on the users behalf from the admin panel. 
+* Counter on admin's delete job button which shows the number of users with the job pinned. This would prevent the Admin having to check the admin panel for this info prior to deleting the job.
 
 # **Testing Phase**
 I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).

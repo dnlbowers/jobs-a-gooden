@@ -1,9 +1,6 @@
 {% extends 'layout/base.html' %} {% block content %}
     <main class="p-3">
         {% if user.is_authenticated %}
-            
-            <!-- Imports messages from class view -->
-            {% include '../components/messages.html' %}
 
             <div class="row">
                 <!-- Full job specification rendered on bootstrap card component -->

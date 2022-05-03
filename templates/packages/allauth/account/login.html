@@ -26,9 +26,15 @@
 
                     {% csrf_token %}
                     {% load widget_tweaks %}
+                    {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
                     {% for field in form %}
                         <div class="form-group p-2 {% if field.errors %} alert alert-danger {% endif %}">
                             {{ field.errors }}
+                            
                             {% if field.name == "remember" %}
                                 <div class="text-center">
                                     {{ field.label_tag}}

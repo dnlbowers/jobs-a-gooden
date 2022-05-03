@@ -2,7 +2,7 @@
 {% if messages %}
 {% for message in messages %}
     <div class="container-fluid p-0">
-        <div id="msg" class="alert {{ message.tags }} alert-dismissible" role="alert" >
+        <div id="msg" class="alert {{ message.tags }} alert-dismissible mb-0" role="alert" >
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
             <span aria-hidden="true"></span>
             </button>
@@ -15,7 +15,8 @@
             let messages = document.getElementById("msg");
             let alert = new bootstrap.Alert(messages);
             alert.close();
-        }, 3000);
+        }, 45000);
+
     </script>
 {% endfor %}
 {% endif %}
