@@ -248,6 +248,9 @@ There is a button linking the user to the site instructions at the top of the pa
 ![Note form Anchor tag](docs/images/features/instructions/note-form-link.JPG)  
   
 ## **Main Page Content**
+### ***Job Openings page:***
+#### ***Add Job Button:***
+![Add Job Button](docs/images/features/openings-page/add-job.JPG)
 ### ***Job Openings and Pinned Board Content:***
 #### ***Job Preview Card (logged out):***
 * Visible only form job openings page.
@@ -325,6 +328,45 @@ There is a button linking the user to the site instructions at the top of the pa
 * Noted "marked as insight" in the top right of the body.
   
 ![Note](docs/images/features/job-details/insight.JPG) 
+  
+### ***Insights PAge:***
+#### ***Add Insight Button:***
+Allows the user to add insights with out a related job.  
+![Add insight button](docs/images/features/insights-page/add-insight-btn.JPG)  
+  
+#### ***Insight left success message:***
+Once an insight is left from the insight page a success message is left on the insights page.
+  
+![Insight success](docs/images/features/insights-page/insights-success.JPG)
+  
+#### ***Insight Item Display:***
+* Insight item displayed with date created.
+* Short description, and note field visible.
+* Button to edit entry.
+* Button to delete the entry. 
+   
+![Insight item on insights page](docs/images/features/insights-page/insight-item.JPG)
+  
+#### ***Timeline:***
+Acts as a centre focal point for insights so the display on alternate sides in order form newest to oldest.  
+  
+![Insights Timeline](docs/images/features/insights-page/timeline.JPG)
+  
+### ***Contact Us Page:***
+* Fake email address to contact site admins (In the future I will be looking into domain names)
+* Navigation button to the job openings page.
+* Navigation button to the job pinboard page.    
+  
+![Contact us page](docs/images/features/contact-us.JPG)
+  
+# **From here**
+### ***Forms:***
+
+### ***Pagination:***
+
+
+### ***Footer:***
+
 
 # **Future development**
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.
