@@ -572,28 +572,28 @@ Here I have only tested the admin panel relating to the JOB_SEARCH app, as the o
 ## As a **Site User** I can...
 | Checked | ...**see appropriate responses upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful.**|
 |:-------:|:--------|
-| &check; | When unpinning a post the is a http response of 200 in the console |
-| &check; | When unpinning a post it disappears from the pinboard |
-| &check; | Prior to unpinning a post there is a warning model advising that associated notes will be deleted |
-| &check; | Only the relevant users notes are deleted when unpinning a job |
+| &check; | When unpinning a post the is an HTTP response of 200 in the console |
+| &check; | When unpinning a post, it disappears from the pinboard |
+| &check; | Prior to unpinning a post, a warning model is advising that associated notes will be deleted |
+| &check; | Only the relevant user's notes are deleted when unpinning a job |
 | &check; | Pin status is correctly updated and reflected in the database |
 | &check; | Notes appear in the accordion when left |
 | &check; | Banner appears when making a note to advise it was left successfully |
-| &check; | Prior to deleting an element a warning modal is displayed |
+| &check; | Prior to deleting an element, a warning modal is displayed |
 | &check; | Deletion logs HTTP response of 200 to the console |
-| &check; | Element being deleted are removed from the DOM |
-| &check; | Deletions of job and notes are correctly reflected in the database. |
-| &check; | When adding a job the default status is hidden and not visible to the user |
+| &check; | Elements being deleted are removed from the DOM |
+| &check; | Deletions of jobs and notes are correctly reflected in the database. |
+| &check; | When adding a job, the default status is hidden and not visible to the user |
 | &check; | Banner stating the job sent for approval |
 | &check; | New job shows in the database |
-| **TO FIX** | Form errors show when jobs form is incorrectly filled in upon submission |
-&check; | Banner stating the note/insight has been successfully been updated from full details page |
+| &check; | Form errors show when jobs form is incorrectly filled in upon submission |
+&check; | Banner stating the note/insight has successfully been updated from full details page |
 | &check; | Note/insight update reflects in the database |
 | &check; | Form errors show when edit notes/insights form is incorrectly filled in upon submission |
-&check; | When editing a note from the full details page they user is redirected back to the full details page |
-&check; | Banner stating the insight has been successfully been updated from insights page |
+&check; | When editing a note from the full details page, the user is redirected back to the full details page |
+&check; | Banner stating the insight has successfully been updated from insights page |
 | &check; | Insight update reflects in the database |
 | &check; | Form errors show when add insights form is incorrectly filled in upon submission |
-&check; | When editing a insight from the insights page they user is redirected back to the insights page |
+&check; | When editing an insight from the insights page, they user is redirected back to the insights page |
 
 

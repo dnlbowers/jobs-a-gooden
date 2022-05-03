@@ -1,20 +1,107 @@
 # **Jobs-A-Gooden**
 As a developing developer within a group of peers, job hunting is something I have found at the forefront of everyone's mind. 
 
-This site is a community job share platform. It provides a method for users to save a job post, and make notes to track their applications. In addition to this the user can also journal their insights as they progress along the job hunting journey.
+This site is a community job share platform. It provides a method for users to save a job post and make notes to track their applications. In addition to this, the user can also journal their insights as they progress along the job hunting journey.
 
 ![Responsive screenshot showing site on different screen sizes](docs/images/responsive.JPG)
 
 [Deployed site](https://jobs-a-gooden.herokuapp.com/)
 
+# **Table of Contents**
+* [**Jobs-A-Gooden**](#jobs-a-gooden)
+* [**Planning Phase**](#planning-phase)
+  * [**Strategy**](#strategy)
+    * [**Site Aims:**](#site-aims)
+    * [Opportunities:](#opportunities)
+  * [**Scope**](#scope)
+  * [**Structure**](#structure)
+    * [**User Stories:**](#user-stories)
+    * [**User Stories dropped as part of the agile process**](#user-stories-dropped-as-part-of-the-agile-process)
+  * [**Skeleton**](#skeleton)
+    * [**Wireframes:**](#wireframes)
+    * [**Database Schema**](#database-schema)
+  * [**Surface**](#surface)
+    * [**Color scheme:**](#color-scheme)
+    * [**Typography**:](#typography)
+      * [***Condiment:***](#condiment)
+      * [***Lato:***](#lato)
+* [**Agile Development Process**](#agile-development-process)
+* [**Features**](#features)
+  * [**Site Navigation**](#site-navigation)
+    * [**Navbar**](#navbar)
+      * [***Logo:***](#logo)
+      * [***Signed Out:***](#signed-out)
+      * [***Signed In:***](#signed-in)
+      * [***Hamburger menu on smaller screen sizes:***](#hamburger-menu-on-smaller-screen-sizes)
+    * [**Hero Images:**](#hero-images)
+      * [***Job Openings/Landing Page:***](#job-openingslanding-page)
+      * [***Add Job Form Page:***](#add-job-form-page)
+    * [***Saved jobs page:***](#saved-jobs-page)
+    * [***Insights page:***](#insights-page)
+    * [***Edit note form page:***](#edit-note-form-page)
+  * [**AllAuth Pages**](#allauth-pages)
+    * [***Sign In:***](#sign-in)
+      * [***Form Errors:***](#form-errors)
+    * [***Sign Up:***](#sign-up)
+      * [***Form Errors:***](#form-errors-1)
+    * [***Sign Out:***](#sign-out)
+  * [**Site Instructions**](#site-instructions)
+    * [***Access to instructions page:***](#access-to-instructions-page)
+      * [***Nav link:***](#nav-link)
+      * [***On page Button:***](#on-page-button)
+      * [***Note form Anchor tag:***](#note-form-anchor-tag)
+  * [**Main Page Content**](#main-page-content)
+    * [***Job Openings page:***](#job-openings-page)
+      * [***Add Job Button:***](#add-job-button)
+      * [***Add Job Form:***](#add-job-form)
+      * [***Add Job Success message:***](#add-job-success-message)
+    * [***Job Openings and Pinned Board Content:***](#job-openings-and-pinned-board-content)
+      * [***Job Preview Card (logged out):***](#job-preview-card-logged-out)
+      * [***Job Preview Card (Logged in):***](#job-preview-card-logged-in)
+      * [***Job Preview Card Footer (Logged in as admin user):***](#job-preview-card-footer-logged-in-as-admin-user)
+    * [***Full Job Details Page***](#full-job-details-page)
+      * [***Full details card (unpinned):***](#full-details-card-unpinned)
+      * [***Full details card (pinned):***](#full-details-card-pinned)
+        * [**Full job card**](#full-job-card)
+      * [***Notes form:***](#notes-form)
+      * [***Notes Accordion:***](#notes-accordion)
+        * [**Note:**](#note)
+        * [**Insight:**](#insight)
+    * [***Insights PAge:***](#insights-page-1)
+      * [***Add Insight Button:***](#add-insight-button)
+      * [***Add Insight Form:***](#add-insight-form)
+      * [***Add Insight Form Errors:***](#add-insight-form-errors)
+        * [**Short description field error:**](#short-description-field-error)
+        * [**Short description field error:**](#short-description-field-error-1)
+      * [***Insight left success message:***](#insight-left-success-message)
+      * [***Insight Item Display:***](#insight-item-display)
+      * [***Timeline:***](#timeline)
+    * [***Contact Us Page:***](#contact-us-page)
+    * [***Pagination:***](#pagination)
+    * [***Footer:***](#footer)
+  * [**Error pages**](#error-pages)
+    * [***Members Only Page:***](#members-only-page)
+    * [***500 Server Error Page:***](#500-server-error-page)
+    * [***404 Page Not Found Error Page:***](#404-page-not-found-error-page)
+  * [**Warning Modals**](#warning-modals)
+    * [***Delete Note/Insight:***](#delete-noteinsight)
+    * [***Delete Job:***](#delete-job)
+    * [***Unpin Job:***](#unpin-job)
+    * [***Delete element from the DOM:***](#delete-element-from-the-dom)
+* [**Future development**](#future-development)
+* [**Testing Phase**](#testing-phase)
+* [Deployment](#deployment)
+* [Honorable mentions](#honorable-mentions)
+* [Credits](#credits)
+
 # **Planning Phase**
 ## **Strategy** 
 ### **Site Aims:**
-It takes a new developer around 20-25 interviews to land their first developer job. This does not include the total number of applications sent out by a job seeker.
+It takes a new developer around 20-25 interviews to land their first developer job. Not including the total number of applications sent out by a job seeker.
 
-Keeping track of one's applications can be troublesome. When a company responds, it can be hard to remember the job post requirements, especially when multiple sites are used to check for roles. Worse yet, several months have passed since you sent the application.
+Keeping track of one's applications can be troublesome. When a company responds, it can be hard to remember the job post requirements, especially when users use multiple sites to check for roles. Worse yet, several months have passed since you sent the application.
 
-This app aims to streamline the process by allowing users to submit a Job advert of interest to them. Once approved by the admin, the job spec would be neatly stored to refer to later, along with any notes or insights the user wishes to keep. 
+This app aims to streamline the process by allowing users to submit a Job advert of interest. Once approved by the admin, the job spec would be neatly stored to refer to later, along with any notes or insights the user wishes to keep. 
 
 Doing this will allow the user to track what is expected during the selection process and make it easier for the candidate to research the potential employer/role upon response to their application. The advert is safely stored on the site. The personal board would also allow the user to make notes to track their application to review their insights of the process and any company feedback provided after an interview.
 
@@ -36,7 +123,7 @@ Personal insights | 5 | 5
 Employer ratings | 1 | 5 
 Number of users applied | 1 | 1 
 User log in | 5 | 5
-Direct email to employer with CV/cover letter attachments | 2 | 1 
+Direct email to an employer with CV/cover letter attachments | 2 | 1 
 Community mentorship | 1 | 1
 Freelance specific jobs board | 1 | 1
 API to fetch jobs data | 5 | 2 
@@ -48,13 +135,13 @@ Viability and feasibility in the above table are based on both time and current 
 
 ## **Scope**
 
-Due to the imbalance in scores above there will definitely be some tradeoffs, however, I anticipate that there will need to be some trade offs due to the time set for this project. 
+Due to the imbalance in scores above, there will be some trade-offs. However, I anticipate that some further trade-offs will need to be made later due to the time set for this project. 
 
-I have further divided this table into 3 categories to help prioritize the order of importance and clarify the MVP required to launch as a basic proof of concept whilst meeting the above objective. These three categories are:-
+I have further divided this table into three categories to help prioritize the order of importance and clarify the MVP required to launch as a basic proof of concept while meeting the above objective. These three categories are:-
 * UX efforts **must** address these:
     * User can pin Jobs.
     * Manually add jobs (approved only by admin).
-    * User specific job notes.
+    * User-specific job notes.
     * Personal insights.
     * User login.
   
@@ -71,9 +158,9 @@ I have further divided this table into 3 categories to help prioritize the order
     * Jobs blog.
     * Employer ratings.
     * Number of users applied.
-    * Direct email to employer with CV/cover letter attachments.
+    * Direct email to an employer with CV/cover letter attachments.
     * Community mentorship.
-    * Freelance specific jobs board.
+    * Freelance-specific jobs board.
   
 ## **Structure**   
 To help me visualize a typical user journey around the site, I used [draw.io](https://app.diagrams.net/) to help me plan out the various routes a user could take through the site. This flow changed slightly throughout development, specifically with the dropping of an API for the jobs data. However, in general, it guided the process.
@@ -113,9 +200,9 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
     * ...**see appropriate responses upon specific interactions with the site** so that **I know my edit, deletion, submission has been successful.**
     * ...**See appealing colors and uniform style themes** so that **every page and part of the process stimulates a positive response.**
     * ...**Access the site from any size screen and still have a pleasant experience on the site** so that **I am not restricted to which devices I can use on the site**
-    * ...**access a live url** so that **I can use the site**
+    * ...**access a live URL** so that **I can use the site**
     * **view open job posts** so that **I can decide which ones are of interest to me.**
-    * ...**type a URL into the web browser** so that **I can access the sites various pages**
+    * ...**type a URL into the web browser** so that **I can access the site's various pages**
     *  ...**see uniformity on each page and clearly distinguish the content subject** so that **I can quickly and familiarly navigate the page.**
     * ... **Find relevant contact details** so that **I can contact the site admin via email**
   
@@ -134,56 +221,56 @@ To help me visualize a typical user journey around the site, I used [draw.io](ht
 I added a hero image to each page during development and made the Job Opening page the home page. I added some forms to edit notes/insights and add a job; however, these were last-minute additions and were a simple form alone on the page. I deemed there were no wireframes required for these.
 
 ### **Database Schema**
-Below shows my initial plan for my database tables:  
+Below is my initial plan for my database tables:  
 ![Entity-Relationship-Model](docs/data-model/data-entity-relationship.jpg) 
 
-My initial plan for my database tables included using a JSON with data from the API. Since I abandoned this idea early on, the JSON was replaced with a jobs model.
+My initial plan for my database tables included using a JSON with data from the API. Since I abandoned this idea early on, I replaced the JSON with a jobs model.
 
-My user model was also removed in favor of the default model provided by the ALLAUTH library. I combined the notes and insights tables into a single table with a boolean felid to indicate if the entry was a note or insight.
+I also removed my user model in favor of the default model provided by the ALLAUTH library. I combined the notes and insights tables into a single table with a boolean felid to indicate if the entry was a note or insight.
 
-Below is the final version of the ERD generated via PG admin connected to my Heroku Postgres database. There are only the three custom tables (Notes, Jobs, PinnedJobs); the rest were generated automatically by various Libraries.
+Below is the final version of the ERD generated via the PGadmin tool connected to my Heroku Postgres database. There are only the three custom tables (Notes, Jobs, PinnedJobs); the rest were generated automatically by various Libraries.
 
 ![Final ERD](docs/images/erd.png)
  
-Within my models.py, I also have a function using the @receiver decorator. This creates a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs with in the PinnedJobs table.
+Within my models.py, I also have a function using the @receiver decorator to create a PinnedJobs object whenever a user registers; the object is user-specific and links a user to a many2many list of the user's pinned jobs within the PinnedJobs table. Later this can be further developed into a user profile.
 
 ## **Surface**
 ### **Color scheme:**
 I used the following [Image](docs/images/jaguar-logo.png) to generate the following color scheme on [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000). The resultant color scheme was:
 ![Color Scheme](docs/images/jag-colors.jpg)
 
-This was adapted throughout the development process. The colors used have been placed in the below [color grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23fcf6ba%2C%0D%0A%23b38728%2C%0D%0A%23fbf5b7%2C%0D%0A%23bf953f%0D%0A%23000%0D%0A%23fffdd0%2C%0D%0A%23fafafa%2C%0D%0A%23603f3f%2C%0D%0A%23fdfd96%2C%0D%0A%23e4b67c%2C%0D%0A%23efefef%2C%0D%0A%23de9f13%2C%0D%0A%23dee2e6%2C%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) to check contrast scores.
+Adapting the above throughout the development process. The final list of colors used has been placed in the below [color grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23fcf6ba%2C%0D%0A%23b38728%2C%0D%0A%23fbf5b7%2C%0D%0A%23bf953f%0D%0A%23000%0D%0A%23fffdd0%2C%0D%0A%23fafafa%2C%0D%0A%23603f3f%2C%0D%0A%23fdfd96%2C%0D%0A%23e4b67c%2C%0D%0A%23efefef%2C%0D%0A%23de9f13%2C%0D%0A%23dee2e6%2C%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) to check contrast scores.
 
 ![Color gird](docs/images/color-grid.jpg)
 
 ### **Typography**:
 
-For this project I used two different fonts. 
+For this project, I used two different fonts. 
 #### ***Condiment:***
-* For the J.A.G Logo. I wanted a jagged effect to emphasis the word JAG. 
+* For the J.A.G Logo. I wanted a jagged effect to emphasize the word JAG. 
 
 #### ***Lato:***
-* The main font for the remainder of the site. This was used for its soft edges to match the border radius placed on most elements.
+* The main font for the remainder of the site. This font was used for its soft edges to match most elements' border-radius attributes.
 
-# Agile Development Process
+# **Agile Development Process**
 I used [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4/roadmap) to track and create issues/user stories. I will provide login credentials for the above project space when submitting the project. However, you can find a summary of my agile process/learnings [here](AGILE.md).
   
 # **Features**
 ## **Site Navigation**
 ### **Navbar**
 #### ***Logo:***
-When brainstorming names for the site the term of phase "Jobs A Gooden" came to mind when thinking about finding the perfect job. This gave rise to the acronym J.A.G, for this reason I used the below image as the logo/mascot of the brand.
+When brainstorming names for the site, the phrase "Jobs A Gooden" came to mind when thinking about finding the perfect job; this term gave rise to the acronym J.A.G. For this reason, I used the below image as the logo/mascot of the brand.
 
 The Font used was a cursive style on purpose because of the jagged appearance it gave the text.  
   
 ![Site Logo](docs/images/features/navbar/logo.JPG)
   
 #### ***Signed Out:***
-The navbar allows the user to easily navigate the site. When signed out of the page it shows the follow:
+The navbar allows the user to navigate the site easily. When signed out of the page, it shows the following:
 * Shows link to register.
-* Shows link to login.
-* Jobs and Tracking dropdown menus disabled and showing as a different color to the other nav items.
-* Logo with company acronym and mascot. This also servers as a link back to the home page at any point in the users journey.  
+* Shows login link.
+* Jobs and Tracking dropdown menus are disabled and show a different color than the other nav items.
+* Logo with company acronym and mascot. The logo also serves as a link back to the home page at any point in the user's journey.  
 ![Navbar when logged out](docs/images/features/navbar/signed-out.JPG)
   
 #### ***Signed In:***
@@ -191,44 +278,47 @@ Changes to the nav bar when logged in are:
 * Register and Login nav items replaced with Logout.     
 ![Navbar when logged in](docs/images/features/navbar/signed-in.JPG)  
   
-* Jobs and Tracking drop downs now clickable and the color matches the other nav items.
+* Jobs and Tracking dropdowns are now clickable, and the color matches the other nav items.
     ![Jobs dropdown](docs/images/features/navbar/jobs-dropdown.JPG)  
     ![Jobs dropdown](docs/images/features/navbar/tracking-dropdown.JPG)
   
 #### ***Hamburger menu on smaller screen sizes:***
-To allow the menu to be displayed properly on smaller screen sizes a burger menu was implemented using bootstrap.  
+To display the menu properly on smaller screen sizes, a burger menu was implemented using bootstrap.  
 ![Jobs dropdown](docs/images/features/navbar/mobile-menu.JPG)   
 ![Jobs dropdown](docs/images/features/navbar/mobile-menu-open.JPG) 
   
 ### **Hero Images:**
-The hero images are picked to portray the theme of the page to the user. 
+I picked the hero images to portray the page's theme to the user. 
 #### ***Job Openings/Landing Page:***
-For this page I wanted something that inspired the user in their job search. The neon sign saying "Do something great" is inline with people I spoke to when researching what a user would want out of a job. Out of the 5 people I asked "Why did you decide to change jobs last?" 4 said that they wanted a career which felt more fulfilling for them and had an impact. The chosen image was to personify this desire.  
+I wanted something that inspired the user in their job search for this page. The neon sign saying "Do something great" aligns with the people I spoke to when researching what a user would want out of a job. Out of the five people I asked, "Why did you decide to change jobs last?" 4 said they wanted a career that felt more fulfilling for them and had an impact. The chosen image was to personify this desire.  
 ![Job Opening page hero image](docs/images/features/hero-images/job-openings.JPG)  
 
 #### ***Add Job Form Page:***
-I wanted an image that invoked a positive feeling for both users and employers adding a job to share with the community.
+I wanted an image that invoked a positive feeling for both users and employers, adding a job to share with the community.
   
 ![Add Job Form Hero Image](docs/images/features/hero-images/add-job.JPG)
   
 ### ***Saved jobs page:***
-The chosen image shows a man sticking posits to the wall and makes notes to track is ideas. I felt this nicely personified the  sites intention to save jobs and makes notes as a user brainstorms and tracks the journey of their future career path.
+The chosen image shows a man sticking posits to the wall and making notes to track their ideas. I felt this nicely personified the site's intention to save jobs and make notes as a user brainstorms and tracks the journey of their future career path.
 
 ![Saved Job page hero image](docs/images/features/hero-images/pinboard.JPG)
   
 ### ***Insights page:***
-This hero image sticks with the inspirational theme. The words "Lets your intuition guide you. You are what you have been looking for" are displayed on a pamphlet. Although there is some [debate in the psychological community](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5020639/#:~:text=Intuition%20and%20insight%20are%20intriguing%20phenomena%20of%20non-analytical,by%20recombining%20the%20single%20elements%20of%20a%20problem.) over the differences between insights and intuition as as a type non-analytical mental functioning. However, the common perception is intuition precedes insight and for this reason it seemed fitting that this inspirational quote should be placed on the insights pages.  
+This hero image sticks with the inspirational theme. The words "Lets your intuition guide you. You are what you have been looking for" are displayed on a pamphlet. There is some [debate in the psychological community](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5020639/#:~:text=Intuition%20and%20insight%20are%20intriguing%20phenomena%20of%20non-analytical,by%20recombining%20the%20single%20elements%20of%20a%20problem.) over the differences between insights and intuition as a type non-analytical mental functioning. However, the common perception is that intuition precedes insight, and for this reason, it seemed fitting to place this inspirational quote on the insights pages.  
   
 ![Insights page hero image](docs/images/features/hero-images/insights.JPG)
   
 ### ***Edit note form page:***
-For this page I chose a image of a person making notes in a copy book.
+I chose an image of a person making notes in a copybook for this page.
   
 ![Edit notes Page hero image](docs/images/features/hero-images/notes.JPG)
 
 ## **AllAuth Pages**
 ### ***Sign In:***
 ![sign-in form](docs/images/features/allauth/sign-in.JPG)
+  
+#### ***Form Errors:***
+![Invalid log in credentials](docs/images/features/allauth/signin-formerror.JPG)
   
 ### ***Sign Up:***
 ![sign-up form](docs/images/features/allauth/sign-up.JPG)
@@ -244,7 +334,7 @@ For this page I chose a image of a person making notes in a copy book.
 ![instructions page](docs/images/features/instructions/instructions-page.JPG)
   
 ### ***Access to instructions page:***
-There are three ways a user can access the site instructions detailing how to use the sites primary feature of tracking a job search journey. 
+There are three ways a user can access the site instructions detailing how to use the site's primary feature of tracking a job search journey. 
 #### ***Nav link:***
 ![Nav link to instructions page](docs/images/features/instructions/nav-link.JPG)  
   
@@ -271,32 +361,32 @@ There is a button linking the user to the site instructions at the top of the pa
 ![Add-Job-Form](docs/images/features/openings-page/add-job-form.JPG)
   
 #### ***Add Job Success message:***
-* Once added the user will see an alert advising them the job has been submitted and is awaiting admin approval.
+* Once added, the user will see an alert advising them that the job post has been submitted and is awaiting admin approval.
 * Can cancel the form without the need to complete it.     
 ![Add job success message](docs/images/features/openings-page/add-job-success.JPG)
   
 ### ***Job Openings and Pinned Board Content:***
 #### ***Job Preview Card (logged out):***
-* Visible only form job openings page.
+* Visible only from the job openings page.
 * Toggle disabled.
 * Button for full job spec invites the user to log in or sign up.
-* Company name, role, location, salary info and expiry date visible.
+* Company name, role, location, salary info, and expiry date visible.
     
 ![Job Preview when logged out](docs/images/features/openings-page/previewcard-loggedout.JPG)  
   
 #### ***Job Preview Card (Logged in):***
 * Only saved jobs will be visible on the jobs pinboard page.
-* From the pinboard page if a post is unpinned is will disappear the remaining jobs will take up the remaining space.
+* From the pinboard page, it will disappear if a post gets unpinned. The remaining jobs will take up the vacated space.
 * Toggle active.
-* Green and toggle to the right when a job is saved.
-* White background and toggle to the left when un saved.
+* When a job is pinned, the toggle goes to the right, and the background turns green.
+* When a job is unpinned, the toggle goes to the left, and the background turns white.
 * Button for full details clickable and directs the user to the full job spec.
-* Company name, role, location, salary info and expiry date visible.
+* Company name, role, location, salary info, and expiry date visible.
   
 ![Job preview when logged in](docs/images/features/openings-page/previewcard-loggedin.JPG)  
 
 #### ***Job Preview Card Footer (Logged in as admin user):***
-* Edit button visible for easy editing of a jobs post.
+* Edit button visible for easy editing of a job post.
 * Delete button visible for easy deletion of a job.
 * Closing date for job role visible.  
    
@@ -315,7 +405,7 @@ There is a button linking the user to the site instructions at the top of the pa
    
 ![Full job spec card (pinned)](docs/images/features/job-details/fullspec-pinned.JPG)
   
-* On narrower screens card width stays the same and button shows to scroll to the notes section instead.  
+* On narrower screens, card width stays the same, and the button shows to scroll to the notes section instead.  
   
 ![Full job spec card (pinned)](docs/images/features/job-details/fullspec-pinned-mob.JPG)
   
@@ -324,19 +414,22 @@ There is a button linking the user to the site instructions at the top of the pa
 * Displayed underneath job card on narrower screens.  
 ![Notes form on Job details page](docs/images/features/job-details/notes-form.JPG)  
   
-* Error displayed if short description or note field are left blank.  
+* Error displayed if the short description or note field is left blank.  
 ![Note form error](docs/images/features/job-details/form-error.JPG)
   
-* Success message shown upon successful submission of a note/insight.  
+* Success message is shown upon successful submission of a note/insight.  
 ![Note form success](docs/images/features/job-details/form-success.JPG)
   
 #### ***Notes Accordion:***
-* Notes and insights are displayed here in the accordion, located under the note form.  
-![Notes accordion](docs/images/features/job-details/notes-accordion.JPG)
+* Notes and insights are displayed here in the accordion, located under the note form.
+* Deletions occur without page refresh
+* When leaving a note, the page redirects to a new URL to prevent a note from being left twice by refreshing the page.  
+  
+![Notes accordion](docs/images/features/job-details/notes-accordion.JPG)  
   
 ##### **Note:**
-* When a job is unpinned by a user their related notes get deleted to prevent a clog up of old data in the database. 
-* Date created visible.
+* When a user unpins a job, their related notes get deleted to prevent a clog up of old data in the database. 
+* Date created is visible.
 * White background.
 * Edit button available to edit note.
 * Delete button available to delete note.
@@ -345,8 +438,8 @@ There is a button linking the user to the site instructions at the top of the pa
   
 ##### **Insight:**
 * Will be saved even if the job is unpinned.
-* Date created visible.
-* Light bulb icon next to the short description to indicate the note is an insight.
+* Date created is visible.
+* Light bulb icon next to the short description indicates the note is an insight.
 * Yellow background.
 * Edit button available to edit insight.
 * Delete button available to delete insight.
@@ -356,19 +449,19 @@ There is a button linking the user to the site instructions at the top of the pa
   
 ### ***Insights PAge:***
 #### ***Add Insight Button:***
-Allows the user to add insights with out a related job.  
+Allows the user to add insights without a related job.  
   
 ![Add insight button](docs/images/features/insights-page/add-insight-btn.JPG) 
   
 #### ***Add Insight Form:***
-* Form allows user to create an insight with no related job post.
+* Form allows users to create insights with no related job post.
 * Related_job field is automatically set to null.
 * is_insight is automatically set to true when using this form and cannot be changed by the user.  
   
 ![Add Insight form](docs/images/features/insights-page/create-insight-form.JPG) 
   
 #### ***Add Insight Form Errors:***
-When form submission is invalid errors are shown to guide the user.
+When a form submission is invalid, errors are shown to guide the user.
   
 ##### **Short description field error:**
   
@@ -380,28 +473,31 @@ When form submission is invalid errors are shown to guide the user.
     
 #### ***Insight left success message:***
   
-Once an insight is left from the insight page a success message is left on the insights page.
+Once submitting an insight from the insight page, a success message displays on the insights page.
   
 ![Insight success](docs/images/features/insights-page/insights-success.JPG)
   
 #### ***Insight Item Display:***
   
 * Insight item displayed with date created.
-* Short description, and note field visible.
-* Button to edit entry.
+* Short description and note field visible.
+* Button to edit an entry.
 * Button to delete the entry. 
    
 ![Insight item on insights page](docs/images/features/insights-page/insight-item.JPG)
   
 #### ***Timeline:***
   
-Acts as a centre focal point for insights so the display on alternate sides in order form newest to oldest.  
+Acts as a central focal point for insights, so they display on alternate sides is in the order from newest to oldest.  
   
 ![Insights Timeline](docs/images/features/insights-page/timeline.JPG)
-  
+
+On narrower devices, the insights stack on top of each other:  
+   
+![Insights Timeline Mobile](docs/images/features/insights-page/timeline-mob.JPG)
 ### ***Contact Us Page:***
   
-* Fake email address to contact site admins (In the future I will be looking into domain names)
+* Fake email address to contact site admins (In the future, I will be looking into domain names)
 * Navigation button to the job openings page.
 * Navigation button to the job pinboard page.    
   
@@ -409,10 +505,10 @@ Acts as a centre focal point for insights so the display on alternate sides in o
   
 
 ### ***Pagination:***
-Appears on the following pages when:
-  * Job Openings page when more than 6 items to be displayed.
-  * Job pinboard page when more than 6 items to be displayed.
-  * Insights page when more that 4 items are available.  
+It appears on the following pages when:
+  * Job Openings page when more than six items are to be displayed.
+  * Job pinboard page when more than six items are to be displayed.
+  * Insights page when more than four items are available.  
 ![Pagination bar](docs/images/features/pagination.JPG)
 
 ### ***Footer:***
@@ -422,13 +518,13 @@ Appears on the following pages when:
 ![Footer](docs/images/features/footer.JPG)
 
 ## **Error pages**
-The below error pages were create out of necessity, When logged out a user was still able to access some pages when logged out. Other pages would show an error due to the logic on the page needing a user to render object from the view.
+The below error pages were created out of necessity. A user could still access some pages when logged out. Other pages would show an error due to the logic on the page needing a user object to render the logic from the view.
   
-My initial solution was this member only page to render when a user was not logged in. However due to some url's being linked to views requiring user specific user related data a default 500 error would been shown so I decided to customize the error page.
+My initial solution was for this was a members-only page when a user was not logged in. However, due to some URLs being linked to views requiring user-specific data, a default 500 error would be shown. I decided to handle this with a customized error page.
   
 ### ***Members Only Page:***
 
-The member only page is visible when logged out and trying to access the below pages via the URL:
+The members-only page is visible when logged out and trying to access the below pages via the URL:
 * Full job spec page.
 * Edit note/insight form page.
 * Add job form.
@@ -437,7 +533,7 @@ The member only page is visible when logged out and trying to access the below p
 ![Member only page](docs/images/features/error-pages/members-pages.JPG)
 
 ### ***500 Server Error Page:***
-The 500 error page appears on those url's which are linked to views requiring a user object to function. It can cover other scenarios in the future however extensive manual testing this was the only trigger I found for this page.
+The 500 error page appears on those URLs linked to views requiring a user object to function. It can cover other scenarios in the future; however, after extensive manual testing, this was the only trigger I found for this page.
 
 Pages where the error shows when trying to access a page via the URL when logged out:
 * Job pinboard page.
@@ -446,37 +542,54 @@ Pages where the error shows when trying to access a page via the URL when logged
 ![500 error page](docs/images/features/error-pages/500.JPG)
 
 ### ***404 Page Not Found Error Page:***
-This error shows when a user type a url into the browser which doesn't exist within the apps domain.
+This error shows when a user types a URL into the browser which does not exist within the app's domain.
 ![404 error page](docs/images/features/error-pages/404.JPG)
+
+## **Warning Modals**
+### ***Delete Note/Insight:***
+![Delete entry (note/insight) warning](docs/images/features/warning-modals/delete-note.JPG)
+  
+### ***Delete Job:***
+![Delete job warning](docs/images/features/warning-modals/delete-job.JPG
+
+### ***Unpin Job:***
+![Unpin job warning](docs/images/features/warning-modals/unpin-post.JPG)
+
+### ***Delete element from the DOM:***
+Once deleting a job or unpinning a job, the element is hidden with javascript, and then the page refreshes to fill the vacant spot as the page rerenders. I took the approach of hiding the element first on list views to prevent the user from re-pinning the post before it refreshed. After removing the element, a refresh was required for the other elements to fill the page's space and prevent pagination issues.
+![element hidden with javascript](docs/images/features/warning-modals/hiding-element.JPG)
 
 # **Future development**
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.
-* Build online community.
+* Build an online community.
 * Job categories
 * Search feature
 * API for a Job's site
-* Auto email to Job post author when job close to expired that it will be deleted after the specified time of expiration.
+* Auto email to Job post author when a job is close to expired that it will be deleted after the specified expiration time.
 * [KanBan board](https://codepen.io/josetxu/pen/VwyxZKq) to track applied, round, and response.
-* The ability for the user to keep their added posts private, visible only on their saved jobs board. Currently this is only possible if the admin pins the post on the users behalf from the admin panel. 
-* Counter on admin's delete job button which shows the number of users with the job pinned. This would prevent the Admin having to check the admin panel for this info prior to deleting the job.
+* The ability for the user to keep their added posts private, visible only on their saved jobs board. Currently, hiding a job in this way is only possible if the admin pins the post on the user's behalf from the admin panel. 
+* Counter on admin's delete job button, which shows the number of users with the job pinned. Preventing the Admin from having to check the admin panel for this info prior to deleting the job.
 
 # **Testing Phase**
-I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).
+I have included testing details during and post-development in a separate document called [TESTING.md](TESTING.md).
 
 # Deployment
 
 I have included details of my initial deployment in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
 
-# **Grammarly done til here**
 # Honorable mentions  
-* [Sean Murphy](https://github.com/nazarja) - just a legend any way you slice it, helped me understand the logic behind my pin job feature by providing examples of similar things and helped me to connect to heroku through the console of VSCODE
-* [Matt Bodden](https://github.com/MattBCoding) - the comfort of a friend no matter the time of day, the push of a competitor even if I am wasn't playing the game
-* [Steve Wier](https://github.com/StevenWeir038) - Always pushing me to think bigger
-* Guillermo Brachetta - for explaining dotenv package and how to use it
+* [Richard Wells](https://github.com/D0nni387) - Mentor extraordinaire. He was ways on call when I needed him and never afraid to pull out the big guns to push that little bit further.
+* [Sean Murphy](https://github.com/nazarja) - Just a legend, any way you slice it, he helped me understand the logic behind my pin job feature by providing examples of similar things and helped me to connect to Heroku through the console of VSCODE
+* [Matt Bodden](https://github.com/MattBCoding) - The comfort of a friend no matter the time of day, the push of a competitor even if I was not playing the game.
+* [Steve Wier](https://github.com/StevenWeir038) - A man and a legend in his own right. Always checking in on me and testing my work. Pushing me to move forward even when I did not feel like it.
+* Guillermo Brachetta - Explained dotenv package and how to use it.
 * Ed_CI - was always there in the project channel and quick to jump in to help
-* Megan
+* [Megan Vella](https://github.com/Medusas71) - Gave me the most extensive testing review of the lot. Always quick to say hello and look for ways to help.
 
+* The code institute Slack community as a whole who tested and supported me throughout. There have been too many to mention everyone who encouraged along the way, but they are all superstars.
 
+* And the biggest thanks goes to my wife and child, who have had to deal with me face to face through it all. Oliver has been my reason for the change, and Analise my inspiration. 
+  
 # Credits
 * responsive screenshot made using [techsini.com](https://techsini.com/multi-mockup/index.php)
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
