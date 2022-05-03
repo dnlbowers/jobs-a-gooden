@@ -28,7 +28,7 @@
                 {{ job.job_description|safe }}
                 
                 <!-- Button to apply or exit job spec -->
-                <div class="text-center">    
+                <div class="text-center mt-3">    
                     {% if user.is_authenticated %}
                         <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to jobs</a>
                         <a href="{{ job.job_url }}" class="btn btn-success" target="_blank" rel="noopener" aria-label="Opens the source of the job posting in a new tab with details on how to apply.">Apply Now</a>
@@ -42,9 +42,10 @@
         
         <!-- Job expiry date and controls to edit or delete (visiable only to Admins) -->
         <div class="text-center card-footer bg-brown border-top">
+            <p>Job Closing date - {{ job.date_expired }} </p>
             {% if user.is_staff %}
             {% csrf_token %}
-                <p>Job Closing date - {{ job.date_expired }} </p>
+                
                 <a href="{% url 'edit_job' job.id %}" class="btn btn-success">Edit</a>
                 <button class="btn btn-danger job-del-button" data-id="{{ job.id }}">Delete</button>
             {% endif %}

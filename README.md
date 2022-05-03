@@ -227,12 +227,15 @@ For this page I chose a image of a person making notes in a copy book.
 ![Edit notes Page hero image](docs/images/features/hero-images/notes.JPG)
   
 ## **Site Instructions**
+  
+![instructions page](docs/images/features/instructions/instructions-page.JPG)
+  
 ### ***Access to instructions page:***
 There are three ways a user can access the site instructions detailing how to use the sites primary feature of tracking a job search journey. 
 #### ***Nav link:***
 ![Nav link to instructions page](docs/images/features/instructions/nav-link.JPG)  
   
-#### ***On page Button***
+#### ***On page Button:***
 There is a button linking the user to the site instructions at the top of the pages main content on the following pages:-
 * Job Openings.
 * Saved Jobs/Jobs Pinboard page.
@@ -240,9 +243,88 @@ There is a button linking the user to the site instructions at the top of the pa
   
 ![Button to instructions](docs/images/features/instructions/button-link.JPG)
 
-## **Page Content**
-### ***Job Openings:***
+#### ***Note form Anchor tag:***
+  
+![Note form Anchor tag](docs/images/features/instructions/note-form-link.JPG)  
+  
+## **Main Page Content**
+### ***Job Openings and Pinned Board Content:***
+#### ***Job Preview Card (logged out):***
+* Visible only form job openings page.
+* Toggle disabled.
+* Button for full job spec invites the user to log in or sign up.
+* Company name, role, location, salary info and expiry date visible.
+    
+![Job Preview when logged out](docs/images/features/openings-page/previewcard-loggedout.JPG)  
+  
+#### ***Job Preview Card (Logged in):***
+* Only saved jobs will be visible on the jobs pinboard page.
+* Toggle active.
+* Green and toggle to the right when a job is saved.
+* White background and toggle to the left when un saved.
+* Button for full details clickable and directs the user to the full job spec.
+* Company name, role, location, salary info and expiry date visible.
+  
+![Job preview when logged in](docs/images/features/openings-page/previewcard-loggedin.JPG)  
 
+#### ***Job Preview Card Footer (Logged in as admin user):***
+* Edit button visible for easy editing of a jobs post.
+* Delete button visible for easy deletion of a job.
+* Closing date for job role visible.  
+   
+![Card footer for admin](docs/images/features/openings-page/previewfooter-admin.JPG)  
+  
+### ***Full Job Details Page***
+#### ***Full details card (unpinned):***
+* Shows all relevant felids of the job entry.
+  
+![Full job spec card (unpinned)](docs/images/features/job-details/fullspec-unpinned.JPG)
+  
+#### ***Full details card (pinned):***
+##### **Full job card**
+* Toggle turns green and to the right.
+* Card width narrows when wider screens to allow for notes section.
+   
+![Full job spec card (pinned)](docs/images/features/job-details/fullspec-pinned.JPG)
+  
+* On narrower screens card width stays the same and button shows to scroll to the notes section instead.  
+  
+![Full job spec card (pinned)](docs/images/features/job-details/fullspec-pinned-mob.JPG)
+  
+#### ***Notes form:***
+* Displayed to the right of the job card on wider screens.
+* Displayed underneath job card on narrower screens.  
+![Notes form on Job details page](docs/images/features/job-details/notes-form.JPG)  
+  
+* Error displayed if short description or note field are left blank.  
+![Note form error](docs/images/features/job-details/form-error.JPG)
+  
+* Success message shown upon successful submission of a note/insight.  
+![Note form success](docs/images/features/job-details/form-success.JPG)
+  
+#### ***Notes Accordion:***
+* Notes and insights are displayed here in the accordion, located under the note form.  
+![Notes accordion](docs/images/features/job-details/notes-accordion.JPG)
+  
+##### **Note:**
+* When a job is unpinned by a user their related notes get deleted to prevent a clog up of old data in the database. 
+* Date created visible.
+* White background.
+* Edit button available to edit note.
+* Delete button available to delete note.
+  
+![Note](docs/images/features/job-details/note.JPG)  
+  
+##### **Insight:**
+* Will be saved even if the job is unpinned.
+* Date created visible.
+* Light bulb icon next to the short description to indicate the note is an insight.
+* Yellow background.
+* Edit button available to edit insight.
+* Delete button available to delete insight.
+* Noted "marked as insight" in the top right of the body.
+  
+![Note](docs/images/features/job-details/insight.JPG) 
 
 # **Future development**
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.

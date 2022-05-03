@@ -178,6 +178,10 @@ main {
   border: 2px solid #000! important;
 }
 
+.form-check-input:checked {
+  background-color: #198754;
+}
+
 .card-footer {
   min-height: 3.125rem;
   border-radius: 0 0 10px 10px! important;
@@ -393,9 +397,13 @@ footer {
       padding: 0 0.25rem 1rem;
     }
 
+    .btn {
+      font-size: 1.3rem;
+    }
+
     .pagination {
-      font-size: 23px;
-      padding: 15px 0;
+      font-size: 1.4375rem;
+      padding: 0.9375rem 0;
     }
 }
 
@@ -450,6 +458,7 @@ footer {
     display: none;
   }
 
+  .btn,
   #instructions-link {
     font-size: 1.8rem;
   }
