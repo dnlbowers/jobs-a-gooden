@@ -225,6 +225,19 @@ This hero image sticks with the inspirational theme. The words "Lets your intuit
 For this page I chose a image of a person making notes in a copy book.
   
 ![Edit notes Page hero image](docs/images/features/hero-images/notes.JPG)
+
+## **AllAuth Pages**
+### ***Sign In:***
+![sign-in form](docs/images/features/allauth/sign-in.JPG)
+  
+### ***Sign Up:***
+![sign-up form](docs/images/features/allauth/sign-up.JPG)
+
+#### ***Form Errors:***
+![Form errors for sign up form](docs/images/features/allauth/signup-formerror.JPG)
+
+### ***Sign Out:***
+![Sign out page](docs/images/features/allauth/sign-out.JPG)
   
 ## **Site Instructions**
   
@@ -251,6 +264,17 @@ There is a button linking the user to the site instructions at the top of the pa
 ### ***Job Openings page:***
 #### ***Add Job Button:***
 ![Add Job Button](docs/images/features/openings-page/add-job.JPG)
+  
+#### ***Add Job Form:***
+* Allows a user to submit a job post for admin approval.
+  
+![Add-Job-Form](docs/images/features/openings-page/add-job-form.JPG)
+  
+#### ***Add Job Success message:***
+* Once added the user will see an alert advising them the job has been submitted and is awaiting admin approval.
+* Can cancel the form without the need to complete it.     
+![Add job success message](docs/images/features/openings-page/add-job-success.JPG)
+  
 ### ***Job Openings and Pinned Board Content:***
 #### ***Job Preview Card (logged out):***
 * Visible only form job openings page.
@@ -262,6 +286,7 @@ There is a button linking the user to the site instructions at the top of the pa
   
 #### ***Job Preview Card (Logged in):***
 * Only saved jobs will be visible on the jobs pinboard page.
+* From the pinboard page if a post is unpinned is will disappear the remaining jobs will take up the remaining space.
 * Toggle active.
 * Green and toggle to the right when a job is saved.
 * White background and toggle to the left when un saved.
@@ -332,14 +357,35 @@ There is a button linking the user to the site instructions at the top of the pa
 ### ***Insights PAge:***
 #### ***Add Insight Button:***
 Allows the user to add insights with out a related job.  
-![Add insight button](docs/images/features/insights-page/add-insight-btn.JPG)  
   
+![Add insight button](docs/images/features/insights-page/add-insight-btn.JPG) 
+  
+#### ***Add Insight Form:***
+* Form allows user to create an insight with no related job post.
+* Related_job field is automatically set to null.
+* is_insight is automatically set to true when using this form and cannot be changed by the user.  
+  
+![Add Insight form](docs/images/features/insights-page/create-insight-form.JPG) 
+  
+#### ***Add Insight Form Errors:***
+When form submission is invalid errors are shown to guide the user.
+  
+##### **Short description field error:**
+  
+![Shortdescription form error](docs/images/features/insights-page/insight-form-error-short.JPG)  
+  
+##### **Short description field error:**  
+  
+![note field error](docs/images/features/insights-page/insight-form-error-note.JPG)  
+    
 #### ***Insight left success message:***
+  
 Once an insight is left from the insight page a success message is left on the insights page.
   
 ![Insight success](docs/images/features/insights-page/insights-success.JPG)
   
 #### ***Insight Item Display:***
+  
 * Insight item displayed with date created.
 * Short description, and note field visible.
 * Button to edit entry.
@@ -348,25 +394,60 @@ Once an insight is left from the insight page a success message is left on the i
 ![Insight item on insights page](docs/images/features/insights-page/insight-item.JPG)
   
 #### ***Timeline:***
+  
 Acts as a centre focal point for insights so the display on alternate sides in order form newest to oldest.  
   
 ![Insights Timeline](docs/images/features/insights-page/timeline.JPG)
   
 ### ***Contact Us Page:***
+  
 * Fake email address to contact site admins (In the future I will be looking into domain names)
 * Navigation button to the job openings page.
 * Navigation button to the job pinboard page.    
   
 ![Contact us page](docs/images/features/contact-us.JPG)
   
-# **From here**
-### ***Forms:***
 
 ### ***Pagination:***
-
+Appears on the following pages when:
+  * Job Openings page when more than 6 items to be displayed.
+  * Job pinboard page when more than 6 items to be displayed.
+  * Insights page when more that 4 items are available.  
+![Pagination bar](docs/images/features/pagination.JPG)
 
 ### ***Footer:***
+* Displays page copyright.
+* Displays social media links to contact the author.  
+  
+![Footer](docs/images/features/footer.JPG)
 
+## **Error pages**
+The below error pages were create out of necessity, When logged out a user was still able to access some pages when logged out. Other pages would show an error due to the logic on the page needing a user to render object from the view.
+  
+My initial solution was this member only page to render when a user was not logged in. However due to some url's being linked to views requiring user specific user related data a default 500 error would been shown so I decided to customize the error page.
+  
+### ***Members Only Page:***
+
+The member only page is visible when logged out and trying to access the below pages via the URL:
+* Full job spec page.
+* Edit note/insight form page.
+* Add job form.
+* Add insights form.
+  
+![Member only page](docs/images/features/error-pages/members-pages.JPG)
+
+### ***500 Server Error Page:***
+The 500 error page appears on those url's which are linked to views requiring a user object to function. It can cover other scenarios in the future however extensive manual testing this was the only trigger I found for this page.
+
+Pages where the error shows when trying to access a page via the URL when logged out:
+* Job pinboard page.
+* Insights page.
+  
+![500 error page](docs/images/features/error-pages/500.JPG)
+
+### ***404 Page Not Found Error Page:***
+This error shows when a user type a url into the browser which doesn't exist within the apps domain.
+![404 error page](docs/images/features/error-pages/404.JPG)
 
 # **Future development**
 * Automated script to delete/archive hidden job posts by set criteria when actions by admin.
