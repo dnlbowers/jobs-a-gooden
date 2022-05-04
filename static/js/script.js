@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (insightSection === noteId) {
                 insightTimelineRef.removeChild(insight);
-                window.location.reload(true)
+                window.location.reload(true);
             }
         });
     };

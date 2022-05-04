@@ -295,8 +295,8 @@ Checking by URL there were a lot of errors coming from the bootstrap and font aw
 </p>
 
 ## [JS](https://jshint.com/):
-JShint found only missing semi-colons, which I have since added where appropriate.
-[jshint metrics](docs/images/jshint/metrics.JPG)
+JShint found only missing semi-colons, which I have since added where appropriate.  
+![jshint metrics](docs/images/jshint/metrics.JPG)
 
 ## [PEP8](http://pep8online.com):
 Before using the pep8 validator I ran ``` autopep8 --in-place --aggressive --aggressive <file name> ``` on all py files.  
