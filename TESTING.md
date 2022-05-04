@@ -162,7 +162,7 @@ The lighthouse test showed a reduced score for accessibility on pages with a tog
 
 The lighthouse score also confirmed the poor contrast scores on the navbar items that are disabled when signed out.
 
-In general Mobile scores were lower in performance for two main reasons, cdn imports from bootstrap, jquery, and the already compressed (multiple times hero images). As a future development, I would be looking to reduce load time by replacing the few lines of jquery in my custom JS file with vanilla JS instead.
+In general Mobile scores were lower in performance for two main reasons, cdn imports from bootstrap, jquery, and the already compressed (multiple times hero images). As a future development, I would be firstly looking to reduce load time by replacing the few lines of jquery in my custom JS file with vanilla JS instead. and secondly I would change the hero image to be imported with CSS so the second hero image (default to display: none) didn't slow down the page load time.
 
 ## Job Openings 
 ### Logged out:
