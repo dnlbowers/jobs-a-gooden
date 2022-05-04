@@ -1,4 +1,18 @@
 # Agile Methodology
+* [Agile Methodology](#agile-methodology)
+  * [Overview](#overview)
+  * [Sprint Notes](#sprint-notes)
+    * [Sprint 1 notes:](#sprint-1-notes)
+    * [Sprint 2 notes:](#sprint-2-notes)
+    * [Sprint 3 notes:](#sprint-3-notes)
+    * [Sprint 4 notes:](#sprint-4-notes)
+    * [Sprint 5 notes:](#sprint-5-notes)
+    * [Sprint 6 notes:](#sprint-6-notes)
+    * [Sprint 7 notes:](#sprint-7-notes)
+    * [Sprint 8 notes:](#sprint-8-notes)
+    * [Sprint 9 notes:](#sprint-9-notes)
+    * [Sprint 10 notes:](#sprint-10-notes)
+    * [Sprint 11 notes:](#sprint-11-notes)
 ## Overview
 Due to some slight familiarity with [JIRA](https://dnlbowers.atlassian.net/jira/software/projects/PJG/boards/4/roadmap) from my current job, I decided to use JIRA over the project board on Github. I wanted to access the different tools and analytics built-in as default. 
 
@@ -13,7 +27,7 @@ Below is a summary of learnings from each iteration.
 My first sprint was short; I intended to get more familiar with JIRA and get the initial app set up and deployed. 
 * I set a time limit from 23:40 on 04/02 until 02:00 05/02.
 * There were five tasks, each with one story point. 
-* During the last sprint stage, I  had some issues with getting the app to display via Heroku and realized I had underestimated the story points on this task.
+* During the last sprint stage, I  had some issues getting the app to display via Heroku and realized I had underestimated the story points on this task.
 *I finished the sprint ahead of time at 01:40 05/02
 ![First sprint screenshot](docs/agile/sprint-screenshots/sprint1-initial-deployment.JPG)
 
@@ -38,7 +52,7 @@ My first sprint was short; I intended to get more familiar with JIRA and get the
 ### Sprint 4 notes:
 * Since in sprint 3, I managed to complete six user stories, I chose to take all the remaining seven into sprint 4.
 * Due to several commitments outside of the course, I only completed one task. I have not had much time to work on the project due to having a tech interview questionnaire to complete.
-* Due to the above, this turned into a dummy sprint with little achievement. Until I had to divert my attention, the burn-down chart was looking ok, so I will re-add the stories to the next sprint with reassessed priorities.
+* Due to the above, this was a dummy sprint with little achievement. Until I had to divert my attention, the burn-down chart was looking ok so I will re-add the stories to the next sprint with reassessed priorities.
 
 ![Fourth Sprint Screenshot](docs/agile/sprint-screenshots/sprint4.JPG)
 
@@ -64,7 +78,7 @@ My first sprint was short; I intended to get more familiar with JIRA and get the
 * First time my burn-down chart met with the expected trajectory largely due to a limited number of user stories.
 * Realized my mistake of meeting the criteria of 60% must-haves in a sprint. I planned for 60% of the overall tasks and not 60% of the story points. I will fix this from the next sprint onwards.
 * Decided to keep the job list page as the home page (initially, this was only a temporary measure). However, in the course of development, I decided that a hero image would look good below the navbar and decided to implement this instead of the carousel I had planned initially.
-* Since the idea of a user profile seemed to be less relevant at this stage, I used the last day of sprint seven to plan other user stories to plan the next stages of development to provide the most value to the user.
+* Since the idea of a user profile seemed less relevant at this stage, I used the last day of sprint seven to plan other user stories to plan the next stages of development to provide the most value to the user.
 ![Seventh sprint screenshot](docs/agile/sprint-screenshots/sprint7.JPG)
 
 ### Sprint 8 notes: 
@@ -89,6 +103,8 @@ My first sprint was short; I intended to get more familiar with JIRA and get the
 ![Tenth sprint screenshot](docs/agile/sprint-screenshots/sprint10.JPG)
 
 ### Sprint 11 notes: 
-* This sprint was all must haves to prepare for submission
+* This sprint was all must-haves to prepare for submission
 
 ![Tenth sprint screenshot](docs/agile/sprint-screenshots/sprint11.JPG)
+
+[Back to Readme](README.md)

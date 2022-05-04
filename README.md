@@ -7,7 +7,7 @@ This site is a community job share platform. It provides a method for users to s
 
 [Deployed site](https://jobs-a-gooden.herokuapp.com/)
 
-# **Table of Contents**
+# **Table Of Contents**
 * [**Jobs-A-Gooden**](#jobs-a-gooden)
 * [**Planning Phase**](#planning-phase)
   * [**Strategy**](#strategy)
@@ -90,7 +90,8 @@ This site is a community job share platform. It provides a method for users to s
     * [***Delete element from the DOM:***](#delete-element-from-the-dom)
 * [**Future development**](#future-development)
 * [**Testing Phase**](#testing-phase)
-* [Deployment](#deployment)
+* [**Deployment**](#deployment)
+* [**Technologies used**](#technologies-used)
 * [Honorable mentions](#honorable-mentions)
 * [Credits](#credits)
 
@@ -550,7 +551,7 @@ This error shows when a user types a URL into the browser which does not exist w
 ![Delete entry (note/insight) warning](docs/images/features/warning-modals/delete-note.JPG)
   
 ### ***Delete Job:***
-![Delete job warning](docs/images/features/warning-modals/delete-job.JPG
+![Delete job warning](docs/images/features/warning-modals/delete-job.JPG)
 
 ### ***Unpin Job:***
 ![Unpin job warning](docs/images/features/warning-modals/unpin-post.JPG)
@@ -573,9 +574,33 @@ Once deleting a job or unpinning a job, the element is hidden with javascript, a
 # **Testing Phase**
 I have included testing details during and post-development in a separate document called [TESTING.md](TESTING.md).
 
-# Deployment
-
+# **Deployment**
+The final Deployed site can be found [here](https://jobs-a-gooden.herokuapp.com/)
 I have included details of my initial deployment in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
+
+# **Technologies used**
+* Python
+  * The packages installed for the is project can be found in [the requirements.txt](requirements.txt)
+* Django
+  * Django was used as the python framework in the project.
+  * Django all auth was used to handle user authentication and related tasks i.e. sign in, sign up, sign out.
+* Heroku
+  * Used to deploy the page and make it publicly available.
+* Heroku PostgreSQL
+  * Used for the database during development and in deployment.
+* HTML
+  * HTML was the base language used to layout the skeleton of all templates.
+* CSS
+  * Custom CSS used to style the page and make the appearance look a little more unique.
+* Javascript
+  * I have used Javascript throughout to manipulate the DOM and communicate to the backend to create, read, update, and delete data from the database.
+* Jinja
+  * Jinja was the templating language used in order to implement the views.py logic and models.py data into a template so it could be displayed to the user.
+* Bootstrap 5.1.3
+  * Used to style HTML, CSS, minor javascript. The more I used this framework the most I realized retrospectively how it could have saved me writing several parts of the code I had already written.
+* Font awesome
+  * All icons throughout the page.
+
 
 # Honorable mentions  
 * [Richard Wells](https://github.com/D0nni387) - Mentor extraordinaire. He was ways on call when I needed him and never afraid to pull out the big guns to push that little bit further.
@@ -591,7 +616,10 @@ I have included details of my initial deployment in a separate document called [
 * And the biggest thanks goes to my wife and child, who have had to deal with me face to face through it all. Oliver has been my reason for the change, and Analise my inspiration. 
   
 # Credits
-* responsive screenshot made using [techsini.com](https://techsini.com/multi-mockup/index.php)
+* Balsamiq was used to create the wireframes.
+* The site was developed using VScode.
+* GitHub was used to store my repository.
+* Responsive screenshot made using [techsini.com](https://techsini.com/multi-mockup/index.php)
 * Flow chart symbol meaning taken from [conceptdraw.com](https://www.conceptdraw.com/How-To-Guide/flow-chart-symbols)
 * Guidance on file structure for templates folder from [learndjango.com article](https://learndjango.com/tutorials/template-structure)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)

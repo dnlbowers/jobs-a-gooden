@@ -596,4 +596,4 @@ Here I have only tested the admin panel relating to the JOB_SEARCH app, as the o
 | &check; | Form errors show when add insights form is incorrectly filled in upon submission |
 &check; | When editing an insight from the insights page, they user is redirected back to the insights page |
 
-
+[Back to Readme](README.md)
