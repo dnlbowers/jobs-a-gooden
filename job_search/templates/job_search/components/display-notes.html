@@ -16,16 +16,16 @@
                     <!-- Accordion heading to display Note summary -->
                     <div class="accordion-item border-bottom" data-note-item="{{ note.id }}">
 
-                        <h2 class="accordion-header" id="flush-headingForNote{{ note.id }}">
+                        <header class="accordion-header" id="flush-headingForNote{{ note.id }}">
                             <button class="accordion-button collapsed bg-brown" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseForNote{{ note.id }}" aria-expanded="false" aria-controls="flush-collapseForNote{{ note.id }}">
                         
-                                <div>    
-                                    <h3 class="note-heading">{% if note.is_insight %}<span><i class="fa-solid fa-lightbulb"></i></span>{% endif %}   {{ note.short_description }}</h3>
-                                    <p class="note-muted-txt">{{ note.date_created }}</p>
-                                </div>
+                                  
+                                <span class="note-heading">{% if note.is_insight %}<span><i class="fa-solid fa-lightbulb"></i></span>{% endif %} {{ note.short_description }}</span>
+                                <span class="note-muted-txt">{{ note.date_created }}</span>
+                                
 
                             </button>
-                        </h2>
+                        </header>
 
                         <!-- Accordion dropdown to show full note -->
                         <div id="flush-collapseForNote{{ note.id }}" class="accordion-collapse collapse border-bottom" aria-labelledby="flush-headingForNote{{ note.id }}" data-bs-parent="#notes-accordion">
@@ -39,7 +39,7 @@
                                 {% endif %}
 
                                 {{ note.note|safe }}
-                                <a href="{% url 'edit_note' note.id %}" class="btn btn-success">Edit</i></a>
+                                <a href="{% url 'edit_note' note.id %}" class="btn btn-success">Edit</a>
                                 <button type="button" class="btn btn-danger delete-note-btn" data-id="{{ note.id }}">Delete</button>
                             </div>
 
