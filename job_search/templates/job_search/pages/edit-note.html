@@ -25,6 +25,8 @@
                                     {{ field.label_tag }}
                                     {% if field == form.is_insight %}
                                         {% render_field field %}
+                                    {% elif field == form.note %}
+                                        {% render_field field %}
                                     {% else %}
                                         {% render_field field class="form-control" %}
                                     {% endif %}
