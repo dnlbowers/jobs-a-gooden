@@ -610,6 +610,7 @@ I have included details of my initial deployment in a separate document called [
 * Guillermo Brachetta - Explained dotenv package and how to use it.
 * Ed_CI - was always there in the project channel and quick to jump in to help
 * [Megan Vella](https://github.com/Medusas71) - Gave me the most extensive testing review of the lot. Always quick to say hello and look for ways to help.
+* Daniel Callaghan - Always hanging out in the PP4 channel and quick to answer any call for help.
 
 * The code institute Slack community as a whole who tested and supported me throughout. There have been too many to mention everyone who encouraged along the way, but they are all superstars.
 
