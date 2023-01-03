@@ -20,7 +20,7 @@ flake8==4.0.1
 gunicorn==20.1.0
 idna==3.3
 mccabe==0.6.1
-oauthlib==3.2.0
+oauthlib==3.2.1
 platformdirs==2.5.2
 psycopg2==2.9.3
 pycodestyle==2.8.0
