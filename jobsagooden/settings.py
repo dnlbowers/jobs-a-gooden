@@ -22,7 +22,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 
 X_FAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['jobs-a-gooden.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['jobs-a-gooden.herokuapp.com', 'jag.dev-bowers.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
