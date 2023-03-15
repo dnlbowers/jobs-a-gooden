@@ -5,7 +5,7 @@ This site is a community job share platform. It provides a method for users to s
 
 ![Responsive screenshot showing site on different screen sizes](docs/images/responsive.JPG)
 
-[Deployed site](https://jobs-a-gooden.herokuapp.com/)
+[Deployed site](https://jag.dev-bowers.com/)
 
 # **Table Of Contents**
 * [**Jobs-A-Gooden**](#jobs-a-gooden)
