@@ -575,7 +575,7 @@ Once deleting a job or unpinning a job, the element is hidden with javascript, a
 I have included testing details during and post-development in a separate document called [TESTING.md](TESTING.md).
 
 # **Deployment**
-The final Deployed site can be found [here](https://jobs-a-gooden.herokuapp.com/)
+The final Deployed site can be found [here](https://jag.dev-bowers.com/)
 I have included details of my initial deployment in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
 
 # **Technologies used**
