@@ -17,7 +17,7 @@ django-summernote==0.8.20.0
 django-widget-tweaks==1.4.12
 filelock==3.6.0
 flake8==4.0.1
-gunicorn==20.1.0
+gunicorn==22.0.0
 idna==3.3
 mccabe==0.6.1
 oauthlib==3.2.2
