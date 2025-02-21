@@ -36,5 +36,5 @@ six==1.16.0
 sqlparse==0.5.0
 toml==0.10.2
 urllib3==1.26.18
-virtualenv==20.10.0
+virtualenv==20.26.6
 webencodings==0.5.1
